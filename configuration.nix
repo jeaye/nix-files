@@ -55,6 +55,7 @@
     hsetroot
     transmission_gtk
     gcc5
+    llvm
   ];
 
   nixpkgs.config.allowUnfree = true;
