@@ -52,6 +52,7 @@
     mplayer
     i3status
     dmenu
+    hsetroot
   ];
 
   nixpkgs.config.allowUnfree = true;
