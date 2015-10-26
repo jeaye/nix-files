@@ -55,6 +55,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us";
+  services.xserver.synaptics.enable = true;
+  services.xserver.synaptics.twoFingerScroll = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.default = "i3";
 
