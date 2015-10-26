@@ -46,6 +46,7 @@
     tmux
     git
     firefox
+    elinks
   ];
 
   # Enable the OpenSSH daemon.
