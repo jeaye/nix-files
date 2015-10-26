@@ -54,6 +54,7 @@
     dmenu
     hsetroot
     transmission_gtk
+    gcc5
   ];
 
   nixpkgs.config.allowUnfree = true;
