@@ -68,6 +68,18 @@
   # Enable acceleration for 32bit apps as well
   hardware.opengl.driSupport32Bit = true;
 
+  # Font
+  fonts = {
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      corefonts # MS free fonts
+      inconsolata # Monospaced
+      terminus_font # The best
+      unifont # Some international fonts
+    ];
+  };
+
   users.extraUsers.jeaye = {
     isNormalUser = true;
     home = "/home/jeaye";
