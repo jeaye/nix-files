@@ -57,6 +57,10 @@
     gcc5
     llvm
     clang
+    gnumake
+    automake
+    cmake
+    lua
   ];
 
   nixpkgs.config.allowUnfree = true;
