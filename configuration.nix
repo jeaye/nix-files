@@ -49,6 +49,8 @@
     elinks
     cmus
     mplayer
+    i3status
+    dmenu
   ];
 
   nixpkgs.config.allowUnfree = true;
