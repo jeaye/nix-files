@@ -56,6 +56,7 @@
     transmission_gtk
     gcc5
     llvm
+    clang
   ];
 
   nixpkgs.config.allowUnfree = true;
