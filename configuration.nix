@@ -48,6 +48,7 @@
     firefox
     elinks
     cmus
+    mplayer
   ];
 
   nixpkgs.config.allowUnfree = true;
