@@ -43,7 +43,7 @@
   environment.systemPackages = with pkgs; [
     wget
     vim
-    urxvt
+    rxvt_unicode
     tmux
     git
     firefox
