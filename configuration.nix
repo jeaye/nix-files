@@ -47,6 +47,7 @@
     git
     firefox
     elinks
+    cmus
   ];
 
   nixpkgs.config.allowUnfree = true;
