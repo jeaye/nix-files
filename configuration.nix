@@ -58,6 +58,10 @@
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.default = "i3";
 
+  # Nvidia
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.driSupport32Bit = true;
+
   users.extraUsers.jeaye = {
     isNormalUser = true;
     home = "/home/jeaye";
