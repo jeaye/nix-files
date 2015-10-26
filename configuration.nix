@@ -53,6 +53,7 @@
     i3status
     dmenu
     hsetroot
+    transmission_gtk
   ];
 
   nixpkgs.config.allowUnfree = true;
