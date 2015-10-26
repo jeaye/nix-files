@@ -49,6 +49,8 @@
     elinks
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -62,6 +64,7 @@
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
+  # Enable acceleration for 32bit apps as well
   hardware.opengl.driSupport32Bit = true;
 
   users.extraUsers.jeaye = {
