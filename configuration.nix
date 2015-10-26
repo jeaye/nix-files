@@ -17,7 +17,6 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.extraEntries = ''
     menuentry 'Slackware-14.1 4.0.1' {
-	load_video
 	insmod gzio
 	insmod part_msdos
 	insmod ext2
