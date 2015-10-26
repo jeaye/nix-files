@@ -43,6 +43,7 @@
   environment.systemPackages = with pkgs; [
     wget
     vim
+    urxvt
     tmux
     git
     firefox
