@@ -45,6 +45,7 @@
     vim
     tmux
     git
+    firefox
   ];
 
   # Enable the OpenSSH daemon.
