@@ -24,16 +24,12 @@
   environment.systemPackages = with pkgs; [
     wget
     vim
-    rxvt_unicode
     tmux
     git
     firefox
     elinks
     cmus
     mplayer
-    i3status
-    dmenu
-    hsetroot
     transmission_gtk
     gcc5
     llvm

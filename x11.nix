@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    rxvt_unicode
+    i3status
+    dmenu
+    hsetroot
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us";
