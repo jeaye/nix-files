@@ -8,6 +8,7 @@
     ./x11.nix
     ./browse.nix
     ./dev.nix
+    ./media.nix
   ];
 
   networking.hostName = "nixos";
@@ -32,18 +33,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Font
-  fonts = {
-    enableFontDir = true;
-    enableGhostscriptFonts = true;
-    fonts = with pkgs; [
-      corefonts # MS free fonts
-      inconsolata # Monospaced
-      terminus_font # The best
-      unifont # Some international fonts
-    ];
-  };
 
   # Zsh
   programs.zsh.enable = true;
