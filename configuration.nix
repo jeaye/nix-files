@@ -61,6 +61,8 @@
     automake
     cmake
     lua
+    unzip
+    leiningen
   ];
 
   nixpkgs.config.allowUnfree = true;
