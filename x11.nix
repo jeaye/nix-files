@@ -16,7 +16,7 @@
     synaptics.twoFingerScroll = true;
     windowManager.i3.enable = true;
     windowManager.default = "i3";
-  }
+  };
 
   # Nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
