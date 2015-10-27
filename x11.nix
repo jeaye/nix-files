@@ -8,7 +8,6 @@
     hsetroot
   ];
 
-  # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
     layout = "us";
@@ -23,7 +22,6 @@
   # Enable acceleration for 32bit apps as well
   hardware.opengl.driSupport32Bit = true;
 
-  # Font
   fonts = {
     enableFontDir = true;
     enableGhostscriptFonts = true;

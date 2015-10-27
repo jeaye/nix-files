@@ -6,6 +6,5 @@
   # TODO
   networking.wireless.enable = false;
 
-  # SSH
   services.openssh.enable = true;
 }
