@@ -21,15 +21,10 @@
 
   time.timeZone = "Singapore/Singapore";
 
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     wget
     vim
     tmux
-    cmus
-    mplayer
-    transmission_gtk
     unzip
   ];
 
