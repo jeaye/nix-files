@@ -6,6 +6,8 @@
     ./grub.nix
     ./user.nix
     ./x11.nix
+    ./browser.nix
+    ./dev.nix
   ];
 
   networking.hostName = "nixos";
@@ -25,19 +27,10 @@
     wget
     vim
     tmux
-    git
     cmus
     mplayer
     transmission_gtk
-    gcc5
-    llvm
-    clang
-    gnumake
-    automake
-    cmake
-    lua
     unzip
-    leiningen
   ];
 
   nixpkgs.config.allowUnfree = true;
