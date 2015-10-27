@@ -9,10 +9,8 @@
     ./browse.nix
     ./dev.nix
     ./media.nix
+    ./network.nix
   ];
-
-  networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   i18n = {
     consoleFont = "Lat2-Terminus16";
@@ -22,17 +20,13 @@
 
   time.timeZone = "Singapore/Singapore";
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget
     vim
     tmux
     unzip
   ];
-
-  nixpkgs.config.allowUnfree = true;
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Zsh
   programs.zsh.enable = true;
