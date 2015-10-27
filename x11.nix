@@ -14,6 +14,7 @@
     tty = 2;
     synaptics.enable = true;
     synaptics.twoFingerScroll = true;
+    displayManager.sddm.enable = true;
     desktopManager.xterm.enable = false; # Disable "xterm + i3" session
     windowManager.i3.enable = true;
     windowManager.default = "i3";
