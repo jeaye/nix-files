@@ -26,8 +26,6 @@
     vim
     tmux
     git
-    firefox
-    elinks
     cmus
     mplayer
     transmission_gtk
