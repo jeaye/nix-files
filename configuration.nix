@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./grub.nix
+    ./user.nix
     ./x11.nix
   ];
 
@@ -64,14 +65,6 @@
 
   # Zsh
   programs.zsh.enable = true;
-
-  users.extraUsers.jeaye = {
-    isNormalUser = true;
-    home = "/home/jeaye";
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = "/run/current-system/sw/bin/zsh";
-    uid = 1000;
-  };
 
   system.stateVersion = "15.09";
 }
