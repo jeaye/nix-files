@@ -11,6 +11,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
+    tty = 2;
     synaptics.enable = true;
     synaptics.twoFingerScroll = true;
     windowManager.i3.enable = true;
