@@ -6,7 +6,7 @@
     ./grub.nix
     ./user.nix
     ./x11.nix
-    ./browser.nix
+    ./browse.nix
     ./dev.nix
   ];
 
