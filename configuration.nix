@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     wget
     vimHugeX
+    vimPlugins.YouCompleteMe
     tmux
     unzip
   ];

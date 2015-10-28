@@ -10,6 +10,8 @@
     automake
     cmake
     lua
+    python2
+    python3
     leiningen
   ];
 }
