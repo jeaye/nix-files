@@ -19,6 +19,7 @@
   };
 
   time.timeZone = "Singapore/Singapore";
+  services.ntp.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
