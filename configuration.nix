@@ -18,7 +18,7 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  time.timeZone = "Singapore/Singapore";
+  time.timeZone = "Singapore";
   services.ntp.enable = true;
 
   nixpkgs.config.allowUnfree = true;
