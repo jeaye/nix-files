@@ -28,8 +28,5 @@
     unzip
   ];
 
-  # Zsh
-  programs.zsh.enable = true;
-
   system.stateVersion = "15.09";
 }
