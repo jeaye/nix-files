@@ -30,5 +30,7 @@
     unzip
   ];
 
+  security.sudo.wheelNeedsPassword = false;
+
   system.stateVersion = "15.09";
 }
