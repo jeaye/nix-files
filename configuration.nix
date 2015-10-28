@@ -28,6 +28,7 @@
     vimPlugins.YouCompleteMe
     tmux
     unzip
+    skype
   ];
 
   security.sudo.wheelNeedsPassword = false;
