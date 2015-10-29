@@ -8,6 +8,7 @@
     ./x11.nix
     ./browse.nix
     ./dev.nix
+    ./vim.nix
     ./media.nix
     ./network.nix
   ];
@@ -24,8 +25,6 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget
-    vimHugeX
-    vimPlugins.YouCompleteMe
     tmux
     unzip
     skype
