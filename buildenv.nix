@@ -2,5 +2,5 @@ with import <nixpkgs>{};
 
 stdenv.mkDerivation {
   name = "buildenv";
-  buildInputs = [ cmake lua boost zlib ncurses gcc5 ];
+  buildInputs = [ cmake lua5_1 boost zlib ncurses gcc5 ];
 }
