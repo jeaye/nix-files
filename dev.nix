@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     git
     gcc5
+    gdb
     llvm
     clang
     gnumake
