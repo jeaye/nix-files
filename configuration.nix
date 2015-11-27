@@ -25,9 +25,6 @@
     unzip
   ];
 
-  # TODO: custom security file
-  security.sudo.wheelNeedsPassword = true;
-
   services.locate.enable = true;
 
   system.stateVersion = "15.09";
