@@ -52,3 +52,4 @@
 # TODO:
 # Setup email for pastespace (postfix + dovecot)
 # Bring in weechat/mutt configs
+# Harden more (ping limit? tor? better firewall?)
