@@ -39,7 +39,11 @@
   services.cron.enable = true;
 
   swapDevices = [
-    { device = "/root/swap"; }
+    {
+      # Nix will create this automagically
+      device = "/root/swap";
+      size = 1024;
+    }
   ];
 
   system.stateVersion = "15.09";
