@@ -14,6 +14,6 @@
 
   # Clean up old pastes
   services.cron.systemCronJobs = [
-    "*/1 * * * * http ${pkgs.findutils}/bin/find /home/http/paste.jeaye.com/* -mmin +2 -type d -exec rm -r {} \;"
+    "*/1 * * * * http ${pkgs.findutils}/bin/find /home/http/paste.jeaye.com/* -mmin +2 -type d -exec rm -r {} \\;"
   ];
 }
