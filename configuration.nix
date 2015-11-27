@@ -26,6 +26,7 @@
     elinks
     unzip
     git
+    htop
   ];
 
   nixpkgs.config = {
