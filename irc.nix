@@ -13,12 +13,8 @@
     serviceConfig = {
       Type = "forking";
       User = "irc";
-      ExecStart = ''
-        ${pkgs.tmux}/bin/tmux new-session -d -s irc ${pkgs.weechat}/bin/weechat \\; new-window ${pkgs.mutt}/bin/mutt
-      '';
-      ExecStop = ''
-        ${pkgs.tmux}/bin/tmux kill-session -t irc
-      '';
+      ExecStart = ''${pkgs.tmux}/bin/tmux new-session -s %u -d'';
+      ExecStop = ''${pkgs.tmux}/bin/tmux kill-session -t %u'';
     };
   };
 
