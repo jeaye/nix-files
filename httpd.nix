@@ -12,6 +12,17 @@
         hostName = "v2.jeaye.com";
         documentRoot = "/home/http/jeaye.com";
       }
+      {
+        hostName = "paste.jeaye.com";
+        documentRoot = "/home/http/paste.jeaye.com";
+        extraConfig = ''
+        <Directory /home/http/paste.jeaye.com>
+          AllowOverride All
+          DirectoryIndex index.html index.txt
+          Require all granted
+        </Directory>
+        '';
+      }
     ];
   };
 
