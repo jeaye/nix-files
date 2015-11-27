@@ -13,8 +13,8 @@
         documentRoot = "/home/http/jeaye.com";
       }
       {
-        hostName = "paste.jeaye.com";
-        serverAliases = "pastespace.org";
+        hostName = "pastespace.org";
+        serverAliases = "paste.jeaye.com";
         documentRoot = "/home/http/paste.jeaye.com";
         extraConfig = ''
         <Directory /home/http/paste.jeaye.com>
