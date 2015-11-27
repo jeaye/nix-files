@@ -23,6 +23,7 @@
     elinks
     tmux
     unzip
+    git
   ];
 
   services.locate.enable = true;
