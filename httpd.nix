@@ -16,15 +16,17 @@
         hostName = "paste.jeaye.com";
         serverAliases = ["pastespace.org"];
         documentRoot = "/home/http/paste.jeaye.com";
-        extraConfig = ''
-        <Directory /home/http/paste.jeaye.com>
-          AllowOverride All
-          DirectoryIndex index.html index.txt
-          Require all granted
-        </Directory>
-        '';
       }
     ];
+
+    extraConfig = ''
+    <Directory /home/http/paste.jeaye.com>
+      AllowOverride All
+      DirectoryIndex index.html index.txt
+      Require all granted
+      Options -Indexes
+    </Directory>
+    '';
   };
 
   users.extraUsers.http = {
