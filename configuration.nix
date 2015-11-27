@@ -9,6 +9,7 @@
     ./network.nix
     ./httpd.nix
     ./irc.nix
+    ./fiche.nix
   ];
 
   i18n = {
