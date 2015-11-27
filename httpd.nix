@@ -12,7 +12,7 @@
         hostName = "v2.jeaye.com";
         documentRoot = "/home/http/jeaye.com";
         extraConfig = ''
-        <Directory /home/http/paste.jeaye.com>
+        <Directory /home/http/jeaye.com>
           Options -Indexes
         </Directory>
         '';
