@@ -7,7 +7,7 @@
     serviceConfig = {
       User = "http";
       ExecStart = ''
-        ${pkgs.fiche}/bin/fiche -d pastespace.org -o /home/http/paste.jeaye.com -l /var/log/fiche
+        ${pkgs.fiche}/bin/fiche -d pastespace.org -o /home/http/paste.jeaye.com -l /home/http/fiche.log
       '';
     };
   };
