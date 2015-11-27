@@ -14,7 +14,7 @@
       Type = "forking";
       User = "irc";
       ExecStart = ''
-        ${pkgs.tmux}/bin/tmux new-session -s irc ${pkgs.weechat}/bin/weechat
+        ${pkgs.tmux}/bin/tmux new-session -d -s irc ${pkgs.weechat}/bin/weechat ;\
         ${pkgs.tmux}/bin/tmux new-window ${pkgs.mutt}/bin/mutt
       '';
       ExecStop = ''
