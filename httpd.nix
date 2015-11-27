@@ -17,4 +17,10 @@
       }
     ];
   };
+
+  users.extraUsers.http = {
+    isNormalUser = true;
+    home = "/home/http";
+    uid = 1000;
+  };
 }
