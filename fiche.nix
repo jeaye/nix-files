@@ -1,4 +1,4 @@
-{ config, pkgs, fetchFromGitHub, ... }:
+{ fetchFromGitHub }:
 
 {
   environment.etc = [
