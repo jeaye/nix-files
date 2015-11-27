@@ -7,6 +7,7 @@
     ./user.nix
     ./vim.nix
     ./network.nix
+    ./httpd.nix
   ];
 
   i18n = {
