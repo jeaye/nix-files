@@ -28,6 +28,12 @@
     git
   ];
 
+  nixpkgs.config = {
+    packageOverrides = pkgs: rec {
+      fiche = pkgs.callPackage ./pkg/fiche.nix { };
+    };
+  };
+
   services.locate.enable = true;
 
   system.stateVersion = "15.09";
