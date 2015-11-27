@@ -14,6 +14,7 @@
       }
       {
         hostName = "paste.jeaye.com";
+        serverAliases = "pastespace.org";
         documentRoot = "/home/http/paste.jeaye.com";
         extraConfig = ''
         <Directory /home/http/paste.jeaye.com>
