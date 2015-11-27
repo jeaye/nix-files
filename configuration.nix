@@ -23,7 +23,6 @@
   environment.systemPackages = with pkgs; [
     wget
     elinks
-    tmux
     unzip
     git
   ];

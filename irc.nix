@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    tmux
     weechat
     mutt
   ];
@@ -12,8 +13,13 @@
     serviceConfig = {
       Type = "forking";
       User = "irc";
-      ExecStart = ''${pkgs.tmux}/bin/tmux new-session -s irc ${pkgs.weechat}/bin/weechat'';
-      ExecStop = ''${pkgs.tmux}/bin/tmux kill-session -t irc'';
+      ExecStart = ''
+        ${pkgs.tmux}/bin/tmux new-session -s irc ${pkgs.weechat}/bin/weechat
+        ${pkgs.tmux}/bin/tmux new-window ${pkgs.mutt}/bin/mutt
+      '';
+      ExecStop = ''
+        ${pkgs.tmux}/bin/tmux kill-session -t irc
+      '';
     };
   };
 
