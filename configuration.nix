@@ -41,3 +41,5 @@
 
 # TODO:
 # Expire fiche pastes; cron job?
+# Setup email for pastespace
+# Bring in weechat/mutt configs
