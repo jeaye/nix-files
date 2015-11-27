@@ -7,7 +7,7 @@
     serviceConfig = {
       User = "http";
       ExecStart = ''
-        ${pkgs.fiche}/bin/fiche -d paste.jeaye.com -o /home/http/paste.jeaye.com -l /home/http/fiche.log
+        ${pkgs.fiche}/bin/fiche -d 104.238.146.252 -o /home/http/paste.jeaye.com -l /home/http/fiche.log
       '';
     };
   };
