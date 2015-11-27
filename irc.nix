@@ -14,10 +14,10 @@
       Type = "forking";
       User = "irc";
       ExecStart = ''
-        ${pkgs.tmux}/bin/tmux new-session -d -s %u ${pkgs.weechat}/bin/weechat && ${pkgs.tmux}/bin/tmux new-window %u:1 ${pkgs.mutt}/bin/mutt
+        ${pkgs.tmux}/bin/tmux new-session -d -s irc ${pkgs.weechat}/bin/weechat && ${pkgs.tmux}/bin/tmux new-window irc:1 ${pkgs.mutt}/bin/mutt
       '';
       ExecStop = ''
-        ${pkgs.tmux}/bin/tmux kill-session -t %u
+        ${pkgs.tmux}/bin/tmux kill-session -t irc
       '';
     };
   };
