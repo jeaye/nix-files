@@ -3,7 +3,7 @@
 {
   environment.etc = [
     {
-      source = fetchFromGitHub {
+      source = pkgs.fetchFromGitHub {
         owner = "solusipse";
         repo = "fiche";
         rev = "8f3e23d3de66aa894f78417523cb6aeb208b6d60";
@@ -12,15 +12,4 @@
       target = "fiche";
     }
   ];
-
-  #systemd.services.fiche = {
-  #  wantedBy = [ "multi-user.target" ];
-  #  after = [ "network.target" ];
-  #  serviceConfig = {
-  #    User = "http";
-  #    ExecStart = ''
-  #      /etc/fiche -d paste.jeaye.com -o /home/http/paste.jeaye.com -l /home/http/fiche.log
-  #    '';
-  #  };
-  #};
 }
