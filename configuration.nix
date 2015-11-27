@@ -35,6 +35,7 @@
   };
 
   services.locate.enable = true;
+  services.cron.enable = true;
 
   system.stateVersion = "15.09";
 }
