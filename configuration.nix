@@ -41,7 +41,7 @@
   swapDevices = [
     {
       # Nix will create this automagically
-      device = "/dev/handy-swap";
+      device = "/root/swap";
       size = 1024;
     }
   ];
