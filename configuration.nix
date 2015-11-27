@@ -5,11 +5,7 @@
     ./hardware-configuration.nix
     ./grub.nix
     ./user.nix
-    ./x11.nix
-    ./browse.nix
-    ./dev.nix
     ./vim.nix
-    ./media.nix
     ./network.nix
   ];
 
@@ -19,18 +15,18 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  time.timeZone = "Singapore";
+  time.timeZone = "America/Los_Angeles";
   services.ntp.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget
+    elinks
     tmux
     unzip
-    skype
   ];
 
-  security.sudo.wheelNeedsPassword = false;
+  # TODO: custom security file
+  security.sudo.wheelNeedsPassword = true;
 
   services.locate.enable = true;
 

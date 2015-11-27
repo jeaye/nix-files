@@ -4,7 +4,7 @@
   users.extraUsers.jeaye = {
     isNormalUser = true;
     home = "/home/jeaye";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" ];
     uid = 1000;
   };
 }
