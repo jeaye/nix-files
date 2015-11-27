@@ -4,10 +4,7 @@
   services.httpd = {
     enable = true;
     adminAddr = "contact@jeaye.com";
-    hostName = "localhost";
-    documentRoot = "/home/http/jeaye.com";
 
-    # Logging
     logPerVirtualHost = true;
 
     virtualHosts = [
