@@ -10,7 +10,11 @@
   # Firewall
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 80 ];
+    allowedTCPPorts = [
+      22 # ssh
+      80 # http
+      9999 # fiche
+    ];
     allowPing = true;
   };
 }
