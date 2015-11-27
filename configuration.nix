@@ -38,6 +38,10 @@
   services.locate.enable = true;
   services.cron.enable = true;
 
+  swapDevices = [
+    { device = "/root/swap"; }
+  ];
+
   system.stateVersion = "15.09";
 }
 
