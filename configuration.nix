@@ -38,6 +38,9 @@
     };
   };
 
+  # Don't bring in any X dependencies
+  environment.noXlibs = true;
+
   programs.bash.enableCompletion = true;
 
   services.locate.enable = true;
