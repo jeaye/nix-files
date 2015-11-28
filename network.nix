@@ -12,9 +12,10 @@
     enable = true;
     allowedTCPPorts = [
       22 # ssh
+      25 # smtp
       80 # http
-      143 # imap (dovecot)
-      587 # smtp (postfix)
+      143 # imap
+      587 # smtp
       9999 # fiche
     ];
     allowPing = true;
