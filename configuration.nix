@@ -32,6 +32,8 @@
     bashCompletion
   ];
 
+  programs.bash.enableCompletion = true;
+
   nixpkgs.config = {
     packageOverrides = pkgs: rec {
       fiche = pkgs.callPackage ./pkg/fiche.nix { };
@@ -42,18 +44,14 @@
   # Don't bring in any X dependencies
   environment.noXlibs = true;
 
-  programs.bash.enableCompletion = true;
-
   services.locate.enable = true;
-  services.cron.enable = true;
-
-  swapDevices = [
-    {
-      # Nix will create this automagically
-      device = "/root/swap";
-      size = 1024;
-    }
-  ];
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      # Clean up unused packages daily
+      "0 0 * * * root nix-collect-garbage"
+    ];
+  };
 
   system.stateVersion = "15.09";
 }
