@@ -29,6 +29,7 @@
     unzip
     git
     htop
+    bash-completion
   ];
 
   nixpkgs.config = {
