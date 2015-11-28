@@ -28,7 +28,7 @@
       }
 
       service auth {
-        unix_listener /var/spool/postfix/private/auth {
+        unix_listener /var/postfix/queue/private/auth {
           mode = 0660
           user = postfix
           group = postfix
