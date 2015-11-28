@@ -43,6 +43,7 @@
 
   # Don't bring in any X dependencies
   environment.noXlibs = true;
+  fonts.enableFontConfig = false;
 
   services.locate.enable = true;
   services.cron = {
@@ -52,6 +53,8 @@
       "0 0 * * * root nix-collect-garbage"
     ];
   };
+
+  sound.enable = false;
 
   system.stateVersion = "15.09";
 }

@@ -17,4 +17,7 @@
     home = "/home/jeaye";
     extraGroups = [ "wheel" ];
   };
+
+  # Can't use useradd/groupadd imperatively
+  users.mutableUsers = false;
 }
