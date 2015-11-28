@@ -24,5 +24,8 @@
     enable = true;
     forwardX11 = false;
     permitRootLogin = "without-password"; # Force key-based authentication
+    extraConfig = ''
+      PermitEmptyPasswords no
+    '';
   };
 }
