@@ -62,5 +62,4 @@
 }
 
 # TODO:
-# OpenSSL keys declaratively
 # Bring in weechat/mutt configs
