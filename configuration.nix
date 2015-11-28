@@ -56,6 +56,8 @@
 
   sound.enable = false;
 
+  nix.maxJobs = 8;
+
   system.stateVersion = "15.09";
 }
 
