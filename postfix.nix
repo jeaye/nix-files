@@ -57,11 +57,6 @@
       smtpd_tls_security_level = encrypt
       smtpd_tls_protocols = !SSLv2, !SSLv3
 
-      smtpd_recipient_restrictions =
-          permit_sasl_authenticated
-          permit_mynetworks
-          reject_unauth_destination
-
       smtpd_sasl_auth_enable = yes
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
