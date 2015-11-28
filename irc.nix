@@ -7,8 +7,9 @@
     mutt
   ];
 
-  users.extraUsers.irc = {
+  users.users.irc = {
     isNormalUser = true;
     home = "/home/irc";
+    createHome = true;
   };
 }

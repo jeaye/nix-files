@@ -31,8 +31,9 @@
     ];
   };
 
-  users.extraUsers.http = {
+  users.users.http = {
     isNormalUser = true;
     home = "/home/http";
+    createHome = true;
   };
 }
