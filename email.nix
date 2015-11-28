@@ -7,7 +7,12 @@
     hostname = "mail.pastespace.org";
     domain = "pastespace.org";
     origin = "${domain}";
-    destination = "${hostname}, ${domain}, localhost.${domain}, localhost";
+    destination = [
+      "${hostname}"
+      "${domain}"
+      "localhost.${domain}"
+      "localhost"
+    ];
     networksStyle = "host";
     virtual = ''
       contact@pastespace.org     jeaye
