@@ -8,8 +8,9 @@
     ./vim.nix
     ./network.nix
     ./httpd.nix
-    ./irc.nix
+    ./email.nix
     ./fiche.nix
+    ./irc.nix
   ];
 
   i18n = {
