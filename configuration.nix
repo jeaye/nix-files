@@ -46,13 +46,6 @@
   fonts.enableFontConfig = false;
 
   services.locate.enable = true;
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      # Clean up unused packages daily
-      "0 0 * * * root nix-collect-garbage"
-    ];
-  };
 
   sound.enable = false;
 
