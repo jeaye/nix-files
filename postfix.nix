@@ -53,30 +53,20 @@
       smtpd_tls_key_file=/etc/ssl/private/mail.key
       smtpd_tls_session_cache_database = btree:''${data_directory}/smtpd_scache
       smtp_tls_session_cache_database = btree:''${data_directory}/smtp_scache
-      smtpd_tls_security_level=may
+      smtpd_tls_wrappermode = no
+      smtpd_tls_security_level = encrypt
       smtpd_tls_protocols = !SSLv2, !SSLv3
-
-      smtpd_recipient_restrictions =
-        permit_sasl_authenticated
-        permit_mynetworks
-        reject_unauth_destination
 
       smtpd_sasl_auth_enable = yes
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
+      smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject
     '';
-    # TODO: Clean up the duplication
     extraMasterConf = ''
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
-        -o smtpd_tls_wrappermode=no
-        -o smtpd_tls_security_level=encrypt
-        -o smtpd_sasl_auth_enable=yes
-        -o smtpd_recipient_restrictions=permit_mynetworks,permit_sasl_authenticated,reject
         -o milter_macro_daemon_name=ORIGINATING
-        -o smtpd_sasl_type=dovecot
-        -o smtpd_sasl_path=private/auth
     '';
   };
 }
