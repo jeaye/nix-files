@@ -12,19 +12,17 @@
     extraConfig = ''
       ssl = required
 
-      namespace inbox {
-        mailbox trash {
-          auto = create
-          special_use = \Trash
-        }
-        mailbox sent {
-          auto = create
-          special_use = \Sent
-        }
-        mailbox junk {
-          auto = create
-          special_use = \Junk
-        }
+      protocol imap {
+        mail_plugins = $mail_plugins autocreate
+      }
+
+      plugin {
+        autocreate = Trash
+        autocreate2 = Sent
+        autocreate3 = Drafts
+        autosubscribe = Trash
+        autosubscribe2 = Sent
+        autosubscribe3 = Drafts
       }
 
       service auth {
