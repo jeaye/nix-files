@@ -55,4 +55,5 @@
 }
 
 # TODO:
+# Split into more directories
 # Bring in weechat/mutt configs
