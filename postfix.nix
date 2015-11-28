@@ -57,7 +57,7 @@
       smtpd_tls_security_level = may
       smtpd_tls_protocols = !SSLv2, !SSLv3
 
-      smtpd_sasl_auth_enable = no
+      smtpd_sasl_auth_enable = yes
       smtpd_tls_auth_only = yes
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
@@ -67,8 +67,13 @@
     extraMasterConf = ''
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
-        -o milter_macro_daemon_name=ORIGINATING
+        -o smtpd_tls_wrappermode=no
+        -o smtpd_tls_security_level=encrypt
         -o smtpd_sasl_auth_enable=yes
+        -o smtpd_recipient_restrictions=permit_mynetworks,permit_sasl_authenticated,reject
+        -o milter_macro_daemon_name=ORIGINATING
+        -o smtpd_sasl_type=dovecot
+        -o smtpd_sasl_path=private/auth
     '';
   };
 }
