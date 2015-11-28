@@ -9,6 +9,7 @@
     ./network.nix
     ./httpd.nix
     ./postfix.nix
+    ./dovecot.nix
     ./fiche.nix
     ./irc.nix
   ];
