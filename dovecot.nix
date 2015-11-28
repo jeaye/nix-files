@@ -10,8 +10,7 @@
     sslServerKey = "/etc/ssl/private/mail.key";
     extraConfig = ''
       ssl = required
-    '';
-    extraConfig = ''
+
       namespace inbox {
         mailbox trash {
           auto = create
