@@ -18,13 +18,11 @@
     virtual = ''
       contact@pastespace.org     jeaye
     '';
+    postmasterAlias = "root";
+    rootAlias = "jeaye";
     extraAliases = ''
-      # Person who should get root's mail. Don't receive mail as root!
-      root:   jeaye
-
       # Basic system aliases -- these MUST be present
       MAILER-DAEMON:  postmaster
-      postmaster: root
 
       # General redirections for pseudo accounts
       bin:      root
