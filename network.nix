@@ -13,6 +13,7 @@
     allowedTCPPorts = [
       22 # ssh
       80 # http
+      143 # imap (dovecot)
       9999 # fiche
     ];
     allowPing = true;
