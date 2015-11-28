@@ -57,7 +57,7 @@
       smtpd_tls_security_level = encrypt
       smtpd_tls_protocols = !SSLv2, !SSLv3
 
-      smtpd_sasl_auth_enable = yes
+      smtpd_sasl_auth_enable = no
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
@@ -67,6 +67,7 @@
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
         -o milter_macro_daemon_name=ORIGINATING
+        -o smtpd_sasl_auth_enable=yes
     '';
   };
 }
