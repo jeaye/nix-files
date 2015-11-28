@@ -66,6 +66,7 @@
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
     '';
+    # TODO: Clean up the duplication
     extraMasterConf = ''
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
