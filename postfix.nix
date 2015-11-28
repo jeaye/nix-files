@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 
-# TODO: SASL and TLS
 {
   services.postfix = rec {
     enable = true;
