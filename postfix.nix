@@ -14,6 +14,7 @@
       "localhost"
     ];
     networksStyle = "host";
+    relayHost = "";
     virtual = ''
       contact@pastespace.org     jeaye
     '';
