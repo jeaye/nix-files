@@ -43,7 +43,7 @@
 
   # Don't bring in any X dependencies
   environment.noXlibs = true;
-  fonts.enableFontConfig = false;
+  fonts.fontconfig.enable = false;
 
   services.locate.enable = true;
 
