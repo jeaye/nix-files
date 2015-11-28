@@ -8,6 +8,7 @@
     mailLocation = "maildir:~/Maildir";
     sslServerCert = "/etc/ssl/certs/mail.pem";
     sslServerKey = "/etc/ssl/private/mail.key";
+    sslCACert =  "/etc/ssl/private/mail.csr";
     extraConfig = ''
       ssl = required
 
