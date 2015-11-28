@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vimHugeX
+    vim
     python2
     python3
     vimPlugins.YouCompleteMe
