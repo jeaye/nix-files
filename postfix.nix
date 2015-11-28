@@ -4,8 +4,8 @@
 {
   services.postfix = rec {
     enable = true;
-    hostname = "mail.pastespace.org";
     domain = "pastespace.org";
+    hostname = "mail.${domain}";
     origin = "${domain}";
     destination = [
       "${hostname}"

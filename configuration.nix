@@ -8,7 +8,7 @@
     ./vim.nix
     ./network.nix
     ./httpd.nix
-    ./email.nix
+    ./postfix.nix
     ./fiche.nix
     ./irc.nix
   ];
