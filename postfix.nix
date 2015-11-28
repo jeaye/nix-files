@@ -51,18 +51,20 @@
       smtpd_use_tls=yes
       smtpd_tls_cert_file=/etc/ssl/certs/mail.pem
       smtpd_tls_key_file=/etc/ssl/private/mail.key
-      smtpd_tls_session_cache_database = btree:''${data_directory}/smtpd_scache
-      smtp_tls_session_cache_database = btree:''${data_directory}/smtp_scache
-      smtpd_tls_wrappermode = no
-      smtpd_tls_security_level = may
+      smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+      smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+      smtpd_tls_security_level=may
       smtpd_tls_protocols = !SSLv2, !SSLv3
 
+      smtpd_recipient_restrictions =
+        permit_sasl_authenticated
+        permit_mynetworks
+        reject_unauth_destination
+
       smtpd_sasl_auth_enable = yes
-      smtpd_tls_auth_only = yes
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
-      smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject
     '';
     extraMasterConf = ''
       submission inet n       -       n       -       -       smtpd
