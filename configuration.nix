@@ -38,6 +38,8 @@
     };
   };
 
+  programs.bash.enableCompletion = true;
+
   services.locate.enable = true;
   services.cron.enable = true;
 
