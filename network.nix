@@ -14,6 +14,7 @@
       22 # ssh
       80 # http
       143 # imap (dovecot)
+      587 # smtp (postfix)
       9999 # fiche
     ];
     allowPing = true;
