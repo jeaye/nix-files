@@ -8,6 +8,8 @@ The main entry point describing the core system is `configuration.nix`; from
 there, each item is split categorically.
 
 ### Managed bits
+* System
+  * Grub, time, network, firewall, users, packages, etc
 * Websites
   * jeaye.com
   * pastespace.org
