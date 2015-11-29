@@ -8,17 +8,16 @@ The main entry point describing the core system is `configuration.nix`; from
 there, each item is split categorically.
 
 ### Managed bits
-* Multiple websites
+* Websites
   * jeaye.com
-  * fu-er.com
-  * furthington.com
   * pastespace.org
-* Mail server for all of the above sites
-  * IMAP + SMTP
-* Fiche service
-  * Posts are cleaned up after 2 weeks
+* Mail server
+  * IMAP (dovecot) + SMTP (postfix)
+* [Fiche](https://github.com/solusipse/fiche) service
+  * Posts expire after 2 weeks
 
 ### Non-managed bits
+* User passwords
 * /home/http repositories
 * /etc/ssl keys and certs
 * weechat/mutt configs
