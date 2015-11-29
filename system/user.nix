@@ -19,6 +19,6 @@
     extraGroups = [ "wheel" ];
   };
 
-  # Can't use useradd/groupadd imperatively
-  #users.mutableUsers = false;
+  # Allow useradd/groupadd imperatively
+  users.mutableUsers = true;
 }
