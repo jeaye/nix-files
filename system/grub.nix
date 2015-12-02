@@ -9,6 +9,9 @@
     device = "/dev/vda";
   };
 
+  # Clean up /tmp on boot
+  boot.cleanTmpDir = true;
+
   swapDevices = [
     {
       # Nix will create this automagically
