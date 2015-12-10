@@ -9,20 +9,10 @@
 
     virtualHosts = [
       {
-        hostName = "v2.jeaye.com";
-        documentRoot = "/home/http/jeaye.com";
+        hostName = "pastespace.org";
+        documentRoot = "/home/http/pastespace.org";
         extraConfig = ''
-        <Directory /home/http/jeaye.com>
-          Options -Indexes
-        </Directory>
-        '';
-      }
-      {
-        hostName = "paste.jeaye.com";
-        serverAliases = ["pastespace.org"];
-        documentRoot = "/home/http/paste.jeaye.com";
-        extraConfig = ''
-        <Directory /home/http/paste.jeaye.com>
+        <Directory /home/http/pastespace.org>
           DirectoryIndex index.html index.txt
           Options -Indexes
         </Directory>
