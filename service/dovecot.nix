@@ -16,6 +16,7 @@
         mail_plugins = $mail_plugins autocreate
       }
 
+      # TODO: Update to namespaces
       plugin {
         autocreate = Trash
         autocreate2 = Sent
