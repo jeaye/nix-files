@@ -28,6 +28,9 @@
     };
   };
 
+  # Build all packages in a chroot
+  nix.useChroot = true;
+
   # Don't bring in any X dependencies
   environment.noXlibs = true;
   fonts.fontconfig.enable = false;
