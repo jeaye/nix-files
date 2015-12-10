@@ -44,7 +44,7 @@
     '';
     extraConfig = ''
       home_mailbox = Maildir/
-      #virtual_alias_domains = jeaye.com fu-er.com furthington.com arrownext.com
+      virtual_alias_domains = arrownext.com
 
       # Security
       smtpd_use_tls = yes
