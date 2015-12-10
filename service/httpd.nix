@@ -31,6 +31,10 @@
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    letsencrypt
+  ];
+
   users.users.http = {
     isNormalUser = true;
     home = "/home/http";
