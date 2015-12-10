@@ -1,8 +1,10 @@
 { stdenv, pkgs, fetchFromGitHub }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation rec
+{
   name = "fiche";
-  src = pkgs.fetchFromGitHub {
+  src = pkgs.fetchFromGitHub
+  {
     owner = "solusipse";
     repo = "fiche";
     rev = "8f3e23d3de66aa894f78417523cb6aeb208b6d60";

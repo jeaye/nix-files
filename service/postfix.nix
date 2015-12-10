@@ -1,12 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  services.postfix = rec {
+  services.postfix = rec
+  {
     enable = true;
     domain = "pastespace.org";
     hostname = "mail.${domain}";
     origin = "${domain}";
-    destination = [
+    destination =
+    [
       "${hostname}"
       "${domain}"
       "localhost.${domain}"
@@ -14,12 +16,14 @@
     ];
     networksStyle = "host";
     relayDomains = [];
-    virtual = ''
+    virtual =
+    ''
       contact@pastespace.org     jeaye
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
-    extraAliases = ''
+    extraAliases =
+    ''
       # Basic system aliases -- these MUST be present
       MAILER-DAEMON:  postmaster
 
@@ -42,7 +46,8 @@
       # Trap decode to catch security attacks
       decode:   root
     '';
-    extraConfig = ''
+    extraConfig =
+    ''
       home_mailbox = Maildir/
       virtual_alias_domains = arrownext.com
 
@@ -62,7 +67,8 @@
       smtpd_sasl_authenticated_header = yes
       smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject
     '';
-    extraMasterConf = ''
+    extraMasterConf =
+    ''
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
         -o milter_macro_daemon_name=ORIGINATING

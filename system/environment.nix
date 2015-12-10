@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  i18n = {
+  i18n =
+  {
     consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
@@ -10,7 +11,8 @@
   time.timeZone = "America/Los_Angeles";
   services.ntp.enable = true;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+  [
     wget
     elinks
     unzip
@@ -21,8 +23,10 @@
 
   programs.bash.enableCompletion = true;
 
-  nixpkgs.config = {
-    packageOverrides = pkgs: rec {
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
       fiche = pkgs.callPackage ../pkg/fiche.nix { };
       gnupg = pkgs.gnupg.override { x11Support = false; };
     };

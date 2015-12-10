@@ -6,9 +6,11 @@
   networking.wireless.enable = false;
 
   # Firewall
-  networking.firewall = {
+  networking.firewall =
+  {
     enable = true;
-    allowedTCPPorts = [
+    allowedTCPPorts =
+    [
       22 # ssh
       25 # smtp (postfix)
       80 # http
@@ -20,7 +22,8 @@
     allowPing = true;
   };
 
-  services.openssh = {
+  services.openssh =
+  {
     enable = true;
     forwardX11 = false;
     permitRootLogin = "no";

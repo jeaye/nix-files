@@ -1,17 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  services.httpd = {
+  services.httpd =
+  {
     enable = true;
     adminAddr = "contact@jeaye.com";
 
     logPerVirtualHost = true;
 
-    virtualHosts = [
+    virtualHosts =
+    [
       {
         hostName = "pastespace.org";
         documentRoot = "/home/http/pastespace.org";
-        extraConfig = ''
+        extraConfig =
+        ''
         <Directory /home/http/pastespace.org>
           DirectoryIndex index.html index.txt
           Options -Indexes
@@ -21,12 +24,14 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+  [
     # TODO: Automatically manage certs
     letsencrypt
   ];
 
-  users.users.http = {
+  users.users.http =
+  {
     isNormalUser = true;
     home = "/home/http";
     createHome = true;
