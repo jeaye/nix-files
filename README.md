@@ -9,7 +9,7 @@ there, each item is split categorically.
 
 ### Managed bits
 * System
-  * Grub, time, network, firewall, users, packages, etc
+  * GRUB, time, network, firewall, users, packages, etc
 * Websites
   * jeaye.com
   * pastespace.org
