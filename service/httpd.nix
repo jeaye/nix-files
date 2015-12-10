@@ -32,6 +32,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # TODO: Automatically manage certs
     letsencrypt
   ];
 
