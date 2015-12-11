@@ -4,6 +4,7 @@
   services.httpd =
   {
     enable = true;
+    user = "http";
     adminAddr = "contact@jeaye.com";
 
     logPerVirtualHost = true;
