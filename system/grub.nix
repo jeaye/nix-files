@@ -13,7 +13,5 @@
   # Clean up /tmp on boot
   boot.cleanTmpDir = true;
 
-  swapDevices =
-  [
-  ];
+  swapDevices = [ ];
 }
