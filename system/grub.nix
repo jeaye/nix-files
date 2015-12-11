@@ -13,5 +13,12 @@
   # Clean up /tmp on boot
   boot.cleanTmpDir = true;
 
-  swapDevices = [ ];
+  swapDevices =
+  [
+    {
+      # Nix will create this automagically
+      device = "/swap";
+      size = 512;
+    }
+  ];
 }
