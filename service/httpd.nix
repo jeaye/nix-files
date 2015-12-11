@@ -16,7 +16,7 @@
         extraConfig =
         ''
         <Directory /home/http/pastespace.org>
-          DirectoryIndex index.html index.txt
+          DirectoryIndex index.txt
           Options -Indexes
         </Directory>
         '';
