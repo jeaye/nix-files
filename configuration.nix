@@ -28,4 +28,5 @@
 }
 
 # TODO:
+# Let's Encrypt automatically handled certs
 # Bring in weechat/mutt configs
