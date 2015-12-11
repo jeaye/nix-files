@@ -5,7 +5,7 @@
   [
     tmux
     weechat
-    mutt
+    #mutt
   ];
 
   users.users.irc =
