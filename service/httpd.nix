@@ -27,7 +27,7 @@
   environment.systemPackages = with pkgs;
   [
     # TODO: Automatically manage certs
-    letsencrypt
+    #letsencrypt
   ];
 
   users.users.http =
