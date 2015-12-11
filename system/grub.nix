@@ -8,7 +8,6 @@
   {
     enable = true;
     version = 2;
-    device = "/dev/vda";
   };
 
   # Clean up /tmp on boot
