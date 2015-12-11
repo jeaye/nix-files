@@ -25,10 +25,13 @@
     ];
   };
 
-  environment.systemPackages = with pkgs;
+  environment.systemPackages =
+    let pkgsUnstable = import
+    (
+      fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+    ) {}; in
   [
-    # TODO: Automatically manage certs
-    #letsencrypt
+    pkgsUnstable.letsencrypt
   ];
 
   users.users.http =
