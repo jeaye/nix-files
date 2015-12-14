@@ -21,7 +21,7 @@
           "mail.pastespace.org" = null;
         };
         email = "contact@jeaye.com";
-        plugins = [ "chain.pem" "key.pem" "cert.pem" ];
+        plugins = [ "chain.pem" "key.pem" "cert.pem" "account_key.json" ];
         postRun = "systemctl restart httpd.service";
       };
     };
