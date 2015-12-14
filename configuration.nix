@@ -29,4 +29,5 @@
 
 # TODO:
 # Let's Encrypt automatically handled certs
+# Users in /etc/usert
 # Bring in weechat/mutt configs
