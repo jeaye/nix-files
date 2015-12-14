@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      fiche = pkgs.callPackage ../pkg/fiche.nix { };
+    };
+  };
+
   systemd.services.fiche =
   {
     wantedBy = [ "multi-user.target" ];

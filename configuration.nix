@@ -14,6 +14,7 @@
     ./program/vim.nix
     ./program/irc.nix
 
+    ./service/acme.nix
     ./service/httpd.nix
     ./service/postfix.nix
     ./service/dovecot.nix

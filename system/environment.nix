@@ -27,7 +27,6 @@
   {
     packageOverrides = pkgs: rec
     {
-      fiche = pkgs.callPackage ../pkg/fiche.nix { };
       gnupg = pkgs.gnupg.override { x11Support = false; };
     };
   };
