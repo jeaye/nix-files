@@ -29,7 +29,6 @@
 }
 
 # TODO:
-# Let's Encrypt automatically handled certs
 # Use activationScript to setup home directories
 # Users in /etc/user
 # Bring in weechat/mutt configs
