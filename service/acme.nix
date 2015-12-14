@@ -1,17 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config =
-  {
-    packageOverrides = pkgs: rec
-    {
-      simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
-    };
-  };
-  imports =
-  [
-    ../pkg/acme.nix
-  ];
+  #nixpkgs.config =
+  #{
+  #  packageOverrides = pkgs: rec
+  #  {
+  #    simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
+  #  };
+  #};
+  #imports =
+  #[
+  #  ../pkg/acme.nix
+  #];
 
   security.acme =
   {
