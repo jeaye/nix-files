@@ -18,7 +18,6 @@
   {
     isNormalUser = true;
     home = "/home/jeaye";
-    createHome = true;
     extraGroups = [ "wheel" ];
   };
 
