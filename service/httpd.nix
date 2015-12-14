@@ -22,6 +22,16 @@
         </Directory>
         '';
       }
+      {
+        hostName = "acme.pastespace.org";
+        documentRoot = "/home/http/acme.pastespace.org";
+        extraConfig =
+        ''
+        <Directory /home/http/acme.pastespace.org>
+          Options -Indexes
+        </Directory>
+        '';
+      }
     ];
   };
 
@@ -29,6 +39,5 @@
   {
     isNormalUser = true;
     home = "/home/http";
-    createHome = true;
   };
 }
