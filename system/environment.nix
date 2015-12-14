@@ -38,7 +38,6 @@
   environment.noXlibs = true;
   fonts.fontconfig.enable = false;
 
-  # Upgrade once a day
-  system.autoUpgrade.enable = true;
+  system.autoUpgrade.enable = false;
   system.autoUpgrade.channel = "https://nixos.org/channels/nixos-unstable-small";
 }
