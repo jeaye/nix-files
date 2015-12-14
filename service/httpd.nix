@@ -13,6 +13,11 @@
     [
       {
         hostName = "pastespace.org";
+        globalRedirect = "https://pastespace.org";
+        enableSSL = false;
+      }
+      {
+        hostName = "pastespace.org";
         documentRoot = "/home/http/pastespace.org";
         extraConfig =
         ''
@@ -20,10 +25,6 @@
             DirectoryIndex index.txt
             Options -Indexes
           </Directory>
-
-          RewriteEngine On
-          RewriteCond %{HTTPS} !=on
-          RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
         '';
         enableSSL = true;
       }
