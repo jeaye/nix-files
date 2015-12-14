@@ -29,6 +29,5 @@
 }
 
 # TODO:
-# Use activationScript to setup home directories
 # Users in /etc/user
 # Bring in weechat/mutt configs
