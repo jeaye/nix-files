@@ -1,20 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  #nixpkgs.config =
-  #{
-  #  packageOverrides = pkgs: rec
-  #  {
-  #    simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
-  #  };
-  #};
-  #imports =
-  #[
-  #  ../pkg/acme.nix
-  #];
-  environment.systemPackages = with pkgs;
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
+    };
+  };
+  imports =
   [
-    simp_le
+    ../pkg/acme.nix
   ];
 
   security.acme =
@@ -42,4 +38,5 @@
     isSystemUser = true;
     group = "acme";
   };
+  users.groups.acme = {};
 }

@@ -1,6 +1,10 @@
 { stdenv, fetchFromGitHub, pythonPackages }:
 
 pythonPackages.buildPythonPackage rec {
+  imports = [
+    ./acme.nix
+  ];
+
   name = "simp_le-20151207";
 
   src = fetchFromGitHub {
