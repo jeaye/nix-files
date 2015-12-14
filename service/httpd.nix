@@ -24,10 +24,10 @@
       }
       {
         hostName = "acme.pastespace.org";
-        documentRoot = "/home/http/acme.pastespace.org";
+        documentRoot = "/home/acme/acme.pastespace.org";
         extraConfig =
         ''
-        <Directory /home/http/acme.pastespace.org>
+        <Directory /home/acme/acme.pastespace.org>
           Options -Indexes
         </Directory>
         '';
@@ -39,5 +39,7 @@
   {
     isNormalUser = true;
     home = "/home/http";
+    extraGroups = [ "http" ];
   };
+  users.groups.http = {};
 }

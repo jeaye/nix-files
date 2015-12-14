@@ -32,7 +32,6 @@
   {
     isNormalUser = true;
     home = "/home/acme";
-    createHome = true;
     extraGroups = [ "acme" ];
   };
   users.groups.acme = {};
