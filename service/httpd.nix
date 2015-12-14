@@ -28,6 +28,12 @@
     sslServerKey = "/var/lib/acme/pastespace.org/key.pem";
     sslServerChain = "/var/lib/acme/pastespace.org/chain.pem";
     sslServerCert = "/var/lib/acme/pastespace.org/cert.pem";
+    extraConfig =
+    ''
+      RewriteEngine On
+      RewriteCond %{HTTPS} !=on
+      RewriteRule ^/?(.*) https://%{SERVER_NAME}/\$1 [R,L]
+    '';
   };
 
   users.users.http =
