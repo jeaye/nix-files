@@ -5,6 +5,8 @@
 
   networking.wireless.enable = false;
 
+  networking.enableIPv6 = false;
+
   # Firewall
   networking.firewall =
   {
