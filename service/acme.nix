@@ -12,6 +12,10 @@
   #[
   #  ../pkg/acme.nix
   #];
+  environment.systemPackages = with pkgs;
+  [
+    simp_le
+  ];
 
   security.acme =
   {
