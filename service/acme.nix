@@ -33,10 +33,10 @@
     };
   };
 
+  users.groups.acme = {};
   users.users.acme =
   {
     isSystemUser = true;
     group = "acme";
   };
-  users.groups.acme = {};
 }
