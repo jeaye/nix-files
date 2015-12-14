@@ -13,7 +13,7 @@
     [
       {
         hostName = "pastespace.org";
-        globalRedirect = "https://pastespace.org";
+        globalRedirect = "https://pastespace.org/";
         enableSSL = false;
       }
       {
