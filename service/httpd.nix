@@ -42,4 +42,17 @@
     extraGroups = [ "http" ];
   };
   users.groups.http = {};
+
+  system.activationScripts =
+  {
+    http =
+    {
+      deps = [];
+      text =
+      ''
+        mkdir -p /home/http/pastespace.org
+        chown http:users /home/http/pastespace.org
+      '';
+    };
+  };
 }
