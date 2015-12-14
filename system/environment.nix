@@ -37,4 +37,8 @@
   # Don't bring in any X dependencies
   environment.noXlibs = true;
   fonts.fontconfig.enable = false;
+
+  # Auto GC every morning
+  nix.gc.automatic = true;
+  nix.gc.dates = "03:00";
 }
