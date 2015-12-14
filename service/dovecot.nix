@@ -3,7 +3,7 @@
 {
   services.dovecot2 =
   {
-    enable = true;
+    enable = false;
     enableImap = true;
     enablePop3 = false;
     mailLocation = "maildir:~/Maildir";
