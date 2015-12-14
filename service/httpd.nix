@@ -24,10 +24,10 @@
       }
       {
         hostName = "acme.pastespace.org";
-        documentRoot = "/home/acme/acme.pastespace.org";
+        documentRoot = "/home/http/acme.pastespace.org";
         extraConfig =
         ''
-        <Directory /home/acme/acme.pastespace.org>
+        <Directory /home/http/acme.pastespace.org>
           Options -Indexes
         </Directory>
         '';

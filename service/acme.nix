@@ -14,25 +14,16 @@
     {
       "pastespace.org" =
       {
-        webroot = "/home/acme/acme.pastespace.org";
+        webroot = "/home/http/acme.pastespace.org";
         extraDomains =
         {
           "www.pastespace.org" = null;
           "mail.pastespace.org" = null;
         };
         email = "contact@jeaye.com";
-        user = "acme";
-        group = "acme";
+        user = "http";
         postRun = "systemctl reload httpd.service";
       };
     };
   };
-
-  users.users.acme =
-  {
-    isNormalUser = true;
-    home = "/home/acme";
-    extraGroups = [ "acme" ];
-  };
-  users.groups.acme = {};
 }
