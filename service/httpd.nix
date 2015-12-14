@@ -25,8 +25,6 @@
       }
     ];
 
-    # SSL
-    enableSSL = true;
     sslServerKey = "/var/lib/acme/pastespace.org/key.pem";
     sslServerChain = "/var/lib/acme/pastespace.org/chain.pem";
     sslServerCert = "/var/lib/acme/pastespace.org/cert.pem";
