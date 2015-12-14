@@ -15,6 +15,7 @@
       25 # smtp (postfix)
       80 # http
       143 # imap (dovecot)
+      443 # https
       587 # smtp (postfix)
       993 # imap (dovecot)
       9999 # fiche
