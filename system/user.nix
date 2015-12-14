@@ -25,5 +25,9 @@
   users.mutableUsers = true;
 
   # Help prevent brute-force password attacks
-  services.fail2ban.enable = true;
+  services.fail2ban =
+  {
+    enable = true;
+    jails.ssh-iptables = "enabled = true";
+  };
 }
