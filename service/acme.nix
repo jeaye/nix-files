@@ -35,9 +35,9 @@
 
   users.users.acme =
   {
-    isSystemUser = true;
-    group = "acme";
-    extraGroups = [ "users" ];
+    isNormalUser = true;
+    createHome = false;
+    extraGroups = [ "acme" ];
   };
   users.groups.acme = {};
 }
