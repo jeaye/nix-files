@@ -14,7 +14,7 @@
     {
       "pastespace.org" =
       {
-        webroot = "/home/http/acme.pastespace.org";
+        webroot = "/home/http/pastespace.org";
         extraDomains =
         {
           "www.pastespace.org" = null;
