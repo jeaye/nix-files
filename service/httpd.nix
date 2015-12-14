@@ -21,6 +21,7 @@
           Options -Indexes
         </Directory>
         '';
+        enableSSL = true;
       }
     ];
 
