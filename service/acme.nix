@@ -21,7 +21,6 @@
           "mail.pastespace.org" = null;
         };
         email = "contact@jeaye.com";
-        user = "http";
         postRun = "systemctl reload httpd.service";
       };
     };
