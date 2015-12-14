@@ -28,6 +28,15 @@
   services.fail2ban =
   {
     enable = true;
-    jails.ssh-iptables = "enabled = true";
+    #jails.ssh-iptables = "enabled = true";
+    jails.default =
+    ''
+      ignoreip = 127.0.0.1/8
+      bantime = 600
+      findtime = 600
+      maxretry = 3
+      backend = auto
+      enabled = true
+    '';
   };
 }
