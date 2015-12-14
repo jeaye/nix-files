@@ -37,7 +37,4 @@
   # Don't bring in any X dependencies
   environment.noXlibs = true;
   fonts.fontconfig.enable = false;
-
-  system.autoUpgrade.enable = false;
-  system.autoUpgrade.channel = "https://nixos.org/channels/nixos-unstable-small";
 }
