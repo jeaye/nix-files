@@ -28,14 +28,20 @@
   services.fail2ban =
   {
     enable = true;
-    #jails.ssh-iptables = "enabled = true";
-    jails.default =
+    jails.DEFAULT =
     ''
       ignoreip = 127.0.0.1/8
       bantime = 600
       findtime = 600
       maxretry = 3
-      backend = auto
+      backend = systemd
+      enabled = true
+    '';
+    jails.ssh =
+    ''
+      filter   = sshd
+      action   = iptables[name=SSH, port=ssh, protocol=tcp]
+      maxretry = 3
       enabled = true
     '';
   };
