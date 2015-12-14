@@ -4,14 +4,9 @@
   nixpkgs.config =
   {
     packageOverrides = pkgs: rec
-    {
-      simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
-    };
+    { simp_le = pkgs.callPackage ../pkg/simp_le.nix { }; };
   };
-  imports =
-  [
-    ../pkg/acme.nix
-  ];
+  imports = [ ../pkg/acme.nix ];
 
   security.acme =
   {
@@ -19,7 +14,7 @@
     {
       "pastespace.org" =
       {
-        webroot = "/home/http/acme.pastespace.org";
+        webroot = "/home/acme/acme.pastespace.org";
         extraDomains =
         {
           "www.pastespace.org" = null;
@@ -36,7 +31,8 @@
   users.users.acme =
   {
     isNormalUser = true;
-    createHome = false;
+    home = "/home/acme";
+    createHome = true;
     extraGroups = [ "acme" ];
   };
   users.groups.acme = {};
