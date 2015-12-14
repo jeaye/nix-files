@@ -21,7 +21,7 @@
           "mail.pastespace.org" = null;
         };
         email = "contact@jeaye.com";
-        postRun = "systemctl reload httpd.service";
+        postRun = "systemctl restart httpd.service";
       };
     };
   };
