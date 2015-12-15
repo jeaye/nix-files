@@ -29,11 +29,22 @@
   services.fail2ban =
   {
     enable = true;
-    jails.ssh-iptables =
+    jails.DEFAULT =
     ''
-      enabled  = true
-      bantime  = 3600
       maxretry = 5
+      bantime  = 3600
+    '';
+
+    jails.ssh-iptables = "enabled = true";
+    jails.port-scan =
+    ''
+      filter   = portscan
+      action   = iptables[name=portscan]
+      enabled  = true
     '';
   };
+  environment.etc."fail2ban/filters.d/portscan.conf".text =
+  ''
+    failregex = rejected connection: .* SRC=<HOST>
+  '';
 }
