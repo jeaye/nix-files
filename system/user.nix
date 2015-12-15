@@ -43,7 +43,7 @@
       enabled  = true
     '';
   };
-  environment.etc."fail2ban/filters.d/portscan.conf".text =
+  environment.etc."fail2ban/filter.d/portscan.conf".text =
   ''
     failregex = rejected connection: .* SRC=<HOST>
   '';
