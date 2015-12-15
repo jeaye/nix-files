@@ -28,6 +28,11 @@
   services.fail2ban =
   {
     enable = true;
-    jails.ssh-iptables = "enabled = true";
+    jails.ssh-iptables =
+    ''
+      enabled  = true
+      bantime  = 3600
+      maxretry = 5
+    '';
   };
 }
