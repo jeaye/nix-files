@@ -45,6 +45,7 @@
   };
   environment.etc."fail2ban/filter.d/portscan.conf".text =
   ''
+    [Definition]
     failregex = rejected connection: .* SRC=<HOST>
   '';
 }
