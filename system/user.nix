@@ -39,7 +39,7 @@
     jails.port-scan =
     ''
       filter   = portscan
-      action   = iptables[name=portscan]
+      action   = iptables-allports[name=portscan]
       enabled  = true
     '';
   };
