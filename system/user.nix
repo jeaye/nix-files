@@ -27,7 +27,7 @@
   # Help prevent brute-force password attacks
   services.fail2ban =
   {
-    enable = false;
+    enable = true;
     jails.ssh-iptables = "enabled = true";
   };
 }
