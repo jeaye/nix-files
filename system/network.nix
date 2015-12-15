@@ -32,7 +32,7 @@
     permitRootLogin = "no";
     extraConfig = ''
       PermitEmptyPasswords no
-      MaxAuthTries 3
+      MaxAuthTries 5
     '';
   };
 }
