@@ -43,6 +43,7 @@
       enabled  = true
     '';
   };
+  # Help prevent port scanning
   environment.etc."fail2ban/filter.d/portscan.conf".text =
   ''
     [Definition]
