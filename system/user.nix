@@ -25,25 +25,27 @@
   # Allow useradd/groupadd imperatively
   users.mutableUsers = true;
 
-  # Help prevent brute-force password attacks
   services.fail2ban =
   {
     enable = true;
-    jails.DEFAULT =
+
+    # Brute-force password attacks
+    jails.ssh-iptables =
     ''
       maxretry = 5
       bantime  = 3600
+      enabled  = true
     '';
-
-    jails.ssh-iptables = "enabled = true";
+    # Port scanning
     jails.port-scan =
     ''
       filter   = portscan
       action   = iptables-allports[name=portscan]
+      maxretry = 3
+      bantime  = 3600
       enabled  = true
     '';
   };
-  # Help prevent port scanning
   environment.etc."fail2ban/filter.d/portscan.conf".text =
   ''
     [Definition]
