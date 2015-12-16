@@ -81,11 +81,4 @@
         ${pkgs.spamassassin}/bin/sendmail -oi -f ''${sender} ''${recipient}
     '';
   };
-
-  services.spamassassin =
-  {
-    enable = true;
-    debug = true;
-  };
-  # TODO: Train in a cron job
 }

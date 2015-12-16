@@ -18,6 +18,7 @@
     ./service/httpd.nix
     ./service/postfix.nix
     ./service/dovecot.nix
+    ./service/spam-assassin.nix
     ./service/fiche.nix
     ./service/fail2ban.nix
   ];
