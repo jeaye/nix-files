@@ -123,5 +123,15 @@ in
     '';
   } else {};
 
+  users.users.spamd =
+  {
+    extraGroups = [ "postdrop" ];
+  };
+
+  users.users.root =
+  {
+    extraGroups = [ "postdrop" ];
+  };
+
   # TODO: Needs initial sa-update
 }
