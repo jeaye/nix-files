@@ -19,6 +19,7 @@
     virtual =
     ''
       contact@pastespace.org     jeaye
+      contact@arrownext.com      jeaye
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
