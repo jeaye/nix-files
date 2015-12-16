@@ -51,4 +51,7 @@
     [Definition]
     failregex = rejected connection: .* SRC=<HOST>
   '';
+
+  # Limit stack size to reduce memory usage; 256KB
+  systemd.services.fail2ban.serviceConfig.LimitSTACK = 262144;
 }
