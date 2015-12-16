@@ -34,7 +34,7 @@ let
 
     log "starting on $(date)"
     SENTMAIL=
-    for d in /var/data/users/*; do  #*/
+    for d in /home/*; do  #*/
        if [ -r "$d/Maildir/.Sent/cur" ]; then
          SENTMAIL="$SENTMAIL $d/Maildir/.Sent/cur/*"
        fi
@@ -61,7 +61,7 @@ let
       ${pkgs.inetutils}/bin/logger "learn-spam-ham: $1"
     }
     learn() {
-      user=$(expr match ''${2#/var/data/users/} '\([a-zA-Z0-9]*\)')
+      user=$(expr match ''${2#/home/} '\([a-zA-Z0-9]*\)')
       log "Learn $1 for user $user on file $2…"
       ${pkgs.su}/bin/su -s ${pkgs.bash}/bin/sh spamd -c "${pkgs.spamassassin}/bin/sa-learn -u $user --dbpath /var/lib/spamassassin/user-$user/bayes $1 $2"
       #chown -R spamd:spamd /var/lib/spamassassin/user-$user/
@@ -69,16 +69,16 @@ let
           [ "$(ls -A $2)" ] && log "remove spam mail $2" && rm -f $2/* #*/
       else
           # mv does not work if src dir is empty
-          [ "$(ls -A $2)" ] && log "move ham mail $2 to inbox" && mv -f $2/* /var/data/users/$user/Maildir/cur/ #*/
+          [ "$(ls -A $2)" ] && log "move ham mail $2 to inbox" && mv -f $2/* /home/$user/Maildir/cur/ #*/
       fi
       return 0
     }
 
     log "starting on $(date)"
-    find /var/data/users -type d | grep "$LEARNHAM/cur" | while read f; do
+    find /home -type d | grep "$LEARNHAM/cur" | while read f; do
       learn "--ham" $f
     done
-    find /var/data/users -type d | grep "$LEARNSPAM/cur" | while read f; do
+    find /home -type d | grep "$LEARNSPAM/cur" | while read f; do
       learn "--spam" $f
     done
     log "done on $(date)"
@@ -112,7 +112,7 @@ in
     spamassassincfg = ''
       mkdir -p /etc/spamassassin
       mkdir -p /var/lib/spamassassin
-      for u in $(ls -1 /var/data/users/); do
+      for u in $(ls -1 /home/); do
           mkdir -p /var/lib/spamassassin/user-$u
       done
       chown -R spamd:spamd /var/lib/spamassassin
@@ -122,4 +122,6 @@ in
       ln -s ${localcf} /etc/spamassassin/local.cf
     '';
   } else {};
+
+  # TODO: Needs initial sa-update
 }
