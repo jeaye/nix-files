@@ -51,4 +51,10 @@
     [Definition]
     failregex = rejected connection: .* SRC=<HOST>
   '';
+
+  # Limit stack size to reduce memory usage
+  environment.etc."default/fail2ban".text =
+  ''
+    ulimit -s 256
+  '';
 }
