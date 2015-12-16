@@ -73,12 +73,6 @@
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
         -o milter_macro_daemon_name=ORIGINATING
-
-      smtp       inet  n      -       -       -       -       smtpd
-        -o content_filter=spamassassin
-      spamassassin unix -     n       n       -       -       pipe
-        user=spamd argv=${pkgs.spamassassin}/bin/spamc -f -e
-        ${pkgs.spamassassin}/bin/sendmail -oi -f ''${sender} ''${recipient}
     '';
   };
 }

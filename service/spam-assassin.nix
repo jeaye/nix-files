@@ -91,7 +91,7 @@ in
     debug = true;
   };
 
-  services.postfix = rec
+  services.postfix =
   {
     extraMasterConf =
     ''
