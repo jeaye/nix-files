@@ -45,17 +45,13 @@
       bantime  = 3600
       enabled  = true
     '';
+
+    # Limit stack size to reduce memory usage
+    serviceConfig.LimitSTACK = 256;
   };
   environment.etc."fail2ban/filter.d/portscan.conf".text =
   ''
     [Definition]
     failregex = rejected connection: .* SRC=<HOST>
   '';
-
-  # Limit stack size to reduce memory usage
-  environment.etc."default/fail2ban" =
-  {
-    text = "ulimit -s 256";
-    mode = "0755";
-  };
 }
