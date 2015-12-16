@@ -3,13 +3,13 @@
 {
   services.dovecot2 =
   {
-    enable = false;
+    enable = true;
     enableImap = true;
     enablePop3 = false;
     mailLocation = "maildir:~/Maildir";
     sslServerCert = "/var/lib/acme/pastespace.org/cert.pem";
     sslServerKey = "/var/lib/acme/pastespace.org/key.pem";
-    sslCACert =  "/etc/ssl/private/mail.csr";
+    sslCACert =  "/var/lib/acme/pastespace.org/chain.pem";
     extraConfig =
     ''
       ssl = required
