@@ -49,7 +49,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      #virtual_alias_domains = pastespace.org arrownext.com
+      virtual_alias_domains = arrownext.com
 
       # Security
       smtpd_use_tls = yes
