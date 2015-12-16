@@ -120,7 +120,7 @@ in
       #*/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
-      chmod -R 777 /var/postfix
+      chmod -R g+w /var/postfix
     '';
   } else {};
 
