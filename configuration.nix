@@ -19,6 +19,7 @@
     ./service/postfix.nix
     ./service/dovecot.nix
     ./service/fiche.nix
+    ./service/fail2ban.nix
   ];
 
   services.locate.enable = true;
@@ -30,6 +31,5 @@
 
 # TODO:
 # Adopt 16.03 once fail2ban is working
-# Move fail2ban into its own file
 # Users in /etc/user
 # Bring in weechat/mutt configs
