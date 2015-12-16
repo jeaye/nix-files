@@ -53,8 +53,9 @@
   '';
 
   # Limit stack size to reduce memory usage
-  environment.etc."default/fail2ban".text =
-  ''
-    ulimit -s 256
-  '';
+  environment.etc."default/fail2ban" =
+  {
+    text = "ulimit -s 256";
+    mode = "0755";
+  };
 }
