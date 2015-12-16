@@ -65,7 +65,7 @@
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
-      smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject
+      smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination
     '';
     extraMasterConf =
     ''
