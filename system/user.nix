@@ -33,7 +33,7 @@
     jails.ssh-iptables =
     ''
       maxretry = 5
-      bantime  = 3600
+      bantime  = 3600 # 1 hour
       enabled  = true
     '';
     # Port scanning
@@ -41,8 +41,8 @@
     ''
       filter   = portscan
       action   = iptables-allports[name=portscan]
-      maxretry = 3
-      bantime  = 3600
+      maxretry = 2
+      bantime  = 7200 # 2 hours
       enabled  = true
     '';
   };
