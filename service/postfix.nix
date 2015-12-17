@@ -52,6 +52,9 @@
       home_mailbox = Maildir/
       virtual_alias_domains = arrownext.com
 
+      # Prevent others from checking for valid emails
+      disable_vrfy_command = yes
+
       # Security
       smtpd_use_tls = yes
       smtpd_tls_cert_file = /var/lib/acme/pastespace.org/cert.pem

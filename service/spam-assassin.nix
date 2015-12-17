@@ -119,19 +119,9 @@ in
       cp -n ${pkgs.spamassassin}/share/spamassassin/* /etc/spamassassin/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
-      chmod -R 0774 /var/postfix/queue
+      #chmod -R 0774 /var/postfix/queue
     '';
   } else {};
-
-  users.users.spamd =
-  {
-    extraGroups = [ "postdrop" ];
-  };
-
-  users.users.postfix =
-  {
-    extraGroups = [ "postdrop" ];
-  };
 
   # TODO: Needs initial sa-update
 }
