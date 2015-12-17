@@ -119,7 +119,7 @@ in
       cp -n ${pkgs.spamassassin}/share/spamassassin/* /etc/spamassassin/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
-      chmod -R 0770 /var/postfix
+      chmod -R 0774 /var/postfix
     '';
   } else {};
 
