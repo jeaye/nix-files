@@ -117,11 +117,9 @@ in
       done
       chown -R spamd:spamd /var/lib/spamassassin
       cp -n ${pkgs.spamassassin}/share/spamassassin/* /etc/spamassassin/
-      #*/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
-      #chmod -R 0770 /var/postfix
-      chown -R root:root /var/postfix
+      chmod -R 0770 /var/postfix
     '';
   } else {};
 
@@ -130,7 +128,7 @@ in
     extraGroups = [ "postdrop" ];
   };
 
-  users.users.root =
+  users.users.postfix =
   {
     extraGroups = [ "postdrop" ];
   };
