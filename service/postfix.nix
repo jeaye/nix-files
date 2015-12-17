@@ -71,10 +71,6 @@
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
 
-      smtpd_sender_restrictions =
-        reject_authenticated_sender_login_mismatch
-        reject_unknown_sender_domain
-
       smtpd_recipient_restrictions =
         permit_sasl_authenticated
         permit_mynetworks
@@ -88,9 +84,13 @@
       smtpd_helo_restrictions =
         permit_sasl_authenticated
         permit_mynetworks
+        reject_unknown_helo_hostname
         reject_invalid_hostname
         reject_unauth_pipelining
         reject_non_fqdn_hostname
+
+      smtpd_data_restrictions =
+        reject_unauth_pipelining
     '';
     extraMasterConf =
     ''
