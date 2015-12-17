@@ -126,21 +126,20 @@ in
     ''
       mkdir -p /etc/spamassassin
       mkdir -p /var/lib/spamassassin
-      for u in /home/*; do
+      for u in /home/*;
+      do
         mkdir -p /var/lib/spamassassin/user-$(basename $u)
       done
       chown -R spamd:spamd /var/lib/spamassassin
       cp -n ${pkgs.spamassassin}/share/spamassassin/* /etc/spamassassin/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
-      mkdir -p /var/postfix/{conf,queue}
-      chown -R postfix:postfix /var/postfix
-      chown -R postfix:postdrop /var/postfix/queue
-      chmod -R 0777 /var/postfix
+
+      # TODO: This is an awful hack to get SA to work with postfix
+      chmod -R 0777 /var/postfix || true
+      sa-update || true
     '';
   }
   else
   { };
-
-  # TODO: Needs initial sa-update
 }
