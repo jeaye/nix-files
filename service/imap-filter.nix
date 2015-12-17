@@ -26,6 +26,15 @@
         chmod -R 0700 /home/jeaye/.secret
         ln -sf /etc/user/jeaye/imap-filter/config.lua /home/jeaye/.imapfilter/
       '';
+      # XXX:
+      #   Create pass file in .secret
+      #   Run imapfilter once imperatively to accept the SSL cert
     };
   };
+
+  # Run imap-filter regularly
+  services.cron.systemCronJobs =
+  [
+    "*/5 * * * * jeaye ${pkgs.imapfilter}/bin/imapfilter"
+  ];
 }
