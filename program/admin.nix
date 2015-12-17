@@ -31,7 +31,7 @@
     };
     "admin/unban-fail2ban-ip" =
     {
-      test =
+      text =
       ''
         #!/run/current-system/sw/bin/bash
         for jail in port-scan ssh-iptables;
