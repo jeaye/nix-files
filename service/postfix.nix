@@ -4,7 +4,6 @@
   services.postfix = rec
   {
     enable = true;
-    user = "root";
     domain = "pastespace.org";
     hostname = "mail.${domain}";
     origin = "${domain}";
