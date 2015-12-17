@@ -16,7 +16,7 @@
         local account = IMAP
         {
           server = 'localhost',
-          username = 'contact@pastespace.org',
+          username = 'jeaye',
           password = get_imap_password(".secret/imap-filter-pass"),
           ssl = 'tls1',
         }
