@@ -137,7 +137,7 @@ in
 
       # TODO: This is an awful hack to get SA to work with postfix
       chmod -R 0777 /var/postfix || true
-      sa-update || true
+      ${pkgs.spamassassin}/bin/sa-update || true
     '';
   }
   else
