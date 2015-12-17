@@ -9,6 +9,8 @@
       text =
       ''
         #!/run/current-system/sw/bin/bash
+        set -eu
+
         journalctl -u sshd | grep 'Failed password' \
                            | grep sshd \
                            | awk '{print $1,$2}' \
@@ -22,6 +24,8 @@
       text =
       ''
         #!/run/current-system/sw/bin/bash
+        set -eu
+
         journalctl | grep 'rejected connection:' \
                    | awk '{print $1,$2}' \
                    | sort -k 1,1M -k 2n \
@@ -34,6 +38,8 @@
       text =
       ''
         #!/run/current-system/sw/bin/bash
+        set -eu
+
         for jail in port-scan ssh-iptables;
         do
           fail2ban-client set $jail unbanip $1 || true
