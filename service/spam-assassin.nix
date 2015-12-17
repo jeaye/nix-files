@@ -118,6 +118,9 @@ in
       cp -n ${pkgs.spamassassin}/share/spamassassin/* /etc/spamassassin/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
+      mkdir -p /var/postfix/{conf,queue}
+      chown -R postfix:postfix /var/postfix
+      chown -R postfix:postdrop /var/postfix/queue
       chmod -R 0776 /var/postfix
     '';
   } else {};
