@@ -97,8 +97,8 @@
       deps = [];
       text =
       ''
-        mkdir -p ~/.secret ~/.imapfilter
-        ln -sf /etc/user/jeaye/imap-filter/config.lua ~/.imapfilter/
+        mkdir -p /home/jeaye/.secret /home/jeaye/.imapfilter
+        ln -sf /etc/user/jeaye/imap-filter/config.lua /home/jeaye/.imapfilter/
       '';
     };
   };
