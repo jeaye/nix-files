@@ -95,10 +95,10 @@ in
   {
     extraMasterConf =
     ''
-      smtp       inet  n      -       -       -       -       smtpd
+      smtp inet n - - - - smtpd
         -o content_filter=spamassassin
       spamassassin unix - n n - - pipe
-        user=${toString config.ids.uids.spamd} argv=${pkgs.spamassassin}/bin/spamc -f -e ${pkgs.postfix}/bin/sendmail -oi -f ''${sender} ''${recipient}
+        user=spamd argv=${pkgs.spamassassin}/bin/spamc -f -e ${pkgs.postfix}/bin/sendmail -oi -f ''${sender} ''${recipient}
     '';
   };
 
