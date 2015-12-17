@@ -21,6 +21,7 @@
     ./service/dovecot.nix
     ./service/fiche.nix
     ./service/fail2ban.nix
+    ./service/imap-filter.nix
   ];
 
   services.locate.enable = true;
