@@ -7,6 +7,9 @@ let
   ''
     required_score 5.0
 
+    # Don't use any dns blacklists.
+    skip_rbl_checks 1
+
     # Leave the message as is (just append headers).
     report_safe 0
 
@@ -36,6 +39,7 @@ let
         SENTMAIL="$SENTMAIL $d/Maildir/.Sent/cur/*"
       fi
     done
+
     log "Adding mail addresses from folders $SENTMAIL"
     cat $SENTMAIL |
         grep -Ei '^(To|cc|bcc):' |
@@ -78,7 +82,7 @@ let
       return 0
     }
 
-    log "starting on $(date)"
+    log "Starting on $(date)"
     find /home -type d | grep "$LEARNHAM/cur" | while read f;
     do
       learn "--ham" $f
@@ -86,7 +90,7 @@ let
     find /home -type d | grep "$LEARNSPAM/cur" | while read f; do
       learn "--spam" $f
     done
-    log "done on $(date)"
+    log "Done on $(date)"
   '';
 in
 {
@@ -119,13 +123,14 @@ in
   {
     spamassassincfg =
     ''
-      mkdir -p /etc/spamassassin
       mkdir -p /var/lib/spamassassin
       for u in /home/*;
       do
         mkdir -p /var/lib/spamassassin/user-$(basename $u)
       done
       chown -R spamd:spamd /var/lib/spamassassin
+
+      mkdir -p /etc/spamassassin
       cp -n ${pkgs.spamassassin}/share/spamassassin/* /etc/spamassassin/
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
