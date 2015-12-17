@@ -13,6 +13,7 @@
 
     ./program/vim.nix
     ./program/irc.nix
+    ./program/admin.nix
 
     #./service/acme.nix
     ./service/httpd.nix
