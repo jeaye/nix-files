@@ -15,7 +15,10 @@ function main()
   move_mailing_lists(account, mails)
 
   -- Ignore some senders
-  delete_mail_from(account, mails, "foo@spam.com");
+  delete_mail_from(account, mails, "foo@spam.com")
+
+  -- Don't be bothered each time imap-filter runs
+  delete_mail_if_subject_contains(accounts mails, "bin/imapfilter")
 
   -- Get all mail from trash
   local trash = account['Trash']:select_all()
