@@ -5,11 +5,7 @@ with config;
 let
   localcf = pkgs.writeText "spam-assassin-local.cf"
   ''
-    # Set required score a bit higher.
-    required_score 5.2
-
-    # Don't use any dns blacklists.
-    skip_rbl_checks 1
+    required_score 5.0
 
     # Leave the message as is (just append headers).
     report_safe 0
@@ -18,7 +14,6 @@ let
     # ${mkwhitelist} script via cron.
     include whitelist-from
 
-    # Learn settings.
     #bayes_auto_learn_threshold_nonspam 0.1
     bayes_auto_learn_threshold_spam 10.0
   '';
