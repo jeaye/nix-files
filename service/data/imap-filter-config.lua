@@ -33,6 +33,9 @@ function move_mailing_lists(account, mails)
   -- ISOCPP mailing lists
   move_if_subject_contains(account, mails, "[std-proposals]", "ML/ISOCPP")
   move_if_subject_contains(account, mails, "[std-discussion]", "ML/ISOCPP")
+
+  -- NixOS
+  move_if_subject_contains(account, mails, "[Nix-dev]", "ML/NixOS")
 end
 
 function move_if_subject_contains(account, mails, subject, mailbox)
