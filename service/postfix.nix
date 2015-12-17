@@ -23,6 +23,35 @@
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
+
+    restrictions =
+    {
+      sender =
+      [
+        "reject_authenticated_sender_login_mismatch"
+        "reject_unknown_sender_domain"
+      ];
+      recipient =
+      [
+        "permit_sasl_authenticated"
+        "permit_mynetworks"
+        "reject_unauth_destination"
+        "reject_invalid_hostname"
+        "reject_non_fqdn_hostname"
+        "reject_non_fqdn_sender"
+        "reject_non_fqdn_recipient"
+        "reject_unknown_reverse_client_hostname"
+      ];
+      helo =
+      [
+        "permit_sasl_authenticated"
+        "permit_mynetworks"
+        "reject_invalid_hostname"
+        "reject_unauth_pipelining"
+        "reject_non_fqdn_hostname"
+      ];
+    };
+
     extraAliases =
     ''
       # Basic system aliases -- these MUST be present
@@ -69,7 +98,6 @@
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
-      smtpd_recipient_restrictions = permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination
     '';
     extraMasterConf =
     ''
