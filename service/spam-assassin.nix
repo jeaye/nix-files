@@ -121,7 +121,7 @@ in
       rm -f /etc/spamassassin/local.cf
       ln -s ${localcf} /etc/spamassassin/local.cf
       #chmod -R 0770 /var/postfix
-      postfix set-permissions
+      ${pkgs.postfix}/bin/postfix set-permissions
     '';
   } else {};
 
