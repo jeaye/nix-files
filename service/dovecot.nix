@@ -23,9 +23,11 @@
         autocreate = Trash
         autocreate2 = Sent
         autocreate3 = Drafts
+        autocreate4 = Spam
         autosubscribe = Trash
         autosubscribe2 = Sent
         autosubscribe3 = Drafts
+        autosubscribe4 = Spam
       }
 
       service auth {
