@@ -76,18 +76,18 @@
         permit_mynetworks
         reject_unauth_destination
         reject_invalid_hostname
-        reject_non_fqdn_hostname
-        reject_non_fqdn_sender
-        reject_non_fqdn_recipient
-        reject_unknown_reverse_client_hostname
+        #reject_non_fqdn_hostname
+        #reject_non_fqdn_sender
+        #reject_non_fqdn_recipient
+        #reject_unknown_reverse_client_hostname
 
       smtpd_helo_restrictions =
         permit_sasl_authenticated
         permit_mynetworks
         reject_unknown_helo_hostname
         reject_invalid_hostname
-        reject_unauth_pipelining
-        reject_non_fqdn_hostname
+        #reject_unauth_pipelining
+        #reject_non_fqdn_hostname
 
       smtpd_data_restrictions =
         reject_unauth_pipelining
