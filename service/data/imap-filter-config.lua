@@ -36,6 +36,10 @@ function move_mailing_lists(account, mails)
 
   -- NixOS
   move_if_subject_contains(account, mails, "[Nix-dev]", "ML/NixOS")
+
+  -- Slackware
+  move_if_subject_contains(account, mails, "[slackware-announce]", "ML/Slackware")
+  move_if_subject_contains(account, mails, "[slackware-security]", "ML/Slackware")
 end
 
 function move_if_subject_contains(account, mails, subject, mailbox)
