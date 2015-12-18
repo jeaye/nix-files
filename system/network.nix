@@ -33,6 +33,7 @@
     extraConfig = ''
       PermitEmptyPasswords no
       MaxAuthTries 5
+      UseDNS no
     '';
   };
 }

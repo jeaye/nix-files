@@ -29,7 +29,7 @@
     '';
     jails.postfix-sasl =
     ''
-      filter   = postfix
+      filter   = postfix-sasl
       port     = smtp,ssmtp
       maxretry = 3
       bantime  = 7200
