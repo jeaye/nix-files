@@ -151,6 +151,20 @@
     };
   };
 
+  systemd.services.opendkim =
+  {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig =
+    {
+      User = "opendkim";
+      ExecStart =
+      ''
+        ${pkgs.opendkim}/bin/opendkim -f -x /etc/opendkim/opendkim.conf
+      '';
+    };
+  };
+
   users.users.opendkim =
   {
     isSystemUser = true;
