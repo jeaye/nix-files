@@ -11,16 +11,19 @@
     '';
     jails.sshd =
     ''
+      filter = sshd
       maxretry = 5
       action   = iptables[name=SSH, port=ssh, protocol=tcp]
       enabled  = true
     '';
     jails.sshd-ddos =
     ''
+      filter = sshd-ddos
       maxretry = 2
       action   = iptables[name=SSH, port=ssh, protocol=tcp]
       enabled  = true
     '';
+    # TODO: Set journalmatch
     jails.port-scan =
     ''
       filter   = port-scan
