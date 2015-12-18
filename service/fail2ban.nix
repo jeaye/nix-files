@@ -5,15 +5,23 @@
   {
     enable = true;
 
-    jails.ssh-iptables =
+    jails.DEFAULT =
+    ''
+      bantime  = 3600
+    '';
+    jails.sshd =
     ''
       maxretry = 5
-      bantime  = 3600
+      enabled  = true
+    '';
+    jails.sshd-ddos =
+    ''
+      maxretry = 5
       enabled  = true
     '';
     jails.port-scan =
     ''
-      filter   = portscan
+      filter   = port-scan
       action   = iptables-allports[name=portscan]
       maxretry = 2
       bantime  = 7200
@@ -21,22 +29,16 @@
     '';
     jails.postfix =
     ''
-      filter   = postfix
-      port     = smtp,ssmtp
       maxretry = 3
-      bantime  = 7200
       enabled  = true
     '';
     jails.postfix-sasl =
     ''
-      filter   = postfix-sasl
-      port     = smtp,ssmtp
       maxretry = 3
-      bantime  = 7200
       enabled  = true
     '';
   };
-  environment.etc."fail2ban/filter.d/portscan.conf".text =
+  environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
     [Definition]
     failregex = rejected connection: .* SRC=<HOST>
