@@ -5,7 +5,6 @@
   {
     enable = true;
 
-    # TODO: limit children
     jails.DEFAULT =
     ''
       bantime  = 3600
@@ -34,12 +33,14 @@
     '';
     jails.postfix =
     ''
+      filter   = postfix
       maxretry = 3
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
     jails.postfix-sasl =
     ''
+      filter   = postfix-sasl
       maxretry = 3
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
