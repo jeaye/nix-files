@@ -33,6 +33,11 @@
     sslServerKey = "/var/lib/acme/pastespace.org/key.pem";
     sslServerChain = "/var/lib/acme/pastespace.org/chain.pem";
     sslServerCert = "/var/lib/acme/pastespace.org/cert.pem";
+
+    extraConfig =
+    ''
+      AddDefaultCharset utf-8
+    '';
   };
 
   users.users.http =
