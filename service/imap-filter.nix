@@ -35,6 +35,6 @@
   # Run imap-filter regularly
   services.cron.systemCronJobs =
   [
-    "*/5 * * * * jeaye ${pkgs.imapfilter}/bin/imapfilter"
+    "*/5 * * * * jeaye ${pkgs.imapfilter}/bin/imapfilter > /dev/null 2>&1"
   ];
 }
