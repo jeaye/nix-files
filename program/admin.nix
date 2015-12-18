@@ -48,7 +48,8 @@
         jails=$(fail2ban-client status | pcregrep -o1 "list:\s*(\w.*)" | sed 's/,//g')
         for jail in $jails;
         do
-          fail2ban-client set $jail unbanip $1 || true
+          echo "Removing $1 from $jail"
+          fail2ban-client set $jail unbanip $1 > /dev/null 2>&1 || true
         done
       '';
       mode = "0774";
