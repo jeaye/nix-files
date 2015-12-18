@@ -45,8 +45,8 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        # TODO: Don't hard-code jails
-        for jail in port-scan ssh-iptables;
+        jails=$(fail2ban-client status | pcregrep -o1 "list:\s*(\w.*)" | sed 's/,//g')
+        for jail in $jails;
         do
           fail2ban-client set $jail unbanip $1 || true
         done
