@@ -19,6 +19,7 @@
     ./service/httpd.nix
     ./service/postfix.nix
     ./service/dovecot.nix
+    ./service/opendkim.nix
     ./service/fiche.nix
     ./service/fail2ban.nix
     ./service/imap-filter.nix
