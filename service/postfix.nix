@@ -138,7 +138,7 @@
       deps = [];
       text =
       ''
-        export PATH=${pkgs.stdenv}/bin:${pkgs.openssl}/bin:${pkgs.gnused}/bin:$PATH
+        export PATH=${pkgs.stdenv}/bin:${pkgs.openssl}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH
         mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
         if [ ! -f /etc/opendkim/keys/pastespace.org/mail.private ];
         then
