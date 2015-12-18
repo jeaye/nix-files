@@ -133,7 +133,7 @@
   {
     opendkim =
     {
-      deps = [ openssl ];
+      deps = [ pkgs.openssl ];
       text =
       ''
         mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
