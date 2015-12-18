@@ -5,6 +5,7 @@
   {
     enable = true;
 
+    # TODO: limit children
     jails.DEFAULT =
     ''
       bantime  = 3600
@@ -13,14 +14,14 @@
     ''
       filter = sshd
       maxretry = 5
-      action   = iptables[name=SSH, port=ssh, protocol=tcp]
+      action   = iptables[name=ssh, port=ssh, protocol=tcp]
       enabled  = true
     '';
     jails.sshd-ddos =
     ''
       filter = sshd-ddos
       maxretry = 2
-      action   = iptables[name=SSH, port=ssh, protocol=tcp]
+      action   = iptables[name=ssh, port=ssh, protocol=tcp]
       enabled  = true
     '';
     jails.port-scan =
@@ -34,16 +35,16 @@
     jails.postfix =
     ''
       maxretry = 3
-      action   = iptables[port=smtp, protocol=tcp]
+      action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
     jails.postfix-sasl =
     ''
       maxretry = 3
-      action   = iptables[port=smtp, protocol=tcp]
+      action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
-    # TODO: dovecot?
+    # TODO: dovecot
   };
   environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
