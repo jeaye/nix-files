@@ -35,16 +35,15 @@
     ''
       maxretry = 3
       action   = iptables[port=smtp, protocol=tcp]
-                 iptables[port=ssmtp, protocol=tcp]
       enabled  = true
     '';
     jails.postfix-sasl =
     ''
       maxretry = 3
       action   = iptables[port=smtp, protocol=tcp]
-                 iptables[port=ssmtp, protocol=tcp]
       enabled  = true
     '';
+    # TODO: dovecot?
   };
   environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
