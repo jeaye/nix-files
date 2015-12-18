@@ -140,6 +140,7 @@
       ''
         export PATH=${pkgs.stdenv}/bin:${pkgs.openssl}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH
         mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
+        chown -R opendkim:opendkim /var/run/opendkim
         if [ ! -f /etc/opendkim/keys/pastespace.org/mail.private ];
         then
           ${pkgs.opendkim}/bin/opendkim-genkey -d pastespace.org -D /etc/opendkim/keys/pastespace.org/ -s mail -r -t
