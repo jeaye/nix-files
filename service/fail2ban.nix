@@ -45,7 +45,15 @@
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
-    # TODO: dovecot
+    jails.dovecot =
+    ''
+      filter   = dovecot
+      maxretry = 5
+      action   = iptables[name=dovecot, port=imap, protocol=tcp]
+                 iptables[name=dovecot, port=imaps, protocol=tcp]
+                 iptables[name=dovecot, port=submission, protocol=tcp]
+      enabled  = true
+    '';
   };
   environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
