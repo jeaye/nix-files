@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs;
+  [
+    opendkim
+  ];
+
   services.postfix = rec
   {
     enable = true;
