@@ -96,6 +96,10 @@
 
       smtpd_data_restrictions =
         reject_unauth_pipelining
+
+      # OpenDKIM mail verification
+      smtpd_milters = unix:/var/run/opendkim/opendkim.sock
+      non_smtpd_milters = unix:/var/run/opendkim/opendkim.sock
     '';
     extraMasterConf =
     ''
@@ -104,4 +108,41 @@
         -o milter_macro_daemon_name=ORIGINATING
     '';
   };
+
+  environment.etc =
+  {
+    "opendkim/opendkim.conf" =
+    {
+      text =
+      ''
+        Domain                  pastespace.org
+        Selector                mail
+        KeyFile                 /var/lib/acme/pastespace.org/key.pem
+        Socket                  local:/var/run/opendkim/opendkim.sock
+        UMask                   002
+        ReportAddress           postmaster@pastespace.org
+      '';
+      mode = "0774";
+    };
+  };
+
+  system.activationScripts =
+  {
+    opendkim =
+    {
+      deps = [];
+      text =
+      ''
+        mkdir -p /var/run/opendkim
+      '';
+    };
+  };
+
+  users.users.milter =
+  {
+    isSystemUser = true;
+    extraGroups = [ "milter" ];
+  };
+  users.users.postfix.extraGroups = [ "milter" ];
+  users.groups.milter = {};
 }
