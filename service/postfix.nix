@@ -120,7 +120,7 @@
       ''
         Domain                  pastespace.org
         Selector                mail
-        KeyFile                 /var/lib/acme/pastespace.org/key.pem
+        KeyFile                 /etc/opendkim/keys/pastespace.org/mail.private
         Socket                  local:/var/run/opendkim/opendkim.sock
         UMask                   002
         ReportAddress           postmaster@pastespace.org
