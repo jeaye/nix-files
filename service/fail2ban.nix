@@ -13,12 +13,14 @@
     ''
       filter = sshd
       maxretry = 5
+      action   = iptables[name=ssh, port=ssh, protocol=tcp]
       enabled  = true
     '';
     jails.sshd-ddos =
     ''
       filter = sshd-ddos
       maxretry = 2
+      action   = iptables[name=ssh, port=ssh, protocol=tcp]
       enabled  = true
     '';
     jails.port-scan =
