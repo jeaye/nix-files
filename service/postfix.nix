@@ -124,6 +124,7 @@
         UMask                   002
         ReportAddress           postmaster@pastespace.org
         RequireSafeKeys         False
+        UserID                  opendkim:opendkim
       '';
       mode = "0774";
     };
