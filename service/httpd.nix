@@ -36,7 +36,8 @@
 
     extraConfig =
     ''
-      AddDefaultCharset utf-8
+      AddDefaultCharset UTF-8
+      AddCharset UTF-8 .html .htm .txt
     '';
   };
 
