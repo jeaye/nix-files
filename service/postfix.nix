@@ -141,7 +141,7 @@
         mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
         if [ ! -f /etc/opendkim/keys/pastespace.org/mail.private ];
         then
-          ${opendkim}/bin/opendkim-genkey -d pastespace.org -D /etc/opendkim/keys/pastespace.org/ -s mail -r -t
+          ${pkgs.opendkim}/bin/opendkim-genkey -d pastespace.org -D /etc/opendkim/keys/pastespace.org/ -s mail -r -t
           chown -R opendkim:opendkim /etc/opendkim/keys/pastespace.org
           chmod -R 660 /etc/opendkim/keys
         fi
