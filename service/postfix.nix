@@ -121,6 +121,7 @@
         Socket                  local:/var/run/opendkim/opendkim.sock
         UMask                   002
         ReportAddress           postmaster@pastespace.org
+        RequireSafeKeys         False
       '';
       mode = "0774";
     };
