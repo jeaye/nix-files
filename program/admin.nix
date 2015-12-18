@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  # Some helpful scripts
+  # Some helpful scripts and packages for diagnostics
+  environment.systemPackages = with pkgs;
+  [
+    pcre
+  ];
+
   environment.etc =
   {
     "admin/daily-failed-ssh-logins" =
@@ -40,6 +45,7 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
+        # TODO: Don't hard-code jails
         for jail in port-scan ssh-iptables;
         do
           fail2ban-client set $jail unbanip $1 || true
