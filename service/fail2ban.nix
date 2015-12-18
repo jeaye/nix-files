@@ -34,13 +34,6 @@
     failregex = rejected connection: .* SRC=<HOST>
     ignoreip = 202.156.237.206
   '';
-  environment.etc."fail2ban/filter.d/postfix.conf".text =
-  ''
-    [Definition]
-    failregex = reject: RCPT from (.*)\[<HOST>\]: 550 5.1.1
-                reject: RCPT from (.*)\[<HOST>\]: 450 4.7.1
-                reject: RCPT from (.*)\[<HOST>\]: 554 5.7.1
-  '';
 
   # Limit stack size to reduce memory usage
   systemd.services.fail2ban.serviceConfig.LimitSTACK = 256 * 1024;
