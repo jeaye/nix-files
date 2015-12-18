@@ -34,11 +34,15 @@
     jails.postfix =
     ''
       maxretry = 3
+      action   = iptables[name=postfix, port=smtp, protocol=tcp]
+                 iptables[name=postfix, port=ssmtp, protocol=tcp]
       enabled  = true
     '';
     jails.postfix-sasl =
     ''
       maxretry = 3
+      action   = iptables[name=postfix, port=smtp, protocol=tcp]
+                 iptables[name=postfix, port=ssmtp, protocol=tcp]
       enabled  = true
     '';
   };
