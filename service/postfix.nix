@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs;
   [
     opendkim
+    openssl
   ];
 
   services.postfix = rec
