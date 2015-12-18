@@ -5,7 +5,7 @@
   {
     enable = true;
     domain = "pastespace.org";
-    hostname = "mail.${domain}";
+    hostname = "${domain}";
     origin = "${domain}";
     destination =
     [
