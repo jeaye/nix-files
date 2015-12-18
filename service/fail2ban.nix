@@ -9,7 +9,7 @@
     ''
       bantime  = 3600
     '';
-    jails.sshd =
+    jails.ssh-iptables =
     ''
       maxretry = 5
       enabled  = true
