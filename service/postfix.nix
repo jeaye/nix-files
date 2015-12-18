@@ -98,6 +98,8 @@
         reject_unauth_pipelining
 
       # OpenDKIM mail verification
+      milter_default_action = accept
+      milter_protocol = 2
       smtpd_milters = unix:/var/run/opendkim/opendkim.sock
       non_smtpd_milters = unix:/var/run/opendkim/opendkim.sock
     '';
@@ -131,19 +133,25 @@
   {
     opendkim =
     {
-      deps = [];
+      deps = [ openssl ];
       text =
       ''
-        mkdir -p /var/run/opendkim
+        mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
+        if [ ! -f /etc/opendkim/keys/pastespace.org/mail.private ];
+        then
+          opendkim-genkey -d pastespace.org -D /etc/opendkim/pastespace.org/ -s mail -r -t
+          chown -R opendkim:opendkim /etc/opendkim/keys/example.com
+          chmod -R 660 /etc/opendkim/keys
+        fi
       '';
     };
   };
 
-  users.users.milter =
+  users.users.opendkim =
   {
     isSystemUser = true;
-    extraGroups = [ "milter" ];
+    extraGroups = [ "opendkim" ];
   };
-  users.users.postfix.extraGroups = [ "milter" ];
-  users.groups.milter = {};
+  users.users.postfix.extraGroups = [ "opendkim" ];
+  users.groups.opendkim = {};
 }
