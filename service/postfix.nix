@@ -54,7 +54,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = fu-er.com penelope-art.com penny-art.com arrownext.com
+      virtual_alias_domains = jeaye.com fu-er.com penelope-art.com penny-art.com arrownext.com
 
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes
