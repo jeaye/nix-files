@@ -23,7 +23,6 @@
     ./service/fiche.nix
     ./service/fail2ban.nix
     ./service/imap-filter.nix
-    ./service/task-warrior.nix
   ];
 
   services.locate.enable = true;
