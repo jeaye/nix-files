@@ -13,16 +13,25 @@
     {
       text =
       ''
-        Domain                  pastespace.org
+        Domain                  pastespace.org fu-er.com
         Selector                mail
-        KeyFile                 /etc/opendkim/keys/pastespace.org/mail.private
+        KeyList                 /etc/opendkim/keylist
         Socket                  local:/var/run/opendkim/opendkim.sock
         UMask                   002
         ReportAddress           postmaster@pastespace.org
         RequireSafeKeys         False
         UserID                  opendkim:opendkim
       '';
-      mode = "0774";
+      mode = "0660";
+    };
+    "opendkim/keylist" =
+    {
+      text =
+      ''
+        *@pastespace.org:pastespace.org:/etc/opendkim/keys/pastespace.org/mail.private
+        *@fu-er.com:fu-er.com:/etc/opendkim/keys/fu-er.com/mail.private
+      '';
+      mode = "0660";
     };
   };
 
@@ -36,12 +45,21 @@
         export PATH=${pkgs.stdenv}/bin:${pkgs.openssl}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH
         mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
         chown -R opendkim:opendkim /var/run/opendkim
-        if [ ! -f /etc/opendkim/keys/pastespace.org/mail.private ];
-        then
-          ${pkgs.opendkim}/bin/opendkim-genkey -d pastespace.org -D /etc/opendkim/keys/pastespace.org/ -s mail -r -t
-          chown -R opendkim:opendkim /etc/opendkim/keys/pastespace.org
-          chmod -R 660 /etc/opendkim/keys
-        fi
+
+        work()
+        {
+          if [ ! -f /etc/opendkim/keys/$1/mail.private ];
+          then
+            ${pkgs.opendkim}/bin/opendkim-genkey -d $1 -D /etc/opendkim/keys/$1/ -s mail -r -t
+          fi
+        }
+        for domain in pastespace.org fu-er.com;
+        do
+          work $domain
+        done
+
+        chmod -R 660 /etc/opendkim/keys
+        chown -R opendkim:opendkim /etc/opendkim/keys
       '';
     };
   };
