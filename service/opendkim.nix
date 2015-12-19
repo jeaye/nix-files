@@ -36,25 +36,16 @@
     {
       text =
       ''
-        KEYS		            VALUES
-        ----		            ------
-        pastespace          pastespace.org
-                            mail
-                            /etc/opendkim/keys/pastespace.org/mail.private
-
-        fu-er               fu-er.com
-                            mail
-                            /etc/opendkim/keys/pastespace.org/mail.private
+        mail._domainkey.pastespace.org pastespace.org:mail:/etc/opendkim/keys/pastespace.org/mail.private
+        mail._domainkey.fu-er.com fu-er.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
       '';
     };
     "opendkim/signing-table" =
     {
       text =
       ''
-        KEYS		            VALUES
-        ----		            ------
-        pastespace.org	    pastespace
-        fu-er.com	          fu-er
+        *@pastespace.org mail._domainkey.pastespace.org
+        *@fu-er.com mail._domainkey.fu-er.com
       '';
     };
   };
