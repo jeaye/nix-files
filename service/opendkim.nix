@@ -74,7 +74,7 @@
           work $domain
         done
 
-        chmod -R 660 /etc/opendkim/keys
+        chmod -R 700 /etc/opendkim/keys
         chown -R opendkim:opendkim /etc/opendkim/keys
       '';
     };
