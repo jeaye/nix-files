@@ -37,7 +37,10 @@
       text =
       ''
         mail._domainkey.pastespace.org pastespace.org:mail:/etc/opendkim/keys/pastespace.org/mail.private
+        mail._domainkey.jeaye.com jeaye.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
         mail._domainkey.fu-er.com fu-er.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
+        mail._domainkey.penelope-art.com penelope-art.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
+        mail._domainkey.penny-art.com penny-art.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
       '';
     };
     "opendkim/signing-table" =
@@ -45,7 +48,10 @@
       text =
       ''
         *@pastespace.org mail._domainkey.pastespace.org
+        *@jeaye.com mail._domainkey.jeaye.com
         *@fu-er.com mail._domainkey.fu-er.com
+        *@penelope-art.com mail._domainkey.penelope-art.com
+        *@penny-art.com mail._domainkey.penny-art.com
       '';
     };
   };
@@ -69,7 +75,7 @@
             ${pkgs.opendkim}/bin/opendkim-genkey -d $1 -D /etc/opendkim/keys/$1/ -s mail -r -t
           fi
         }
-        for domain in pastespace.org fu-er.com;
+        for domain in pastespace.org jeaye.com fu-er.com penelope-art.com penny-art.com;
         do
           work $domain
         done
