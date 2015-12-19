@@ -15,8 +15,8 @@
       ''
         Domain                  pastespace.org fu-er.com
         Selector                mail
-        KeyTable                /etc/opendkim/key-table
-        SigningTable            /etc/opendkim/signing-table
+        KeyTable                refile:/etc/opendkim/key-table
+        SigningTable            refile:/etc/opendkim/signing-table
         Socket                  local:/var/run/opendkim/opendkim.sock
         ReportAddress           postmaster@pastespace.org
         RequireSafeKeys         False
