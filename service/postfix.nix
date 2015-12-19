@@ -21,6 +21,8 @@
       contact@pastespace.org     jeaye
       contact@arrownext.com      jeaye
       contact@fu-er.com          fu-er
+      contact@penelope-art.com   fu-er
+      contact@penny-art.com      fu-er
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
@@ -52,7 +54,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = fu-er.com arrownext.com
+      virtual_alias_domains = penelope-art.com penny-art.com fu-er.com arrownext.com
 
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes
