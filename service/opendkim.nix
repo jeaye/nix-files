@@ -43,13 +43,14 @@
       text =
       ''
         export PATH=${pkgs.stdenv}/bin:${pkgs.openssl}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH
-        mkdir -p /var/run/opendkim /etc/opendkim/keys/pastespace.org
+        mkdir -p /var/run/opendkim
         chown -R opendkim:opendkim /var/run/opendkim
 
         work()
         {
           if [ ! -f /etc/opendkim/keys/$1/mail.private ];
           then
+            mkdir -p /etc/opendkim/keys/$1
             ${pkgs.opendkim}/bin/opendkim-genkey -d $1 -D /etc/opendkim/keys/$1/ -s mail -r -t
           fi
         }
