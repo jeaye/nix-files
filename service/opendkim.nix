@@ -30,11 +30,11 @@
       ''
         KEYS		            VALUES
         ----		            ------
-        pastespace		      pastespace.org
+        pastespace          pastespace.org
                             mail
                             /etc/opendkim/keys/pastespace.org/mail.private
 
-        fu-er		            fu-er.com
+        fu-er               fu-er.com
                             mail
                             /etc/opendkim/keys/pastespace.org/mail.private
       '';
