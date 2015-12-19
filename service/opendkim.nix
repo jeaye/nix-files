@@ -15,7 +15,7 @@
       ''
         Domain                  pastespace.org fu-er.com
         Selector                mail
-        KeyList                 /etc/opendkim/keylist
+        KeyTable                /etc/opendkim/key-table
         Socket                  local:/var/run/opendkim/opendkim.sock
         UMask                   002
         ReportAddress           postmaster@pastespace.org
@@ -23,7 +23,7 @@
         UserID                  opendkim:opendkim
       '';
     };
-    "opendkim/keylist" =
+    "opendkim/key-table" =
     {
       text =
       ''
