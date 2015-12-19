@@ -20,6 +20,7 @@
     ''
       contact@pastespace.org     jeaye
       contact@arrownext.com      jeaye
+      contact@fu-er.com          fu-er
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
@@ -51,7 +52,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = arrownext.com
+      virtual_alias_domains = fu-er.com arrownext.com
 
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes

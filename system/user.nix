@@ -22,6 +22,12 @@
     extraGroups = [ "wheel" ];
   };
 
+  users.users.fu-er =
+  {
+    isNormalUser = true;
+    home = "/home/fu-er";
+  };
+
   # Allow useradd/groupadd imperatively
   users.mutableUsers = true;
 }
