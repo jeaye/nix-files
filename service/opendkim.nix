@@ -18,10 +18,18 @@
         KeyTable                /etc/opendkim/key-table
         SigningTable            /etc/opendkim/signing-table
         Socket                  local:/var/run/opendkim/opendkim.sock
-        UMask                   002
         ReportAddress           postmaster@pastespace.org
         RequireSafeKeys         False
         UserID                  opendkim:opendkim
+
+        AutoRestart             Yes
+        AutoRestartRate         10/1h
+        UMask                   002
+        Syslog                  yes
+        SyslogSuccess           Yes
+        LogWhy                  Yes
+
+        Canonicalization        relaxed/simple
       '';
     };
     "opendkim/key-table" =
