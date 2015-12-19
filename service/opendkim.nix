@@ -29,7 +29,7 @@
       text =
       ''
         *@pastespace.org:pastespace.org:/etc/opendkim/keys/pastespace.org/mail.private
-        *@fu-er.com:fu-er.com:/etc/opendkim/keys/fu-er.com/mail.private
+        *@fu-er.com:fu-er.com:/etc/opendkim/keys/pastespace.org/mail.private
       '';
       mode = "0660";
     };
