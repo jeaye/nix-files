@@ -22,7 +22,6 @@
         RequireSafeKeys         False
         UserID                  opendkim:opendkim
       '';
-      mode = "0660";
     };
     "opendkim/keylist" =
     {
@@ -31,7 +30,6 @@
         *@pastespace.org:pastespace.org:/etc/opendkim/keys/pastespace.org/mail.private
         *@fu-er.com:fu-er.com:/etc/opendkim/keys/pastespace.org/mail.private
       '';
-      mode = "0660";
     };
   };
 
