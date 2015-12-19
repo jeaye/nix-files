@@ -14,12 +14,11 @@ there, each item is split categorically.
   * jeaye.com
   * pastespace.org
 * Mail server
-  * IMAP (dovecot) + SMTP (postfix)
+  * IMAP (dovecot) + SMTP (postfix) + DKIM
 * [Fiche](https://github.com/solusipse/fiche) service
   * Posts expire after 2 weeks
+* SSL Certs (Let's Encrypt)
 
 ### Non-managed bits
 * User passwords
-* /home/http repositories
-* /etc/ssl keys and certs
 * weechat/mutt configs
