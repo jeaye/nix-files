@@ -16,6 +16,7 @@
         Domain                  pastespace.org fu-er.com
         Selector                mail
         KeyTable                /etc/opendkim/key-table
+        SigningTable            /etc/opendkim/signing-table
         Socket                  local:/var/run/opendkim/opendkim.sock
         UMask                   002
         ReportAddress           postmaster@pastespace.org
@@ -27,8 +28,25 @@
     {
       text =
       ''
-        *@pastespace.org:pastespace.org:/etc/opendkim/keys/pastespace.org/mail.private
-        *@fu-er.com:fu-er.com:/etc/opendkim/keys/pastespace.org/mail.private
+        KEYS		            VALUES
+        ----		            ------
+        pastespace		      pastespace.org
+                            mail
+                            /etc/opendkim/keys/pastespace.org/mail.private
+
+        fu-er		            fu-er.com
+                            mail
+                            /etc/opendkim/keys/pastespace.org/mail.private
+      '';
+    };
+    "opendkim/signing-table" =
+    {
+      text =
+      ''
+        KEYS		            VALUES
+        ----		            ------
+        pastespace.org	    pastespace
+        fu-er.com	          fu-er
       '';
     };
   };
