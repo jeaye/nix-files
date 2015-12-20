@@ -12,7 +12,7 @@
     jails.sshd =
     ''
       filter = sshd
-      maxretry = 5
+      maxretry = 4
       action   = iptables[name=ssh, port=ssh, protocol=tcp]
       enabled  = true
     '';
@@ -27,7 +27,7 @@
     ''
       filter   = port-scan
       action   = iptables-allports[name=port-scan]
-      maxretry = 2
+      maxretry = 1
       bantime  = 7200
       enabled  = true
     '';
@@ -69,7 +69,6 @@
     failregex = rejected connection: .* SRC=<HOST>
     ignoreip = 202.156.237.206
   '';
-  # TODO: Add an admin view for this
   environment.etc."fail2ban/filter.d/postfix-ddos.conf".text =
   ''
     [Definition]

@@ -1,31 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  networking.hostName = "nixums";
-
-  networking.wireless.enable = false;
-
-  networking.enableIPv6 = false;
-
-  networking.firewall =
+  networking =
   {
-    enable = true;
-    allowedTCPPorts =
-    [
-      22 # ssh
-    ];
-    allowPing = true;
-  };
+    hostName = "nixums";
 
-  services.openssh =
-  {
-    enable = true;
-    forwardX11 = false;
-    permitRootLogin = "no";
-    extraConfig = ''
-      PermitEmptyPasswords no
-      MaxAuthTries 5
-      UseDNS no
-    '';
+    wireless.enable = false;
+    enableIPv6 = false;
+
+    firewall =
+    {
+      enable = true;
+      allowPing = true;
+    };
   };
 }
