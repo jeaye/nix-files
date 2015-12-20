@@ -25,14 +25,11 @@
             DirectoryIndex index.txt
             Options -Indexes
           </Directory>
-        '';
-        enableSSL = true;
-        extraConfig =
-        ''
           SSLCertificateKeyFile = "/var/lib/acme/pastespace.org/key.pem";
           SSLCertificateChainFile = "/var/lib/acme/pastespace.org/chain.pem";
           SSLCertificateFile = "/var/lib/acme/pastespace.org/cert.pem";
         '';
+        enableSSL = true;
       }
       {
         hostName = "mail.jeaye.com";
@@ -47,14 +44,11 @@
           <Directory /home/http/mail.jeaye.com>
             Options -Indexes
           </Directory>
-        '';
-        enableSSL = true;
-        extraConfig =
-        ''
           SSLCertificateKeyFile = "/var/lib/acme/mail.jeaye.com/key.pem";
           SSLCertificateChainFile = "/var/lib/acme/mail.jeaye.com/chain.pem";
           SSLCertificateFile = "/var/lib/acme/mail.jeaye.com/cert.pem";
         '';
+        enableSSL = true;
       }
       {
         hostName = "fu-er.com";
@@ -69,14 +63,11 @@
           <Directory /home/http/fu-er.com>
             Options -Indexes
           </Directory>
-        '';
-        enableSSL = true;
-        extraConfig =
-        ''
           SSLCertificateKeyFile = "/var/lib/acme/fu-er.com/key.pem";
           SSLCertificateChainFile = "/var/lib/acme/fu-er.com/chain.pem";
           SSLCertificateFile = "/var/lib/acme/fu-er.com/cert.pem";
         '';
+        enableSSL = true;
       }
       {
         hostName = "penelope-art.com";
@@ -91,14 +82,11 @@
           <Directory /home/http/penelope-art.com>
             Options -Indexes
           </Directory>
-        '';
-        enableSSL = true;
-        extraConfig =
-        ''
           SSLCertificateKeyFile = "/var/lib/acme/penelope-art.com/key.pem";
           SSLCertificateChainFile = "/var/lib/acme/penelope-art.com/chain.pem";
           SSLCertificateFile = "/var/lib/acme/penelope-art.com/cert.pem";
         '';
+        enableSSL = true;
       }
       {
         hostName = "penny-art.com";
@@ -113,14 +101,11 @@
           <Directory /home/http/penny-art.com>
             Options -Indexes
           </Directory>
-        '';
-        enableSSL = true;
-        extraConfig =
-        ''
           SSLCertificateKeyFile = "/var/lib/acme/penny-art.com/key.pem";
           SSLCertificateChainFile = "/var/lib/acme/penny-art.com/chain.pem";
           SSLCertificateFile = "/var/lib/acme/penny-art.com/cert.pem";
         '';
+        enableSSL = true;
       }
     ];
 
