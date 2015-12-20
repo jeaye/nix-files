@@ -27,7 +27,7 @@
     ''
       filter   = port-scan
       action   = iptables-allports[name=port-scan]
-      maxretry = 1
+      maxretry = 2
       bantime  = 7200
       enabled  = true
     '';
