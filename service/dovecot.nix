@@ -39,4 +39,13 @@
       }
     '';
   };
+
+  networking.firewall =
+  {
+    allowedTCPPorts =
+    [
+      143 # imap
+      993 # imap
+    ];
+  };
 }

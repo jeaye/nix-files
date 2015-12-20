@@ -108,4 +108,13 @@
         -o milter_macro_daemon_name=ORIGINATING
     '';
   };
+
+  networking.firewall =
+  {
+    allowedTCPPorts =
+    [
+      25 # smtp
+      587 # smtp
+    ];
+  };
 }

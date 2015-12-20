@@ -28,4 +28,6 @@
   [
     "0 0 * * * http ${pkgs.findutils}/bin/find /home/http/pastespace.org/* -mtime +14 -type d -exec rm -r {} \\;"
   ];
+
+  networking.firewall.allowedTCPPorts = [ 9999 ];
 }
