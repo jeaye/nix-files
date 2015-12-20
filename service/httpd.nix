@@ -56,8 +56,15 @@
       deps = [];
       text =
       ''
-        mkdir -p /home/http/pastespace.org
-        chown http:users /home/http/pastespace.org
+        setup()
+        {
+          mkdir -p /home/http/$1
+          chown http:http /home/http/$1
+        }
+        for domain in pastespace.org mail.jeaye.com fu-er.com penelope-art.com penny-art.com;
+        do
+          setup $domain
+        done
       '';
     };
   };
