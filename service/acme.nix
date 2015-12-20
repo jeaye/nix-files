@@ -3,7 +3,11 @@
 let
   global-email = "contact@jeaye.com";
   global-plugins = [ "chain.pem" "key.pem" "cert.pem" ];
-  global-post-run = "systemctl restart httpd.service";
+  global-post-run =
+  ''
+    cp -R /var/lib/acme-unstable/* /var/lib/acme/
+    systemctl restart httpd.service ;
+  '';
 in
 {
   imports = [ ../pkg/acme.nix ];
@@ -17,6 +21,8 @@ in
 
   security.acme =
   {
+    directory = "/var/lib/acme-unstable";
+
     certs =
     {
       "pastespace.org" =
