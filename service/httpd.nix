@@ -28,6 +28,70 @@
         '';
         enableSSL = true;
       }
+      {
+        hostName = "mail.jeaye.com";
+        globalRedirect = "https://mail.jeaye.com";
+        enableSSL = false;
+      }
+      {
+        hostName = "mail.jeaye.com";
+        documentRoot = "/home/http/mail.jeaye.com";
+        extraConfig =
+        ''
+          <Directory /home/http/mail.jeaye.com>
+            Options -Indexes
+          </Directory>
+        '';
+        enableSSL = true;
+      }
+      {
+        hostName = "fu-er.com";
+        globalRedirect = "https://fu-er.com";
+        enableSSL = false;
+      }
+      {
+        hostName = "fu-er.com";
+        documentRoot = "/home/http/fu-er.com";
+        extraConfig =
+        ''
+          <Directory /home/http/fu-er.com>
+            Options -Indexes
+          </Directory>
+        '';
+        enableSSL = true;
+      }
+      {
+        hostName = "penelope-art.com";
+        globalRedirect = "https://penelope-art.com";
+        enableSSL = false;
+      }
+      {
+        hostName = "penelope-art.com";
+        documentRoot = "/home/http/penelope-art.com";
+        extraConfig =
+        ''
+          <Directory /home/http/penelope-art.com>
+            Options -Indexes
+          </Directory>
+        '';
+        enableSSL = true;
+      }
+      {
+        hostName = "penny-art.com";
+        globalRedirect = "https://penny-art.com";
+        enableSSL = false;
+      }
+      {
+        hostName = "penny-art.com";
+        documentRoot = "/home/http/penny-art.com";
+        extraConfig =
+        ''
+          <Directory /home/http/penny-art.com>
+            Options -Indexes
+          </Directory>
+        '';
+        enableSSL = true;
+      }
     ];
 
     sslServerKey = "/var/lib/acme/pastespace.org/key.pem";
