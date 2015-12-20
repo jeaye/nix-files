@@ -26,9 +26,5 @@
     ./service/imap-filter.nix
   ];
 
-  services.locate.enable = true;
-
-  sound.enable = false;
-
   system.stateVersion = "15.09";
 }

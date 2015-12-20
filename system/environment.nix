@@ -9,7 +9,7 @@
   };
 
   time.timeZone = "America/Los_Angeles";
-  services.ntp.enable = true;
+  services.ntp.enable = false;
 
   environment.systemPackages = with pkgs;
   [
@@ -31,12 +31,15 @@
     };
   };
 
+  services.locate.enable = true;
+
   # Build all packages in a chroot
   nix.useChroot = true;
 
-  # Don't bring in any X dependencies
+  # This is a headless machine; no need for anything fancy
   environment.noXlibs = true;
   fonts.fontconfig.enable = false;
+  sound.enable = false;
 
   # Auto GC every morning
   nix.gc.automatic = true;
