@@ -38,6 +38,20 @@
       '';
       mode = "0774";
     };
+    "admin/daily-postfix-dos" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        journalctl -u postfix | grep 'lost connection after EHLO from' \
+                              | awk '{print $1,$2}' \
+                              | sort -k 1,1M -k 2n \
+                              | uniq -c
+      '';
+      mode = "0774";
+    };
     "admin/unban-fail2ban-ip" =
     {
       text =
