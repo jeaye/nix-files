@@ -21,8 +21,8 @@
       contact@pastespace.org     jeaye
       contact@arrownext.com      jeaye
       contact@fu-er.com          fu-er
-      contact@penelope-art.com   fu-er
-      contact@penny-art.com      fu-er
+      contact@penelope-art.com   penelope
+      contact@penny-art.com      penelope
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";

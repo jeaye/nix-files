@@ -63,6 +63,7 @@
     #  enabled  = true
     #'';
   };
+  improper command pipelining after EHLO from unknown[202.156.237.206]
   environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
     [Definition]
