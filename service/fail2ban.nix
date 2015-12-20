@@ -50,6 +50,7 @@
       filter   = postfix-ddos
       maxretry = 3
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
+                 iptables[name=postfix, port=submission, protocol=tcp]
       bantime  = 7200
       enabled  = true
     '';
@@ -63,7 +64,6 @@
     #  enabled  = true
     #'';
   };
-  improper command pipelining after EHLO from unknown[202.156.237.206]
   environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
     [Definition]
