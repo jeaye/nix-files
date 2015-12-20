@@ -73,48 +73,48 @@
         '';
         enableSSL = true;
       }
-      {
-        hostName = "penelope-art.com";
-        serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
-        globalRedirect = "https://penelope-art.com";
-        enableSSL = false;
-      }
-      {
-        hostName = "penelope-art.com";
-        serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
-        documentRoot = "/home/http/penelope-art.com";
-        extraConfig =
-        ''
-          <Directory /home/http/penelope-art.com>
-            Options -Indexes
-          </Directory>
-          SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
-          SSLCertificateFile /var/lib/acme/penelope-art.com/cert.pem
-        '';
-        enableSSL = true;
-      }
-      {
-        hostName = "penny-art.com";
-        serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
-        globalRedirect = "https://penny-art.com";
-        enableSSL = false;
-      }
-      {
-        hostName = "penny-art.com";
-        serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
-        documentRoot = "/home/http/penny-art.com";
-        extraConfig =
-        ''
-          <Directory /home/http/penny-art.com>
-            Options -Indexes
-          </Directory>
-          SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
-          SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
-        '';
-        enableSSL = true;
-      }
+      #{
+      #  hostName = "penelope-art.com";
+      #  serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
+      #  globalRedirect = "https://penelope-art.com";
+      #  enableSSL = false;
+      #}
+      #{
+      #  hostName = "penelope-art.com";
+      #  serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
+      #  documentRoot = "/home/http/penelope-art.com";
+      #  extraConfig =
+      #  ''
+      #    <Directory /home/http/penelope-art.com>
+      #      Options -Indexes
+      #    </Directory>
+      #    SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
+      #    SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
+      #    SSLCertificateFile /var/lib/acme/penelope-art.com/cert.pem
+      #  '';
+      #  enableSSL = true;
+      #}
+      #{
+      #  hostName = "penny-art.com";
+      #  serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
+      #  globalRedirect = "https://penny-art.com";
+      #  enableSSL = false;
+      #}
+      #{
+      #  hostName = "penny-art.com";
+      #  serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
+      #  documentRoot = "/home/http/penny-art.com";
+      #  extraConfig =
+      #  ''
+      #    <Directory /home/http/penny-art.com>
+      #      Options -Indexes
+      #    </Directory>
+      #    SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
+      #    SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
+      #    SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
+      #  '';
+      #  enableSSL = true;
+      #}
     ];
 
     extraConfig =
