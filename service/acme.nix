@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  global-email = "contact@jeaye.com";
+  global-plugins = [ "chain.pem" "key.pem" "cert.pem" ];
+  global-post-run = "systemctl restart httpd.service";
+in
 {
   imports = [ ../pkg/acme.nix ];
 
@@ -10,75 +15,68 @@
   { };
   in [ pkgsUnstable.simp_le ];
 
-  let
-    global-email = "contact@jeaye.com";
-    global-plugins = [ "chain.pem" "key.pem" "cert.pem" ];
-    global-post-run = "systemctl restart httpd.service";
-  in
+  security.acme =
   {
-    security.acme =
+    certs =
     {
-      certs =
+      "pastespace.org" =
       {
-        "pastespace.org" =
+        webroot = "/home/http/pastespace.org";
+        extraDomains =
         {
-          webroot = "/home/http/pastespace.org";
-          extraDomains =
-          {
-            "www.pastespace.org" = null;
-            "mail.pastespace.org" = null;
-          };
-          email = global-email;
-          plugins = global-plugins;
-          postRun = global-post-run;
+          "www.pastespace.org" = null;
+          "mail.pastespace.org" = null;
         };
-        "mail.jeaye.com" =
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "mail.jeaye.com" =
+      {
+        webroot = "/home/http/mail.jeaye.com";
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "fu-er.com" =
+      {
+        webroot = "/home/http/fu-er.com";
+        extraDomains =
         {
-          webroot = "/home/http/mail.jeaye.com";
-          email = global-email;
-          plugins = global-plugins;
-          postRun = global-post-run;
+          "www.fu-er.com" = null;
+          "mail.fu-er.com" = null;
         };
-        "fu-er.com" =
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "penelope-art.com" =
+      {
+        webroot = "/home/http/penelope-art.com";
+        extraDomains =
         {
-          webroot = "/home/http/fu-er.com";
-          extraDomains =
-          {
-            "www.fu-er.com" = null;
-            "mail.fu-er.com" = null;
-          };
-          email = global-email;
-          plugins = global-plugins;
-          postRun = global-post-run;
-        };
-        "penelope-art.com" =
-        {
-          webroot = "/home/http/penelope-art.com";
-          extraDomains =
-          {
-            "www.penelope-art.com" = null;
-            "mail.penelope-art.com" = null;
+          "www.penelope-art.com" = null;
+          "mail.penelope-art.com" = null;
 
-            "penny-art.com" = null;
-            "www.penny-art.com" = null;
-            "mail.penny-art.com" = null;
-          };
-          email = global-email;
-          plugins = global-plugins;
-          postRun = global-post-run;
+          "penny-art.com" = null;
+          "www.penny-art.com" = null;
+          "mail.penny-art.com" = null;
         };
-        "penny-art.com" =
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "penny-art.com" =
+      {
+        webroot = "/home/http/penny-art.com";
+        extraDomains =
         {
-          webroot = "/home/http/penny-art.com";
-          extraDomains =
-          {
-            "www.penny-art.com" = null;
-            "mail.penny-art.com" = null;
-          };
-          email = global-email;
-          plugins = global-plugins;
-          postRun = global-post-run;
+          "www.penny-art.com" = null;
+          "mail.penny-art.com" = null;
         };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
       };
     };
   };
