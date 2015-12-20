@@ -49,8 +49,7 @@
     ''
       filter   = postfix-ddos
       maxretry = 3
-      action   = iptables[name=postfix, port=smtp, protocol=tcp]
-                 iptables[name=postfix, port=submission, protocol=tcp]
+      action   = iptables[name=postfix, port=submission, protocol=tcp]
       bantime  = 7200
       enabled  = true
     '';
@@ -73,7 +72,7 @@
   environment.etc."fail2ban/filter.d/postfix-ddos.conf".text =
   ''
     [Definition]
-    failregex = lost connection after EHLO from .*\[<HOST>\]
+    failregex = lost connection after EHLO from \S+\[<HOST>\]
   '';
 
   # Limit stack size to reduce memory usage
