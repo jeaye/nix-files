@@ -19,6 +19,8 @@ in
   { };
   in [ pkgsUnstable.simp_le ];
 
+  # XXX: SSL must be disabled per-domain in httpd for the initial certs
+  # to be created properly.
   security.acme =
   {
     directory = "/var/lib/acme-unstable";
