@@ -31,7 +31,3 @@
 
   system.stateVersion = "15.09";
 }
-
-# TODO:
-# Users in /etc/user
-# Bring in weechat/mutt configs
