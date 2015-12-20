@@ -37,10 +37,10 @@
       text =
       ''
         mail._domainkey.pastespace.org pastespace.org:mail:/etc/opendkim/keys/pastespace.org/mail.private
-        mail._domainkey.jeaye.com jeaye.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
-        mail._domainkey.fu-er.com fu-er.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
-        mail._domainkey.penelope-art.com penelope-art.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
-        mail._domainkey.penny-art.com penny-art.com:mail:/etc/opendkim/keys/pastespace.org/mail.private
+        mail._domainkey.jeaye.com jeaye.com:mail:/etc/opendkim/keys/jeaye.com/mail.private
+        mail._domainkey.fu-er.com fu-er.com:mail:/etc/opendkim/keys/fu-er.com/mail.private
+        mail._domainkey.penelope-art.com penelope-art.com:mail:/etc/opendkim/keys/penelope-art.com/mail.private
+        mail._domainkey.penny-art.com penny-art.com:mail:/etc/opendkim/keys/penny-art.com/mail.private
       '';
     };
     "opendkim/signing-table" =
