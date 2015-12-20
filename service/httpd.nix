@@ -13,11 +13,13 @@
     [
       {
         hostName = "pastespace.org";
+        serverAliases = [ "www.pastespace.org" "mail.pastespace.org" ];
         globalRedirect = "https://pastespace.org/";
         enableSSL = false;
       }
       {
         hostName = "pastespace.org";
+        serverAliases = [ "www.pastespace.org" "mail.pastespace.org" ];
         documentRoot = "/home/http/pastespace.org";
         extraConfig =
         ''
@@ -52,11 +54,13 @@
       }
       {
         hostName = "fu-er.com";
+        serverAliases = [ "www.fu-er.com" "mail.fu-er.com" ];
         globalRedirect = "https://fu-er.com";
         enableSSL = false;
       }
       {
         hostName = "fu-er.com";
+        serverAliases = [ "www.fu-er.com" "mail.fu-er.com" ];
         documentRoot = "/home/http/fu-er.com";
         extraConfig =
         ''
@@ -71,11 +75,13 @@
       }
       {
         hostName = "penelope-art.com";
+        serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
         globalRedirect = "https://penelope-art.com";
         enableSSL = false;
       }
       {
         hostName = "penelope-art.com";
+        serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
         documentRoot = "/home/http/penelope-art.com";
         extraConfig =
         ''
@@ -90,11 +96,13 @@
       }
       {
         hostName = "penny-art.com";
+        serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
         globalRedirect = "https://penny-art.com";
         enableSSL = false;
       }
       {
         hostName = "penny-art.com";
+        serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
         documentRoot = "/home/http/penny-art.com";
         extraConfig =
         ''
