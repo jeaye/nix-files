@@ -34,6 +34,12 @@
         enableSSL = true;
       }
       {
+        hostName = "jank-lang.org";
+        serverAliases = [ "www.jank-lang.org" ];
+        globalRedirect = "https://github.com/jeaye/jank";
+        enableSSL = false;
+      }
+      {
         hostName = "fu-er.com";
         serverAliases = [ "www.fu-er.com" ];
         globalRedirect = "https://fu-er.com/";
