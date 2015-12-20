@@ -48,7 +48,7 @@
     jails.postfix-ddos =
     ''
       filter   = postfix-ddos
-      maxretry = 5
+      maxretry = 3
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       bantime  = 7200
       enabled  = true
