@@ -18,7 +18,9 @@
       User = "http";
       ExecStart =
       ''
-        ${pkgs.fiche}/bin/fiche -d pastespace.org -o /home/http/pastespace.org -l /home/http/fiche.log
+        ${pkgs.fiche}/bin/fiche -d pastespace.org \
+                                -o /home/http/pastespace.org \
+                                -l /home/http/fiche.log
       '';
     };
   };
