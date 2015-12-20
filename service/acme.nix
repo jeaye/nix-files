@@ -37,20 +37,12 @@ in
         plugins = global-plugins;
         postRun = global-post-run;
       };
-      "mail.jeaye.com" =
-      {
-        webroot = "/home/http/mail.jeaye.com";
-        email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
-      };
       "fu-er.com" =
       {
         webroot = "/home/http/fu-er.com";
         extraDomains =
         {
           "www.fu-er.com" = null;
-          "mail.fu-er.com" = null;
         };
         email = global-email;
         plugins = global-plugins;
@@ -62,11 +54,6 @@ in
       #  extraDomains =
       #  {
       #    "www.penelope-art.com" = null;
-      #    "mail.penelope-art.com" = null;
-
-      #    "penny-art.com" = null;
-      #    "www.penny-art.com" = null;
-      #    "mail.penny-art.com" = null;
       #  };
       #  email = global-email;
       #  plugins = global-plugins;
@@ -78,7 +65,6 @@ in
       #  extraDomains =
       #  {
       #    "www.penny-art.com" = null;
-      #    "mail.penny-art.com" = null;
       #  };
       #  email = global-email;
       #  plugins = global-plugins;

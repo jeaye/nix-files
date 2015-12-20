@@ -34,33 +34,14 @@
         enableSSL = true;
       }
       {
-        hostName = "mail.jeaye.com";
-        globalRedirect = "https://mail.jeaye.com";
-        enableSSL = false;
-      }
-      {
-        hostName = "mail.jeaye.com";
-        documentRoot = "/home/http/mail.jeaye.com";
-        extraConfig =
-        ''
-          <Directory /home/http/mail.jeaye.com>
-            Options -Indexes
-          </Directory>
-          SSLCertificateKeyFile /var/lib/acme/mail.jeaye.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/mail.jeaye.com/chain.pem
-          SSLCertificateFile /var/lib/acme/mail.jeaye.com/cert.pem
-        '';
-        enableSSL = true;
-      }
-      {
         hostName = "fu-er.com";
-        serverAliases = [ "www.fu-er.com" "mail.fu-er.com" ];
+        serverAliases = [ "www.fu-er.com" ];
         globalRedirect = "https://fu-er.com";
         enableSSL = false;
       }
       {
         hostName = "fu-er.com";
-        serverAliases = [ "www.fu-er.com" "mail.fu-er.com" ];
+        serverAliases = [ "www.fu-er.com" ];
         documentRoot = "/home/http/fu-er.com";
         extraConfig =
         ''
@@ -75,13 +56,13 @@
       }
       #{
       #  hostName = "penelope-art.com";
-      #  serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
+      #  serverAliases = [ "www.penelope-art.com" ];
       #  globalRedirect = "https://penelope-art.com";
       #  enableSSL = false;
       #}
       #{
       #  hostName = "penelope-art.com";
-      #  serverAliases = [ "www.penelope-art.com" "mail.penelope-art.com" ];
+      #  serverAliases = [ "www.penelope-art.com" ];
       #  documentRoot = "/home/http/penelope-art.com";
       #  extraConfig =
       #  ''
@@ -96,13 +77,13 @@
       #}
       #{
       #  hostName = "penny-art.com";
-      #  serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
+      #  serverAliases = [ "www.penny-art.com" ];
       #  globalRedirect = "https://penny-art.com";
       #  enableSSL = false;
       #}
       #{
       #  hostName = "penny-art.com";
-      #  serverAliases = [ "www.penny-art.com" "mail.penny-art.com" ];
+      #  serverAliases = [ "www.penny-art.com" ];
       #  documentRoot = "/home/http/penny-art.com";
       #  extraConfig =
       #  ''
@@ -144,7 +125,7 @@
           mkdir -p /home/http/$1
           chown http:http /home/http/$1
         }
-        for domain in pastespace.org mail.jeaye.com fu-er.com penelope-art.com penny-art.com;
+        for domain in pastespace.org fu-er.com penelope-art.com penny-art.com;
         do
           setup $domain
         done
