@@ -36,7 +36,7 @@
       {
         hostName = "fu-er.com";
         serverAliases = [ "www.fu-er.com" ];
-        globalRedirect = "https://fu-er.com";
+        globalRedirect = "https://fu-er.com/";
         enableSSL = false;
       }
       {
@@ -57,7 +57,7 @@
       #{
       #  hostName = "penelope-art.com";
       #  serverAliases = [ "www.penelope-art.com" ];
-      #  globalRedirect = "https://penelope-art.com";
+      #  globalRedirect = "https://penelope-art.com/";
       #  enableSSL = false;
       #}
       #{
@@ -78,7 +78,7 @@
       #{
       #  hostName = "penny-art.com";
       #  serverAliases = [ "www.penny-art.com" ];
-      #  globalRedirect = "https://penny-art.com";
+      #  globalRedirect = "https://penny-art.com/";
       #  enableSSL = false;
       #}
       #{
