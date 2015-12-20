@@ -1,12 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config =
-  {
-    packageOverrides = pkgs: rec
-    { simp_le = pkgs.callPackage ../pkg/simp_le.nix { }; };
-  };
   imports = [ ../pkg/acme.nix ];
+
+  environment.systemPackages = let pkgsUnstable = import
+  (
+    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+  )
+  { };
+  in [ pkgsUnstable.simp_le ];
 
   security.acme =
   {
@@ -37,7 +39,7 @@
           "mail.penny-art.com" = null;
         };
         email = "contact@jeaye.com";
-        plugins = [ "chain.pem" "key.pem" "cert.pem" "account_key.json" ];
+        plugins = [ "chain.pem" "key.pem" "cert.pem" ];
         postRun = "systemctl restart httpd.service";
       };
     };

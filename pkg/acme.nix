@@ -6,6 +6,12 @@ let
 
   cfg = config.security.acme;
 
+  pkgsUnstable = import
+	(
+    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+  )
+  { };
+
   certOpts = { ... }: {
     options = {
       webroot = mkOption {
@@ -155,7 +161,7 @@ in
             Group = data.group;
             PrivateTmp = true;
           };
-          path = [ pkgs.simp_le ];
+          path = [ pkgsUnstable.simp_le ];
           preStart = ''
             mkdir -p '${cfg.directory}'
             if [ ! -d '${cpath}' ]; then

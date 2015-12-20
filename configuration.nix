@@ -15,7 +15,7 @@
     ./program/irc.nix
     ./program/admin.nix
 
-    #./service/acme.nix
+    ./service/acme.nix
     ./service/httpd.nix
     ./service/postfix.nix
     ./service/dovecot.nix
@@ -33,6 +33,5 @@
 }
 
 # TODO:
-# Adopt 16.03 once fail2ban is working
 # Users in /etc/user
 # Bring in weechat/mutt configs
