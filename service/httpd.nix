@@ -25,9 +25,9 @@
             DirectoryIndex index.txt
             Options -Indexes
           </Directory>
-          SSLCertificateKeyFile = "/var/lib/acme/pastespace.org/key.pem";
-          SSLCertificateChainFile = "/var/lib/acme/pastespace.org/chain.pem";
-          SSLCertificateFile = "/var/lib/acme/pastespace.org/cert.pem";
+          SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
+          SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem
+          SSLCertificateFile /var/lib/acme/pastespace.org/cert.pem
         '';
         enableSSL = true;
       }
@@ -44,9 +44,9 @@
           <Directory /home/http/mail.jeaye.com>
             Options -Indexes
           </Directory>
-          SSLCertificateKeyFile = "/var/lib/acme/mail.jeaye.com/key.pem";
-          SSLCertificateChainFile = "/var/lib/acme/mail.jeaye.com/chain.pem";
-          SSLCertificateFile = "/var/lib/acme/mail.jeaye.com/cert.pem";
+          SSLCertificateKeyFile /var/lib/acme/mail.jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/mail.jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/mail.jeaye.com/cert.pem
         '';
         enableSSL = true;
       }
@@ -63,9 +63,9 @@
           <Directory /home/http/fu-er.com>
             Options -Indexes
           </Directory>
-          SSLCertificateKeyFile = "/var/lib/acme/fu-er.com/key.pem";
-          SSLCertificateChainFile = "/var/lib/acme/fu-er.com/chain.pem";
-          SSLCertificateFile = "/var/lib/acme/fu-er.com/cert.pem";
+          SSLCertificateKeyFile /var/lib/acme/fu-er.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/fu-er.com/chain.pem
+          SSLCertificateFile /var/lib/acme/fu-er.com/cert.pem
         '';
         enableSSL = true;
       }
@@ -82,9 +82,9 @@
           <Directory /home/http/penelope-art.com>
             Options -Indexes
           </Directory>
-          SSLCertificateKeyFile = "/var/lib/acme/penelope-art.com/key.pem";
-          SSLCertificateChainFile = "/var/lib/acme/penelope-art.com/chain.pem";
-          SSLCertificateFile = "/var/lib/acme/penelope-art.com/cert.pem";
+          SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
+          SSLCertificateFile /var/lib/acme/penelope-art.com/cert.pem
         '';
         enableSSL = true;
       }
@@ -101,9 +101,9 @@
           <Directory /home/http/penny-art.com>
             Options -Indexes
           </Directory>
-          SSLCertificateKeyFile = "/var/lib/acme/penny-art.com/key.pem";
-          SSLCertificateChainFile = "/var/lib/acme/penny-art.com/chain.pem";
-          SSLCertificateFile = "/var/lib/acme/penny-art.com/cert.pem";
+          SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
+          SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
         '';
         enableSSL = true;
       }
