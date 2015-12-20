@@ -45,6 +45,14 @@
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
+    jails.postfix-ddos =
+    ''
+      filter   = postfix-ddos
+      maxretry = 5
+      action   = iptables[name=postfix, port=smtp, protocol=tcp]
+      bantime  = 7200
+      enabled  = true
+    '';
     #jails.dovecot =
     #''
     #  filter   = dovecot
@@ -60,6 +68,11 @@
     [Definition]
     failregex = rejected connection: .* SRC=<HOST>
     ignoreip = 202.156.237.206
+  '';
+  environment.etc."fail2ban/filter.d/postfix-ddos.conf".text =
+  ''
+    [Definition]
+    failregex = lost connection after EHLO from .*[<HOST>]
   '';
 
   # Limit stack size to reduce memory usage
