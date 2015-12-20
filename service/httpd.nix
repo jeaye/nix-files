@@ -27,9 +27,12 @@
           </Directory>
         '';
         enableSSL = true;
-        SSLCertificateKeyFile = "/var/lib/acme/pastespace.org/key.pem";
-        SSLCertificateChainFile = "/var/lib/acme/pastespace.org/chain.pem";
-        SSLCertificateFile = "/var/lib/acme/pastespace.org/cert.pem";
+        extraConfig =
+        ''
+          SSLCertificateKeyFile = "/var/lib/acme/pastespace.org/key.pem";
+          SSLCertificateChainFile = "/var/lib/acme/pastespace.org/chain.pem";
+          SSLCertificateFile = "/var/lib/acme/pastespace.org/cert.pem";
+        '';
       }
       {
         hostName = "mail.jeaye.com";
@@ -46,9 +49,12 @@
           </Directory>
         '';
         enableSSL = true;
-        SSLCertificateKeyFile = "/var/lib/acme/mail.jeaye.com/key.pem";
-        SSLCertificateChainFile = "/var/lib/acme/mail.jeaye.com/chain.pem";
-        SSLCertificateFile = "/var/lib/acme/mail.jeaye.com/cert.pem";
+        extraConfig =
+        ''
+          SSLCertificateKeyFile = "/var/lib/acme/mail.jeaye.com/key.pem";
+          SSLCertificateChainFile = "/var/lib/acme/mail.jeaye.com/chain.pem";
+          SSLCertificateFile = "/var/lib/acme/mail.jeaye.com/cert.pem";
+        '';
       }
       {
         hostName = "fu-er.com";
@@ -65,9 +71,12 @@
           </Directory>
         '';
         enableSSL = true;
-        SSLCertificateKeyFile = "/var/lib/acme/fu-er.com/key.pem";
-        SSLCertificateChainFile = "/var/lib/acme/fu-er.com/chain.pem";
-        SSLCertificateFile = "/var/lib/acme/fu-er.com/cert.pem";
+        extraConfig =
+        ''
+          SSLCertificateKeyFile = "/var/lib/acme/fu-er.com/key.pem";
+          SSLCertificateChainFile = "/var/lib/acme/fu-er.com/chain.pem";
+          SSLCertificateFile = "/var/lib/acme/fu-er.com/cert.pem";
+        '';
       }
       {
         hostName = "penelope-art.com";
@@ -84,9 +93,12 @@
           </Directory>
         '';
         enableSSL = true;
-        SSLCertificateKeyFile = "/var/lib/acme/penelope-art.com/key.pem";
-        SSLCertificateChainFile = "/var/lib/acme/penelope-art.com/chain.pem";
-        SSLCertificateFile = "/var/lib/acme/penelope-art.com/cert.pem";
+        extraConfig =
+        ''
+          SSLCertificateKeyFile = "/var/lib/acme/penelope-art.com/key.pem";
+          SSLCertificateChainFile = "/var/lib/acme/penelope-art.com/chain.pem";
+          SSLCertificateFile = "/var/lib/acme/penelope-art.com/cert.pem";
+        '';
       }
       {
         hostName = "penny-art.com";
@@ -103,9 +115,12 @@
           </Directory>
         '';
         enableSSL = true;
-        SSLCertificateKeyFile = "/var/lib/acme/penny-art.com/key.pem";
-        SSLCertificateChainFile = "/var/lib/acme/penny-art.com/chain.pem";
-        SSLCertificateFile = "/var/lib/acme/penny-art.com/cert.pem";
+        extraConfig =
+        ''
+          SSLCertificateKeyFile = "/var/lib/acme/penny-art.com/key.pem";
+          SSLCertificateChainFile = "/var/lib/acme/penny-art.com/chain.pem";
+          SSLCertificateFile = "/var/lib/acme/penny-art.com/cert.pem";
+        '';
       }
     ];
 
