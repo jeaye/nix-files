@@ -72,7 +72,7 @@
   environment.etc."fail2ban/filter.d/postfix-ddos.conf".text =
   ''
     [Definition]
-    failregex = lost connection after EHLO from .*[<HOST>]
+    failregex = lost connection after EHLO from .*\[<HOST>\]
   '';
 
   # Limit stack size to reduce memory usage
