@@ -28,12 +28,6 @@
     home = "/home/fu-er";
   };
 
-  users.users.penelope =
-  {
-    isNormalUser = true;
-    home = "/home/penelope";
-  };
-
   # Allow useradd/groupadd imperatively
   users.mutableUsers = true;
 }

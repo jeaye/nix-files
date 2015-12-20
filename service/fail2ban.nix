@@ -69,6 +69,7 @@
     failregex = rejected connection: .* SRC=<HOST>
     ignoreip = 202.156.237.206
   '';
+  # TODO: Add an admin view for this
   environment.etc."fail2ban/filter.d/postfix-ddos.conf".text =
   ''
     [Definition]
