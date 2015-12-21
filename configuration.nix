@@ -10,6 +10,7 @@
     ./system/environment.nix
     ./system/network.nix
     ./system/user.nix
+    ./system/systemd.nix
 
     ./program/vim.nix
     ./program/irc.nix
