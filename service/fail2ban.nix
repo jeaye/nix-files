@@ -1,19 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   nixpkgs.config =
   {
     packageOverrides = pkgs: rec
     {
-      fail2ban = pkgs.fail2ban.override
+      fail2ban = pkgs.fail2ban.overrideDerivation (oldAttrs :
       {
-        src = fetchzip
+        src = pkgs.fetchzip
         {
-          name   = "fail2ban-0.9.3-1-src";
-          url    = "https://github.com/fail2ban/fail2ban/archive/0.9.3-1.tar.gz";
-          sha256 = "bf4e3de5349544b910eefce29c1d7fa1773ff8a17185cc64b3b9cf7fefccbf60";
+          name   = "fail2ban-0.9.3-src";
+          url    = "https://github.com/fail2ban/fail2ban/archive/0.9.3.tar.gz";
+          sha256 = "1pwgr56i6l6wh2ap8b5vknxgsscfzjqy2nmd1c3vzdii5kf72j0f";
         };
-      };
+      });
     };
   };
 
