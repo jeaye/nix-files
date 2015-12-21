@@ -3,9 +3,9 @@
 {
   services.journald.extraConfig =
   ''
-    Storage=auto
+    Storage=persist
     Compress=yes
-    SystemMaxUse=1G
-    RuntimeMaxUse=64M
+    SystemMaxUse=128M
+    RuntimeMaxUse=8M
   '';
 }
