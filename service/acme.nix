@@ -50,28 +50,28 @@ in
         plugins = global-plugins;
         postRun = global-post-run;
       };
-      #"penelope-art.com" =
-      #{
-      #  webroot = "/home/http/penelope-art.com";
-      #  extraDomains =
-      #  {
-      #    "www.penelope-art.com" = null;
-      #  };
-      #  email = global-email;
-      #  plugins = global-plugins;
-      #  postRun = global-post-run;
-      #};
-      #"penny-art.com" =
-      #{
-      #  webroot = "/home/http/penny-art.com";
-      #  extraDomains =
-      #  {
-      #    "www.penny-art.com" = null;
-      #  };
-      #  email = global-email;
-      #  plugins = global-plugins;
-      #  postRun = global-post-run;
-      #};
+      "penelope-art.com" =
+      {
+        webroot = "/home/http/penelope-art.com";
+        extraDomains =
+        {
+          "www.penelope-art.com" = null;
+        };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "penny-art.com" =
+      {
+        webroot = "/home/http/penny-art.com";
+        extraDomains =
+        {
+          "www.penny-art.com" = null;
+        };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
     };
   };
 }
