@@ -8,6 +8,8 @@
 
   environment.etc."user/usenet/slrnrc".text =
     lib.readFile ./data/slrnrc;
+  environment.etc."user/usenet/bashrc".text =
+    lib.readFile ./usenet/bashrc;
 
   users.users.usenet =
   {
@@ -25,6 +27,7 @@
       text =
       ''
         PATH=${pkgs.su}/bin:$PATH
+        su - usenet -c "ln -sf /etc/user/usenet/bashrc ~/.bashrc"
         su - usenet -c "ln -sf /etc/user/usenet/slrnrc ~/.slrnrc"
         if [ ! -f /home/usenet/.jnewsrc ];
         then
