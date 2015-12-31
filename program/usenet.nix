@@ -16,6 +16,7 @@
     createHome = true;
   };
 
+  # XXX: Setup ~/.secret/slrn passwords
   system.activationScripts =
   {
     usenet-home =
