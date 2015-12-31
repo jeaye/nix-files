@@ -14,6 +14,7 @@
 
     ./program/vim.nix
     ./program/irc.nix
+    ./program/usenet.nix
     ./program/admin.nix
 
     ./service/ssh.nix
