@@ -6,6 +6,18 @@
     slrn
   ];
 
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      slrn = pkgs.slrn.override
+      {
+        configureFlags = "--with-ssl=${pkgs.openssl}";
+        buildInputs = [ slang ncurses openssl ];
+      };
+    };
+  };
+
   environment.etc."user/usenet/slrnrc".text =
     lib.readFile ./usenet/slrnrc;
   environment.etc."user/usenet/bashrc".text =
