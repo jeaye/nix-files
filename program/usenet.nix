@@ -24,10 +24,11 @@
       deps = [];
       text =
       ''
-        su -u usenet -c "ln -sf /etc/user/usenet/slrnrc ~/.slrnrc"
+        PATH=${pkgs.su}/bin:$PATH
+        su - usenet -c "ln -sf /etc/user/usenet/slrnrc ~/.slrnrc"
         if [ ! -f /home/usenet/.jnewsrc ];
         then
-          su -u usenet -c "slrn --create && slrn -d"
+          su - usenet -c "slrn --create && slrn -d"
         fi
       '';
     };
