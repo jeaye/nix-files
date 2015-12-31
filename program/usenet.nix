@@ -7,7 +7,7 @@
   ];
 
   environment.etc."user/usenet/slrnrc".text =
-    lib.readFile ./data/slrnrc;
+    lib.readFile ./usenet/slrnrc;
   environment.etc."user/usenet/bashrc".text =
     lib.readFile ./usenet/bashrc;
 
