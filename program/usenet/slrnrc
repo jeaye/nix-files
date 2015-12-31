@@ -32,7 +32,7 @@ set realname "Jeaye"
 % If a server requires authentication, add a nnrpaccess line for it.
 % If you leave username and/or password empty, slrn will prompt for it.
 %nnrpaccess "free.xsusenet.com" "some-user" "some-password"
-interpret /home/usenet/.secret/slrn
+include /home/usenet/.secret/slrn
 
 % Some servers require authentication, but don't ask for it.
 % To offer your authentication data "voluntarily", set this variable to 1.
