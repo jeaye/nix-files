@@ -29,10 +29,6 @@
         PATH=${pkgs.su}/bin:$PATH
         su - usenet -c "ln -sf /etc/user/usenet/bashrc ~/.bashrc"
         su - usenet -c "ln -sf /etc/user/usenet/slrnrc ~/.slrnrc"
-        if [ ! -f /home/usenet/.jnewsrc ];
-        then
-          su - usenet -c "slrn --create && slrn -d"
-        fi
       '';
     };
   };
