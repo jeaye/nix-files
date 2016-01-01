@@ -10,7 +10,7 @@
   {
     packageOverrides = pkgs: rec
     {
-      slrn pkgs.slrn.overrideDerivation (oldAttrs :
+      slrn = pkgs.slrn.overrideDerivation (oldAttrs :
       {
         configureFlags = "--with-slang=${pkgs.slang} --with-ssl=${pkgs.openssl}";
         buildInputs = [ pkgs.slang pkgs.ncurses pkgs.openssl ];
