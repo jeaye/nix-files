@@ -3,8 +3,14 @@
 
 # News reading
 export NNTPSERVER="snews://reader.usenetbucket.com"
-if [ ! -f ~/.jnewsrc ];
-then
-  slrn --create
-  slrn -d
-fi
+actual_slrn=$(which slrn)
+slrn()
+{
+  if [ ! -f ~/.jnewsrc ];
+  then
+    $actual_slrn --create $@
+    $actual_slrn -d
+  else
+    $actual_slrn $@
+  fi
+}
