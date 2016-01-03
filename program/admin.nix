@@ -23,6 +23,25 @@
       '';
       mode = "0774";
     };
+    "admin/daily-succeeded-ssh-logins" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        journalctl -u sshd \
+          | grep 'Accepted' \
+          | sed 's/\(\S\+\) \(\S\+\).*for \(\S\+\) from.*/\1 \2 \3/' \
+          | uniq \
+          | tr '\n' '|' \
+          | sed -e ':loop' \
+                -e 's/\(\S\+\) \(\S\+\) \(.\+\)|\1 \2 \(\S\+\)/\1 \2 \3 \4/g' \
+                -e 't loop' \
+          | tr '|' '\n'
+      '';
+      mode = "0774";
+    };
     "admin/daily-port-scans" =
     {
       text =
