@@ -17,7 +17,6 @@
         set -eu
 
         journalctl -u sshd | grep 'Failed password' \
-                           | grep sshd \
                            | awk '{print $1,$2}' \
                            | sort -k 1,1M -k 2n \
                            | uniq -c
