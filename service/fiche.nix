@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      fiche = pkgs.callPackage ../pkg/fiche.nix { };
+    };
+  };
+
   containers.fiche =
   {
     privateNetwork = true;
@@ -9,14 +17,6 @@
 
     config = { config, pkgs, ... }:
     {
-      nixpkgs.config =
-      {
-        packageOverrides = pkgs: rec
-        {
-          fiche = pkgs.callPackage ../pkg/fiche.nix { };
-        };
-      };
-
       systemd.services.fiche =
       {
         wantedBy = [ "multi-user.target" ];
