@@ -14,4 +14,6 @@
     home = "/etc/user/irc";
     createHome = true;
   };
+
+  # TODO: Setup configs
 }
