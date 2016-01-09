@@ -23,25 +23,11 @@
   environment.etc."user/usenet/bashrc".text =
     lib.readFile ./usenet/bashrc;
 
+  # XXX: Setup ~/.secret/slrn passwords
   users.users.usenet =
   {
     isNormalUser = true;
-    home = "/home/usenet";
+    home = "/etc/user/usenet";
     createHome = true;
-  };
-
-  # XXX: Setup ~/.secret/slrn passwords
-  system.activationScripts =
-  {
-    usenet-home =
-    {
-      deps = [];
-      text =
-      ''
-        PATH=${pkgs.su}/bin:$PATH
-        su - usenet -c "ln -sf /etc/user/usenet/bashrc ~/.bashrc"
-        su - usenet -c "ln -sf /etc/user/usenet/slrnrc ~/.slrnrc"
-      '';
-    };
   };
 }
