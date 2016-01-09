@@ -130,7 +130,7 @@
 
   system.activationScripts =
   {
-    http =
+    http-home =
     {
       deps = [];
       text =

@@ -11,7 +11,7 @@
   users.users.irc =
   {
     isNormalUser = true;
-    home = "/home/irc";
+    home = "/etc/user/irc";
     createHome = true;
   };
 }

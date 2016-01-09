@@ -21,10 +21,10 @@
       deps = [];
       text =
       ''
-        mkdir -p /home/jeaye/{.secret,.imapfilter}
-        chown -R jeaye:users /home/jeaye/{.secret,.imapfilter}
-        chmod -R 0700 /home/jeaye/.secret
-        ln -sf /etc/user/jeaye/imap-filter/config.lua /home/jeaye/.imapfilter/
+        mkdir -p /etc/user/jeaye/{.secret,.imapfilter}
+        chown -R jeaye:users /etc/user/jeaye/{.secret,.imapfilter}
+        chmod -R 0700 /etc/user/jeaye/.secret
+        ln -sf /etc/user/jeaye/imap-filter/config.lua /etc/user/jeaye/.imapfilter/
       '';
       # XXX:
       #   Create pass file in .secret

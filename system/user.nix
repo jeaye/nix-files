@@ -18,14 +18,14 @@
   users.users.jeaye =
   {
     isNormalUser = true;
-    home = "/home/jeaye";
+    home = "/etc/user/jeaye";
     extraGroups = [ "wheel" ];
   };
 
   users.users.fu-er =
   {
     isNormalUser = true;
-    home = "/home/fu-er";
+    home = "/etc/user/fu-er";
   };
 
   # Allow useradd/groupadd imperatively
