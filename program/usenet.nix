@@ -18,9 +18,9 @@
     };
   };
 
-  environment.etc."user/usenet/slrnrc".text =
+  environment.etc."user/usenet/.slrnrc".text =
     lib.readFile ./usenet/slrnrc;
-  environment.etc."user/usenet/bashrc".text =
+  environment.etc."user/usenet/.bashrc".text =
     lib.readFile ./usenet/bashrc;
 
   # XXX: Setup ~/.secret/slrn passwords
@@ -29,5 +29,17 @@
     isNormalUser = true;
     home = "/etc/user/usenet";
     createHome = true;
+  };
+
+  system.activationScripts =
+  {
+    usenet-home =
+    {
+      deps = [];
+      text =
+      ''
+        chown -R usenet:usenet /etc/user/usenet
+      '';
+    };
   };
 }
