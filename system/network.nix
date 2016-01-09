@@ -13,5 +13,10 @@
       enable = true;
       allowPing = true;
     };
+
+    # Allow containers to talk to the outside network.
+    nat.enable = true;
+    nat.internalInterfaces = ["ve-+"];
+    nat.externalInterface = "eth0";
   };
 }
