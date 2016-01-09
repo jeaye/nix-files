@@ -20,10 +20,10 @@
       {
         hostName = "pastespace.org";
         serverAliases = [ "www.pastespace.org" "mail.pastespace.org" ];
-        documentRoot = "/home/http/pastespace.org";
+        documentRoot = "/etc/user/http/pastespace.org";
         extraConfig =
         ''
-          <Directory /home/http/pastespace.org>
+          <Directory /etc/user/http/pastespace.org>
             DirectoryIndex index.txt
             Options -Indexes
           </Directory>
@@ -48,10 +48,10 @@
       {
         hostName = "fu-er.com";
         serverAliases = [ "www.fu-er.com" ];
-        documentRoot = "/home/http/fu-er.com";
+        documentRoot = "/etc/user/http/fu-er.com";
         extraConfig =
         ''
-          <Directory /home/http/fu-er.com>
+          <Directory /etc/user/http/fu-er.com>
             Options -Indexes
           </Directory>
           SSLCertificateKeyFile /var/lib/acme/fu-er.com/key.pem
@@ -69,10 +69,10 @@
       {
         hostName = "penelope-art.com";
         serverAliases = [ "www.penelope-art.com" ];
-        documentRoot = "/home/http/penelope-art.com";
+        documentRoot = "/etc/user/http/penelope-art.com";
         extraConfig =
         ''
-          <Directory /home/http/penelope-art.com>
+          <Directory /etc/user/http/penelope-art.com>
             Options -Indexes
           </Directory>
           SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
@@ -90,10 +90,10 @@
       {
         hostName = "penny-art.com";
         serverAliases = [ "www.penny-art.com" ];
-        documentRoot = "/home/http/penny-art.com";
+        documentRoot = "/etc/user/http/penny-art.com";
         extraConfig =
         ''
-          <Directory /home/http/penny-art.com>
+          <Directory /etc/user/http/penny-art.com>
             Options -Indexes
           </Directory>
           SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
@@ -114,10 +114,19 @@
   users.users.http =
   {
     isNormalUser = true;
-    home = "/home/http";
+    home = "/etc/user/http";
     extraGroups = [ "http" ];
   };
   users.groups.http = {};
+
+  environment.etc =
+  {
+    "user/http/.manage-directory".text = "";
+    "user/http/pastespace.org/.manage-directory".text = "";
+    "user/http/fu-er.com/.manage-directory".text = "";
+    "user/http/penelope-art.com/.manage-directory".text = "";
+    "user/http/penny-art.com/.manage-directory".text = "";
+  };
 
   system.activationScripts =
   {
@@ -126,15 +135,7 @@
       deps = [];
       text =
       ''
-        setup()
-        {
-          mkdir -p /home/http/$1
-          chown http:http /home/http/$1
-        }
-        for domain in pastespace.org fu-er.com penelope-art.com penny-art.com;
-        do
-          setup $domain
-        done
+        chown -R http:http /etc/user/http
       '';
     };
   };

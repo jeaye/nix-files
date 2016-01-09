@@ -29,7 +29,7 @@ in
     {
       "pastespace.org" =
       {
-        webroot = "/home/http/pastespace.org";
+        webroot = "/etc/user/http/pastespace.org";
         extraDomains =
         {
           "www.pastespace.org" = null;
@@ -41,7 +41,7 @@ in
       };
       "fu-er.com" =
       {
-        webroot = "/home/http/fu-er.com";
+        webroot = "/etc/user/http/fu-er.com";
         extraDomains =
         {
           "www.fu-er.com" = null;
@@ -52,7 +52,7 @@ in
       };
       "penelope-art.com" =
       {
-        webroot = "/home/http/penelope-art.com";
+        webroot = "/etc/user/http/penelope-art.com";
         extraDomains =
         {
           "www.penelope-art.com" = null;
@@ -63,7 +63,7 @@ in
       };
       "penny-art.com" =
       {
-        webroot = "/home/http/penny-art.com";
+        webroot = "/etc/user/http/penny-art.com";
         extraDomains =
         {
           "www.penny-art.com" = null;
