@@ -38,7 +38,7 @@
       deps = [];
       text =
       ''
-        chown -R usenet:usenet /etc/user/usenet
+        chown -R usenet:users /etc/user/usenet
       '';
     };
   };
