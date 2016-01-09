@@ -133,10 +133,7 @@
     http-home =
     {
       deps = [];
-      text =
-      ''
-        chown -R http:http /etc/user/http
-      '';
+      text = "chown -R http:http /etc/user/http";
     };
   };
 

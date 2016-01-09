@@ -28,6 +28,19 @@
     home = "/etc/user/fu-er";
   };
 
+  system.activationScripts =
+  {
+    homes =
+    {
+      deps = [];
+      text =
+      ''
+        chown -R jeaye:users /etc/user/jeaye
+        chown -R fu-er:users /etc/user/fu-er
+      '';
+    };
+  };
+
   # Allow useradd/groupadd imperatively
   users.mutableUsers = true;
 }
