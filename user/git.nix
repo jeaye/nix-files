@@ -12,6 +12,7 @@
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ3FLbdsKAdYsYf/kc62WhZr9DbGMqqB9zKQbtRCsm0PS2Ihkl1niQwX7iSESk3oDfnosU+CA5MM+ZHFovo3urHQ75KpXU+tFBgujfLb3W5Es4aW4tQVqkf5BgUg2Og1b8sxZD3YTHJUoSj7tTwnh1HUcnAzC5q/gcKd+o8tqWaK7FxmdVeX83PVSoNUIFDSykEex4hT/Y+WNc9HAC6Vwv3ciYdsjn6hPWc+fStFnWqlhE+rZqsaUB3+07DFlverwGeD/W4Ad1MOs2lF+CbqZXdFhSYb/rJK/AEllSXIKfr+Vn8LI3o0rlHrIe8LwxDl7LaTgPBllVDZSoAPxzRpHN jeaye@darkstar"
     ];
   };
+  users.groups.git = {};
 
   # Ensure some directories exist
   environment.etc."user/git/dotfiles/.manage-directory".text = "";
@@ -25,6 +26,13 @@
       text =
       ''
         chown -R git:users /etc/user/git
+
+        if [ ! -d /etc/user/dotfiles ];
+        then
+          git clone /etc/user/git/dotfiles /etc/user/dotfiles
+        fi
+        chgrp -R git /etc/user/dotfiles
+        chown -R g+w /etc/user/dotfiles
       '';
     };
   };
