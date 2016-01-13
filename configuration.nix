@@ -13,9 +13,10 @@
     ./system/systemd.nix
 
     ./program/vim.nix
-    ./program/irc.nix
-    ./program/usenet.nix
     ./program/admin.nix
+
+    ./user/irc.nix
+    ./user/usenet.nix
 
     ./service/ssh.nix
     ./service/acme.nix
