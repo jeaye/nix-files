@@ -37,7 +37,7 @@
       (us: u:
       ''
         ${us}
-        ln -sf /etc/dotfiles/bashrc /etc/user/${u.name}/.bashrc;
+        ln -sf /etc/user/dotfiles/bashrc /etc/user/${u.name}/.bashrc;
         chown -R ${u.name}:users /etc/user/${u.name};
       '')
       ""
