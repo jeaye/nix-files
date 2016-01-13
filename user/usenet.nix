@@ -40,7 +40,7 @@
       text =
       ''
         chown -R usenet:users /etc/user/usenet
-        ln -s /etc/user/dotfiles/jnewsrc /etc/user/usenet/.jnewsrc
+        ln -sf /etc/user/dotfiles/jnewsrc /etc/user/usenet/.jnewsrc
       '';
     };
   };
