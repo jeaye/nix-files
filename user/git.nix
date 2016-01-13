@@ -27,8 +27,6 @@
       ''
         PATH=${pkgs.git}/bin:$PATH
 
-        chown -R git:users /etc/user/git
-
         if [ ! -d /etc/user/dotfiles ];
         then
           git clone /etc/user/git/dotfiles /etc/user/dotfiles

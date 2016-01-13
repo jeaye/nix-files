@@ -115,9 +115,7 @@
   {
     isNormalUser = true;
     home = "/etc/user/http";
-    extraGroups = [ "http" ];
   };
-  users.groups.http = {};
 
   environment.etc =
   {
@@ -125,15 +123,6 @@
     "user/http/fu-er.com/.manage-directory".text = "";
     "user/http/penelope-art.com/.manage-directory".text = "";
     "user/http/penny-art.com/.manage-directory".text = "";
-  };
-
-  system.activationScripts =
-  {
-    http-home =
-    {
-      deps = [];
-      text = "chown -R http:http /etc/user/http";
-    };
   };
 
   networking.firewall =

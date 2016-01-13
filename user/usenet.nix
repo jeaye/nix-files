@@ -39,7 +39,6 @@
       deps = [];
       text =
       ''
-        chown -R usenet:users /etc/user/usenet
         ln -sf /etc/user/dotfiles/jnewsrc /etc/user/usenet/.jnewsrc
       '';
     };

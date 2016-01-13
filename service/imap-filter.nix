@@ -8,7 +8,7 @@
 
   environment.etc =
   {
-    "user/jeaye/imap-filter/config.lua" =
+    "user/jeaye/.imapfilter/config.lua" =
     {
       text = lib.readFile ./data/imap-filter-config.lua;
     };
@@ -21,10 +21,9 @@
       deps = [];
       text =
       ''
-        mkdir -p /etc/user/jeaye/{.secret,.imapfilter}
+        mkdir -p /etc/user/jeaye/.secret
         chown -R jeaye:users /etc/user/jeaye/{.secret,.imapfilter}
         chmod -R 0700 /etc/user/jeaye/.secret
-        ln -sf /etc/user/jeaye/imap-filter/config.lua /etc/user/jeaye/.imapfilter/
       '';
       # XXX:
       #   Create pass file in .secret
