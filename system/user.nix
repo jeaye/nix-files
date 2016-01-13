@@ -33,7 +33,8 @@
     homes =
     {
       deps = [];
-      # TODO: Iterate through each normal user can do this
+      # TODO: Iterate through each normal user and do this
+      # TODO: Also ln -s each user a .gitconfig and .bashrc
       text =
       ''
         chown -R jeaye:users /etc/user/jeaye
