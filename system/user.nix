@@ -33,7 +33,7 @@
     homes =
     {
       deps = [];
-      text = foldl'
+      text = (builtins.foldl'
       (us: u:
       ''
         ${us}
@@ -41,9 +41,9 @@
         ln -sf /etc/dotfiles/bashrc /etc/user/${u.name}/.bashrc;
       '')
       ""
-      filter (u: u.isNormalUser)
-             (map (key: getAttr key config.users.users)
-                  (attrNames config.users.users));
+      (builtins.filter (u: u.isNormalUser)
+             (map (key: builtins.getAttr key config.users.users)
+                  (builtins.attrNames config.users.users))));
     };
   };
 
