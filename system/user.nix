@@ -33,6 +33,7 @@
     homes =
     {
       deps = [];
+      # TODO: Iterate through each normal user can do this
       text =
       ''
         chown -R jeaye:users /etc/user/jeaye
