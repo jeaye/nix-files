@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # XXX: We need to import the private key
   environment.etc."user/http/pastespace.org/6C61E510.asc".text =
   ''
 -----BEGIN PGP PUBLIC KEY BLOCK-----
