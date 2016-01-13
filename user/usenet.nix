@@ -29,6 +29,7 @@
     isNormalUser = true;
     home = "/etc/user/usenet";
     createHome = true;
+    extraGroups = [ "git" ];
   };
 
   system.activationScripts =

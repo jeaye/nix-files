@@ -13,6 +13,7 @@
     isNormalUser = true;
     home = "/etc/user/irc";
     createHome = true;
+    extraGroups = [ "git" ];
   };
 
   # TODO: Setup configs
