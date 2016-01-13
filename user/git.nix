@@ -25,6 +25,8 @@
       deps = [];
       text =
       ''
+        PATH=${pkgs.git}/bin:$PATH
+
         chown -R git:users /etc/user/git
 
         if [ ! -d /etc/user/dotfiles ];
@@ -32,7 +34,7 @@
           git clone /etc/user/git/dotfiles /etc/user/dotfiles
         fi
         chgrp -R git /etc/user/dotfiles
-        chown -R g+w /etc/user/dotfiles
+        chmod -R g+w /etc/user/dotfiles
       '';
     };
   };
