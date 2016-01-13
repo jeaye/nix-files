@@ -26,6 +26,7 @@
     ./service/fiche.nix
     ./service/fail2ban.nix
     ./service/imap-filter.nix
+    ./service/gpg.nix
   ];
 
   system.stateVersion = "15.09";
