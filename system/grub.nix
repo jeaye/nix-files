@@ -18,7 +18,7 @@
     {
       # Nix will create this automagically
       device = "/swap";
-      size = 1024;
+      size = 2048;
     }
   ];
 }
