@@ -121,7 +121,6 @@
 
   environment.etc =
   {
-    "user/http/.manage-directory".text = "";
     "user/http/pastespace.org/.manage-directory".text = "";
     "user/http/fu-er.com/.manage-directory".text = "";
     "user/http/penelope-art.com/.manage-directory".text = "";

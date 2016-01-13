@@ -17,6 +17,7 @@
 
     ./user/irc.nix
     ./user/usenet.nix
+    ./user/git.nix
 
     ./service/ssh.nix
     ./service/acme.nix
