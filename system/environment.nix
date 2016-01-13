@@ -19,6 +19,7 @@
     git
     htop
     bashCompletion
+    nix-repl
   ];
 
   programs.bash.enableCompletion = true;
