@@ -33,13 +33,17 @@
     homes =
     {
       deps = [];
-      # TODO: Iterate through each normal user and do this
-      # TODO: Also ln -s each user a .gitconfig and .bashrc
-      text =
+      text = foldl'
+      (us: u:
       ''
-        chown -R jeaye:users /etc/user/jeaye
-        chown -R fu-er:users /etc/user/fu-er
-      '';
+        ${us}
+        chown -R ${u.name}:users /etc/user/${u.name};
+        ln -sf /etc/dotfiles/bashrc /etc/user/${u.name}/.bashrc;
+      '')
+      ""
+      filter (u: u.isNormalUser)
+             (map (key: getAttr key config.users.users)
+                  (attrNames config.users.users));
     };
   };
 
