@@ -51,9 +51,6 @@
              (map (key: builtins.getAttr key config.users.users)
                   (builtins.attrNames config.users.users))));
     };
-  };
-  system.activationScripts =
-  {
     root-home =
     {
       deps = [];
