@@ -59,7 +59,7 @@
         ln -sf /etc/user/dotfiles/bash_profile /root/.bash_profile
         ln -sf /etc/user/dotfiles/bashrc /root/.bashrc
         ln -sf /etc/user/dotfiles/dir_colors /root/.dir_colors
-        ln -sf /etc/user/dotfiles/tmux.conf /etc/user/${u.name}/.tmux.conf
+        ln -sf /etc/user/dotfiles/tmux.conf /root/.tmux.conf
       '';
     };
   };
