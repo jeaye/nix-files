@@ -29,7 +29,7 @@
 
         if [ ! -d /etc/user/dotfiles ];
         then
-          git clone /etc/user/git/dotfiles /etc/user/dotfiles
+          git clone --recursive /etc/user/git/dotfiles /etc/user/dotfiles
         fi
         chgrp -R git /etc/user/dotfiles
         chmod -R g+w /etc/user/dotfiles
