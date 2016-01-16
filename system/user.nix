@@ -43,6 +43,7 @@
         ln -sf /etc/user/dotfiles/gitconfig /etc/user/${u.name}/.gitconfig
         ln -sf /etc/user/dotfiles/gitignore /etc/user/${u.name}/.gitignore
         ln -sf /etc/user/dotfiles/tmux.conf /etc/user/${u.name}/.tmux.conf
+        ln -sf /etc/user/dotfiles/elinks /etc/user/${u.name}/.elinks
         chown -R ${u.name}:users /etc/user/${u.name}
       '')
       ""
