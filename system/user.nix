@@ -60,6 +60,7 @@
         ln -sf /etc/user/dotfiles/bashrc /root/.bashrc
         ln -sf /etc/user/dotfiles/dir_colors /root/.dir_colors
         ln -sf /etc/user/dotfiles/tmux.conf /root/.tmux.conf
+        ln -sf /etc/user/dotfiles/tmux-nixos.conf /root/.tmux-nixos.conf
       '';
     };
   };
