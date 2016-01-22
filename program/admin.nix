@@ -16,7 +16,7 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        title="Failed SSH Logins"
+        title="Failed SSH logins"
         printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl -u sshd | grep 'Failed password' \
                            | awk '{print $1,$2}' \
@@ -32,7 +32,7 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        title="Accepted SSH Logins"
+        title="Accepted SSH logins"
         printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl -u sshd \
           | grep 'Accepted' \
@@ -69,7 +69,7 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        title="Postfix DOS Attempts"
+        title="Postfix DOS attempts"
         printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl -u postfix | grep 'lost connection after EHLO from' \
                               | awk '{print $1,$2}' \
