@@ -21,7 +21,7 @@
         journalctl -u sshd | grep 'Failed password' \
                            | awk '{print $1,$2}' \
                            | sort -k 1,1M -k 2n \
-                           | uniq -c
+                           | uniq -c \
                            | sed -e '^s/\s\+//g' \
                                  -e 's/\(\S\+\) \+\(\S\+\) \+\(\S\+\)/\2 \3\t\1/'
       '';
@@ -44,7 +44,7 @@
           | sed -e ':loop' \
                 -e 's/\(\S\+\) \(\S\+\) \(.\+\)|\1 \2 \(\S\+\)/\1 \2 \3 \4/g' \
                 -e 't loop' \
-          | tr '|' '\n'
+          | tr '|' '\n' \
           | sed -e 's/\(\S\+\) \+\(\S\+\) \+\(.\+\)/\1 \2\t\3/'
       '';
       mode = "0774";
@@ -61,7 +61,7 @@
         journalctl | grep 'rejected connection:' \
                    | awk '{print $1,$2}' \
                    | sort -k 1,1M -k 2n \
-                   | uniq -c
+                   | uniq -c \
                    | sed -e 's/^\s\+//g' \
                          -e 's/\(\S\+\) \+\(\S\+\) \+\(\S\+\)/\2 \3\t\1/'
       '';
@@ -79,7 +79,7 @@
         journalctl -u postfix | grep 'lost connection after EHLO from' \
                               | awk '{print $1,$2}' \
                               | sort -k 1,1M -k 2n \
-                              | uniq -c
+                              | uniq -c \
                               | sed -e 's/^\s\+//g' \
                                     -e 's/\(\S\+\) \+\(\S\+\) \+\(\S\+\)/\2 \3\t\1/'
       '';
