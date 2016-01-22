@@ -16,6 +16,8 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
+        title="Failed SSH Logins"
+        printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl -u sshd | grep 'Failed password' \
                            | awk '{print $1,$2}' \
                            | sort -k 1,1M -k 2n \
@@ -30,6 +32,8 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
+        title="Accepted SSH Logins"
+        printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl -u sshd \
           | grep 'Accepted' \
           | sed 's/\(\S\+\) \(\S\+\).*for \(\S\+\) from.*/\1 \2 \3/' \
@@ -49,6 +53,8 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
+        title="Port scans detected"
+        printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl | grep 'rejected connection:' \
                    | awk '{print $1,$2}' \
                    | sort -k 1,1M -k 2n \
@@ -63,6 +69,8 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
+        title="Postfix DOS Attempts"
+        printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
         journalctl -u postfix | grep 'lost connection after EHLO from' \
                               | awk '{print $1,$2}' \
                               | sort -k 1,1M -k 2n \
