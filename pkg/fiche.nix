@@ -8,7 +8,7 @@ stdenv.mkDerivation rec
     owner = "solusipse";
     repo = "fiche";
     rev = "a5c137c06d20e96fb97e946378437ec198299287";
-    sha256 = "1371gafnysddg7zip2rdrp3wd8n4xc6ddvkcqfg4b4jc6i2hxxax";
+    sha256 = "0kvywffrh4723051ndyb5zzb81bcc5x5q2qpkp26m9g65q8xdf8";
   };
   buildInputs = [];
   installPhase = "mkdir -p $out/bin; install -m 0755 fiche $out/bin/";
