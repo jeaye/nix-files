@@ -19,6 +19,7 @@
       ExecStart =
       ''
         ${pkgs.fiche}/bin/fiche -d pastespace.org \
+                                -S
                                 -o /etc/user/http/pastespace.org \
                                 -l /etc/user/http/fiche.log
       '';
