@@ -20,14 +20,14 @@
 
       # TODO: Update to namespaces
       plugin {
-        autocreate = Trash
-        autocreate2 = Sent
-        autocreate3 = Drafts
-        autocreate4 = Spam
-        autosubscribe = Trash
-        autosubscribe2 = Sent
-        autosubscribe3 = Drafts
-        autosubscribe4 = Spam
+        autocreate1 = Sent
+        autocreate2 = Drafts
+        autocreate3 = Spam
+        autocreate4 = Ham
+        autosubscribe1 = Sent
+        autosubscribe2 = Drafts
+        autosubscribe3 = Spam
+        autosubscribe4 = Ham
       }
 
       service auth {
