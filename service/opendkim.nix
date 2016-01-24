@@ -13,7 +13,7 @@
     {
       text =
       ''
-        Domain                  pastespace.org fu-er.com penelope-art.com penny-art.com
+        Domain                  pastespace.org jeaye.com fu-er.com penelope-art.com penny-art.com
         Selector                mail
         KeyTable                refile:/etc/opendkim/key-table
         SigningTable            refile:/etc/opendkim/signing-table
