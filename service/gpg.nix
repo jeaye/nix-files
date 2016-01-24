@@ -2,9 +2,8 @@
 
 {
   # XXX: We need to import the private key
-  environment.etc."user/http/pastespace.org/6C61E510.asc".text =
-  ''
------BEGIN PGP PUBLIC KEY BLOCK-----
+  environment.etc."user/http/upload.jeaye.com/6C61E510.asc".text =
+  ''-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2
 
 mQENBFaWCMYBCAChLz9/nVXLdrNIhvHD4Kg4DOxTp7XaEXEVM9oKTnxbO49ZKl9u
@@ -40,6 +39,5 @@ EKQIyGau+FdcKfN6IIufUveq/uYXT9YuFbEd2k774LusCf8tBqJ+9ehy9YeUSxBl
 tkz7tldLlyD9v0N5TSBPm2T0wI6Ih30HA05v/vAdGXovxBJI7kLQ6Z7aPBDxFQX1
 ac4UGQmr6bAUue97EAZkpmONhTW6szTM+PTNAFQ2HmsT
 =j3xc
------END PGP PUBLIC KEY BLOCK-----
-  '';
+-----END PGP PUBLIC KEY BLOCK-----'';
 }
