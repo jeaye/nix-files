@@ -2,7 +2,7 @@
 
 let
   global-email = "contact@jeaye.com";
-  global-plugins = [ "chain.pem" "key.pem" "cert.pem" ];
+  global-plugins = [ "account_key.json" "chain.pem" "key.pem" "cert.pem" ];
   global-post-run =
   ''
     cp -R /var/lib/acme-unstable/* /var/lib/acme/
