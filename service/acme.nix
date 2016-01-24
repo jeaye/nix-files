@@ -39,6 +39,13 @@ in
         plugins = global-plugins;
         postRun = global-post-run;
       };
+      "upload.jeaye.com" =
+      {
+        webroot = "/etc/user/http/upload.jeaye.com";
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
       "fu-er.com" =
       {
         webroot = "/etc/user/http/fu-er.com";

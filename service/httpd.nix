@@ -9,6 +9,7 @@
 
     logPerVirtualHost = true;
 
+    # TODO: Remove duplication
     virtualHosts =
     [
       {
@@ -38,6 +39,20 @@
         serverAliases = [ "www.jank-lang.org" ];
         globalRedirect = "https://github.com/jeaye/jank";
         enableSSL = false;
+      }
+      {
+        hostName = "upload.jeaye.com";
+        documentRoot = "/etc/user/http/upload.jeaye.com";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/upload.jeaye.com>
+            Options -Indexes
+          </Directory>
+          SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
+        '';
+        enableSSL = true;
       }
       {
         hostName = "fu-er.com";
@@ -120,6 +135,8 @@
   environment.etc =
   {
     "user/http/pastespace.org/.manage-directory".text = "";
+    "user/http/upload.jeaye.com/.manage-directory".text = "";
+    "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
     "user/http/fu-er.com/.manage-directory".text = "";
     "user/http/penelope-art.com/.manage-directory".text = "";
     "user/http/penny-art.com/.manage-directory".text = "";
