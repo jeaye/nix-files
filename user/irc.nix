@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs;
+  environment.systemPackages = let pkgsUnstable = import
+  (
+    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+  )
+  { };
+  in
   [
     tmux
-    weechat
+    pkgsUnstable.weechat
     mutt
   ];
 
