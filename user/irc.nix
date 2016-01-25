@@ -38,8 +38,7 @@
   {
     allowedTCPPorts =
     [
-      6667 # irc
-      6697 # irc (SSL)
+      113 # irc (ident)
     ];
   };
 }
