@@ -13,6 +13,15 @@
     {
       text = lib.readFile ./data/imap-filter-config.lua;
     };
+    "user/jeaye/teach-bogofilter" =
+    {
+      text =
+      ''
+        bogofilter -Bnv Maildir/.Ham Maildir/.ML*
+        bogofilter -Bsv Maildir/.Spam
+      '';
+      mode = "0774";
+    };
   };
 
   system.activationScripts =
@@ -36,5 +45,6 @@
   services.cron.systemCronJobs =
   [
     "*/5 * * * * jeaye ${pkgs.imapfilter}/bin/imapfilter > /dev/null 2>&1"
+    "0 */1 * * * jeaye /etc/user/jeaye/teach-bogofilter"
   ];
 }
