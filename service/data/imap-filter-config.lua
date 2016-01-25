@@ -12,6 +12,7 @@ function main()
 
   -- Get all mail from INBOX
   local mails = account.INBOX:select_all()
+  delete_spam(account, mails)
   move_mailing_lists(account, mails)
 
   -- Ignore some senders
@@ -24,6 +25,18 @@ function main()
   -- Get all mail from spam
   local spam = account['Spam']:select_all()
   move_mailing_lists(account, spam)
+end
+
+function delete_spam(account, mails)
+  results = Set {}
+  for _, mesg in ipairs(mails) do
+    mbox, uid = table.unpack(mesg)
+    text = mbox[uid]:fetch_message()
+    if (pipe_to('/run/current-system/sw/bin/bogofilter', text) == 1) then
+      table.insert(results, mesg)
+    end
+  end
+  results:delete_messages()
 end
 
 function move_mailing_lists(account, mails)
