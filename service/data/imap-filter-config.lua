@@ -1,10 +1,10 @@
 function main()
   local account = IMAP
   {
-    server = 'localhost',
-    username = 'jeaye',
+    server = "localhost",
+    username = "jeaye",
     password = get_imap_password(".secret/imap-filter-pass"),
-    ssl = 'tls1',
+    ssl = "tls1",
   }
 
   -- Make sure the account is configured properly
@@ -19,11 +19,11 @@ function main()
   delete_mail_from(account, mails, "foo@spam.com")
 
   -- Get all mail from trash
-  local trash = account['Trash']:select_all()
+  local trash = account["Trash"]:select_all()
   move_mailing_lists(account, trash)
 
   -- Get all mail from spam
-  local spam = account['Spam']:select_all()
+  local spam = account["Spam"]:select_all()
   move_mailing_lists(account, spam)
 end
 
@@ -32,11 +32,11 @@ function delete_spam(account, mails)
   for _, mesg in ipairs(mails) do
     mbox, uid = table.unpack(mesg)
     text = mbox[uid]:fetch_message()
-    if (pipe_to('/run/current-system/sw/bin/bogofilter', text) == 1) then
+    if (pipe_to("/run/current-system/sw/bin/bogofilter", text) == 0) then
       table.insert(results, mesg)
     end
   end
-  results:delete_messages()
+  filtered:move_messages(account["Spam"]);
 end
 
 function move_mailing_lists(account, mails)
