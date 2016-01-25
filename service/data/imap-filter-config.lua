@@ -36,7 +36,7 @@ function delete_spam(account, mails)
       table.insert(results, mesg)
     end
   end
-  filtered:move_messages(account["Spam"]);
+  results:move_messages(account["Spam"]);
 end
 
 function move_mailing_lists(account, mails)
