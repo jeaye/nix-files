@@ -19,6 +19,8 @@
     git
     htop
     bashCompletion
+    telnet
+    traceroute
     nix-repl
   ];
 
