@@ -17,8 +17,8 @@
     {
       text =
       ''
-        bogofilter -Bnv Maildir/.Ham Maildir/.ML*
-        bogofilter -Bsv Maildir/.Spam
+        ${pkgs.bogofilter}/bin/bogofilter -Bnv ~/Maildir/.Ham ~/Maildir/.ML*
+        ${pkgs.bogofilter}/bin/bogofilter -Bsv ~/Maildir/.Spam
       '';
       mode = "0774";
     };
