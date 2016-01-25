@@ -21,7 +21,6 @@
     extraGroups = [ "git" ];
   };
 
-  # TODO: Setup configs
   system.activationScripts =
   {
     usenet-home =
