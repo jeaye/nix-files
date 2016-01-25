@@ -33,4 +33,13 @@
       '';
     };
   };
+
+  networking.firewall =
+  {
+    allowedTCPPorts =
+    [
+      6667 # irc
+      6697 # irc (SSL)
+    ];
+  };
 }
