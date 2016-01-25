@@ -8,9 +8,9 @@
   { };
   in
   [
-    tmux
+    pkgs.tmux
     pkgsUnstable.weechat
-    mutt
+    pkgs.mutt
   ];
 
   users.users.irc =
