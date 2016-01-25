@@ -51,6 +51,10 @@ function move_mailing_lists(account, mails)
   move_if_subject_contains(account, mails, "[slackware-announce]", "ML/Slackware")
   move_if_subject_contains(account, mails, "[slackware-security]", "ML/Slackware")
 
+  -- Clang
+  move_if_subject_contains(account, mails, "[cfe-dev]", "ML/Clang")
+  move_if_subject_contains(account, mails, "[cfe-users]", "ML/Clang")
+
   -- DMARC
   move_if_subject_contains(account, mails, "Report domain:", "ML/DMARC")
 end
