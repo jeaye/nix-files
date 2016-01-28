@@ -55,6 +55,10 @@ function move_mailing_lists(account, mails)
   move_if_subject_contains(account, mails, "[cfe-dev]", "ML/Clang")
   move_if_subject_contains(account, mails, "[cfe-users]", "ML/Clang")
 
+  -- Clojure
+  move_if_to_contains(account, mails, "clojure@googlegroups.com", "ML/Clojure")
+  move_if_to_contains(account, mails, "clojurescript@googlegroups.com", "ML/ClojureScript")
+
   -- DMARC
   move_if_subject_contains(account, mails, "Report domain:", "ML/DMARC")
 end
