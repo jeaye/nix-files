@@ -34,6 +34,7 @@ in
         {
           "www.pastespace.org" = null;
           "mail.pastespace.org" = null;
+          "safepaste.org" = null;
         };
         email = global-email;
         plugins = global-plugins;
