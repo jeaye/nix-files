@@ -14,23 +14,37 @@
     [
       {
         hostName = "pastespace.org";
-        serverAliases = [ "www.pastespace.org" "mail.pastespace.org" ];
-        globalRedirect = "https://pastespace.org/";
+        serverAliases =
+        [
+          "www.pastespace.org"
+          "safepaste.org"
+        ];
+        globalRedirect = "https://safepaste.org/";
         enableSSL = false;
       }
       {
         hostName = "pastespace.org";
-        serverAliases = [ "www.pastespace.org" "mail.pastespace.org" ];
-        documentRoot = "/etc/user/http/pastespace.org";
+        serverAliases = [ "www.pastespace.org" ];
+        globalRedirect = "https://safepaste.org/";
         extraConfig =
         ''
-          <Directory /etc/user/http/pastespace.org>
-            DirectoryIndex index.txt
-            Options -Indexes
-          </Directory>
           SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
           SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem
           SSLCertificateFile /var/lib/acme/pastespace.org/cert.pem
+        '';
+        enableSSL = true;
+      }
+      {
+        hostName = "safepaste.org";
+        documentRoot = "/etc/user/http/safepaste.org";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/safepaste.org>
+            Options -Indexes
+          </Directory>
+          SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
+          SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
+          SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
         '';
         enableSSL = true;
       }
@@ -135,6 +149,7 @@
   environment.etc =
   {
     "user/http/pastespace.org/.manage-directory".text = "";
+    "user/http/safepaste.org/.manage-directory".text = "";
     "user/http/upload.jeaye.com/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
     "user/http/fu-er.com/.manage-directory".text = "";
