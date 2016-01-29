@@ -19,6 +19,7 @@
     virtual =
     ''
       contact@pastespace.org     jeaye
+      contact@safepaste.org      jeaye
       contact@arrownext.com      jeaye
       contact@jeaye.com          jeaye
       contact@trustcoin.org      jeaye
@@ -56,7 +57,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = jeaye.com trustcoin.org arrownext.com fu-er.com penelope-art.com penny-art.com
+      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org arrownext.com fu-er.com penelope-art.com penny-art.com
 
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes
