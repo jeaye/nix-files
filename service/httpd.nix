@@ -18,6 +18,7 @@
         [
           "www.pastespace.org"
           "safepaste.org"
+          "www.safepaste.org"
         ];
         globalRedirect = "https://safepaste.org/";
         enableSSL = false;
