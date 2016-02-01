@@ -10,6 +10,7 @@
     logPerVirtualHost = true;
 
     # TODO: Remove duplication
+    # TODO: Add an acme mode which disables all SSL temporarily
     virtualHosts =
     [
       {
