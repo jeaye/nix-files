@@ -34,7 +34,18 @@ in
         {
           "www.pastespace.org" = null;
           "mail.pastespace.org" = null;
-          "safepaste.org" = null;
+        };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "safepaste.org" =
+      {
+        webroot = "/etc/user/http/safepaste.org";
+        extraDomains =
+        {
+          "www.safepaste.org" = null;
+          "mail.safepaste.org" = null;
         };
         email = global-email;
         plugins = global-plugins;
