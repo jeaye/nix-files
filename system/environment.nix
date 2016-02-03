@@ -45,6 +45,9 @@
   sound.enable = false;
 
   # Auto GC every morning
-  nix.gc.automatic = true;
-  nix.gc.dates = "03:00";
+  nix.gc.automatic = false;
+  services.cron.systemCronJobs =
+  [
+    "0 3 * * * root /etc/admin/optimize-nix"
+  ];
 }

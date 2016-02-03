@@ -101,5 +101,18 @@
       '';
       mode = "0774";
     };
+    "admin/optimize-nix" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        nix-env --delete-generations 7d
+        nix-store --gc
+        nix-store --optimise
+      '';
+      mode = "0774";
+    };
   };
 }
