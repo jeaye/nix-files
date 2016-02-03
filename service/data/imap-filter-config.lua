@@ -56,8 +56,8 @@ function move_mailing_lists(account, mails)
   move_if_subject_contains(account, mails, "[cfe-users]", "ML/Clang")
 
   -- Clojure
-  move_if_to_contains(account, mails, "clojure@googlegroups.com", "ML/Clojure")
-  move_if_to_contains(account, mails, "clojurescript@googlegroups.com", "ML/ClojureScript")
+  move_if_to_or_cc_contains(account, mails, "clojure@googlegroups.com", "ML/Clojure")
+  move_if_to_or_cc_contains(account, mails, "clojurescript@googlegroups.com", "ML/ClojureScript")
 
   -- DMARC
   move_if_subject_contains(account, mails, "Report domain:", "ML/DMARC")
@@ -71,6 +71,16 @@ end
 function move_if_to_contains(account, mails, to, mailbox)
   filtered = mails:contain_to(to)
   filtered:move_messages(account[mailbox]);
+end
+
+function move_if_cc_contains(account, mails, to, mailbox)
+  filtered = mails:contain_cc(to)
+  filtered:move_messages(account[mailbox]);
+end
+
+function move_if_to_or_cc_contains(account, mails, to, mailbox)
+  move_if_to_contains(account, mails, to, mailbox)
+  move_if_cc_contains(account, mails, to, mailbox)
 end
 
 function move_if_from_contains(account, mails, from, mailbox)
