@@ -9,6 +9,8 @@
 
     logPerVirtualHost = true;
 
+    extraModules = [ "proxy" "proxy_http" ];
+
     # TODO: Remove duplication
     # TODO: Add an acme mode which disables all SSL temporarily
     virtualHosts =
@@ -44,6 +46,10 @@
           <Directory /etc/user/http/safepaste.org>
             Options -Indexes
           </Directory>
+          ProxyPreserveHost On
+          ProxyRequests off
+          ProxyPass / http://0.0.0.0:3000/
+          ProxyPassReverse / http://0.0.0.0:3000/
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
           SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
           SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
