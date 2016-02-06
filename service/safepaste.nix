@@ -1,10 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs;
-  [
-    boot # Clojure build system
-  ];
+  environment.systemPackages = let pkgsUnstable = import
+  (
+    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+  )
+  { };
+  in [ pkgsUnstable.boot ]; # Clojure build system
 
   # TODO: Run in a container
 
