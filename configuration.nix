@@ -26,6 +26,7 @@
     ./service/dovecot.nix
     ./service/opendkim.nix
     ./service/fiche.nix
+    ./service/safepaste.nix
     ./service/fail2ban.nix
     ./service/imap-filter.nix
     ./service/gpg.nix
