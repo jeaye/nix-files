@@ -46,10 +46,10 @@
           <Directory /etc/user/http/safepaste.org>
             Options -Indexes
           </Directory>
-          ProxyPreserveHost On
-          ProxyRequests off
-          ProxyPass / http://0.0.0.0:3000/
-          ProxyPassReverse / http://0.0.0.0:3000/
+          ProxyPreserveHost Off
+          ProxyRequests Off
+          ProxyPass / http://localhost:3000/
+          ProxyPassReverse / http://localhost:3000/
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
           SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
           SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
