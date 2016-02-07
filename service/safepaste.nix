@@ -9,7 +9,7 @@
   in
   [
     pkgsUnstable.boot # Clojure build system
-    pkgs.npm
+    pkgs.nodejs
   ];
 
   # TODO: Run in a container
