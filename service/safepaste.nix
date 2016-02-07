@@ -6,7 +6,11 @@
     fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
   )
   { };
-  in [ pkgsUnstable.boot ]; # Clojure build system
+  in
+  [
+    pkgsUnstable.boot # Clojure build system
+    pkgs.npm
+  ];
 
   # TODO: Run in a container
 
