@@ -1,18 +1,33 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = let pkgsUnstable = import
-  (
-    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-  )
-  { };
-  in
+  environment.systemPackages = with pkgs;
   [
-    pkgsUnstable.boot # Clojure build system
-    pkgs.nodejs
+    openjdk
   ];
 
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      safepaste = pkgs.callPackage ../pkg/safepaste.nix { };
+    };
+  };
+
   # TODO: Run in a container
+  systemd.services.safepaste =
+  {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig =
+    {
+      User = "jeaye";
+      ExecStart =
+      ''
+        ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
+      '';
+    };
+  };
 
   # TODO: Clean up old pastes
 }
