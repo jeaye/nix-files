@@ -17,10 +17,13 @@ in
       sha256 = "1ax8pnaa0l7cr2sya50gjvhfr4j401vw70q973ms5mla95l6zqvh";
     };
     buildInputs = [ pkgsUnstable.boot pkgs.nodejs ];
+    buildPhase =
+    ''
+      ${pkgs.boot}/bin/boot build
+    '';
     installPhase =
     ''
       mkdir -p $out/bin;
-      boot build
       install -m 0644 target/safepaste.jar $out/bin/
     '';
   }
