@@ -16,6 +16,7 @@ in
       rev = "cbaf3939970cf2e5964946dcad001330d4ee5324";
       sha256 = "1lz1w4afcdsz4br36smvfcv83skhv4cqhk46xz81g56akc915kfd";
     };
+    __noChroot = true;
     buildInputs = [ pkgsUnstable.boot pkgs.nodejs ];
     buildPhase =
     ''
