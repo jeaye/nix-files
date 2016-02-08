@@ -1,4 +1,4 @@
-{ stdenv, pkgs, fetchFromGitHub }:
+{ stdenv, pkgs, fetchgit }:
 
 let
   pkgsUnstable = import
@@ -9,17 +9,19 @@ in
   stdenv.mkDerivation rec
   {
     name = "safepaste";
-    src = pkgs.fetchFromGitHub
+    src = fetchgit
     {
-      owner = "jeaye";
-      repo = "safepaste";
+      url = "https://github.com/jeaye/safepaste.git";
+      deepClone = true;
       rev = "cbaf3939970cf2e5964946dcad001330d4ee5324";
-      sha256 = "1ax8pnaa0l7cr2sya50gjvhfr4j401vw70q973ms5mla95l6zqvh";
+      sha256 = "1lz1w4afcdsz4br36smvfcv83skhv4cqhk46xz81g56akc915kfd";
     };
     buildInputs = [ pkgsUnstable.boot pkgs.nodejs ];
     buildPhase =
     ''
-      ${pkgs.boot}/bin/boot build
+      export BOOT_HOME=$PWD
+      export BOOT_LOCAL_REPO=$PWD
+      ${pkgsUnstable.boot}/bin/boot build
     '';
     installPhase =
     ''
