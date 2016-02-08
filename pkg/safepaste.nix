@@ -20,9 +20,13 @@ in
     buildInputs = [ pkgsUnstable.boot pkgs.nodejs ];
     buildPhase =
     ''
+      # For boot
       export BOOT_HOME=$PWD
       export BOOT_LOCAL_REPO=$PWD
-      export PATH=${pkgs.nodejs}/bin:$PATH
+
+      # For npm
+      export HOME=$PWD
+
       ${pkgsUnstable.boot}/bin/boot build
     '';
     installPhase =
