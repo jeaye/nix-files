@@ -16,5 +16,5 @@ stdenv.mkDerivation rec
     mkdir -p $out/bin;
     boot build
     install -m 0644 target/safepaste.jar $out/bin/
-  ''";
+  '';
 }
