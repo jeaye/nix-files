@@ -22,6 +22,7 @@ in
     ''
       export BOOT_HOME=$PWD
       export BOOT_LOCAL_REPO=$PWD
+      export PATH=${pkgs.nodejs}/bin:$PATH
       ${pkgsUnstable.boot}/bin/boot build
     '';
     installPhase =
