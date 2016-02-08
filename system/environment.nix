@@ -38,6 +38,12 @@
 
   # Build all packages in a chroot
   nix.useChroot = true;
+  nix.allowedUsers = [];
+  nix.extraOptions =
+  ''
+    auto-optimise-store = true
+    build-use-chroot = relaxed
+  '';
 
   # This is a headless machine; no need for anything fancy
   environment.noXlibs = true;
