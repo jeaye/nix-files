@@ -41,7 +41,7 @@
 
       services.cron.systemCronJobs =
       [
-        "0 0 * * * safepaste ${pkgs.safepaste}/bin/clean-expired ~/paste"
+        "0 */1 * * * safepaste ${pkgs.safepaste}/bin/clean-expired ~/paste"
       ];
 
       users.users.safepaste =
