@@ -1,39 +1,64 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs;
-  [
-    openjdk
-  ];
+  # TODO: Rate limit
 
-  nixpkgs.config =
+  containers.safepaste =
   {
-    packageOverrides = pkgs: rec
+    privateNetwork = true;
+    hostAddress = "192.168.100.10";
+    localAddress = "192.168.100.11";
+
+    config = { config, pkgs, ... }:
     {
-      safepaste = pkgs.callPackage ../pkg/safepaste.nix { };
+      environment.systemPackages = with pkgs;
+      [
+        openjdk
+      ];
+
+      nixpkgs.config =
+      {
+        packageOverrides = pkgs: rec
+        {
+          safepaste = pkgs.callPackage ../pkg/safepaste.nix { };
+        };
+      };
+
+      systemd.services.safepaste =
+      {
+        wantedBy = [ "multi-user.target" ];
+        after = [ "network.target" ];
+        serviceConfig =
+        {
+          User = "safepaste";
+          WorkingDirectory = "~";
+          ExecStart =
+          ''
+            ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
+          '';
+        };
+      };
+
+      services.cron.systemCronJobs =
+      [
+        "0 0 * * * safepaste ${pkgs.safepaste}/bin/clean-expired ~/paste"
+      ];
+
+      users.users.safepaste =
+      {
+        isNormalUser = false;
+        home = "/etc/user/safepaste";
+        createHome = true;
+      };
+      environment.etc."user/safepaste/paste/.manage-directory".text = "";
+
+      networking.firewall =
+      {
+        allowedTCPPorts =
+        [
+          3000
+        ];
+      };
     };
   };
-
-  # TODO: Run in a container
-  systemd.services.safepaste =
-  {
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    serviceConfig =
-    {
-      User = "safepaste";
-      ExecStart =
-      ''
-        ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
-      '';
-    };
-  };
-
-  # TODO: Clean up old pastes
-  services.cron.systemCronJobs =
-  [
-    "0 0 * * * safepaste ${pkgs.safepaste}/bin/clean-expired /etc/user/safepaste/paste"
-  ];
-
-  # TODO: Limit posts
 }

@@ -48,8 +48,8 @@
           </Directory>
           ProxyPreserveHost Off
           ProxyRequests Off
-          ProxyPass / http://localhost:3000/
-          ProxyPassReverse / http://localhost:3000/
+          ProxyPass / http://192.168.100.11:3000/
+          ProxyPassReverse / http://192.168.100.11:3000/
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
           SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
           SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
