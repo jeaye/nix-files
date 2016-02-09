@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs;
   [
+    vim
     wget
     elinks
     unzip

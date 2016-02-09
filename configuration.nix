@@ -12,7 +12,6 @@
     ./system/user.nix
     ./system/systemd.nix
 
-    ./program/vim.nix
     ./program/admin.nix
 
     ./user/irc.nix
