@@ -33,5 +33,6 @@ in
     ''
       mkdir -p $out/bin;
       install -m 0644 target/safepaste.jar $out/bin/
+      install -m 0755 tool/clean-expired $out/bin/
     '';
   }

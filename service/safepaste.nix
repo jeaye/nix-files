@@ -21,7 +21,7 @@
     after = [ "network.target" ];
     serviceConfig =
     {
-      User = "jeaye";
+      User = "safepaste";
       ExecStart =
       ''
         ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
@@ -30,6 +30,10 @@
   };
 
   # TODO: Clean up old pastes
+  services.cron.systemCronJobs =
+  [
+    "0 0 * * * safepaste ${pkgs.safepaste}/bin/clean-expired /etc/user/safepaste/paste"
+  ];
 
   # TODO: Limit posts
 }
