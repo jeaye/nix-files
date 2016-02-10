@@ -30,12 +30,12 @@
         text =
         ''
           #!/run/current-system/sw/bin/bash
-          set -eux
+          set -eu
 
           for p in about donate;
           do
-            #${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
-            echo "encrypting $p"
+          #${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
+          touch paste/{about,donate}
           done
           ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
         '';
@@ -49,7 +49,7 @@
         serviceConfig =
         {
           User = "safepaste";
-          WorkingDirectory = "~";
+          WorkingDirectory = "/etc/user/safepaste";
           ExecStart = "/etc/user/safepaste/run-server";
         };
       };
