@@ -99,6 +99,7 @@
         ''
           filter   = safepaste
           maxretry = 10
+          findtime = 43200
           action   = iptables[name=safepaste, port=3001, protocol=tcp]
           bantime  = 43200
           enabled  = true
