@@ -12,6 +12,7 @@
     pkgsUnstable.weechat
     pkgs.mutt
     pkgs.aspell
+    pkgs.aspell-dict-en
   ];
 
   users.users.irc =
