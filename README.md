@@ -12,13 +12,13 @@ there, each item is split categorically.
   * GRUB, time, network, firewall, users, packages, etc
 * Websites
   * jeaye.com
-  * pastespace.org
+  * safepaste.org
+  * jank-lang.org
 * Mail server
   * IMAP (dovecot) + SMTP (postfix) + DKIM
-* [Fiche](https://github.com/solusipse/fiche) service
-  * Posts expire after 2 weeks
+* [safepaste](https://github.com/jeaye/safepaste) service
 * SSL Certs (Let's Encrypt)
+* Persistent weechat/mutt sessions
 
 ### Non-managed bits
 * User passwords
-* weechat/mutt configs
