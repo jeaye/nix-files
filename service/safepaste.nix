@@ -34,8 +34,7 @@
 
           for p in about donate;
           do
-          #${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
-          touch paste/{about,donate}
+            ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
           done
           ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
         '';
