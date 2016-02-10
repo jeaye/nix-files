@@ -31,9 +31,11 @@ in
     '';
     installPhase =
     ''
-      mkdir -p $out/bin;
+      mkdir -p $out/{bin,share}
       install -m 0644 target/safepaste.jar $out/bin/
       install -m 0755 tool/clean-expired $out/bin/
       install -m 0755 tool/encrypt $out/bin/
+      install -m 0644 src/paste/about $out/share/
+      install -m 0644 src/paste/donate $out/share/
     '';
   }
