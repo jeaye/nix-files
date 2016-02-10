@@ -3,6 +3,7 @@
 {
   # TODO: Rate limit
 
+  # TODO: Inherit configs? Setup firewall, minimalism, etc
   containers.safepaste =
   {
     privateNetwork = true;
@@ -24,6 +25,23 @@
         };
       };
 
+      environment.etc."user/safepaste/run-server" =
+      {
+        text =
+        ''
+          #!/run/current-system/sw/bin/bash
+          set -eu
+
+          for p in about donate;
+          do
+            #${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
+            echo "encrypting $p"
+          done
+          ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
+        '';
+        mode = "0774";
+      };
+
       systemd.services.safepaste =
       {
         wantedBy = [ "multi-user.target" ];
@@ -32,15 +50,7 @@
         {
           User = "safepaste";
           WorkingDirectory = "~";
-          ExecStart =
-          ''
-            for p in about donate;
-            do
-              #${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
-              echo "encrypting $p"
-            done
-            ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
-          '';
+          ExecStart = "/etc/user/safepaste/run-server";
         };
       };
 
