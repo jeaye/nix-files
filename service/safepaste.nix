@@ -3,7 +3,6 @@
 {
   # TODO: Rate limit
 
-  # TODO: Inherit configs? Setup firewall, minimalism, etc
   containers.safepaste =
   {
     privateNetwork = true;
@@ -12,6 +11,13 @@
 
     config = { config, pkgs, ... }:
     {
+      imports =
+      [
+        ./system/environment.nix
+        ./system/network.nix
+        ./system/systemd.nix
+      ];
+
       environment.systemPackages = with pkgs;
       [
         openjdk
