@@ -31,6 +31,7 @@
         ''
           #!/run/current-system/sw/bin/bash
           set -eu
+          export PATH=${pkgs.openssl}/bin:$PATH
 
           for p in about donate;
           do
