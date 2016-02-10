@@ -34,7 +34,7 @@
 
           for p in about donate;
           do
-            ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
+            ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share /etc/user/safepaste/paste
           done
           ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
         '';
@@ -55,7 +55,7 @@
 
       services.cron.systemCronJobs =
       [
-        "0 */1 * * * safepaste ${pkgs.safepaste}/bin/clean-expired ~/paste"
+        "0 */1 * * * safepaste ${pkgs.safepaste}/bin/clean-expired /etc/user/safepaste/paste"
       ];
 
       users.users.safepaste =
