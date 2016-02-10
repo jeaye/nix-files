@@ -34,6 +34,11 @@
           WorkingDirectory = "~";
           ExecStart =
           ''
+            for p in about donate;
+            do
+              #${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share ~/paste
+              echo "encrypting $p"
+            done
             ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
           '';
         };
