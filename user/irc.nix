@@ -11,6 +11,7 @@
     pkgs.tmux
     pkgsUnstable.weechat
     pkgs.mutt
+    pkgs.aspell
   ];
 
   users.users.irc =
