@@ -38,6 +38,7 @@
           set -eu
           export PATH=${pkgs.openssl}/bin:$PATH
 
+          cd /etc/user/safepaste
           for p in about donate;
           do
             ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share /etc/user/safepaste/paste
