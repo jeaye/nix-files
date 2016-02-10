@@ -30,7 +30,7 @@
         text =
         ''
           #!/run/current-system/sw/bin/bash
-          set -eu
+          set -eux
 
           for p in about donate;
           do
@@ -39,7 +39,7 @@
           done
           ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
         '';
-        mode = "0774";
+        mode = "0775";
       };
 
       systemd.services.safepaste =
