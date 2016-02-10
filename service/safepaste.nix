@@ -67,6 +67,18 @@
       };
       environment.etc."user/safepaste/paste/.manage-directory".text = "";
 
+      system.activationScripts =
+      {
+        safepaste-home =
+        {
+          deps = [];
+          text =
+          ''
+            chown -R safepaste:users /etc/user/safepaste
+          '';
+        };
+      };
+
       networking.firewall =
       {
         allowedTCPPorts =
