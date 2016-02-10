@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # TODO: Rate limit
-
   containers.safepaste =
   {
     privateNetwork = true;
