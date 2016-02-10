@@ -12,6 +12,7 @@
     ./system/user.nix
     ./system/systemd.nix
 
+    ./program/essentials.nix
     ./program/admin.nix
 
     ./user/irc.nix

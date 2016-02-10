@@ -11,20 +11,6 @@
   time.timeZone = "America/Los_Angeles";
   services.ntp.enable = false;
 
-  environment.systemPackages = with pkgs;
-  [
-    vim
-    wget
-    elinks
-    unzip
-    git
-    htop
-    bashCompletion
-    telnet
-    traceroute
-    nix-repl
-  ];
-
   programs.bash.enableCompletion = true;
 
   nixpkgs.config =
