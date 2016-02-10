@@ -93,6 +93,25 @@
           3000
         ];
       };
+
+      services.fail2ban =
+      {
+        enable = true;
+        jails.safepaste =
+        ''
+          filter   = safepaste
+          maxretry = 10
+          action   = iptables[name=safepaste, port=3001, protocol=tcp]
+          bantime  = 43200
+          enabled  = true
+        '';
+      };
+
+      environment.etc."fail2ban/filter.d/safepaste.conf".text =
+      ''
+        [Definition]
+        failregex = Paste from <HOST> .*
+      '';
     };
   };
 }
