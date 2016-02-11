@@ -60,10 +60,15 @@
         };
       };
 
-      services.cron.systemCronJobs =
-      [
-        "0 */1 * * * safepaste ${pkgs.safepaste}/bin/clean-expired /etc/user/safepaste/paste"
-      ];
+      services.cron =
+      {
+        mailto = "contact@jeaye.com";
+        systemCronJobs =
+        [
+          "0 */1 * * * safepaste ${pkgs.safepaste}/bin/clean-expired /etc/user/safepaste/paste"
+        ];
+      };
+
 
       users.users.safepaste =
       {
