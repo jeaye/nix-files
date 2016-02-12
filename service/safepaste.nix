@@ -131,7 +131,7 @@
       environment.etc."fail2ban/action.d/safepaste.conf".text =
       ''
         [Definition]
-        actionstart =
+        actionstart = chmod a+r /var/tmp/safepaste.ban
         actionstop = sed -i '/.*/d' /var/tmp/safepaste.ban
         actioncheck =
         actionban = ${pkgs.safepaste}/bin/ban add <ip> /var/tmp
