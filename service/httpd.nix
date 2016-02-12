@@ -35,6 +35,9 @@
           SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
           SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem
           SSLCertificateFile /var/lib/acme/pastespace.org/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
         enableSSL = true;
       }
@@ -53,6 +56,9 @@
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
           SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
           SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
         enableSSL = true;
       }
@@ -73,6 +79,9 @@
           SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
         enableSSL = true;
       }
@@ -94,6 +103,9 @@
           SSLCertificateKeyFile /var/lib/acme/fu-er.com/key.pem
           SSLCertificateChainFile /var/lib/acme/fu-er.com/chain.pem
           SSLCertificateFile /var/lib/acme/fu-er.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
         enableSSL = true;
       }
@@ -115,6 +127,9 @@
           SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
           SSLCertificateFile /var/lib/acme/penelope-art.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
         enableSSL = true;
       }
@@ -136,6 +151,9 @@
           SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
           SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
         enableSSL = true;
       }
