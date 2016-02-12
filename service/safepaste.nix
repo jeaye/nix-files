@@ -132,10 +132,10 @@
       ''
         [Definition]
         actionstart =
-        actionstop = sed -i '/.*/d' /tmp/.ban
+        actionstop = sed -i '/.*/d' /var/tmp/safepaste.ban
         actioncheck =
-        actionban = ${pkgs.safepaste}/bin/ban add <ip> /tmp/$(whoami)
-        actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /tmp
+        actionban = ${pkgs.safepaste}/bin/ban add <ip> /var/tmp
+        actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /var/tmp
       '';
     };
   };
