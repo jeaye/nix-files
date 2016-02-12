@@ -47,6 +47,7 @@
       bantime  = 7200
       enabled  = true
     '';
+    # TODO: Move these to their appropriate files
     jails.postfix =
     ''
       filter   = postfix

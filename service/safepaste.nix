@@ -54,6 +54,7 @@
           do
             ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share /etc/user/safepaste/paste
           done
+          touch /etc/user/safepaste/paste/.ban
           ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
         '';
         mode = "0775";
