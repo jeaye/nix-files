@@ -96,7 +96,6 @@
           deps = [];
           text =
           ''
-            touch /etc/user/safepaste/paste/.ban
             chown -R safepaste:users /etc/user/safepaste
           '';
         };
@@ -133,10 +132,10 @@
       ''
         [Definition]
         actionstart =
-        actionstop = sed -i '/.*/d' /etc/user/safepaste/paste/.ban
+        actionstop = sed -i '/.*/d' /tmp/.ban
         actioncheck =
-        actionban = ${pkgs.safepaste}/bin/ban add <ip> /etc/user/safepaste/paste
-        actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /etc/user/safepaste/paste
+        actionban = ${pkgs.safepaste}/bin/ban add <ip> /tmp
+        actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /tmp
       '';
     };
   };
