@@ -13,7 +13,7 @@ in
     {
       url = "https://github.com/jeaye/safepaste.git";
       deepClone = true;
-      rev = "cc320481903236091270f6fdb8f8f18d72653be7";
+      rev = "1989e03929b33e1e561974eba6048fcd9dd30ff3";
       sha256 = "1vr09yzssh5zpzmyq3plga25lkgpmcy0zch13n4lgbz33v2p8rqp";
     };
     __noChroot = true;
@@ -35,6 +35,7 @@ in
       install -m 0644 target/safepaste.jar $out/bin/
       install -m 0755 tool/clean-expired $out/bin/
       install -m 0755 tool/encrypt $out/bin/
+      install -m 0755 tool/ban $out/bin/
       install -m 0644 src/paste/about $out/share/
       install -m 0644 src/paste/donate $out/share/
     '';

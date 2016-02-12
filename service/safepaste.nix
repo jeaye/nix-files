@@ -118,7 +118,7 @@
           filter   = safepaste
           maxretry = 10
           findtime = 43200
-          action   = iptables[name=safepaste, port=3001, protocol=tcp]
+          action   = safepaste
           bantime  = 43200
           enabled  = true
         '';
@@ -128,6 +128,15 @@
       ''
         [Definition]
         failregex = Paste from <HOST> .*
+      '';
+      environment.etc."fail2ban/action.d/safepaste.conf".text =
+      ''
+        [Definition]
+        actionstart =
+        actionstop = sed -i '/.*/d' /etc/user/safepaste/paste/.ban
+        actioncheck =
+        actionban = ${pkgs.safepaste}/bin/ban add <ip> /etc/user/safepaste/paste
+        actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /etc/user/safepaste/paste
       '';
     };
   };
