@@ -134,7 +134,7 @@
         actionstart =
         actionstop = sed -i '/.*/d' /tmp/.ban
         actioncheck =
-        actionban = ${pkgs.safepaste}/bin/ban add <ip> /tmp
+        actionban = ${pkgs.safepaste}/bin/ban add <ip> /tmp/$(whoami)
         actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /tmp
       '';
     };
