@@ -95,6 +95,8 @@
         reject_unauth_pipelining
         reject_non_fqdn_hostname
 
+      smtpd_helo_required = yes
+
       smtpd_data_restrictions =
         reject_unauth_pipelining
 
