@@ -53,6 +53,9 @@
 
       # Trap decode to catch security attacks
       decode:   root
+
+      # Local users
+      safepaste: jeaye
     '';
     extraConfig =
     ''
