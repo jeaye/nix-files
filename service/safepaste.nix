@@ -55,7 +55,7 @@
   {
     systemCronJobs =
     [
-      "0 */1 * * * safepaste /etc/user/safepaste/clean-expired /etc/user/safepaste/paste"
+      "*/5 * * * * safepaste /etc/user/safepaste/clean-expired /etc/user/safepaste/paste"
     ];
   };
 
