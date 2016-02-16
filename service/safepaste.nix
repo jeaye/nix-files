@@ -55,7 +55,7 @@
   {
     systemCronJobs =
     [
-      "*/5 * * * * safepaste /etc/user/safepaste/clean-expired /etc/user/safepaste/paste"
+      "0 */1 * * * safepaste ${pkgs.safepaste}/bin/clean-expired /etc/user/safepaste/paste"
     ];
   };
 
@@ -110,29 +110,4 @@
     actionban = ${pkgs.safepaste}/bin/ban add <ip> /var/tmp
     actionunban = ${pkgs.safepaste}/bin/ban remove <ip> /var/tmp
   '';
-  environment.etc."user/safepaste/clean-expired" =
-  {
-    text =
-    ''
-      #!/usr/bin/env bash
-
-      set -eu
-
-      dir="$(cd "$(dirname "''${BASH_SOURCE[0]}")" && pwd)"
-
-      function usage
-      {
-        echo "usage: $0 <paste directory>"
-        exit 1
-      }
-
-      [ ! $# -eq 1 ] && usage
-
-      for paste in $(find "$1" -mmin +0 -type f | egrep -v 'burn|disable');
-      do
-        [ -w "$paste" ] && rm -fv "$paste" "$paste.burn"
-      done
-    '';
-    mode = "0774";
-  };
 }
