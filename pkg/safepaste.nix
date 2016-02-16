@@ -13,7 +13,7 @@ in
     {
       url = "https://github.com/jeaye/safepaste.git";
       deepClone = true;
-      rev = "c0c6f8d5ccf034bd9e393f0d414403529e7ed7d3";
+      rev = "605febb767b054902414fd41f94c9be62fde5666";
       sha256 = "00aw2d1sszlyklk6jk6if8hsw3a2gcki01zbw0n8ia4rn30xy1z6";
     };
     __noChroot = true;
