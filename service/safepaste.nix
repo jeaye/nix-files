@@ -130,8 +130,7 @@
 
       for paste in $(find "$1" -mmin +0 -type f | egrep -v 'burn|disable');
       do
-        stat "$paste"
-        rm -fv "$paste" "$paste.burn"
+        [ -w "$paste" ] && rm -fv "$paste" "$paste.burn"
       done
     '';
     mode = "0774";
