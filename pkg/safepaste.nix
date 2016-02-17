@@ -14,7 +14,7 @@ in
       url = "https://github.com/jeaye/safepaste.git";
       deepClone = true;
       rev = "db3a72d62f9cf68ab536ee99c76ac8d52436dcd3";
-      sha256 = "1qj4zwwbra0y454979c74v17vyyjbwdjpw1b4p87k0arv8wg2lmn";
+      sha256 = "0f8ziwb46za9dwxf1hh6p9rywrc6bg3dysi6b6x41cji2k5wdmk3";
     };
     __noChroot = true;
     buildInputs = [ pkgsUnstable.boot pkgs.nodejs ];
