@@ -9,7 +9,7 @@
 
     logPerVirtualHost = true;
 
-    extraModules = [ "proxy" "proxy_http" "http2" ];
+    extraModules = [ "proxy" "proxy_http" ];
 
     # TODO: Remove duplication
     # TODO: Add an acme mode which disables all SSL temporarily
@@ -161,7 +161,6 @@
 
     extraConfig =
     ''
-      Protocols h2 http/1.1
       AddDefaultCharset UTF-8
       AddCharset UTF-8 .html .htm .txt
     '';
