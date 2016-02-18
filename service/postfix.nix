@@ -70,18 +70,28 @@
       smtpd_tls_cert_file = /var/lib/acme/pastespace.org/cert.pem
       smtpd_tls_key_file = /var/lib/acme/pastespace.org/key.pem
       smtpd_tls_session_cache_database = btree:''${queue_directory}/smtpd_scache
-      smtp_tls_session_cache_database = btree:''${queue_directory}/smtp_scache
       smtpd_tls_wrappermode = no
-      smtpd_tls_security_level = encrypt
+      smtpd_tls_security_level = may
+      smtpd_tls_eecdh_grade = ultra
       smtpd_tls_protocols = !SSLv2, !SSLv3
       smtpd_tls_auth_only = yes
+      smtpd_tls_loglevel = 1
 
       smtpd_sasl_auth_enable = yes
       smtpd_sasl_type = dovecot
       smtpd_sasl_path = private/auth
       smtpd_sasl_authenticated_header = yes
 
+      smtp_tls_security_level = may
+      smtp_tls_eecdh_grade = ultra
+      smtp_tls_cert_file = /var/lib/acme/pastespace.org/cert.pem
+      smtp_tls_key_file = /var/lib/acme/pastespace.org/key.pem
+      smtp_tls_session_cache_database = btree:''${queue_directory}/smtp_scache
+      smtp_tls_loglevel = 1
+
       tls_random_source = dev:/dev/urandom
+      tls_eecdh_strong_curve = prime256v1
+      tls_eecdh_ultra_curve = secp384r1
 
       smtpd_recipient_restrictions =
         permit_sasl_authenticated
@@ -117,6 +127,8 @@
       submission inet n       -       n       -       -       smtpd
         -o syslog_name=postfix/submission
         -o milter_macro_daemon_name=ORIGINATING
+        -o smtpd_tls_security_level=encrypt
+        -o smtpd_sasl_security_options=noanonymous
     '';
   };
 
