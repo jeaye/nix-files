@@ -10,8 +10,6 @@ let
   '';
 in
 {
-  imports = [ ../pkg/acme.nix ];
-
   environment.systemPackages = let pkgsUnstable = import
   (
     fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
