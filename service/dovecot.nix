@@ -37,6 +37,8 @@
           group = postfix
         }
       }
+
+      auth_mechanisms = plain login
     '';
   };
 
