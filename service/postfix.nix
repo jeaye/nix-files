@@ -74,6 +74,7 @@
       smtpd_tls_wrappermode = no
       smtpd_tls_security_level = encrypt
       smtpd_tls_protocols = !SSLv2, !SSLv3
+      smtpd_tls_auth_only = yes
 
       smtpd_sasl_auth_enable = yes
       smtpd_sasl_type = dovecot
