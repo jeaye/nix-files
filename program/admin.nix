@@ -85,6 +85,23 @@
       '';
       mode = "0774";
     };
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        title="Valid safepaste submissions"
+        printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
+        journalctl -u safepaste | egrep 'Paste from .+ for .+ is valid.' \
+                                | awk '{print $1,$2}' \
+                                | sort -k 1,1M -k 2n \
+                                | uniq -c \
+                                | sed -e 's/^\s\+//g' \
+                                      -e 's/\(\S\+\) \+\(\S\+\) \+\(\S\+\)/\2 \3\t\t= \1/'
+      '';
+      mode = "0774";
+    };
     "admin/unban-fail2ban-ip" =
     {
       text =
