@@ -85,7 +85,7 @@
       '';
       mode = "0774";
     };
-    "admin/valid-safepaste" =
+    "admin/daily-valid-safepaste" =
     {
       text =
       ''
