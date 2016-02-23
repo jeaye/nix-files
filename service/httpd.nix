@@ -69,22 +69,21 @@
         enableSSL = false;
       }
       {
-        hostName = "jeaye.com";
-        serverAliases = [ "www.jeaye.com" "upload.jeaye.com" "blog.jeaye.com" ]; # TODO
+        hostName = "upload.jeaye.com";
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
           <Directory /etc/user/http/upload.jeaye.com>
             Options -Indexes
           </Directory>
-          #SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
-          #SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
-          #SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
-          #SSLProtocol All -SSLv2 -SSLv3
-          #SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          #SSLHonorCipherOrder on
+          SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
         '';
-        #enableSSL = true;
+        enableSSL = true;
       }
       {
         hostName = "fu-er.com";
