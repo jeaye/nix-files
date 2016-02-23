@@ -108,6 +108,28 @@
         '';
         enableSSL = true;
       }
+      # TODO: https redirect
+      {
+        hostName = "blog.jeaye.com";
+        documentRoot = "/etc/user/http/blog.jeaye.com";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/blog.jeaye.com>
+            Options -Indexes
+          </Directory>
+          ProxyPreserveHost Off
+          ProxyRequests Off
+          ProxyPass / http://jeaye.github.io/blog.jeaye.com/
+          ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
+          SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
+        '';
+        enableSSL = true;
+      }
       {
         hostName = "fu-er.com";
         serverAliases = [ "www.fu-er.com" ];
@@ -199,6 +221,8 @@
   {
     "user/http/pastespace.org/.manage-directory".text = "";
     "user/http/safepaste.org/.manage-directory".text = "";
+    "user/http/jeaye.com/.manage-directory".text = "";
+    "user/http/blog.jeaye.com/.manage-directory".text = "";
     "user/http/upload.jeaye.com/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
     "user/http/fu-er.com/.manage-directory".text = "";
