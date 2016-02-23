@@ -102,7 +102,7 @@
             Options -Indexes
           </Directory>
           SSLProxyEngine On
-          ProxyPreserveHost On
+          ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
@@ -127,7 +127,7 @@
             Options -Indexes
           </Directory>
           SSLProxyEngine On
-          ProxyPreserveHost On
+          ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
