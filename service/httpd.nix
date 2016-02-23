@@ -68,7 +68,10 @@
         globalRedirect = "https://github.com/jeaye/jank";
         enableSSL = false;
       }
-      # TODO: redirect to https
+      {
+        hostName = "upload.jeaye.com";
+        globalRedirect = "https://upload.jeaye.com/";
+      }
       {
         hostName = "upload.jeaye.com";
         documentRoot = "/etc/user/http/upload.jeaye.com";
@@ -86,7 +89,10 @@
         '';
         enableSSL = true;
       }
-      # TODO: https redirect
+      {
+        hostName = "jeaye.com";
+        globalRedirect = "https://jeaye.com/";
+      }
       {
         hostName = "jeaye.com";
         documentRoot = "/etc/user/http/jeaye.com";
@@ -108,7 +114,10 @@
         '';
         enableSSL = true;
       }
-      # TODO: https redirect
+      {
+        hostName = "blog.jeaye.com";
+        globalRedirect = "https://blog.jeaye.com/";
+      }
       {
         hostName = "blog.jeaye.com";
         documentRoot = "/etc/user/http/blog.jeaye.com";
