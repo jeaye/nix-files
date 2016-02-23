@@ -68,6 +68,7 @@
         globalRedirect = "https://github.com/jeaye/jank";
         enableSSL = false;
       }
+      # TODO: redirect to https
       {
         hostName = "upload.jeaye.com";
         documentRoot = "/etc/user/http/upload.jeaye.com";
@@ -79,6 +80,28 @@
           SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
+        '';
+        enableSSL = true;
+      }
+      # TODO: https redirect
+      {
+        hostName = "jeaye.com";
+        documentRoot = "/etc/user/http/jeaye.com";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/jeaye.com>
+            Options -Indexes
+          </Directory>
+          ProxyPreserveHost Off
+          ProxyRequests Off
+          ProxyPass / http://jeaye.github.io/jeaye.com/
+          ProxyPassReverse / http://jeaye.github.io/jeaye.com/
+          SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
           SSLProtocol All -SSLv2 -SSLv3
           SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
           SSLHonorCipherOrder on
