@@ -69,8 +69,8 @@
         enableSSL = false;
       }
       {
-        hostName = "upload.jeaye.com";
-        serverAliases = [ "www.jeaye.com" "jeaye.com" ]; # TODO
+        hostName = "jeaye.com";
+        serverAliases = [ "www.jeaye.com" "upload.jeaye.com" ]; # TODO
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
