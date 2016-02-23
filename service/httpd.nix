@@ -9,7 +9,7 @@
 
     logPerVirtualHost = true;
 
-    extraModules = [ "proxy" "proxy_http" ];
+    extraModules = [ "proxy" "proxy_http" "proxy_html" ];
 
     # TODO: Remove duplication
     # TODO: Add an acme mode which disables all SSL temporarily
@@ -107,6 +107,8 @@
           ProxyRequests Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
+          ProxyHTMLEnable On
+          ProxyHTMLURLMap https://jeaye.github.io/jeaye.com /
           SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
@@ -133,6 +135,8 @@
           ProxyRequests Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
+          ProxyHTMLEnable On
+          ProxyHTMLURLMap https://jeaye.github.io/blog.jeaye.com /
           SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
