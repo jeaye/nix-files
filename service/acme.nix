@@ -51,7 +51,7 @@ in
       };
       "jeaye.com" =
       {
-        webroot = "/etc/user/http/jeaye.com";
+        webroot = "/etc/user/http/upload.jeaye.com";
         extraDomains =
         {
           "www.jeaye.com" = null;

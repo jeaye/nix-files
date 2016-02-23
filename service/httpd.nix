@@ -71,7 +71,7 @@
       {
         hostName = "upload.jeaye.com";
         serverAliases = [ "www.jeaye.com" "jeaye.com" ]; # TODO
-        documentRoot = "/etc/user/http/jeaye.com";
+        documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
           <Directory /etc/user/http/upload.jeaye.com>
