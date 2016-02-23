@@ -49,6 +49,7 @@
           <Directory /etc/user/http/safepaste.org>
             Options -Indexes
           </Directory>
+          SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyRequests Off
           ProxyPass / http://localhost:3000/
@@ -101,6 +102,7 @@
           <Directory /etc/user/http/jeaye.com>
             Options -Indexes
           </Directory>
+          SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyRequests Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
@@ -126,6 +128,7 @@
           <Directory /etc/user/http/blog.jeaye.com>
             Options -Indexes
           </Directory>
+          SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyRequests Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
