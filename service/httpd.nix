@@ -104,6 +104,7 @@
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
+          ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
           SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
