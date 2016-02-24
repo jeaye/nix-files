@@ -91,10 +91,12 @@
       }
       {
         hostName = "jeaye.com";
+        serverAliases = [ "www.jeaye.com" ];
         globalRedirect = "https://jeaye.com/";
       }
       {
         hostName = "jeaye.com";
+        serverAliases = [ "www.jeaye.com" ];
         documentRoot = "/etc/user/http/jeaye.com";
         extraConfig =
         ''
