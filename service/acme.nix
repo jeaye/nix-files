@@ -49,9 +49,15 @@ in
         plugins = global-plugins;
         postRun = global-post-run;
       };
-      "upload.jeaye.com" =
+      "jeaye.com" =
       {
         webroot = "/etc/user/http/upload.jeaye.com";
+        extraDomains =
+        {
+          "www.jeaye.com" = null;
+          "blog.jeaye.com" = null;
+          "upload.jeaye.com" = null;
+        };
         email = global-email;
         plugins = global-plugins;
         postRun = global-post-run;

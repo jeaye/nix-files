@@ -49,8 +49,8 @@
           <Directory /etc/user/http/safepaste.org>
             Options -Indexes
           </Directory>
+          SSLProxyEngine On
           ProxyPreserveHost Off
-          ProxyRequests Off
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
@@ -70,6 +70,10 @@
       }
       {
         hostName = "upload.jeaye.com";
+        globalRedirect = "https://upload.jeaye.com/";
+      }
+      {
+        hostName = "upload.jeaye.com";
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
@@ -79,6 +83,60 @@
           SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
+        '';
+        enableSSL = true;
+      }
+      {
+        hostName = "jeaye.com";
+        serverAliases = [ "www.jeaye.com" ];
+        globalRedirect = "https://jeaye.com/";
+      }
+      {
+        hostName = "jeaye.com";
+        serverAliases = [ "www.jeaye.com" ];
+        documentRoot = "/etc/user/http/jeaye.com";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/jeaye.com>
+            Options -Indexes
+          </Directory>
+          SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass / https://jeaye.github.io/jeaye.com/
+          ProxyPassReverse / https://jeaye.github.io/jeaye.com/
+          ProxyPassReverse / http://jeaye.github.io/jeaye.com/
+          SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
+          SSLProtocol All -SSLv2 -SSLv3
+          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          SSLHonorCipherOrder on
+        '';
+        enableSSL = true;
+      }
+      {
+        hostName = "blog.jeaye.com";
+        globalRedirect = "https://blog.jeaye.com/";
+      }
+      {
+        hostName = "blog.jeaye.com";
+        documentRoot = "/etc/user/http/blog.jeaye.com";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/blog.jeaye.com>
+            Options -Indexes
+          </Directory>
+          SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass / https://jeaye.github.io/blog.jeaye.com/
+          ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
+          ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
+          SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
+          SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
+          SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
           SSLProtocol All -SSLv2 -SSLv3
           SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
           SSLHonorCipherOrder on
@@ -176,6 +234,8 @@
   {
     "user/http/pastespace.org/.manage-directory".text = "";
     "user/http/safepaste.org/.manage-directory".text = "";
+    "user/http/jeaye.com/.manage-directory".text = "";
+    "user/http/blog.jeaye.com/.manage-directory".text = "";
     "user/http/upload.jeaye.com/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
     "user/http/fu-er.com/.manage-directory".text = "";
