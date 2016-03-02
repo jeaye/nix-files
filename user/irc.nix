@@ -15,6 +15,11 @@
     pkgs.aspellDicts.en
   ];
 
+  nixpkgs.config =
+  {
+    mutt.withSidebar = true;
+  };
+
   users.users.irc =
   {
     isNormalUser = true;
