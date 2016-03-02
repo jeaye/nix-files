@@ -10,15 +10,10 @@
   [
     pkgs.tmux
     pkgsUnstable.weechat
-    pkgs.mutt
+    pkgs.mutt-with-sidebar
     pkgs.aspell
     pkgs.aspellDicts.en
   ];
-
-  nixpkgs.config =
-  {
-    mutt.withSidebar = true;
-  };
 
   users.users.irc =
   {
