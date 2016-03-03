@@ -11,6 +11,7 @@
     pkgs.tmux
     pkgsUnstable.weechat
     pkgs.mutt-with-sidebar
+    pkgs.gnupg
     pkgs.aspell
     pkgs.aspellDicts.en
   ];
