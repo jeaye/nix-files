@@ -16,6 +16,11 @@
     pkgs.aspellDicts.en
   ];
 
+  nixpkgs.config =
+  {
+    gnupg.x11Support = false;
+  };
+
   users.users.irc =
   {
     isNormalUser = true;
