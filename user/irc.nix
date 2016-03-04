@@ -17,10 +17,10 @@
   ];
 
   # TODO: I don't know the difference between these
-  nixpkgs.config =
-  {
-    gnupg.x11Support = false;
-  };
+  #nixpkgs.config =
+  #{
+  #  gnupg.x11Support = false;
+  #};
 
   nixpkgs.config =
   {
