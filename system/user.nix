@@ -37,8 +37,6 @@
         ln -sf /etc/user/dotfiles/gitignore /etc/user/${u.name}/.gitignore
         ln -sf /etc/user/dotfiles/tmux.conf /etc/user/${u.name}/.tmux.conf
         ln -sf /etc/user/dotfiles/elinks /etc/user/${u.name}/.elinks
-        ln -sf /etc/user/dotfiles/vim /etc/user/${u.name}/.vim
-        ln -sf /etc/user/dotfiles/vim/vimrc /etc/user/${u.name}/.vimrc
         chown -R ${u.name}:users /etc/user/${u.name}
       '')
       ""
