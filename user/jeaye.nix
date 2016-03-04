@@ -20,7 +20,6 @@
           git clone --recursive https://github.com/jeaye/vimrc.git /etc/user/jeaye/.vim
           ln -sf /etc/user/jeaye/.vim/vimrc /etc/user/jeaye/.vimrc
         fi
-        chgrp -R jeaye /etc/user/jeaye/.vim
       '';
     };
   };
