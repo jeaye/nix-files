@@ -34,6 +34,13 @@
         fi
         chgrp -R git /etc/user/dotfiles
         chmod -R g+w /etc/user/dotfiles
+
+        if [ ! -d /etc/user/vimrc ];
+        then
+          git clone --recursive https://github.com/jeaye/vimrc.git /etc/user/vimrc
+        fi
+        chgrp -R git /etc/user/vimrc
+        chmod -R g+w /etc/user/vimrc
       '';
     };
   };

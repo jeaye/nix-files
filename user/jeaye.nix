@@ -17,11 +17,8 @@
       ''
         PATH=${pkgs.git}/bin:$PATH
 
-        if [ ! -d /etc/user/jeaye/.vim ];
-        then
-          git clone --recursive https://github.com/jeaye/vimrc.git /etc/user/jeaye/.vim
-          ln -sf /etc/user/jeaye/.vim/vimrc /etc/user/jeaye/.vimrc
-        fi
+        ln -sf /etc/user/vimrc/vimrc /etc/user/jeaye/.vimrc
+        ln -sf /etc/user/vimrc /etc/user/jeaye/.vim
       '';
     };
   };
