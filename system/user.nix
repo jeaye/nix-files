@@ -15,13 +15,6 @@
     { domain = "*"; item = "nofile"; type = "hard"; value = "512"; }
   ];
 
-  users.users.jeaye =
-  {
-    isNormalUser = true;
-    home = "/etc/user/jeaye";
-    extraGroups = [ "wheel" ];
-  };
-
   users.users.fu-er =
   {
     isNormalUser = true;

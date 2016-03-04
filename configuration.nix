@@ -18,6 +18,7 @@
     ./user/irc.nix
     ./user/usenet.nix
     ./user/git.nix
+    ./user/jeaye.nix
 
     ./service/ssh.nix
     ./service/acme.nix
