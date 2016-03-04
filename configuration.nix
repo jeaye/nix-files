@@ -33,5 +33,5 @@
     ./service/upload.jeaye.com-tmp.nix
   ];
 
-  system.stateVersion = "15.09";
+  system.stateVersion = "16.03";
 }
