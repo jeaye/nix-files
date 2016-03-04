@@ -27,6 +27,7 @@
       text =
       ''
         PATH=${pkgs.git}/bin:$PATH
+        PATH=${pkgs.gnused}/bin:$PATH
 
         if [ ! -d /etc/user/dotfiles ];
         then
