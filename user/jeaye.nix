@@ -15,6 +15,8 @@
       deps = [];
       text =
       ''
+        PATH=${pkgs.git}/bin:$PATH
+
         if [ ! -d /etc/user/jeaye/.vim ];
         then
           git clone --recursive https://github.com/jeaye/vimrc.git /etc/user/jeaye/.vim
