@@ -31,7 +31,7 @@
 
   system.activationScripts =
   {
-    usenet-home =
+    irc-home =
     {
       deps = [];
       text =
@@ -45,7 +45,7 @@
   {
     allowedTCPPorts =
     [
-      113 # irc (ident)
+      113 # ident
     ];
   };
 }
