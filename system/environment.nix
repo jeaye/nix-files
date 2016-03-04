@@ -13,14 +13,6 @@
 
   programs.bash.enableCompletion = true;
 
-  nixpkgs.config =
-  {
-    packageOverrides = pkgs: rec
-    {
-      gnupg = pkgs.gnupg.override { x11Support = false; };
-    };
-  };
-
   services.locate.enable = true;
 
   # Build all packages in a chroot
@@ -39,8 +31,5 @@
 
   # Auto GC every morning
   nix.gc.automatic = false;
-  services.cron.systemCronJobs =
-  [
-    "0 3 * * * root /etc/admin/optimize-nix"
-  ];
+  services.cron.systemCronJobs = [ "0 3 * * * root /etc/admin/optimize-nix" ];
 }
