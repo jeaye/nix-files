@@ -10,12 +10,7 @@ let
   '';
 in
 {
-  environment.systemPackages = let pkgsUnstable = import
-  (
-    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-  )
-  { };
-  in [ pkgsUnstable.simp_le ];
+  environment.systemPackages = [ pkgs.simp_le ];
 
   # XXX: SSL must be disabled per-domain in httpd for the initial certs
   # to be created properly.
