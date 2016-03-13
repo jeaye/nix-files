@@ -85,6 +85,26 @@
       '';
       mode = "0774";
     };
+    "admin/rejected-emails" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        title="Rejected emails"
+        printf "%*s\n\n" $(((''${#title}+$COLUMNS)/2)) "$title"
+
+        regex="reject: .+\[(.+)\]: .+ (from=<.+>) (to=<.+>) .+ (helo=<.+>).*"
+        rejected=$(journalctl -u postfix \
+                    | pcregrep -o1 -o2 -o3 --om-separator '|' "$regex")
+        count=$(wc -l <<< "$rejected")
+        last=$(sed 's/|/\n\t/g' <<< "$rejected" | tail -15)
+
+        printf "Total: $count\n\n$last\n"
+      '';
+      mode = "0774";
+    };
     "admin/daily-valid-safepaste" =
     {
       text =
