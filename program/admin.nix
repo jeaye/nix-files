@@ -99,9 +99,10 @@
         rejected=$(journalctl -u postfix \
                     | pcregrep -o1 -o2 -o3 --om-separator '|' "$regex")
         count=$(wc -l <<< "$rejected")
+        unique=$(sort -u <<< "$rejected" | wc -l)
         last=$(sed 's/|/\n\t/g' <<< "$rejected" | tail -15)
 
-        printf "Total: $count\n\n$last\n"
+        printf "Total: $count\nUnique: $unique\n\n$last\n"
       '';
       mode = "0774";
     };
