@@ -93,6 +93,11 @@
       tls_eecdh_strong_curve = prime256v1
       tls_eecdh_ultra_curve = secp384r1
 
+      smtpd_relay_restrictions =
+        permit_sasl_authenticated
+        permit_mynetworks
+        reject_unauth_destination
+
       smtpd_recipient_restrictions =
         permit_sasl_authenticated
         permit_mynetworks
