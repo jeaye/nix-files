@@ -46,13 +46,27 @@ in
       };
       "jeaye.com" =
       {
+        webroot = "/etc/user/http/jeaye.com";
+        extraDomains =
+        { "www.jeaye.com" = null; };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "upload.jeaye.com" =
+      {
         webroot = "/etc/user/http/upload.jeaye.com";
         extraDomains =
-        {
-          "www.jeaye.com" = null;
-          "blog.jeaye.com" = null;
-          "upload.jeaye.com" = null;
-        };
+        { "upload.jeaye.com" = null; };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
+      "blog.jeaye.com" =
+      {
+        webroot = "/etc/user/http/blog.jeaye.com";
+        extraDomains =
+        { "blog.jeaye.com" = null; };
         email = global-email;
         plugins = global-plugins;
         postRun = global-post-run;
