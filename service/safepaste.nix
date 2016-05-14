@@ -1,14 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = let pkgsUnstable = import
-  (
-    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-  )
-  { };
-  in
+  environment.systemPackages =
   [
-    pkgsUnstable.boot
+    pkgs.boot
     pkgs.nodejs
     pkgs.openjdk
   ];
