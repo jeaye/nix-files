@@ -50,7 +50,7 @@
             Options -Indexes
           </Directory>
           SSLProxyEngine On
-          ProxyPreserveHost On
+          ProxyPreserveHost Off
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
@@ -104,7 +104,7 @@
             Options -Indexes
           </Directory>
           SSLProxyEngine On
-          ProxyPreserveHost On
+          ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
@@ -130,7 +130,7 @@
             Options -Indexes
           </Directory>
           SSLProxyEngine On
-          ProxyPreserveHost On
+          ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
