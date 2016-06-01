@@ -125,6 +125,25 @@
       '';
       mode = "0774";
     };
+    "admin/monthly-http-access" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        month=$1 # Mar, Jun, etc
+        site=$2 # jeaye.com, safepaste.org, etc
+        year=$(date +"%Y")
+
+        views=$(grep "$month/$year" /var/log/httpd/access_log-$site \
+                     | grep "GET / HTTP/1.1\" 200" \
+                                  | wc -l)
+
+        printf "$month $year $site : $views\n"
+      '';
+                                                                                                                                                                                                                                                                     mode = "0774";
+    };
     "admin/unban-fail2ban-ip" =
     {
       text =
