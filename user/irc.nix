@@ -7,7 +7,6 @@
   )
   { };
   in
-  environment.systemPackages =
   [
     pkgs.tmux
     pkgsUnstable.weechat
