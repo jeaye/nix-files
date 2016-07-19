@@ -26,6 +26,8 @@
       contact@fu-er.com          fu-er
       contact@penelope-art.com   fu-er
       contact@penny-art.com      fu-er
+      contact@furthington.com    fu-er
+      support@furthington.com    fu-er
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
@@ -60,7 +62,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org arrownext.com fu-er.com penelope-art.com penny-art.com
+      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org furthington.com fu-er.com penelope-art.com penny-art.com
 
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes
