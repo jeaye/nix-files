@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_4_6;
+  boot.kernelPackages = pkgs.linuxPackages_4_7;
   boot.kernelParams = [ "boot.shell_on_fail" ];
 
   boot.loader.grub =
