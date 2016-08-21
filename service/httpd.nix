@@ -49,10 +49,12 @@
           <Directory /etc/user/http/safepaste.org>
             Options -Indexes
           </Directory>
+
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
+
           SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
           SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
           SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
@@ -80,6 +82,7 @@
           <Directory /etc/user/http/upload.jeaye.com>
             Options -Indexes
           </Directory>
+
           SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
@@ -103,11 +106,13 @@
           <Directory /etc/user/http/jeaye.com>
             Options -Indexes
           </Directory>
+
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
+
           SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
@@ -129,11 +134,13 @@
           <Directory /etc/user/http/blog.jeaye.com>
             Options -Indexes
           </Directory>
+
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
+
           SSLCertificateKeyFile /var/lib/acme/blog.jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/blog.jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/blog.jeaye.com/cert.pem
@@ -158,6 +165,7 @@
           <Directory /etc/user/http/fu-er.com>
             Options -Indexes
           </Directory>
+
           SSLCertificateKeyFile /var/lib/acme/fu-er.com/key.pem
           SSLCertificateChainFile /var/lib/acme/fu-er.com/chain.pem
           SSLCertificateFile /var/lib/acme/fu-er.com/cert.pem
@@ -176,18 +184,13 @@
       {
         hostName = "penelope-art.com";
         serverAliases = [ "www.penelope-art.com" ];
+        globalRedirect = "https://penny.artstation.com/";
         documentRoot = "/etc/user/http/penelope-art.com";
         extraConfig =
         ''
           <Directory /etc/user/http/penelope-art.com>
             Options -Indexes
           </Directory>
-
-          SSLProxyEngine On
-          ProxyPreserveHost Off
-          ProxyPass / https://penny.artstation.com/
-          ProxyPassReverse / https://penny.artstation.com/
-          ProxyPassReverse / http://penny.artstation.com/
 
           SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
@@ -208,17 +211,12 @@
         hostName = "penny-art.com";
         serverAliases = [ "www.penny-art.com" ];
         documentRoot = "/etc/user/http/penny-art.com";
+        globalRedirect = "https://penny.artstation.com/";
         extraConfig =
         ''
           <Directory /etc/user/http/penny-art.com>
             Options -Indexes
           </Directory>
-
-          SSLProxyEngine On
-          ProxyPreserveHost Off
-          ProxyPass / https://penny.artstation.com/
-          ProxyPassReverse / https://penny.artstation.com/
-          ProxyPassReverse / http://penny.artstation.com/
 
           SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
