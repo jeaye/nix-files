@@ -182,6 +182,13 @@
           <Directory /etc/user/http/penelope-art.com>
             Options -Indexes
           </Directory>
+
+          SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass / https://penny.artstation.com/
+          ProxyPassReverse / https://penny.artstation.com/
+          ProxyPassReverse / http://penny.artstation.com/
+
           SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
           SSLCertificateFile /var/lib/acme/penelope-art.com/cert.pem
@@ -206,6 +213,13 @@
           <Directory /etc/user/http/penny-art.com>
             Options -Indexes
           </Directory>
+
+          SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass / https://penny.artstation.com/
+          ProxyPassReverse / https://penny.artstation.com/
+          ProxyPassReverse / http://penny.artstation.com/
+
           SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
           SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
