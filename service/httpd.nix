@@ -184,10 +184,11 @@
       {
         hostName = "penelope-art.com";
         serverAliases = [ "www.penelope-art.com" ];
-        globalRedirect = "https://penny.artstation.com/";
+        #globalRedirect = "https://penny.artstation.com/";
         documentRoot = "/etc/user/http/penelope-art.com";
         extraConfig =
         ''
+          DirectoryIndex resume.pdf
           <Directory /etc/user/http/penelope-art.com>
             Options -Indexes
           </Directory>
