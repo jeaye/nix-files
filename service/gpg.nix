@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  # Refresh keys daily
+  services.cron.systemCronJobs =
+  [
+    "0 23 * * * jeaye /etc/user/jeaye/bin/gpg --refresh-keys"
+  ];
+
   # XXX: We need to import the private key
   environment.etc."user/http/upload.jeaye.com/6C61E510.asc".text =
   ''-----BEGIN PGP PUBLIC KEY BLOCK-----
