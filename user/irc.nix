@@ -1,19 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = let pkgsUnstable = import
-  (
-    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-  )
-  { };
-  in
+  environment.systemPackages = with pkgs;
   [
-    pkgs.tmux
-    pkgsUnstable.weechat
-    pkgs.mutt-with-sidebar
-    pkgs.gnupg
-    pkgs.aspell
-    pkgs.aspellDicts.en
+    tmux
+    weechat
+    mutt-with-sidebar
+    gnupg
+    aspell
+    aspellDicts.en
   ];
 
   # TODO: I don't know the difference between these
