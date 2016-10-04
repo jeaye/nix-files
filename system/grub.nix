@@ -4,6 +4,8 @@
   boot.kernelPackages = pkgs.linuxPackages_4_7;
   boot.kernelParams = [ "boot.shell_on_fail" ];
 
+  security.grsecurity.enable = true;
+
   boot.loader.grub =
   {
     enable = true;
