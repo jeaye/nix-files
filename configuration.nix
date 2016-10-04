@@ -16,7 +16,6 @@
     ./program/admin.nix
 
     ./user/irc.nix
-    ./user/usenet.nix
     ./user/git.nix
     ./user/jeaye.nix
 
