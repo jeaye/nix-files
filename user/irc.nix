@@ -6,6 +6,7 @@
     tmux
     weechat
     mutt-with-sidebar
+    pinentry
     gnupg
     aspell
     aspellDicts.en
