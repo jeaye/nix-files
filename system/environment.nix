@@ -16,7 +16,6 @@
   services.locate.enable = true;
 
   # Build all packages in a chroot
-  nix.useSandbox = true;
   nix.allowedUsers = [];
   nix.extraOptions =
   ''
