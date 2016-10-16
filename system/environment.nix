@@ -20,6 +20,7 @@
   ''
     auto-optimise-store = true
     build-use-sandbox = false
+    build-use-chroot = false
   '';
 
   # This is a headless machine; no need for anything fancy
