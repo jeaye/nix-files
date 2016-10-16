@@ -20,7 +20,7 @@
   nix.extraOptions =
   ''
     auto-optimise-store = true
-    build-use-sandbox = relaxed
+    build-use-sandbox = false
   '';
 
   # This is a headless machine; no need for anything fancy
