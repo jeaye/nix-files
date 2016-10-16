@@ -7,7 +7,7 @@ stdenv.mkDerivation rec
   {
     url = "https://github.com/jeaye/safepaste.git";
     deepClone = true;
-    rev = "96eec620010fa748b6aec855fcc144a9c0b2d32e";
+    rev = "feb8d45dea622adc22b8b19f88515c409a5bae58";
     sha256 = "0lck6bipddgbmvhhicn70m6sz7szya994b6ixp9mvv1gycvrrgqg";
   };
   __noChroot = true;
