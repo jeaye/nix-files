@@ -16,12 +16,12 @@
   services.locate.enable = true;
 
   # Build all packages in a chroot
-  nix.useSandbox = false;
+  nix.useSandbox = true;
   nix.allowedUsers = [];
   nix.extraOptions =
   ''
     auto-optimise-store = true
-    build-use-chroot = relaxed
+    build-use-sandbox = relaxed
   '';
 
   # This is a headless machine; no need for anything fancy
