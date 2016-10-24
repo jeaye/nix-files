@@ -4,7 +4,7 @@
   # Refresh keys daily
   services.cron.systemCronJobs =
   [
-    "0 23 * * * jeaye /etc/user/jeaye/bin/gpg --refresh-keys"
+    "0 23 * * * jeaye /etc/user/jeaye/bin/gpg --refresh-keys > /dev/null"
   ];
 
   # XXX: We need to import the private key
