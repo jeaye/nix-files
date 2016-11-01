@@ -61,6 +61,9 @@ function move_mailing_lists(account, mails)
 
   -- DMARC
   move_if_subject_contains(account, mails, "Report domain:", "ML/DMARC")
+
+  -- LetsBet
+  move_if_to_or_cc_or_from_contains(account, mails, "russalek13@gmail.com", "LetsBet")
 end
 
 function move_if_subject_contains(account, mails, subject, mailbox)
@@ -81,6 +84,11 @@ end
 function move_if_to_or_cc_contains(account, mails, to, mailbox)
   move_if_to_contains(account, mails, to, mailbox)
   move_if_cc_contains(account, mails, to, mailbox)
+end
+
+function move_if_to_or_cc_or_from_contains(account, mails, to, mailbox)
+  move_if_to_or_cc_contains(account, mails, to, mailbox)
+  move_if_from_contains(account, mails, to, mailbox)
 end
 
 function move_if_from_contains(account, mails, from, mailbox)
