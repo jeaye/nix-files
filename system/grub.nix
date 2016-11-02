@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_4_7;
+  boot.kernelPackages = pkgs.linuxPackages_4_8;
   boot.kernelParams = [ "boot.shell_on_fail" ];
 
   security.grsecurity.enable = true;
