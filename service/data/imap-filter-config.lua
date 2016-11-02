@@ -13,15 +13,12 @@ function main()
   local mails = account.INBOX:select_all()
   delete_spam(account, mails)
   move_mailing_lists(account, mails)
-  move_personal_lists(account, mails)
 
   local sent = account["Sent"]:select_all()
   move_mailing_lists(account, sent)
-  move_personal_lists(account, sent)
 
   local ham = account["Ham"]:select_all()
   move_mailing_lists(account, ham)
-  move_personal_lists(account, ham)
 
   -- Ignore some senders
   delete_mail_from(account, mails, "foo@spam.com")
@@ -67,6 +64,8 @@ function move_mailing_lists(account, mails)
 
   -- DMARC
   move_if_subject_contains(account, mails, "Report domain:", "ML/DMARC")
+
+  move_personal_lists(account, mails)
 end
 
 function move_personal_lists(account, mails)
