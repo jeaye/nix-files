@@ -14,6 +14,7 @@ function main()
   local mails = account.INBOX:select_all()
   delete_spam(account, mails)
   move_mailing_lists(account, mails)
+  move_personal_lists(account, mails)
 
   -- Ignore some senders
   delete_mail_from(account, mails, "foo@spam.com")
@@ -61,7 +62,9 @@ function move_mailing_lists(account, mails)
 
   -- DMARC
   move_if_subject_contains(account, mails, "Report domain:", "ML/DMARC")
+end
 
+function move_personal_lists(account, mails)
   -- LetsBet
   move_if_to_or_cc_or_from_contains(account, mails, "russalek13@gmail.com", "LetsBet")
 end
