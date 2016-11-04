@@ -26,8 +26,8 @@
       contact@fu-er.com          fu-er
       contact@penelope-art.com   fu-er
       contact@penny-art.com      fu-er
-      contact@furthington.com    fu-er
-      support@furthington.com    fu-er
+      contact@furthington.com    jeaye
+      support@furthington.com    jeaye
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
