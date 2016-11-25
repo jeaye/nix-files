@@ -172,7 +172,7 @@
 
         # Delete generations older than a wee
         nix-collect-garbage
-        nix-collect-garbage -d 7d
+        nix-collect-garbage --delete-older-than 7d
 
         # Optimize
         nix-store --gc --print-dead
