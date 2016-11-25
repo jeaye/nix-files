@@ -167,8 +167,15 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        nix-env --delete-generations 7d
-        nix-store --gc
+        # Delete everything from this profile that isn't currently needed
+        nix-env --delete-generations old
+
+        # Delete generations older than a wee
+        nix-collect-garbage
+        nix-collect-garbage -d 7d
+
+        # Optimize
+        nix-store --gc --print-dead
         nix-store --optimise
       '';
       mode = "0774";
