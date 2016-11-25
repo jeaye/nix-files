@@ -23,8 +23,11 @@
     build-use-chroot = false
   '';
 
-  # This is a headless machine; no need for anything fancy
-  environment.noXlibs = true;
+  # This is a headless machine; no need for anything fancy... or so I thought.
+  # Enabling noXlibs requires manual compilation of some large packages, like
+  # openjdk. I'll try to disable it, to avoid massive compilations, with the
+  # tradeoff of a larger /nix/store.
+  environment.noXlibs = false;
   fonts.fontconfig.enable = false;
   sound.enable = false;
 
