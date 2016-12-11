@@ -151,11 +151,11 @@
         enableSSL = true;
       }
       {
-        hostName = "benchmark.jeaye.com";
-        documentRoot = "/etc/user/http/jeaye.com";
+        hostName = "benchmark.jank-lang.org";
+        documentRoot = "/etc/user/http/jank-lang.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/jeaye.com>
+          <Directory /etc/user/http/jank-lang.org>
             Options -Indexes
           </Directory>
 
@@ -164,9 +164,9 @@
           ProxyPass / http://localhost:3001/
           ProxyPassReverse / http://localhost:3001/
 
-          #SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
-          #SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
-          #SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
+          #SSLCertificateKeyFile /var/lib/acme/jank-lang.org/key.pem
+          #SSLCertificateChainFile /var/lib/acme/jank-lang.org/chain.pem
+          #SSLCertificateFile /var/lib/acme/jank-lang.org/cert.pem
           #SSLProtocol All -SSLv2 -SSLv3
           #SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
           #SSLHonorCipherOrder on
