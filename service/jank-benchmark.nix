@@ -21,7 +21,7 @@
     ''
       #!/run/current-system/sw/bin/bash
       set -eu
-      export PATH=${pkgs.git}/bin:$PATH
+      export PATH=${pkgs.git}/bin:${pkgs.lein}/bin:$PATH
 
       ${pkgs.openjdk}/bin/java -jar ${pkgs.jank-benchmark}/bin/jank-benchmark.jar
     '';
