@@ -26,13 +26,24 @@
     mode = "0775";
   };
 
+  systemd.services.jank-benchmark =
+  {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig =
+    {
+      User = "jank-benchmark";
+      WorkingDirectory = "/etc/user/jank-benchmark";
+      ExecStart = "/etc/user/jank-benchmark/run-server";
+    };
+  };
+
   users.users.jank-benchmark =
   {
     isNormalUser = false;
     home = "/etc/user/jank-benchmark";
     createHome = true;
   };
-  environment.etc."user/jank-benchmark/paste/.manage-directory".text = "";
 
   system.activationScripts =
   {
