@@ -151,6 +151,29 @@
         enableSSL = true;
       }
       {
+        hostName = "benchmark.jeaye.com";
+        documentRoot = "/etc/user/http/jeaye.com";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/jeaye.com>
+            Options -Indexes
+          </Directory>
+
+          #SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass / http://localhost:3001/
+          ProxyPassReverse / http://localhost:3001/
+
+          #SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
+          #SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
+          #SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
+          #SSLProtocol All -SSLv2 -SSLv3
+          #SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+          #SSLHonorCipherOrder on
+        '';
+        #enableSSL = true;
+      }
+      {
         hostName = "fu-er.com";
         serverAliases = [ "www.fu-er.com" ];
         globalRedirect = "https://fu-er.com/";
