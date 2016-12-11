@@ -21,6 +21,8 @@
     ''
       #!/run/current-system/sw/bin/bash
       set -eu
+      export PATH=${pkgs.git}/bin:$PATH
+
       ${pkgs.openjdk}/bin/java -jar ${pkgs.jank-benchmark}/bin/jank-benchmark.jar
     '';
     mode = "0775";
