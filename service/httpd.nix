@@ -151,7 +151,7 @@
         enableSSL = true;
       }
       {
-        hostName = "benchmark.jank-lang.org";
+        hostName = "bench.jank-lang.org";
         documentRoot = "/etc/user/http/jank-lang.org";
         extraConfig =
         ''
