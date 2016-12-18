@@ -5,7 +5,7 @@
   [
     pkgs.leiningen
     pkgs.openjdk
-    pkgs.clang
+    pkgs.gcc
   ];
 
   nixpkgs.config =
@@ -22,7 +22,7 @@
     ''
       #!/run/current-system/sw/bin/bash
       set -eu
-      export PATH=${pkgs.git}/bin:${pkgs.leiningen}/bin:${pkgs.clang}/bin:$PATH
+      export PATH=${pkgs.git}/bin:${pkgs.leiningen}/bin:${pkgs.gcc}/bin:$PATH
 
       ${pkgs.openjdk}/bin/java -jar ${pkgs.jank-benchmark}/bin/jank-benchmark.jar
     '';
