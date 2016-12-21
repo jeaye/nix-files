@@ -7,7 +7,7 @@ stdenv.mkDerivation rec
   {
     url = "https://github.com/jeaye/jank-benchmark.git";
     deepClone = true;
-    rev = "3017dd985c4bc078053670410c676421ae6a2857";
+    rev = "8d30c026105d3979422e550f96768a7034c73287";
     sha256 = "00ryzh6hv6f732plpv9n9mb6rhz6a0z5c09rg7kjwmv8hlkbfa81";
   };
   buildInputs = [ pkgs.leiningen ];
