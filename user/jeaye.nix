@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs;
   [
     tmux
-    mutt-with-sidebar
+    neomutt
     pinentry
     gnupg
   ];
