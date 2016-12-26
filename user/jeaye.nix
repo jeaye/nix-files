@@ -1,6 +1,22 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs;
+  [
+    tmux
+    mutt-with-sidebar
+    pinentry
+    gnupg
+  ];
+
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      gnupg = pkgs.gnupg.override { x11Support = false; };
+    };
+  };
+
   users.users.jeaye =
   {
     isNormalUser = true;
