@@ -20,8 +20,6 @@
         serverAliases =
         [
           "www.pastespace.org"
-          "safepaste.org"
-          "www.safepaste.org"
         ];
         globalRedirect = "https://pastespace.org/";
         enableSSL = false;
@@ -48,6 +46,15 @@
           SSLHonorCipherOrder on
         '';
         enableSSL = true;
+      }
+      {
+        hostName = "safepaste.org";
+        serverAliases =
+        [
+          "www.safepaste.org"
+        ];
+        globalRedirect = "https://safepaste.org/";
+        enableSSL = false;
       }
       {
         hostName = "safepaste.org";
