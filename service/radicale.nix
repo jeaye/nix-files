@@ -72,4 +72,5 @@ format = %(message)s
 # Full output format
 format = %(asctime)s - %(levelname)s: %(message)s
     '';
+  };
 }
