@@ -36,8 +36,8 @@
 
           SSLProxyEngine On
           ProxyPreserveHost Off
-          ProxyPass /calendar http://localhost:5232/
-          ProxyPassReverse /calendar http://localhost:5232/
+          ProxyPass / http://localhost:5232/
+          ProxyPassReverse / http://localhost:5232/
 
           SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
           SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem

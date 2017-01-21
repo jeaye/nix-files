@@ -6,7 +6,7 @@
     config =
     ''
 [server]
-base_prefix = /calendar/
+base_prefix = /
 
 [auth]
 type = None
