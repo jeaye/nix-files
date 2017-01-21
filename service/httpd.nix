@@ -27,6 +27,7 @@
       {
         hostName = "pastespace.org";
         serverAliases = [ "www.pastespace.org" ];
+        documentRoot = "/etc/user/http/pastespace.org";
         extraConfig =
         ''
           <Directory /etc/user/http/pastespace.org>
