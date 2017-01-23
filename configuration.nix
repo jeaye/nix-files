@@ -29,6 +29,7 @@
     ./service/jank-benchmark.nix
     ./service/fail2ban.nix
     ./service/imap-filter.nix
+    ./service/radicale.nix
     ./service/gpg.nix
     ./service/jank-license.nix
     ./service/upload.jeaye.com-tmp.nix
