@@ -5,9 +5,10 @@
     enable = true;
     config =
     ''
+[server]
+base_prefix = /calendar/
+
 [auth]
-# Authentication method
-# Value: None | htpasswd | IMAP | LDAP | PAM | courier | http | remote_user | custom
 type = None
 
 [rights]
