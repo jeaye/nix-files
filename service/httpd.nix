@@ -239,6 +239,7 @@
 
       ServerTokens Prod
       ServerSignature Off
+      TraceEnable off
     '';
   };
 
