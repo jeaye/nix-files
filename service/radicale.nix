@@ -18,7 +18,7 @@ type = owner_only
 committer = Radicale <radicale@jeaye.com>
 
 [logging]
-debug = True
+debug = False
     '';
   };
 }
