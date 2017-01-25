@@ -31,10 +31,6 @@
         serverAliases = [ "www.pastespace.org" ];
         extraConfig =
         ''
-          <Directory /etc/user/http/pastespace.org>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /calendar http://localhost:5232/
@@ -54,10 +50,6 @@
         documentRoot = "/etc/user/http/safepaste.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/safepaste.org>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / http://localhost:3000/
@@ -87,10 +79,6 @@
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/upload.jeaye.com>
-            Options -Indexes
-          </Directory>
-
           SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
           SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
           SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
@@ -111,10 +99,6 @@
         documentRoot = "/etc/user/http/jeaye.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/jeaye.com>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
@@ -139,10 +123,6 @@
         documentRoot = "/etc/user/http/blog.jeaye.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/blog.jeaye.com>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
@@ -163,10 +143,6 @@
         documentRoot = "/etc/user/http/jank-lang.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/jank-lang.org>
-            Options -Indexes
-          </Directory>
-
           #SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / http://localhost:3001/
@@ -193,10 +169,6 @@
         documentRoot = "/etc/user/http/fu-er.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/fu-er.com>
-            Options -Indexes
-          </Directory>
-
           SSLCertificateKeyFile /var/lib/acme/fu-er.com/key.pem
           SSLCertificateChainFile /var/lib/acme/fu-er.com/chain.pem
           SSLCertificateFile /var/lib/acme/fu-er.com/cert.pem
@@ -220,9 +192,6 @@
         extraConfig =
         ''
           DirectoryIndex resume.pdf
-          <Directory /etc/user/http/penelope-art.com>
-            Options -Indexes
-          </Directory>
 
           SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
@@ -246,10 +215,6 @@
         globalRedirect = "https://penny.artstation.com/";
         extraConfig =
         ''
-          <Directory /etc/user/http/penny-art.com>
-            Options -Indexes
-          </Directory>
-
           SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
           SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
           SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
@@ -265,6 +230,12 @@
     ''
       AddDefaultCharset UTF-8
       AddCharset UTF-8 .html .htm .txt
+
+      <Directory />
+        Options -Indexes
+        Order allow,deny
+        Allow from all
+      </Directory>
     '';
   };
 
