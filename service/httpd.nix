@@ -238,6 +238,7 @@
       </Directory>
 
       ServerTokens Prod
+      ServerSignature Off
     '';
   };
 
