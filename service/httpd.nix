@@ -32,6 +32,15 @@
         globalRedirect = "https://safepaste.org/";
         extraConfig =
         ''
+          <Directory /etc/user/http/pastespace.org>
+            Options -Indexes
+          </Directory>
+
+          SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass /calendar http://localhost:5232/
+          ProxyPassReverse /calendar http://localhost:5232/
+
           SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
           SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem
           SSLCertificateFile /var/lib/acme/pastespace.org/cert.pem
