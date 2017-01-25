@@ -236,6 +236,8 @@
         Order allow,deny
         Allow from all
       </Directory>
+
+      ServerTokens Prod
     '';
   };
 
