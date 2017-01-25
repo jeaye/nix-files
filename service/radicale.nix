@@ -10,9 +10,8 @@
 # Value: None | htpasswd | IMAP | LDAP | PAM | courier | http | remote_user | custom
 type = None
 
-imap_hostname = localhost
-imap_port = 143
-imap_ssl = True
+[rights]
+type = owner_only
 
 [git]
 committer = Radicale <radicale@jeaye.com>
