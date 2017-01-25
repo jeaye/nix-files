@@ -29,7 +29,6 @@
       {
         hostName = "pastespace.org";
         serverAliases = [ "www.pastespace.org" ];
-        globalRedirect = "https://safepaste.org/";
         extraConfig =
         ''
           <Directory /etc/user/http/pastespace.org>
