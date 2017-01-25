@@ -23,7 +23,7 @@
           "safepaste.org"
           "www.safepaste.org"
         ];
-        globalRedirect = "https://safepaste.org/";
+        globalRedirect = "https://pastespace.org/";
         enableSSL = false;
       }
       {
