@@ -14,7 +14,7 @@ can_skip_base_prefix = True
 type = None
 
 [rights]
-type = owner_only
+type = none
 
 [git]
 committer = Radicale <radicale@jeaye.com>
