@@ -34,13 +34,13 @@
             Options -Indexes
           </Directory>
 
-          <Directory /calendar>
+          <Location /calendar>
             AuthType Basic
             AuthName "Restricted Calendar"
             AuthBasicProvider file
             AuthUserFile /etc/user/http/auth-users
             Require valid-user
-          </Directory>
+          </Location>
 
           SSLProxyEngine On
           ProxyPreserveHost Off
