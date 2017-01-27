@@ -17,6 +17,8 @@ there, each item is split categorically.
 * Mail server
   * IMAP (dovecot) + SMTP (postfix) + DKIM
 * [safepaste](https://github.com/jeaye/safepaste) service
+* [jank benchmark visualizer](http://bench.jank-lang.org/) service
+* caldav service
 * SSL Certs (Let's Encrypt)
 * Persistent weechat/mutt sessions
 
