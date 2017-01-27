@@ -12,7 +12,7 @@
     extraModules = [ "proxy" "proxy_http" ];
 
     # TODO: Remove duplication
-    # TODO: Add an acme mode which disables all SSL temporarily
+    # TODO: Add .well-known directories for each, to handle cert auth
     virtualHosts =
     [
       {
