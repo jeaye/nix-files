@@ -32,19 +32,24 @@ debug = True
 keys = root
 
 [handlers]
-keys = console
+keys = console,file
 
 [formatters]
 keys = full
 
 [logger_root]
 level = DEBUG
-handlers = console
+handlers = console,file
 
 [handler_console]
 class = StreamHandler
-level = DEBUG
 args = (sys.stdout,)
+formatter = full
+
+[handler_file]
+# File handler
+class = FileHandler
+args = ('/tmp/radicale',)
 formatter = full
 
 [formatter_full]
