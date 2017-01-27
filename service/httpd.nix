@@ -34,10 +34,18 @@
             Options -Indexes
           </Directory>
 
+          <Directory /calendar>
+            AuthType Basic
+            AuthName "Restricted Calendar"
+            AuthBasicProvider file
+            AuthUserFile /etc/user/http/auth-users
+            Require valid-user
+          </Directory>
+
           SSLProxyEngine On
           ProxyPreserveHost Off
-          ProxyPass / http://localhost:5232/
-          ProxyPassReverse / http://localhost:5232/
+          ProxyPass /calendar http://localhost:5232/
+          ProxyPassReverse /calendar http://localhost:5232/
 
           SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
           SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem
