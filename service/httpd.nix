@@ -34,6 +34,7 @@
             Options -Indexes
           </Directory>
 
+          # XXX: Requires manual creation using htpasswd
           <Location /calendar>
             AuthType Basic
             AuthName "Restricted Calendar"
