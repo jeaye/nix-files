@@ -24,6 +24,6 @@ stdenv.mkDerivation rec
   installPhase =
   ''
     mkdir -p $out/{bin,share}
-    install -m 0644 target/padwatch.jar $out/bin/
+    install -m 0644 target/uberjar/padwatch-0.1.0-SNAPSHOT-standalone.jar $out/bin/padwatch.jar
   '';
 }
