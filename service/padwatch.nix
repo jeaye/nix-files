@@ -17,11 +17,13 @@
 
   environment.etc."user/padwatch/run-server" =
   {
+    # XXX: Need to specify walkscore key
     text =
     ''
       #!/run/current-system/sw/bin/bash
       set -eu
 
+      [ -f $HOME/walkscore-key ] && export WALKSCORE_KEY=$(cat $HOME/walkscore-key)
       ${pkgs.openjdk}/bin/java -jar ${pkgs.padwatch}/bin/padwatch.jar
     '';
     mode = "0775";
