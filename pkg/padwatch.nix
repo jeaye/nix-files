@@ -7,7 +7,7 @@ stdenv.mkDerivation rec
   {
     url = "https://github.com/jeaye/padwatch.git";
     deepClone = true;
-    rev = "6b3a27656cba8f97ef31a1ac2662270efb8fc5bb";
+    rev = "7efa35909b665969283398e1b5b7c4d03ff77632";
     sha256 = "159iv484widy7axb1yj21dmsql021qqzw457mqwr3swin0wr5sby";
   };
   buildInputs = [ pkgs.leiningen ];
