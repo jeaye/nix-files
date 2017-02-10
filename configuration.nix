@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+# TODO: Add automatic blacklist lookup
+# http://www.blacklistalert.org/
+# https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a192.241.218.198&run=toolpage
+# http://mail-blacklist-checker.online-domain-tools.com/
+
 {
   imports =
   [
