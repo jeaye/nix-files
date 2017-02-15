@@ -27,6 +27,6 @@ stdenv.mkDerivation rec
   ''
     mkdir -p $out/{bin,share}
     install -m 0644 target/uberjar/wordy-word-0.1.0-SNAPSHOT-standalone.jar $out/bin/wordy-word.jar
-    install -m 0644 unapproved-{adjectives,nouns} $out/
+    install -m 0644 unapproved-{adjectives,nouns} /etc/user/wordy-word/
   '';
 }
