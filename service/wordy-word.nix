@@ -21,6 +21,7 @@
     ''
       #!/run/current-system/sw/bin/bash
       set -eu
+      export PATH=${pkgs.wget}/bin:$PATH
 
       if [ ! -f unapproved-nouns ];
       then
