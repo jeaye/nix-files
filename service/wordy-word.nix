@@ -34,7 +34,7 @@
     serviceConfig =
     {
       User = "wordy-word";
-      WorkingDirectory = "/etc/user/wordy-word";
+      WorkingDirectory = "${pkgs.wordy-word}";
       ExecStart = "/etc/user/wordy-word/run-server";
     };
   };
