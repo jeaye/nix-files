@@ -123,6 +123,15 @@
       smtpd_data_restrictions =
         reject_unauth_pipelining
 
+      smtpd_sender_restrictions =
+        permit_sasl_authenticated
+        permit_mynetworks
+        reject_unknown_sender_domain
+        reject_sender_login_mismatch
+        reject_unauth_pipelining
+        reject_non_fqdn_sender
+        permit
+
       # OpenDKIM mail verification
       milter_default_action = accept
       milter_protocol = 2
