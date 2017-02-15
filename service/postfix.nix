@@ -28,6 +28,7 @@
       contact@penny-art.com      fu-er
       contact@furthington.com    jeaye
       support@furthington.com    jeaye
+      spam@pastespace.org        jeaye
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
