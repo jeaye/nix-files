@@ -38,7 +38,7 @@
     ./service/gpg.nix
     ./service/jank-license.nix
     ./service/upload.jeaye.com-tmp.nix
-    ./service/padwatch.nix
+    ./service/wordy-word.nix
   ];
 
   system.stateVersion = "16.09";
