@@ -20,10 +20,13 @@ stdenv.mkDerivation rec
     echo "{:user {:local-repo \"$LEIN_HOME\"}}" > $LEIN_HOME/profiles.clj
 
     ${pkgs.leiningen}/bin/lein uberjar
+
+    ./build-word-lists
   '';
   installPhase =
   ''
     mkdir -p $out/{bin,share}
     install -m 0644 target/uberjar/wordy-word-0.1.0-SNAPSHOT-standalone.jar $out/bin/wordy-word.jar
+    install -m 0644 unapproved-{adjectives,nouns} $out/
   '';
 }
