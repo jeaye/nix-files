@@ -21,12 +21,6 @@
     ''
       #!/run/current-system/sw/bin/bash
       set -eu
-      export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
-
-      if [ ! -f unapproved-nouns ];
-      then
-        ${pkgs.wordy-word}/bin/build-word-lists
-      fi
 
       ${pkgs.openjdk}/bin/java -jar ${pkgs.wordy-word}/bin/wordy-word.jar
     '';
@@ -59,6 +53,7 @@
       deps = [];
       text =
       ''
+        export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
         if [ ! -f /etc/user/wordy-word/unapproved-nouns ];
         then
           pushd /etc/user/wordy-word
