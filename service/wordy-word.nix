@@ -5,7 +5,6 @@
   [
     pkgs.leiningen
     pkgs.openjdk
-    pkgs.wordy-word
   ];
 
   nixpkgs.config =
@@ -60,6 +59,11 @@
       deps = [];
       text =
       ''
+        if [ ! -f /etc/user/wordy-word/unapproved-nouns ];
+          pushd /etc/user/wordy-word
+            ${pkgs.wordy-word}/bin/build-word-lists
+          popd
+        fi
         chown -R wordy-word:users /etc/user/wordy-word
       '';
     };
