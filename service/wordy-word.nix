@@ -60,6 +60,7 @@
       text =
       ''
         if [ ! -f /etc/user/wordy-word/unapproved-nouns ];
+        then
           pushd /etc/user/wordy-word
             ${pkgs.wordy-word}/bin/build-word-lists
           popd
