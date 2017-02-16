@@ -48,7 +48,7 @@
 
   users.users.wordy-word =
   {
-    isNormalUser = false;
+    isNormalUser = true;
     home = "/etc/user/wordy-word";
     createHome = true;
   };
