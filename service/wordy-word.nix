@@ -15,22 +15,29 @@
     };
   };
 
-  environment.etc."user/wordy-word/run-server" =
+  environment.etc =
   {
-    text =
-    ''
-      #!/run/current-system/sw/bin/bash
-      set -eu
-      export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
+    "user/wordy-word/run-server" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+        export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
 
-      if [ ! -f unapproved-nouns ];
-      then
-        ${pkgs.wordy-word}/bin/build-word-lists
-      fi
+        if [ ! -f unapproved-nouns ];
+        then
+          ${pkgs.wordy-word}/bin/build-word-lists
+        fi
 
-      ${pkgs.openjdk}/bin/java -jar ${pkgs.wordy-word}/bin/wordy-word.jar
-    '';
-    mode = "0775";
+        ${pkgs.openjdk}/bin/java -jar ${pkgs.wordy-word}/bin/wordy-word.jar
+      '';
+      mode = "0775";
+    },
+    "user/wordy-word/build-word-lists" =
+    {
+      text = lib.readFile ${pkgs.wordy-word}/bin/build-word-lists;
+    }
   };
 
   systemd.services.wordy-word =
@@ -42,7 +49,6 @@
       User = "wordy-word";
       WorkingDirectory = "/etc/user/wordy-word";
       ExecStart = "/etc/user/wordy-word/run-server";
-      TimeoutStartSec = 120;
     };
   };
 
