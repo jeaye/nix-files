@@ -42,6 +42,7 @@
       User = "wordy-word";
       WorkingDirectory = "/etc/user/wordy-word";
       ExecStart = "/etc/user/wordy-word/run-server";
+      TimeoutStartSec = 120;
     };
   };
 
