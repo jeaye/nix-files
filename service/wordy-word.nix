@@ -5,6 +5,7 @@
   [
     pkgs.leiningen
     pkgs.openjdk
+    pkgs.wordy-word
   ];
 
   nixpkgs.config =
@@ -15,29 +16,22 @@
     };
   };
 
-  environment.etc =
+  environment.etc."user/wordy-word/run-server" =
   {
-    "user/wordy-word/run-server" =
-    {
-      text =
-      ''
-        #!/run/current-system/sw/bin/bash
-        set -eu
-        export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
+    text =
+    ''
+      #!/run/current-system/sw/bin/bash
+      set -eu
+      export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
 
-        if [ ! -f unapproved-nouns ];
-        then
-          ${pkgs.wordy-word}/bin/build-word-lists
-        fi
+      if [ ! -f unapproved-nouns ];
+      then
+        ${pkgs.wordy-word}/bin/build-word-lists
+      fi
 
-        ${pkgs.openjdk}/bin/java -jar ${pkgs.wordy-word}/bin/wordy-word.jar
-      '';
-      mode = "0775";
-    },
-    "user/wordy-word/build-word-lists" =
-    {
-      text = lib.readFile pkgs.wordy-word/bin/build-word-lists;
-    }
+      ${pkgs.openjdk}/bin/java -jar ${pkgs.wordy-word}/bin/wordy-word.jar
+    '';
+    mode = "0775";
   };
 
   systemd.services.wordy-word =
