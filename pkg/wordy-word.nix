@@ -7,8 +7,8 @@ stdenv.mkDerivation rec
   {
     url = "https://github.com/jeaye/wordy-word.git";
     deepClone = true;
-    rev = "c1cc226b41ba31aff483035e8155ea003eba4f78";
-    sha256 = "1qs36910r19s0nygcbis0ksrvjw9vcyq2jq7gx58cjwlh46jrps4";
+    rev = "b771814d1dc5a1c7009cd587d67d73941d59d8d3";
+    sha256 = "1yn0lixg6v34gq7lqdciqhficmmw9lhvz84i6ia9ly0il803y726";
   };
   buildInputs = [ pkgs.leiningen pkgs.wget ];
   buildPhase =
