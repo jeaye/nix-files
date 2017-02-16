@@ -53,7 +53,7 @@
       deps = [];
       text =
       ''
-        export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:$PATH
+        export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:${pkgs.gzip}/bin:$PATH
         if [ ! -f /etc/user/wordy-word/unapproved-nouns ];
         then
           pushd /etc/user/wordy-word
