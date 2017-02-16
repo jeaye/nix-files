@@ -36,7 +36,7 @@
     },
     "user/wordy-word/build-word-lists" =
     {
-      text = lib.readFile ${pkgs.wordy-word}/bin/build-word-lists;
+      text = lib.readFile pkgs.wordy-word/bin/build-word-lists;
     }
   };
 
