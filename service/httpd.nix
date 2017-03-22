@@ -3,14 +3,12 @@
 let
   ssl_info = domain:
   ''
-    <Location /.well-known>
-      Alias /etc/user/http/${domain}/.well-known/
-    </Location>
     <Directory /etc/user/http/${domain}/.well-known>
      AllowOverride None
      Options None
      Require all granted
     </Directory>
+    Alias /.well-known/ /etc/user/http/${domain}/.well-known/
 
     SSLCertificateKeyFile /var/lib/acme/${domain}/key.pem
     SSLCertificateChainFile /var/lib/acme/${domain}/chain.pem
