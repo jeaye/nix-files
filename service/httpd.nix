@@ -4,9 +4,7 @@ let
   ssl_info = domain:
   ''
     <Directory /etc/user/http/${domain}/.well-known>
-     AllowOverride None
-     Options None
-     Require all granted
+      Options +Indexes
     </Directory>
     Alias /.well-known/ /etc/user/http/${domain}/.well-known/
 
