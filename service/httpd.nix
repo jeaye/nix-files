@@ -4,7 +4,9 @@ let
   ssl_info = domain:
   ''
     <Directory /etc/user/http/${domain}/.well-known>
-      Options +Indexes
+      AllowOverride None
+      Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+      Require method GET POST OPTIONS
     </Directory>
     Alias /.well-known/ /etc/user/http/${domain}/.well-known/
 
