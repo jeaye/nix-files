@@ -3,8 +3,8 @@
 let
   ssl_info = domain:
   ''
-    Alias "/.well-known/" "/etc/user/http/${domain}/.well-known/"
-    <Directory "/etc/user/http/${domain}/.well-known">
+    Alias /.well-known/ /etc/user/http/${domain}/.well-known/
+    <Directory /etc/user/http/${domain}/.well-known>
      AllowOverride None
      Options None
      Require all granted
