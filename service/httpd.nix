@@ -65,6 +65,7 @@ in
 
           SSLProxyEngine On
           ProxyPreserveHost Off
+          ProxyPass /.well-known !
           ProxyPass /calendar http://localhost:5232/
           ProxyPassReverse /calendar http://localhost:5232/
         '' + (defaults "pastespace.org");
@@ -86,6 +87,7 @@ in
         ''
           SSLProxyEngine On
           ProxyPreserveHost Off
+          ProxyPass /.well-known !
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
         '' + (defaults "safepaste.org");
@@ -116,6 +118,7 @@ in
         ''
           SSLProxyEngine On
           ProxyPreserveHost Off
+          ProxyPass /.well-known !
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
@@ -133,6 +136,7 @@ in
         ''
           SSLProxyEngine On
           ProxyPreserveHost Off
+          ProxyPass /.well-known !
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
@@ -156,6 +160,7 @@ in
 
           #SSLProxyEngine On
           ProxyPreserveHost Off
+          ProxyPass /.well-known !
           ProxyPass / http://localhost:3001/
           ProxyPassReverse / http://localhost:3001/
 
