@@ -1,5 +1,30 @@
 { config, pkgs, ... }:
 
+let
+  ssl_info = domain:
+  ''
+    Alias "/.well-known/" "/etc/user/http/${domain}/.well-known/"
+    <Directory "/etc/user/http/${domain}/.well-known">
+     AllowOverride None
+     Options None
+     Require all granted
+    </Directory>
+
+    SSLCertificateKeyFile /var/lib/acme/${domain}/key.pem
+    SSLCertificateChainFile /var/lib/acme/${domain}/chain.pem
+    SSLCertificateFile /var/lib/acme/${domain}/cert.pem
+    SSLProtocol All -SSLv2 -SSLv3
+    SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+    SSLHonorCipherOrder on
+  '';
+  ignore_directory = domain:
+  ''
+    <Directory /etc/user/http/${domain}>
+      Options -Indexes
+    </Directory>
+  '';
+  defaults = domain: (ignore_directory domain) + (ssl_info domain);
+in
 {
   services.httpd =
   {
@@ -30,10 +55,6 @@
         documentRoot = "/etc/user/http/pastespace.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/pastespace.org>
-            Options -Indexes
-          </Directory>
-
           # XXX: Requires manual creation using htpasswd
           <Location /calendar>
             AuthType Basic
@@ -47,14 +68,7 @@
           ProxyPreserveHost Off
           ProxyPass /calendar http://localhost:5232/
           ProxyPassReverse /calendar http://localhost:5232/
-
-          SSLCertificateKeyFile /var/lib/acme/pastespace.org/key.pem
-          SSLCertificateChainFile /var/lib/acme/pastespace.org/chain.pem
-          SSLCertificateFile /var/lib/acme/pastespace.org/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "pastespace.org");
         enableSSL = true;
       }
       {
@@ -71,22 +85,11 @@
         documentRoot = "/etc/user/http/safepaste.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/safepaste.org>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
-
-          SSLCertificateKeyFile /var/lib/acme/safepaste.org/key.pem
-          SSLCertificateChainFile /var/lib/acme/safepaste.org/chain.pem
-          SSLCertificateFile /var/lib/acme/safepaste.org/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "safepaste.org");
         enableSSL = true;
       }
       {
@@ -114,7 +117,7 @@
           SSLProtocol All -SSLv2 -SSLv3
           SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
           SSLHonorCipherOrder on
-        '';
+        '' + (defaults "upload.jeaye.com");
         enableSSL = true;
       }
       {
@@ -128,23 +131,12 @@
         documentRoot = "/etc/user/http/jeaye.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/jeaye.com>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
-
-          SSLCertificateKeyFile /var/lib/acme/jeaye.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/jeaye.com/chain.pem
-          SSLCertificateFile /var/lib/acme/jeaye.com/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "jeaye.com");
         enableSSL = true;
       }
       {
@@ -156,23 +148,12 @@
         documentRoot = "/etc/user/http/blog.jeaye.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/blog.jeaye.com>
-            Options -Indexes
-          </Directory>
-
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
-
-          SSLCertificateKeyFile /var/lib/acme/blog.jeaye.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/blog.jeaye.com/chain.pem
-          SSLCertificateFile /var/lib/acme/blog.jeaye.com/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "blog.jeaye.com");
         enableSSL = true;
       }
       {
@@ -197,6 +178,7 @@
           #SSLHonorCipherOrder on
         '';
         #enableSSL = true;
+        # TODO: SSL
       }
       {
         hostName = "fu-er.com";
@@ -210,17 +192,7 @@
         documentRoot = "/etc/user/http/fu-er.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/fu-er.com>
-            Options -Indexes
-          </Directory>
-
-          SSLCertificateKeyFile /var/lib/acme/fu-er.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/fu-er.com/chain.pem
-          SSLCertificateFile /var/lib/acme/fu-er.com/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "fu-er.com");
         enableSSL = true;
       }
       {
@@ -237,17 +209,7 @@
         extraConfig =
         ''
           DirectoryIndex resume.pdf
-          <Directory /etc/user/http/penelope-art.com>
-            Options -Indexes
-          </Directory>
-
-          SSLCertificateKeyFile /var/lib/acme/penelope-art.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/penelope-art.com/chain.pem
-          SSLCertificateFile /var/lib/acme/penelope-art.com/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "penelope-art.com");
         enableSSL = true;
       }
       {
@@ -263,17 +225,7 @@
         globalRedirect = "https://penny.artstation.com/";
         extraConfig =
         ''
-          <Directory /etc/user/http/penny-art.com>
-            Options -Indexes
-          </Directory>
-
-          SSLCertificateKeyFile /var/lib/acme/penny-art.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/penny-art.com/chain.pem
-          SSLCertificateFile /var/lib/acme/penny-art.com/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
-        '';
+        '' + (defaults "penny-art.com");
         enableSSL = true;
       }
     ];
@@ -297,15 +249,15 @@
 
   environment.etc =
   {
-    "user/http/pastespace.org/.manage-directory".text = "";
-    "user/http/safepaste.org/.manage-directory".text = "";
-    "user/http/jeaye.com/.manage-directory".text = "";
-    "user/http/blog.jeaye.com/.manage-directory".text = "";
-    "user/http/upload.jeaye.com/.manage-directory".text = "";
+    "user/http/pastespace.org/.well-known/.manage-directory".text = "";
+    "user/http/safepaste.org/.well-known/.manage-directory".text = "";
+    "user/http/jeaye.com/.well-known/.manage-directory".text = "";
+    "user/http/blog.jeaye.com/.well-known/.manage-directory".text = "";
+    "user/http/upload.jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
-    "user/http/fu-er.com/.manage-directory".text = "";
-    "user/http/penelope-art.com/.manage-directory".text = "";
-    "user/http/penny-art.com/.manage-directory".text = "";
+    "user/http/fu-er.com/.well-known/.manage-directory".text = "";
+    "user/http/penelope-art.com/.well-known/.manage-directory".text = "";
+    "user/http/penny-art.com/.well-known/.manage-directory".text = "";
   };
 
   networking.firewall =
