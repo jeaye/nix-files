@@ -36,8 +36,9 @@ in
 
     extraModules = [ "proxy" "proxy_http" ];
 
-    # TODO: Remove duplication
-    # TODO: Add .well-known directories for each, to handle cert auth
+    # TODO: Add proxy helper fn
+    # TODO: Bring blog.jeaye.com into jeaye.com cert
+    # TODO: Allow reading cert from other domain in helper fns
     virtualHosts =
     [
       {
@@ -93,12 +94,6 @@ in
         enableSSL = true;
       }
       {
-        hostName = "jank-lang.org";
-        serverAliases = [ "www.jank-lang.org" ];
-        globalRedirect = "https://github.com/jeaye/jank";
-        enableSSL = false;
-      }
-      {
         hostName = "upload.jeaye.com";
         globalRedirect = "https://upload.jeaye.com/";
       }
@@ -107,16 +102,6 @@ in
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
-          <Directory /etc/user/http/upload.jeaye.com>
-            Options -Indexes
-          </Directory>
-
-          SSLCertificateKeyFile /var/lib/acme/upload.jeaye.com/key.pem
-          SSLCertificateChainFile /var/lib/acme/upload.jeaye.com/chain.pem
-          SSLCertificateFile /var/lib/acme/upload.jeaye.com/cert.pem
-          SSLProtocol All -SSLv2 -SSLv3
-          SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          SSLHonorCipherOrder on
         '' + (defaults "upload.jeaye.com");
         enableSSL = true;
       }
@@ -157,11 +142,17 @@ in
         enableSSL = true;
       }
       {
+        hostName = "jank-lang.org";
+        serverAliases = [ "www.jank-lang.org" ];
+        globalRedirect = "https://github.com/jeaye/jank";
+        enableSSL = false;
+      }
+      {
         hostName = "bench.jank-lang.org";
-        documentRoot = "/etc/user/http/jank-lang.org";
+        documentRoot = "/etc/user/http/bench.jank-lang.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/jank-lang.org>
+          <Directory /etc/user/http/bench.jank-lang.org>
             Options -Indexes
           </Directory>
 
@@ -253,6 +244,8 @@ in
     "user/http/safepaste.org/.well-known/.manage-directory".text = "";
     "user/http/jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/blog.jeaye.com/.well-known/.manage-directory".text = "";
+    "user/http/jank-lang.org/.well-known/.manage-directory".text = "";
+    "user/http/bench.jank-lang.org/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
     "user/http/fu-er.com/.well-known/.manage-directory".text = "";
