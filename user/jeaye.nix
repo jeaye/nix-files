@@ -13,7 +13,7 @@
   {
     packageOverrides = pkgs: rec
     {
-      gnupg = pkgs.gnupg.override { x11Support = false; };
+      gnupg = pkgs.gnupg.override { guiSupport = false; };
     };
   };
 
