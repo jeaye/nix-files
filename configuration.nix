@@ -41,5 +41,5 @@
     ./service/wordy-word.nix
   ];
 
-  system.stateVersion = "16.09";
+  system.stateVersion = "17.03";
 }
