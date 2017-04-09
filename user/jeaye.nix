@@ -9,14 +9,6 @@
     gnupg
   ];
 
-  nixpkgs.config =
-  {
-    packageOverrides = pkgs: rec
-    {
-      gnupg = pkgs.gnupg.override { guiSupport = false; };
-    };
-  };
-
   users.users.jeaye =
   {
     isNormalUser = true;
