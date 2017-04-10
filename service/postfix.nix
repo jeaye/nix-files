@@ -65,6 +65,9 @@
       home_mailbox = Maildir/
       virtual_alias_domains = jeaye.com safepaste.org trustcoin.org furthington.com fu-er.com penelope-art.com penny-art.com
 
+      # Max email size ~20MB
+      message_size_limit = 20480000
+
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes
 
