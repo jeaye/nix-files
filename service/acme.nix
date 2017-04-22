@@ -29,23 +29,35 @@ in
   #    });
   #  };
   #};
-  let
-    python = let
-      packageOverrides = self: super: {
-        simp_le = super.simp_le.override
-        {
+  nixpkgs.config.packageOverrides = super: {
+    pythonPackages = super.pythonPackages // {
+      simp_le = super.python27Packages.simp_le.overrideAttrs (oldAttrs: {
+        version = "0.2.0";
+        src = super.pythonPackages.fetchPypi {
+          pname = "simp_le-client";
           version = "0.2.0";
-          src = pythonPackages.fetchPypi
-          {
-            pname = "simp_le-client";
-            version = "0.2.0";
-            sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
-          };
+          sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
         };
-      };
-    in pkgs.python35.override {inherit packageOverrides;};
+      });
+    };
+  };
+  #let
+  #  python = let
+  #    packageOverrides = self: super: {
+  #      simp_le = super.simp_le.override
+  #      {
+  #        version = "0.2.0";
+  #        src = pythonPackages.fetchPypi
+  #        {
+  #          pname = "simp_le-client";
+  #          version = "0.2.0";
+  #          sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
+  #        };
+  #      };
+  #    };
+  #  in pkgs.python35.override {inherit packageOverrides;};
 
-  in python.pkgs.simp_le;
+  #in python.pkgs.simp_le;
 
   security.acme =
   {
