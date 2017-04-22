@@ -34,7 +34,7 @@ in
 
     logPerVirtualHost = true;
 
-    extraModules = [ "proxy" "proxy_http" ];
+    extraModules = [ "proxy" "proxy_http" "php" ];
 
     # TODO: Add proxy helper fn
     virtualHosts =
