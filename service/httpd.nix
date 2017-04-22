@@ -23,7 +23,7 @@ let
       Options -Indexes
     </Directory>
   '';
-  defaults = domain: cert_domain: (ignore_directory domain) + (ssl_info domain cert_domain);
+  defaults = domain: (ignore_directory domain) + (ssl_info domain);
 in
 {
   services.httpd =
