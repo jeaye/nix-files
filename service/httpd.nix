@@ -73,6 +73,11 @@ in
       }
       {
         hostName = "webmail.pastespace.org";
+        globalRedirect = "https://webmail.pastespace.org/";
+        enableSSL = false;
+      }
+      {
+        hostName = "webmail.pastespace.org";
         documentRoot = "/etc/user/http/webmail.pastespace.org";
         extraConfig =
         ''
