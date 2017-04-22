@@ -89,7 +89,7 @@ in
             Options -Indexes
             Deny from all
           </Directory>
-        '' + (defaults "webmail.pastespace.org" "pastespace.org");
+        '' + (defaults "webmail.pastespace.org" "webmail.pastespace.org");
         enableSSL = true;
       }
       {
@@ -123,7 +123,7 @@ in
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
-        '' + (defaults "upload.jeaye.com" "jeaye.com");
+        '' + (defaults "upload.jeaye.com" "upload.jeaye.com");
         enableSSL = true;
       }
       {
@@ -161,7 +161,7 @@ in
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
-        '' + (defaults "blog.jeaye.com" "jeaye.com");
+        '' + (defaults "blog.jeaye.com" "blog.jeaye.com");
         enableSSL = true;
       }
       {
