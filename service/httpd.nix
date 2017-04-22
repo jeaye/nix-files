@@ -265,6 +265,7 @@ in
   environment.etc =
   {
     "user/http/pastespace.org/.well-known/.manage-directory".text = "";
+    "user/http/webmail.pastespace.org/.well-known/.manage-directory".text = "";
     "user/http/safepaste.org/.well-known/.manage-directory".text = "";
     "user/http/jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/blog.jeaye.com/.well-known/.manage-directory".text = "";
