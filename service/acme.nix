@@ -19,53 +19,6 @@ in
   };
   environment.systemPackages = [ pkgs.simp_le ];
 
-  #nixpkgs.config =
-  #{
-  #  packageOverrides = pkgs: rec
-  #  {
-  #    simp_le = pkgs.stdenv.lib.overrideDerivation pkgs.simp_le (oldAttrs:
-  #    {
-  #      version = "0.2.0";
-  #      src = pythonPackages.fetchPypi
-  #      {
-  #        pname = "simp_le-client";
-  #        version = "0.2.0";
-  #        sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
-  #      };
-  #      patches = [];
-  #    });
-  #  };
-  #};
-  #nixpkgs.config.packageOverrides = super: {
-  #  pythonPackages = super.pythonPackages // {
-  #    simp_le = super.python27Packages.simp_le.overrideAttrs (oldAttrs: {
-  #      version = "0.2.0";
-  #      src = super.pythonPackages.fetchPypi {
-  #        pname = "simp_le-client";
-  #        version = "0.2.0";
-  #        sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
-  #      };
-  #    });
-  #  };
-  #};
-  #let
-  #  python = let
-  #    packageOverrides = self: super: {
-  #      simp_le = super.simp_le.override
-  #      {
-  #        version = "0.2.0";
-  #        src = pythonPackages.fetchPypi
-  #        {
-  #          pname = "simp_le-client";
-  #          version = "0.2.0";
-  #          sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
-  #        };
-  #      };
-  #    };
-  #  in pkgs.python35.override {inherit packageOverrides;};
-
-  #in python.pkgs.simp_le;
-
   security.acme =
   {
     directory = "/var/lib/acme-unstable";
