@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  ssl_info = domain:
+  ssl_info = domain: cert_domain:
   ''
     <Directory /etc/user/http/${domain}/.well-known>
       AllowOverride None
@@ -10,9 +10,9 @@ let
     </Directory>
     Alias /.well-known/ /etc/user/http/${domain}/.well-known/
 
-    SSLCertificateKeyFile /var/lib/acme/${domain}/key.pem
-    SSLCertificateChainFile /var/lib/acme/${domain}/chain.pem
-    SSLCertificateFile /var/lib/acme/${domain}/cert.pem
+    SSLCertificateKeyFile /var/lib/acme/${cert_domain}/key.pem
+    SSLCertificateChainFile /var/lib/acme/${cert_domain}/chain.pem
+    SSLCertificateFile /var/lib/acme/${cert_domain}/cert.pem
     SSLProtocol All -SSLv2 -SSLv3
     SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
     SSLHonorCipherOrder on
@@ -37,8 +37,6 @@ in
     extraModules = [ "proxy" "proxy_http" ];
 
     # TODO: Add proxy helper fn
-    # TODO: Bring blog.jeaye.com into jeaye.com cert
-    # TODO: Allow reading cert from other domain in helper fns
     virtualHosts =
     [
       {
@@ -70,7 +68,28 @@ in
           ProxyPass /.well-known !
           ProxyPass /calendar http://localhost:5232/
           ProxyPassReverse /calendar http://localhost:5232/
-        '' + (defaults "pastespace.org");
+        '' + (defaults "pastespace.org" "pastespace.org");
+        enableSSL = true;
+      }
+      {
+        hostName = "webmail.pastespace.org";
+        documentRoot = "/etc/user/http/webmail.pastespace.org";
+        extraConfig =
+        ''
+          # XXX: Requires manual creation using htpasswd
+          <Directory /etc/user/http/webmail.pastespace.org>
+            DirectoryIndex index.php
+            Options +Indexes +FollowSymLinks +ExecCGI
+            AllowOverride All
+            Order deny,allow
+            Allow from all
+            Require all granted
+          </Directory>
+          <Directory /etc/user/http/webmail.pastespace.org/data>
+            Options -Indexes
+            Deny from all
+          </Directory>
+        '' + (defaults "webmail.pastespace.org" "pastespace.org");
         enableSSL = true;
       }
       {
@@ -92,7 +111,7 @@ in
           ProxyPass /.well-known !
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
-        '' + (defaults "safepaste.org");
+        '' + (defaults "safepaste.org" "safepaste.org");
         enableSSL = true;
       }
       {
@@ -104,7 +123,7 @@ in
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
-        '' + (defaults "upload.jeaye.com");
+        '' + (defaults "upload.jeaye.com" "jeaye.com");
         enableSSL = true;
       }
       {
@@ -124,7 +143,7 @@ in
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
-        '' + (defaults "jeaye.com");
+        '' + (defaults "jeaye.com" "jeaye.com");
         enableSSL = true;
       }
       {
@@ -142,7 +161,7 @@ in
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
-        '' + (defaults "blog.jeaye.com");
+        '' + (defaults "blog.jeaye.com" "jeaye.com");
         enableSSL = true;
       }
       {
@@ -188,7 +207,7 @@ in
         documentRoot = "/etc/user/http/fu-er.com";
         extraConfig =
         ''
-        '' + (defaults "fu-er.com");
+        '' + (defaults "fu-er.com" "fu-er.com");
         enableSSL = true;
       }
       {
@@ -205,7 +224,7 @@ in
         extraConfig =
         ''
           DirectoryIndex resume.pdf
-        '' + (defaults "penelope-art.com");
+        '' + (defaults "penelope-art.com" "penelope-art.com");
         enableSSL = true;
       }
       {
@@ -221,7 +240,7 @@ in
         globalRedirect = "https://penny.artstation.com/";
         extraConfig =
         ''
-        '' + (defaults "penny-art.com");
+        '' + (defaults "penny-art.com" "penny-art.com");
         enableSSL = true;
       }
     ];
