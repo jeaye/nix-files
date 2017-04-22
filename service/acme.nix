@@ -10,12 +10,21 @@ let
   '';
 in
 {
-  environment.systemPackages = let pkgsUnstable = import
-  (
-    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
-  )
-  { };
-  in [ pkgsUnstable.simp_le ];
+  environment.systemPackages = [ pkgs.simp_le ];
+
+  packageOverrides = pkgs: rec
+  {
+    simp_le = pkgs.stdenv.lib.overrideDerivation pkgs.simp_le (oldAttrs:
+    {
+      version = "0.2.0";
+      src = pythonPackages.fetchPypi
+      {
+        inherit pname version;
+        sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
+      };
+      patches = [];
+    });
+  };
 
   security.acme =
   {
