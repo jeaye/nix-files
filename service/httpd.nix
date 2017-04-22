@@ -89,7 +89,7 @@ in
             Options -Indexes
             Deny from all
           </Directory>
-        '' + (defaults "webmail.pastespace.org" "webmail.pastespace.org");
+        '' + (defaults "webmail.pastespace.org" "pastespace.org");
         enableSSL = true;
       }
       {
