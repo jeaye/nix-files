@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pythonPackages, ... }:
 
 let
   global-email = "contact@jeaye.com";
