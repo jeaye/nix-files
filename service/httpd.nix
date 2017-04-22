@@ -34,7 +34,11 @@ in
 
     logPerVirtualHost = true;
 
-    extraModules = [ "proxy" "proxy_http" "php" ];
+    extraModules =
+    [
+      "proxy" "proxy_http"
+      { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; }
+    ];
 
     # TODO: Add proxy helper fn
     virtualHosts =
