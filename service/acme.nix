@@ -19,8 +19,7 @@ in
   };
   environment.systemPackages = [ pkgs.simp_le ];
 
-  # XXX: SSL must be disabled per-domain in httpd for the initial certs
-  # to be created properly.
+  # TODO: Combine these subdomains where possible
   security.acme =
   {
     directory = "/var/lib/acme-unstable";
