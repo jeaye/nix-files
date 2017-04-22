@@ -83,7 +83,6 @@ in
         ''
           # XXX: Requires manual creation using htpasswd
           <Directory /etc/user/http/webmail.pastespace.org>
-            DirectoryIndex index.php
             Options +Indexes +FollowSymLinks +ExecCGI
             AllowOverride All
             Order deny,allow
