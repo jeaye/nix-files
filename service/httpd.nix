@@ -37,7 +37,7 @@ in
     extraModules =
     [
       "proxy" "proxy_http"
-      { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; }
+      { name = "php7"; path = "${pkgs.php}/modules/libphp7.so"; }
     ];
 
     # TODO: Add proxy helper fn
