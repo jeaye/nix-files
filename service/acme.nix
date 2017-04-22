@@ -12,19 +12,22 @@ in
 {
   environment.systemPackages = [ pkgs.simp_le ];
 
-  packageOverrides = pkgs: rec
+  nixpkgs.config =
   {
-    simp_le = pkgs.stdenv.lib.overrideDerivation pkgs.simp_le (oldAttrs:
+    packageOverrides = pkgs: rec
     {
-      version = "0.2.0";
-      src = pythonPackages.fetchPypi
+      simp_le = pkgs.stdenv.lib.overrideDerivation pkgs.simp_le (oldAttrs:
       {
-        pname = "simp_le-client";
         version = "0.2.0";
-        sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
-      };
-      patches = [];
-    });
+        src = pythonPackages.fetchPypi
+        {
+          pname = "simp_le-client";
+          version = "0.2.0";
+          sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
+        };
+        patches = [];
+      });
+    };
   };
 
   security.acme =
