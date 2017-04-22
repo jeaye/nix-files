@@ -10,7 +10,12 @@ let
   '';
 in
 {
-  environment.systemPackages = [ pkgs.simp_le ];
+  environment.systemPackages = let pkgsUnstable = import
+  (
+    fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz
+  )
+  { };
+  in [ pkgsUnstable.simp_le ];
 
   security.acme =
   {
