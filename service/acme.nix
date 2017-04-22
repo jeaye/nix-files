@@ -10,6 +10,13 @@ let
   '';
 in
 {
+  nixpkgs.config =
+  {
+    packageOverrides = pkgs: rec
+    {
+      simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
+    };
+  };
   environment.systemPackages = [ pkgs.simp_le ];
 
   #nixpkgs.config =
@@ -29,18 +36,18 @@ in
   #    });
   #  };
   #};
-  nixpkgs.config.packageOverrides = super: {
-    pythonPackages = super.pythonPackages // {
-      simp_le = super.python27Packages.simp_le.overrideAttrs (oldAttrs: {
-        version = "0.2.0";
-        src = super.pythonPackages.fetchPypi {
-          pname = "simp_le-client";
-          version = "0.2.0";
-          sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
-        };
-      });
-    };
-  };
+  #nixpkgs.config.packageOverrides = super: {
+  #  pythonPackages = super.pythonPackages // {
+  #    simp_le = super.python27Packages.simp_le.overrideAttrs (oldAttrs: {
+  #      version = "0.2.0";
+  #      src = super.pythonPackages.fetchPypi {
+  #        pname = "simp_le-client";
+  #        version = "0.2.0";
+  #        sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
+  #      };
+  #    });
+  #  };
+  #};
   #let
   #  python = let
   #    packageOverrides = self: super: {
