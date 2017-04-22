@@ -19,7 +19,8 @@ in
       version = "0.2.0";
       src = pythonPackages.fetchPypi
       {
-        inherit pname version;
+        pname = "simp_le-client";
+        version = "0.2.0";
         sha256 = "18y8mg0s0i2bs57pi6mbkwgjlr5mmivchiyvrpcbdmkg9qlbfwaa";
       };
       patches = [];
