@@ -12,8 +12,6 @@ in
 {
   environment.systemPackages = [ pkgs.simp_le ];
 
-  # XXX: SSL must be disabled per-domain in httpd for the initial certs
-  # to be created properly.
   security.acme =
   {
     directory = "/var/lib/acme-unstable";
@@ -27,6 +25,7 @@ in
         {
           "www.pastespace.org" = null;
           "mail.pastespace.org" = null;
+          "webmail.pastespace.org" = null;
         };
         email = global-email;
         plugins = global-plugins;
@@ -48,25 +47,11 @@ in
       {
         webroot = "/etc/user/http/jeaye.com";
         extraDomains =
-        { "www.jeaye.com" = null; };
-        email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
-      };
-      "upload.jeaye.com" =
-      {
-        webroot = "/etc/user/http/upload.jeaye.com";
-        extraDomains =
-        { "upload.jeaye.com" = null; };
-        email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
-      };
-      "blog.jeaye.com" =
-      {
-        webroot = "/etc/user/http/blog.jeaye.com";
-        extraDomains =
-        { "blog.jeaye.com" = null; };
+        {
+          "www.jeaye.com" = null;
+          "upload.jeaye.com" = null;
+          "blog.jeaye.com" = null;
+        };
         email = global-email;
         plugins = global-plugins;
         postRun = global-post-run;
