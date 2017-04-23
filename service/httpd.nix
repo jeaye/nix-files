@@ -82,10 +82,9 @@ in
       }
       {
         hostName = "webmail.pastespace.org";
-        documentRoot = "/etc/user/http/webmail.pastespace.org";
+        documentRoot = "/etc/user/http/webmail.pastespace.org/latest";
         extraConfig =
         ''
-          Alias / /etc/user/http/webmail.pastespace.org/latest
           <Directory /etc/user/http/webmail.pastespace.org/latest>
             DirectoryIndex index.php
             Options +Indexes +FollowSymLinks +ExecCGI
