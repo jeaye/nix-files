@@ -85,7 +85,8 @@ in
         documentRoot = "/etc/user/http/webmail.pastespace.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/webmail.pastespace.org>
+          Alias / /etc/user/http/webmail.pastespace.org/latest
+          <Directory /etc/user/http/webmail.pastespace.org/latest>
             DirectoryIndex index.php
             Options +Indexes +FollowSymLinks +ExecCGI
             AllowOverride All
@@ -93,7 +94,7 @@ in
             Allow from all
             Require all granted
           </Directory>
-          <Directory /etc/user/http/webmail.pastespace.org/data>
+          <Directory /etc/user/http/webmail.pastespace.org/latest/data>
             Options -Indexes
             Deny from all
           </Directory>
