@@ -85,7 +85,6 @@ in
         documentRoot = "/etc/user/http/webmail.pastespace.org";
         extraConfig =
         ''
-          # XXX: Requires manual creation using htpasswd
           <Directory /etc/user/http/webmail.pastespace.org>
             DirectoryIndex index.php
             Options +Indexes +FollowSymLinks +ExecCGI
