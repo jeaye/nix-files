@@ -25,7 +25,7 @@
   {
     homes =
     {
-      deps = [];
+      path = [];
       text = (builtins.foldl'
       (us: u:
       ''
@@ -46,7 +46,7 @@
     };
     root-home =
     {
-      deps = [];
+      path = [];
       text =
       ''
         ln -sf /etc/user/dotfiles/bash_profile /root/.bash_profile

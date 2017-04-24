@@ -50,7 +50,7 @@
   {
     wordy-word-home =
     {
-      deps = [];
+      path = [];
       text =
       ''
         export PATH=${pkgs.wget}/bin:${pkgs.gnutar}/bin:${pkgs.gzip}/bin:$PATH

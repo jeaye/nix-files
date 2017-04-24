@@ -20,7 +20,7 @@
   {
     jeaye-home =
     {
-      deps = [];
+      path = [];
       text =
       ''
         PATH=${pkgs.git}/bin:$PATH
