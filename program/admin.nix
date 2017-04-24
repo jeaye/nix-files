@@ -7,6 +7,7 @@
     pcre
   ];
 
+  # TODO: Add a script for watching failed email logins
   environment.etc =
   {
     "admin/daily-failed-ssh-logins" =
