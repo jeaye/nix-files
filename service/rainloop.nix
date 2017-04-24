@@ -5,7 +5,7 @@
   {
     rainloop =
     {
-      deps = [pkgs.gnupg pkgs.rsync pkgs.unzip];
+      path = [pkgs.gnupg pkgs.rsync pkgs.unzip];
       text = lib.readFile ./data/upgrade-rainloop;
     };
   };
