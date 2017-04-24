@@ -10,12 +10,10 @@ there, each item is split categorically.
 ### Managed bits
 * System
   * GRUB, time, network, firewall, users, packages, etc
-* Websites
-  * jeaye.com
-  * safepaste.org
-  * jank-lang.org
+* Several websites
 * Mail server
   * IMAP (dovecot) + SMTP (postfix) + DKIM
+* Rainloop web client
 * [safepaste](https://github.com/jeaye/safepaste) service
 * [jank benchmark visualizer](http://bench.jank-lang.org/) service
 * caldav service
