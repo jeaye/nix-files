@@ -9,7 +9,7 @@ local_webmail=/etc/user/http/webmail.pastespace.org
 new_zip_signature=$(curl -s "$remote_webmail/$signature_file")
 old_zip_signature=$(cat "$local_webmail/latest/$signature_file" || true)
 
-printf "RainLoop: checking for updates... "
+printf "RainLoop: checking for upgrades... "
 if [ "$new_zip_signature" != "$old_zip_signature" ];
 then
   echo "found"
