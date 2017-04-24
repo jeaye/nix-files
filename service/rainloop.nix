@@ -6,8 +6,11 @@
     rainloop =
     {
       deps = [];
-      path = [pkgs.curl pkgs.wget pkgs.gnupg pkgs.rsync pkgs.unzip];
-      text = lib.readFile ./data/upgrade-rainloop;
+      text =
+      ''
+        export PATH=${pkgs.curl}/bin:${pkgs.wget}/bin:${pkgs.gnupg}/bin:${pkgs.rsync}/bin:${pkgs.unzip}/bin:$PATH
+        ${lib.readFile ./data/upgrade-rainloop}
+      '';
     };
   };
 }
