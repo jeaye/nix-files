@@ -47,5 +47,5 @@ then
 
   echo "Rainloop: upgrade complete"
 else
-  printf "not found"
+  echo "not found"
 fi
