@@ -1,6 +1,6 @@
 #!/run/current-system/sw/bin/bash
 
-set -eux -o pipefail
+set -eu -o pipefail
 
 zip_file=rainloop-community-latest.zip
 signature_file=$zip_file.asc
