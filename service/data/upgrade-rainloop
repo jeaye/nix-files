@@ -27,6 +27,8 @@ then
     fi
 
     unzip -o "$zip_file"
+
+    echo "$new_zip_signature" > "$signature_file"
   popd
 
   new_version=$(date +'version-%Y-%m-%d.%H:%M:%S')
