@@ -29,7 +29,7 @@ then
     unzip -o "$zip_file"
   popd
 
-  new_version=$(date +'%Y-%m-%d.%H:%M:%S')
+  new_version=$(date +'version-%Y-%m-%d.%H:%M:%S')
   new_path=$local_webmail/$new_version
   if [ -d "$new_path" ];
   then
