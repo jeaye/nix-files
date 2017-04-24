@@ -39,6 +39,7 @@
     ./service/jank-license.nix
     ./service/upload.jeaye.com-tmp.nix
     ./service/wordy-word.nix
+    ./service/rainloop.nix
   ];
 
   system.stateVersion = "17.03";
