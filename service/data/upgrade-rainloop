@@ -39,7 +39,7 @@ then
 
   # Move the new version into place and atomically link/upgrade
   mv "$temp_dir" "$new_path"
-  ln -sf "$new_path" "$local_webmail/latest"
+  ln -sfn "$new_path" "$local_webmail/latest"
 
   echo "Rainloop: upgrade complete"
 fi
