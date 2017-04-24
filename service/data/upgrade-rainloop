@@ -9,8 +9,10 @@ local_webmail=/etc/user/http/webmail.pastespace.org
 new_zip_signature=$(curl -s "$remote_webmail/$signature_file")
 old_zip_signature=$(cat "$local_webmail/latest/$signature_file" || true)
 
+printf "RainLoop: checking for updates... "
 if [ "$new_zip_signature" != "$old_zip_signature" ];
 then
+  echo "found"
   echo "RainLoop: upgrading..."
   temp_dir=$(mktemp -d)
   pushd "$temp_dir"
@@ -44,4 +46,6 @@ then
   ln -sfn "$new_path" "$local_webmail/latest"
 
   echo "Rainloop: upgrade complete"
+else
+  printf "not found"
 fi
