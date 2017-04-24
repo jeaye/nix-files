@@ -52,7 +52,7 @@
   {
     jank-benchmark-home =
     {
-      path = [];
+      deps = [];
       text =
       ''
         chown -R jank-benchmark:users /etc/user/jank-benchmark

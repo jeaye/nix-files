@@ -67,7 +67,7 @@
   {
     safepaste-home =
     {
-      path = [];
+      deps = [];
       text =
       ''
         chown -R safepaste:users /etc/user/safepaste

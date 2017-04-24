@@ -23,7 +23,7 @@
   {
     git-home =
     {
-      path = [];
+      deps = [];
       text =
       ''
         PATH=${pkgs.git}/bin:$PATH

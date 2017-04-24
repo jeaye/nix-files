@@ -28,7 +28,7 @@
   {
     jeaye-imap-filter =
     {
-      path = [];
+      deps = [];
       text =
       ''
         mkdir -p /etc/user/jeaye/.secret

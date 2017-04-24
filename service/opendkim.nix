@@ -62,7 +62,7 @@
   {
     opendkim =
     {
-      path = [];
+      deps = [];
       text =
       ''
         export PATH=${pkgs.stdenv}/bin:${pkgs.openssl}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH

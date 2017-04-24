@@ -20,7 +20,7 @@
   {
     irc-home =
     {
-      path = [];
+      deps = [];
       text =
       ''
         ln -sf /etc/user/dotfiles/weechat /etc/user/irc/.weechat
