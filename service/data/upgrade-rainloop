@@ -14,11 +14,11 @@ then
   echo "RainLoop: upgrading..."
   temp_dir=$(mktemp -d)
   pushd "$temp_dir"
-    gpg --import <(curl -s "http://www.rainloop.net/repository/RainLoop.asc")
+    gpg2 --import <(curl -s "http://www.rainloop.net/repository/RainLoop.asc")
 
     # Download new version
     wget "$remote_webmail/$zip_file"
-    gpg --verify <(echo "$new_zip_signature") "$zip_file"
+    gpg2 --verify <(echo "$new_zip_signature") "$zip_file"
 
     # Start from the latest, if it's there
     if [ -d "$local_webmail/latest" ];
