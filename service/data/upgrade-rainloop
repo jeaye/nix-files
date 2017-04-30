@@ -6,10 +6,11 @@ zip_file=rainloop-community-latest.zip
 signature_file=$zip_file.asc
 remote_webmail=https://www.rainloop.net/repository/webmail
 local_webmail=/etc/user/http/webmail.pastespace.org
+
+printf "RainLoop: checking for upgrades... "
 new_zip_signature=$(curl -s "$remote_webmail/$signature_file")
 old_zip_signature=$(cat "$local_webmail/latest/$signature_file" || true)
 
-printf "RainLoop: checking for upgrades... "
 if [ "$new_zip_signature" != "$old_zip_signature" ];
 then
   echo "found"
