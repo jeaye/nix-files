@@ -87,7 +87,7 @@ in
         ''
           <Directory /etc/user/http/webmail.pastespace.org/latest>
             DirectoryIndex index.php
-            Options +FollowSymLinks +ExecCGI
+            Options -Indexes +FollowSymLinks +ExecCGI
             AllowOverride All
             Order deny,allow
             Allow from all
