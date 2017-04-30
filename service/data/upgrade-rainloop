@@ -29,6 +29,7 @@ then
     fi
 
     unzip -o "$zip_file"
+    rm "$zip_file"
 
     echo "$new_zip_signature" > "$signature_file"
   popd
