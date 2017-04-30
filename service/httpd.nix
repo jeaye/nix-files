@@ -87,7 +87,7 @@ in
         ''
           <Directory /etc/user/http/webmail.pastespace.org/latest>
             DirectoryIndex index.php
-            Options +Indexes +FollowSymLinks +ExecCGI
+            Options +FollowSymLinks +ExecCGI
             AllowOverride All
             Order deny,allow
             Allow from all
@@ -183,10 +183,6 @@ in
         documentRoot = "/etc/user/http/bench.jank-lang.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/bench.jank-lang.org>
-            Options -Indexes
-          </Directory>
-
           #SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
