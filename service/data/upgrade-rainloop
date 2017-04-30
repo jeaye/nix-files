@@ -4,7 +4,7 @@ set -eu -o pipefail
 
 zip_file=rainloop-community-latest.zip
 signature_file=$zip_file.asc
-remote_webmail=http://www.rainloop.net/repository/webmail
+remote_webmail=https://www.rainloop.net/repository/webmail
 local_webmail=/etc/user/http/webmail.pastespace.org
 new_zip_signature=$(curl -s "$remote_webmail/$signature_file")
 old_zip_signature=$(cat "$local_webmail/latest/$signature_file" || true)
@@ -16,7 +16,7 @@ then
   echo "RainLoop: upgrading..."
   temp_dir=$(mktemp -d)
   pushd "$temp_dir"
-    gpg2 --import <(curl -s "http://www.rainloop.net/repository/RainLoop.asc")
+    gpg2 --import <(curl -s "https://www.rainloop.net/repository/RainLoop.asc")
 
     # Download new version
     wget "$remote_webmail/$zip_file"
