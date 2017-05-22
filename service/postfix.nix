@@ -174,6 +174,7 @@
       '';
       mode = "0774";
     };
+  };
 
   networking.firewall =
   {
