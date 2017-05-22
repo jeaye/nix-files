@@ -151,12 +151,12 @@
         -o smtpd_sasl_security_options=noanonymous
 
       # Hooking
-      filter_hook unix - n n - - pipe
-        flags=F user=jeaye argv=/etc/postfix-filter-hook ''${sender} ''${size} ''${recipient}
-      smtp      inet  n       -       -       -       -       smtpd
-        -o content_filter=filter_hook:dummy
-      pickup    fifo  n       -       -       60      1       pickup
-        -o content_filter=filter_hook:dummy
+      #filter_hook unix - n n - - pipe
+      #  flags=F user=jeaye argv=/etc/postfix-filter-hook ''${sender} ''${size} ''${recipient}
+      #smtp      inet  n       -       -       -       -       smtpd
+      #  -o content_filter=filter_hook:dummy
+      #pickup    fifo  n       -       -       60      1       pickup
+      #  -o content_filter=filter_hook:dummy
     '';
   };
 
