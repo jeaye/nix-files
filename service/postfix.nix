@@ -152,7 +152,7 @@
 
       # Hooking
       filter_hook unix - n n - - pipe
-        flags=F user=postfix argv=/etc/postfix-filter-hook ''${sender} ''${size} ''${recipient}
+        flags=F user=jeaye argv=/etc/postfix-filter-hook ''${sender} ''${size} ''${recipient}
       smtp      inet  n       -       -       -       -       smtpd
         -o content_filter=filter_hook:dummy
       pickup    fifo  n       -       -       60      1       pickup
