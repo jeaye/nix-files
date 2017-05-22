@@ -169,7 +169,8 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        cat > /tmp/postfix-filter-dump
+        #cat > /tmp/postfix-filter-dump
+        echo "yes!" > /tmp/postfix-filter-dump
         exit 0
       '';
       mode = "0774";
