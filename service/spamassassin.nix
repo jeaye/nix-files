@@ -73,6 +73,7 @@
         sa-learn --no-sync --ham /etc/user/jeaye/Maildir/.ML*/{cur,new}
         sa-learn --sync
       '';
+      mode = "0774";
     };
   };
 }
