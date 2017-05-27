@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs;
+  [
+    procmail
+  ];
+
   services.postfix = rec
   {
     enable = true;
@@ -70,6 +75,9 @@
 
       # Prevent others from checking for valid emails
       disable_vrfy_command = yes
+
+      # Deliver through procmail
+      mailbox_command = ${pkgs.procmail}/bin/procmail -a "$EXTENSION"
 
       # Security
       smtpd_use_tls = yes
