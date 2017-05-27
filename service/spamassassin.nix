@@ -60,7 +60,7 @@
         }
       '';
     };
-    "train-spamassassin"
+    "train-spamassassin" =
     {
       text =
       ''
@@ -70,6 +70,7 @@
         # TODO: Possibly run for other users
         sa-learn --no-sync --spam /etc/user/jeaye/Maildir/.Spam/{cur,new}
         sa-learn --no-sync --ham /etc/user/jeaye/Maildir/.Ham/{cur,new}
+        sa-learn --no-sync --ham /etc/user/jeaye/Maildir/.ML*/{cur,new}
         sa-learn --sync
       '';
     };
