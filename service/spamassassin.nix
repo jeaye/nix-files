@@ -3,10 +3,11 @@
 {
   services.spamassassin.enable = true;
 
-  # Regularly update spamassassin rules
+  # Regularly update spamassassin rules and train
   services.cron.systemCronJobs =
   [
     "@daily root ${pkgs.spamassassin}/bin/sa-update"
+    "@daily root /etc/train-spamassassin"
   ];
 
   system.activationScripts =
@@ -27,10 +28,10 @@
 
   # https://github.com/NixOS/nixpkgs/issues/7915#issuecomment-104882091
   environment.etc =
-  [
+  {
+    "procmailrc" =
     {
-      target = "procmailrc";
-      source = pkgs.writeText "procmailrc"
+      text =
       ''
         SHELL="/bin/bash"
         SENDMAIL="/run/wrappers/bin/sendmail -oi -t"
@@ -58,6 +59,18 @@
           | sed -e '1s/^/F/'
         }
       '';
-    }
+    };
+    "train-spamassassin"
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        # TODO: Possibly run for other users
+        sa-learn --spam /etc/user/jeaye/Maildir/.Spam/{cur,new}
+        sa-learn --ham /etc/user/jeaye/Maildir/.Ham/{cur,new}
+      '';
+    };
   ];
 }
