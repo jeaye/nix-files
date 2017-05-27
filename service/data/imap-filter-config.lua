@@ -11,7 +11,6 @@ function main()
   account.INBOX:check_status()
 
   local mails = account.INBOX:select_all()
-  delete_spam(account, mails)
   move_mailing_lists(account, mails)
 
   local sent = account["Sent"]:select_all()
@@ -28,18 +27,6 @@ function main()
 
   local spam = account["Spam"]:select_all()
   move_mailing_lists(account, spam)
-end
-
-function delete_spam(account, mails)
-  results = Set {}
-  for _, mesg in ipairs(mails) do
-    mbox, uid = table.unpack(mesg)
-    text = mbox[uid]:fetch_message()
-    if (pipe_to("/run/current-system/sw/bin/bogofilter", text) == 0) then
-      table.insert(results, mesg)
-    end
-  end
-  results:move_messages(account["Spam"]);
 end
 
 function move_mailing_lists(account, mails)

@@ -42,9 +42,9 @@
   };
 
   # Run imap-filter regularly
-  #services.cron.systemCronJobs =
-  #[
-  #  "*/5 * * * * jeaye ${pkgs.imapfilter}/bin/imapfilter > /dev/null 2>&1"
-  #  "0 */1 * * * jeaye /etc/user/jeaye/teach-bogofilter > /dev/null 2>&1"
-  #];
+  services.cron.systemCronJobs =
+  [
+    "*/5 * * * * jeaye ${pkgs.imapfilter}/bin/imapfilter > /dev/null 2>&1"
+    "0 */1 * * * jeaye /etc/user/jeaye/teach-bogofilter > /dev/null 2>&1"
+  ];
 }
