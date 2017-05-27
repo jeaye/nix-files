@@ -62,6 +62,9 @@ function move_personal_lists(account, mails)
 
   -- Furthington
   move_if_to_or_cc_or_from_contains(account, mails, "furthington.com", "Furthington")
+
+  -- TinyCo
+  move_if_to_or_cc_or_from_contains(account, mails, "brooklynpacket/", "TinyCo")
 end
 
 function move_if_subject_contains(account, mails, subject, mailbox)
