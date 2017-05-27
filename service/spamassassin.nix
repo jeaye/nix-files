@@ -2,7 +2,6 @@
 
 {
   services.spamassassin.enable = true;
-  services.spamassassin.debug = true;
 
   # Regularly update spamassassin rules
   services.cron.systemCronJobs =
