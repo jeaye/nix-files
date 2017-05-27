@@ -34,6 +34,8 @@
       text =
       ''
         SHELL="/bin/bash"
+        LINEBUF=4096
+        VERBOSE=on
         SENDMAIL="/run/wrappers/bin/sendmail -oi -t"
         LOGFILE="/var/log/procmail.log"
         DEFAULT="$HOME/Maildir/"
@@ -58,6 +60,8 @@
           :0 fhw
           | sed -e '1s/^/F/'
         }
+
+        INCLUDERC="$HOME/.procmailrc
       '';
     };
     "train-spamassassin" =
