@@ -35,12 +35,12 @@
       ''
         SHELL="/bin/bash"
         LINEBUF=4096
-        VERBOSE=on
         SENDMAIL="/run/wrappers/bin/sendmail -oi -t"
-        LOGFILE="/var/log/procmail.log"
         DEFAULT="$HOME/Maildir/"
         MAILDIR="$HOME/Maildir/"
         DROPPRIVS="yes"
+        VERBOSE=on
+        LOGFILE=$HOME/.procmail.log
 
         :0fw
         * < 512000
