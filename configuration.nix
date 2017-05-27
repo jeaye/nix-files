@@ -30,6 +30,7 @@
     ./service/postfix.nix
     ./service/dovecot.nix
     ./service/opendkim.nix
+    ./service/spamassassin.nix
     ./service/safepaste.nix
     ./service/jank-benchmark.nix
     ./service/fail2ban.nix
