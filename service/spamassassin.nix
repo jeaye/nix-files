@@ -4,7 +4,12 @@
   services.spamassassin.enable = true;
   services.spamassassin.debug = true;
 
-  # TODO: sa-update job
+  # Regularly update spamassassin rules
+  services.cron.systemCronJobs =
+  [
+    "@daily root ${pkgs.spamassassin}/bin/sa-update"
+  ];
+
   system.activationScripts =
   {
     spamassassin =
