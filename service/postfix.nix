@@ -77,7 +77,7 @@
       disable_vrfy_command = yes
 
       # Deliver through procmail
-      mailbox_command = ${pkgs.procmail}/bin/procmail -a "$EXTENSION"
+      mailbox_command = ${pkgs.procmail}/bin/procmail -t -a "$EXTENSION"
 
       # Security
       smtpd_use_tls = yes
