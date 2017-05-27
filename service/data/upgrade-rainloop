@@ -43,8 +43,13 @@ then
     exit 1
   fi
 
-  # Move the new version into place and atomically link/upgrade
+  # Move the new version into place and setup permissions
   mv "$temp_dir" "$new_path"
+  find "$new_path" -type d -exec chmod 755 {} \;
+  find "$new_path" -type f -exec chmod 644 {} \;
+  chown -R http:users "$new_path"
+
+  # Atomically link/upgrade
   ln -sfn "$new_path" "$local_webmail/latest"
 
   echo "Rainloop: upgrade complete"
