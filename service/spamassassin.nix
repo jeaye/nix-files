@@ -4,6 +4,7 @@
   services.spamassassin.enable = true;
   services.spamassassin.debug = true;
 
+  # TODO: sa-update job
   system.activationScripts =
   {
     spamassassin =
@@ -27,9 +28,11 @@
       target = "procmailrc";
       source = pkgs.writeText "procmailrc"
       ''
-        # generated global procmail configuration -- do not edit
-
-        DEFAULT="/var/spool/mail/$LOGNAME"
+        SHELL="/bin/bash"
+        SENDMAIL="/run/wrappers/bin/sendmail -oi -t"
+        LOGFILE="/var/log/procmail.log"
+        DEFAULT="$HOME/Maildir/"
+        MAILDIR="$HOME/Maildir/"
         DROPPRIVS="yes"
 
         :0fw
