@@ -38,6 +38,10 @@
         :0fw
         * < 512000
         | ${pkgs.spamassassin}/bin/spamc
+
+        :0:
+        * ^X-Spam-Level: ****
+        Spam
       '';
     }
   ];
