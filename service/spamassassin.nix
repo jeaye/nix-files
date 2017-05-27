@@ -68,8 +68,9 @@
         set -eu
 
         # TODO: Possibly run for other users
-        sa-learn --spam /etc/user/jeaye/Maildir/.Spam/{cur,new}
-        sa-learn --ham /etc/user/jeaye/Maildir/.Ham/{cur,new}
+        sa-learn --no-sync --spam /etc/user/jeaye/Maildir/.Spam/{cur,new}
+        sa-learn --no-sync --ham /etc/user/jeaye/Maildir/.Ham/{cur,new}
+        sa-learn --sync
       '';
     };
   ];
