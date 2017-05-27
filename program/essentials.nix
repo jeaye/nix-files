@@ -13,5 +13,6 @@
     telnet
     traceroute
     nix-repl
+    file
   ];
 }
