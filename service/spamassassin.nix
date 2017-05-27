@@ -46,6 +46,17 @@
         :0:
         * ^X-Spam-Status: Yes
         Spam
+
+        # Work around procmail bug: any output on stderr will cause the
+        # "F" in "From" to be dropped. This will re-add it.
+        :0
+        * ^^rom[ ]
+        {
+          LOG="*** Dropped F off From_ header! Fixing up. "
+
+          :0 fhw
+          | sed -e '1s/^/F/'
+        }
       '';
     }
   ];
