@@ -45,7 +45,7 @@
 
         :0:
         * ^X-Spam-Status: Yes
-        Spam
+        .Spam/
 
         # Work around procmail bug: any output on stderr will cause the
         # "F" in "From" to be dropped. This will re-add it.
