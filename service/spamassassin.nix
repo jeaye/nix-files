@@ -16,7 +16,7 @@
       deps = [];
       text =
       ''
-        # Make sure SpamAssassin database is present
+        # Make sure spamassassin database is present
         if ! [ -d /etc/spamassassin ];
         then
           cp -r ${pkgs.spamassassin}/share/spamassassin /etc
@@ -44,7 +44,7 @@
         | ${pkgs.spamassassin}/bin/spamc
 
         :0:
-        * ^X-Spam-Level: ****
+        * ^X-Spam-Status: Yes
         Spam
       '';
     }
