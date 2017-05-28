@@ -34,7 +34,6 @@
     ./service/safepaste.nix
     ./service/jank-benchmark.nix
     ./service/fail2ban.nix
-    ./service/imap-filter.nix
     ./service/radicale.nix
     ./service/gpg.nix
     ./service/jank-license.nix
