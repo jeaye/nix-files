@@ -143,7 +143,7 @@
 
         printf "$month $year $site : $views\n"
       '';
-                                                                                                                                                                                                                                                                     mode = "0774";
+      mode = "0774";
     };
     "admin/unban-fail2ban-ip" =
     {
