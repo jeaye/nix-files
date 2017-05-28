@@ -35,4 +35,87 @@
       '';
     };
   };
+
+  environment.etc =
+  {
+    "user/jeaye/.procmailrc" =
+    {
+      text =
+      ''
+        INCLUDERC $HOME/.procmail/list.rc
+        INCLUDERC $HOME/.procmail/work.rc
+        INCLUDERC $HOME/.procmail/admin.rc
+      '';
+    };
+    "user/jeaye/.procmail/list.rc" =
+    {
+      text =
+      ''
+        # Clojure mailing list
+        :0:
+        * ^X-BeenThere: clojure@googlegroups\.com
+        .ML.Clojure/
+
+        # ClojureScript mailing list
+        :0:
+        * ^X-BeenThere: clojurescript@googlegroups\.com
+        .ML.ClojureScript/
+
+        # Clang mailing list
+        :0:
+        * ^X-BeenThere: cfe-(users|dev)@cs\.uiuc\.edu
+        .ML.Clang/
+
+        # ISOC++ mailing list
+        :0:
+        * ^X-BeenThere: std-(proposals|discussion)@isocpp\.org
+        .ML.ISOCPP/
+
+        # Slackware mailing list
+        :0:
+        * ^(From|Cc|To).*slackware-(security|announce)@slackware\.com
+        .ML.Slackware/
+
+        # NixOS mailing list
+        :0:
+        * ^X-BeenThere: nix-dev@lists\.science\.uu\.nl
+        .ML.NixOS/
+
+        # NixOS-Security mailing list
+        :0:
+        * ^X-BeenThere: nix-security-announce@googlegroups\.com
+        .ML.NixOS-Sec/
+      '';
+    };
+    "user/jeaye/.procmail/work.rc" =
+    {
+      text =
+      ''
+        # Furthington bucket
+        :0:
+        * ^(From|Cc|To).*furthington\.com
+        .Furthington/
+
+        # LetsBet bucket
+        :0:
+        * ^(From|Cc|To).*russalek13@gmail\.com
+        .LetsBet/
+
+        # TinyCo bucket
+        :0:
+        * ^(From|Cc|To).*brooklynpacket/.*
+        .TinyCo/
+      '';
+    };
+    "user/jeaye/.procmail/admin.rc" =
+    {
+      text =
+      ''
+        # DMARC reports
+        :0:
+        * ^Subject: Report domain:
+        .ML.DMARC/
+      '';
+    };
+  };
 }
