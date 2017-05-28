@@ -62,7 +62,7 @@
         }
 
         # Apply user rules
-        INCLUDERC="$HOME/.procmailrc
+        INCLUDERC="$HOME/.procmailrc"
       '';
     };
     "train-spamassassin" =
