@@ -4,6 +4,7 @@ let
   spamassassin_prefs =
   ''
     required_score 3
+    report_safe 0
     score BAYES_00 -4
     score BAYES_05 -2
     score BAYES_95 6
