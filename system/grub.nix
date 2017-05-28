@@ -3,8 +3,6 @@
 {
   boot.kernelParams = [ "boot.shell_on_fail" ];
 
-  security.grsecurity.enable = false;
-
   boot.loader.grub =
   {
     enable = true;
