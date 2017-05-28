@@ -46,9 +46,6 @@
         * < 512000
         | ${pkgs.spamassassin}/bin/spamc
 
-        # Apply user rules first
-        INCLUDERC="$HOME/.procmailrc
-
         :0:
         * ^X-Spam-Status: Yes
         .Spam/
@@ -63,6 +60,9 @@
           :0 fhw
           | sed -e '1s/^/F/'
         }
+
+        # Apply user rules
+        INCLUDERC="$HOME/.procmailrc
       '';
     };
     "train-spamassassin" =
