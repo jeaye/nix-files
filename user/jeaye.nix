@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 
+let
+  spamassassin_prefs =
+  ''
+    required_score 3
+    score BAYES_00 -4
+    score BAYES_05 -2
+    score BAYES_95 6
+    score BAYES_99 9
+  '';
+in
 {
   environment.systemPackages = with pkgs;
   [
@@ -32,6 +42,11 @@
           ln -sf /etc/user/jeaye/.vim/vimrc /etc/user/jeaye/.vimrc
         fi
         chown -R jeaye:users /etc/user/jeaye/.vim
+
+        if [ ! -f /var/lib/spamassassin/user-jeaye/user_prefs ];
+        then
+          echo "${spamassassin_prefs}" > /var/lib/spamassassin/user-jeaye/user_prefs
+        fi
       '';
     };
   };
