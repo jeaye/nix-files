@@ -57,9 +57,9 @@ in
     {
       text =
       ''
-        INCLUDERC $HOME/.procmail/list.rc
-        INCLUDERC $HOME/.procmail/work.rc
-        INCLUDERC $HOME/.procmail/admin.rc
+        INCLUDERC .procmail/list.rc
+        INCLUDERC .procmail/work.rc
+        INCLUDERC .procmail/admin.rc
       '';
     };
     "user/jeaye/.procmail/list.rc" =
