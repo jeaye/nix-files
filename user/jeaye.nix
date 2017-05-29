@@ -59,9 +59,9 @@ in
     {
       text =
       ''
-        INCLUDERC /etc/user/jeaye/.procmail/list.rc
-        INCLUDERC /etc/user/jeaye/.procmail/work.rc
-        INCLUDERC /etc/user/jeaye/.procmail/admin.rc
+        INCLUDERC=/etc/user/jeaye/.procmail/list.rc
+        INCLUDERC=/etc/user/jeaye/.procmail/work.rc
+        INCLUDERC=/etc/user/jeaye/.procmail/admin.rc
       '';
     };
     "user/jeaye/.procmail/list.rc" =
