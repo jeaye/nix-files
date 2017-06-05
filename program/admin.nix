@@ -138,8 +138,9 @@
         year=$(date +"%Y")
 
         views=$(grep "$month/$year" /var/log/httpd/access_log-$site \
-                     | grep "GET / HTTP/1.1\" 200" \
-                                  | wc -l)
+                     | egrep "GET /\S* HTTP/1.1\" 200" \
+                     | egrep -v "\.(css|png|js|txt)" \
+                     | wc -l)
 
         printf "$month $year $site : $views\n"
       '';
