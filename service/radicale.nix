@@ -38,7 +38,7 @@ keys = console,file
 keys = full
 
 [logger_root]
-level = DEBUG
+level = WARNING
 handlers = console,file
 
 [handler_console]
