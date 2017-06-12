@@ -20,7 +20,7 @@ type = none
 committer = Radicale <radicale@jeaye.com>
 
 [logging]
-debug = True
+debug = False
     '';
   };
 
