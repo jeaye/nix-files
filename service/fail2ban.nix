@@ -62,9 +62,9 @@
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
-    jails.postfix-ddos =
+    jails.postfix-scan =
     ''
-      filter   = postfix-ddos
+      filter   = postfix-scan
       maxretry = 3
       action   = iptables[name=postfix, port=submission, protocol=tcp]
       bantime  = 7200
@@ -86,10 +86,10 @@
     failregex = rejected connection: .* SRC=<HOST>
     ignoreip = 202.156.237.206
   '';
-  environment.etc."fail2ban/filter.d/postfix-ddos.conf".text =
+  environment.etc."fail2ban/filter.d/postfix-scan.conf".text =
   ''
     [Definition]
-    failregex = lost connection after EHLO from \S+\[<HOST>\]
+    failregex = lost connection after (EHLO|AUTH) from \S+\[<HOST>\]
   '';
 
   # Limit stack size to reduce memory usage
