@@ -53,7 +53,7 @@
       filter   = postfix
       maxretry = 3
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
-      enabled  = true
+      enabled  = false
     '';
     jails.postfix-sasl =
     ''
@@ -62,11 +62,12 @@
       action   = iptables[name=postfix, port=smtp, protocol=tcp]
       enabled  = true
     '';
-    jails.postfix-scan =
+    jails.postfix-custom =
     ''
-      filter   = postfix-scan
+      filter   = postfix-custom
       maxretry = 3
       action   = iptables[name=postfix, port=submission, protocol=tcp]
+                 iptables[name=postfix, port=smtp, protocol=tcp]
       bantime  = 7200
       enabled  = true
     '';
@@ -86,10 +87,14 @@
     failregex = rejected connection: .* SRC=<HOST>
     ignoreip = 202.156.237.206
   '';
-  environment.etc."fail2ban/filter.d/postfix-scan.conf".text =
+  environment.etc."fail2ban/filter.d/postfix-custom.conf".text =
   ''
     [Definition]
     failregex = lost connection after (EHLO|AUTH) from \S+\[<HOST>\]
+                reject: RCPT from \S+\[<HOST>\]: 450 4.7.1
+                reject: RCPT from \S+\[<HOST>\]: 554 5\.7\.1
+                reject: VRFY from \S+\[<HOST>\]: 550 5\.1\.1
+                improper command pipelining after \S+ from [^[]*\[<HOST>\]:?
   '';
 
   # Limit stack size to reduce memory usage
