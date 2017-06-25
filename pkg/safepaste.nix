@@ -7,7 +7,7 @@ stdenv.mkDerivation rec
   {
     url = "https://github.com/jeaye/safepaste.git";
     deepClone = true;
-    rev = "c4bc8af889c8ab43e7fcb4f0c0e100682d165d17";
+    rev = "28c4ed7ca2725e0412f68ef038c7f8cd9e24209e";
     sha256 = "1rg6ay68xnmz3pxgm7mgd4bcyra8z1s519lwx3gxciga1qyxb3z0";
   };
   buildInputs = [ pkgs.boot pkgs.nodejs ];
