@@ -130,7 +130,7 @@ in
       ''
         # DMARC reports
         :0:
-        * ^Subject: Report domain:
+        * ^Subject: Report [dD]omain:
         .ML.DMARC/
       '';
     };
