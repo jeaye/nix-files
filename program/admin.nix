@@ -8,6 +8,7 @@
   ];
 
   # TODO: Add a script for watching failed email logins
+  # TODO: Script for daily emails sent/recieved per user
   environment.etc =
   {
     "admin/daily-failed-ssh-logins" =
