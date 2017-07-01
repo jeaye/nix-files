@@ -3,7 +3,7 @@
 pythonPackages.buildPythonApplication rec
 {
   pname = "simp_le-client";
-  version = "0.2.0";
+  version = "0.3.0";
   name = "${pname}-${version}";
 
   src = pythonPackages.fetchPypi {
