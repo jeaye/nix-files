@@ -8,7 +8,7 @@ pythonPackages.buildPythonApplication rec
 
   src = pythonPackages.fetchPypi {
     inherit pname version;
-    sha256 = "1zg18jfry9mvkri3yd2f5mwfsl27ac9zmnll3bm93jb91jhd6ssh";
+    sha256 = "13nqfxlpw9y8r5p83cz5ms7i43vrarkrz2kfgnc9s6k1l2nbl6dm";
   };
 
   checkPhase = ''
