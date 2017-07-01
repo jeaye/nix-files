@@ -45,7 +45,6 @@ in
         extraDomains =
         {
           "www.safepaste.org" = null;
-          "mail.safepaste.org" = null;
         };
         email = global-email;
         plugins = global-plugins;
