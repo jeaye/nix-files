@@ -240,7 +240,7 @@ in
         hostName = "penny-art.com";
         serverAliases = [ "www.penny-art.com" ];
         documentRoot = "/etc/user/http/penny-art.com";
-        #globalRedirect = "https://penny.artstation.com/";
+        globalRedirect = "https://penny.artstation.com/";
         extraConfig =
         ''
         '' + (defaults "penny-art.com" "penny-art.com");
