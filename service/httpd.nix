@@ -230,21 +230,22 @@ in
         '' + (defaults "penelope-art.com" "penelope-art.com");
         enableSSL = true;
       }
-      #{
-      #  hostName = "penny-art.com";
-      #  serverAliases = [ "www.penny-art.com" ];
-      #  globalRedirect = "https://penny-art.com/";
-      #  enableSSL = false;
-      #}
+      {
+        hostName = "penny-art.com";
+        serverAliases = [ "www.penny-art.com" ];
+        globalRedirect = "https://penny-art.com/";
+        enableSSL = false;
+      }
       {
         hostName = "penny-art.com";
         serverAliases = [ "www.penny-art.com" ];
         documentRoot = "/etc/user/http/penny-art.com";
-        globalRedirect = "https://penny.artstation.com/";
         extraConfig =
+        (defaults "penny-art.com" "penny-art.com") +
         ''
-        '' + (defaults "penny-art.com" "penny-art.com");
-        enableSSL = false;
+          RedirectMatch 302 "^\/(?!\.well-known).*" https://penny.artstation.com/
+        '';
+        enableSSL = true;
       }
     ];
 
