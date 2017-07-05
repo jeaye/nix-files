@@ -243,7 +243,7 @@ in
         extraConfig =
         (defaults "penny-art.com" "penny-art.com") +
         ''
-          RedirectMatch 302 "^\/(?!\.well-known).*" https://penny.artstation.com/
+          RedirectMatch 301 "^\/(?!\.well-known).*" https://penny.artstation.com/
         '';
         enableSSL = true;
       }
