@@ -77,6 +77,15 @@ in
         plugins = global-plugins;
         postRun = global-post-run;
       };
+      "jank-lang.org" =
+      {
+        webroot = "/etc/user/http/jank-lang.org";
+        extraDomains =
+        { "www.jank-lang.org" = null; };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
       "fu-er.com" =
       {
         webroot = "/etc/user/http/fu-er.com";
