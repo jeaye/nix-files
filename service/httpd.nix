@@ -175,8 +175,18 @@ in
       {
         hostName = "jank-lang.org";
         serverAliases = [ "www.jank-lang.org" ];
-        globalRedirect = "https://github.com/jeaye/jank";
+        globalRedirect = "https://jank-lang.org/";
         enableSSL = false;
+      }
+      {
+        hostName = "jank-lang.org";
+        serverAliases = [ "www.jank-lang.org" ];
+        documentRoot = "/etc/user/http/jank-lang.org";
+        extraConfig =
+        ''
+          RedirectMatch 301 "^\/(?!\.well-known).*" https://github.com/jeaye/jank
+        '' + (defaults "jank-lang.org" "jank-lang.org");
+        enableSSL = true;
       }
       {
         hostName = "bench.jank-lang.org";
@@ -241,10 +251,9 @@ in
         serverAliases = [ "www.penny-art.com" ];
         documentRoot = "/etc/user/http/penny-art.com";
         extraConfig =
-        (defaults "penny-art.com" "penny-art.com") +
         ''
           RedirectMatch 301 "^\/(?!\.well-known).*" https://penny.artstation.com/
-        '';
+        '' + (defaults "penny-art.com" "penny-art.com");
         enableSSL = true;
       }
     ];
