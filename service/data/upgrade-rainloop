@@ -8,8 +8,14 @@ remote_webmail=https://www.rainloop.net/repository/webmail
 local_webmail=/etc/user/http/webmail.pastespace.org
 
 printf "RainLoop: checking for upgrades... "
-new_zip_signature=$(curl -s "$remote_webmail/$signature_file")
+new_zip_signature=$(curl -s "$remote_webmail/$signature_file" || true)
 old_zip_signature=$(cat "$local_webmail/latest/$signature_file" || true)
+
+if [ "x$new_zip_signature" == "x" ];
+then
+  echo "no internet"
+  exit 0
+fi
 
 if [ "$new_zip_signature" != "$old_zip_signature" ];
 then
