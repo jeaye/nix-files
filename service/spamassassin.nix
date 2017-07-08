@@ -19,22 +19,6 @@
     "@daily root /etc/train-spamassassin"
   ];
 
-  system.activationScripts =
-  {
-    spamassassin =
-    {
-      deps = [];
-      text =
-      ''
-        # Make sure spamassassin database is present
-        if ! [ -d /etc/spamassassin ];
-        then
-          cp -r ${pkgs.spamassassin}/share/spamassassin /etc
-        fi
-      '';
-    };
-  };
-
   # https://github.com/NixOS/nixpkgs/issues/7915#issuecomment-104882091
   environment.etc =
   {
