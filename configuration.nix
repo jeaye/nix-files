@@ -42,6 +42,5 @@
     ./service/rainloop.nix
   ];
 
-  nix.nixPath = [ "nixpkgs=/etc/nixos/nixpkgs" "nixos-config=/etc/nixos/configuration.nix" ];
   system.stateVersion = "17.03";
 }
