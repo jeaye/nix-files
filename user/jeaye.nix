@@ -44,10 +44,10 @@ in
         fi
         chown -R jeaye:users /etc/user/jeaye/.vim
 
-        user_prefs=/var/lib/spamassassin/user-jeaye/user_prefs
+        user_prefs=/etc/user/jeaye/.spamassassin/user_prefs
         rm -f "$user_prefs"
         echo "${spamassassin_prefs}" > "$user_prefs"
-        chown spamd:spamd "$user_prefs"
+        chown jeaye:users "$user_prefs"
         chmod 0600 "$user_prefs"
       '';
     };
