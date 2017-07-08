@@ -26,11 +26,9 @@
       text =
       ''
         # Make sure spamassassin database is present
-        bayes_path=/var/lib/spamassassin/bayes
-        if ! [ -d $bayes_path ];
+        if ! [ -d /etc/spamassassin ];
         then
-          mkdir $bayes_path
-          chown spamd:spamd -R $bayes_path
+          cp -r ${pkgs.spamassassin}/share/spamassassin /etc
         fi
       '';
     };
