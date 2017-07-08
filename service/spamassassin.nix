@@ -1,12 +1,21 @@
 { config, pkgs, ... }:
 
 {
-  services.spamassassin.enable = true;
+  services.spamassassin =
+  {
+    enable = true;
+    config =
+    ''
+      use_bayes 1
+      bayes_auto_learn 0
+      bayes_path /var/lib/spamassassin/bayes
+    '';
+  };
 
   # Regularly update spamassassin rules and train
   services.cron.systemCronJobs =
   [
-    "@daily root ${pkgs.spamassassin}/bin/sa-update"
+    "@daily root ${pkgs.spamassassin}/bin/sa-update && systemctl restart spamd"
     "@daily root /etc/train-spamassassin"
   ];
 
@@ -73,9 +82,9 @@
         set -eu
 
         # TODO: Possibly run for other users
-        ${pkgs.spamassassin}/bin/sa-learn -u jeaye --no-sync --spam /etc/user/jeaye/Maildir/.Spam/{cur,new}
-        ${pkgs.spamassassin}/bin/sa-learn -u jeaye --no-sync --ham /etc/user/jeaye/Maildir/.Ham/{cur,new}
-        ${pkgs.spamassassin}/bin/sa-learn -u jeaye --no-sync --ham /etc/user/jeaye/Maildir/.ML*/{cur,new}
+        ${pkgs.spamassassin}/bin/sa-learn --no-sync --spam /etc/user/jeaye/Maildir/.Spam/{cur,new}
+        ${pkgs.spamassassin}/bin/sa-learn --no-sync --ham /etc/user/jeaye/Maildir/.Ham/{cur,new}
+        ${pkgs.spamassassin}/bin/sa-learn --no-sync --ham /etc/user/jeaye/Maildir/.ML*/{cur,new}
         ${pkgs.spamassassin}/bin/sa-learn --sync
       '';
       mode = "0774";
