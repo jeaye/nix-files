@@ -4,11 +4,12 @@
   services.spamassassin =
   {
     enable = true;
-    config =
-    ''
-      use_bayes 1
-      bayes_auto_learn 0
-    '';
+    # TODO: Wait for 17.09
+    #config =
+    #''
+    #  use_bayes 1
+    #  bayes_auto_learn 0
+    #'';
   };
 
   # Regularly update spamassassin rules and train
