@@ -8,8 +8,6 @@
     ''
       use_bayes 1
       bayes_auto_learn 0
-      bayes_path /var/lib/spamassassin/bayes
-      bayes_file_mode 0777
     '';
   };
 
