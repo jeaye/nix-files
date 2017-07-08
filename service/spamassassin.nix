@@ -9,6 +9,7 @@
       use_bayes 1
       bayes_auto_learn 0
       bayes_path /var/lib/spamassassin/bayes
+      bayes_file_mode 0777
     '';
   };
 
@@ -18,6 +19,24 @@
     "@daily root ${pkgs.spamassassin}/bin/sa-update && systemctl restart spamd"
     "@daily root /etc/train-spamassassin"
   ];
+
+  system.activationScripts =
+  {
+    spamassassin =
+    {
+      deps = [];
+      text =
+      ''
+        # Make sure spamassassin database is present
+        bayes_path=/var/lib/spamassassin/bayes
+        if ! [ -d $bayes_path ];
+        then
+          mkdir $bayes_path
+          chown spamd:spamd -R $bayes_path
+        fi
+      '';
+    };
+  };
 
   # https://github.com/NixOS/nixpkgs/issues/7915#issuecomment-104882091
   environment.etc =
