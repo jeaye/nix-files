@@ -139,7 +139,7 @@
         year=$(date +"%Y")
 
         views=$(grep "$month/$year" /var/log/httpd/access_log-$site \
-                     | pcregrep -o1 "GET (\/\S*\/)(?:\?.*)? HTTP\/\S+\" 200" \
+                     | pcregrep -o1 "GET (\/|\/\S*\/)(?:\?.*)? HTTP\/\S+\" 200" \
                      | egrep -v "\.(css|png|js|txt|xml|well-known)" \
                      | wc -l)
 
@@ -159,7 +159,7 @@
         year=$(date +"%Y")
 
         views=$(grep "$month/$year" /var/log/httpd/access_log-$site \
-                    | pcregrep -o1 "GET (\/\S*\/)(?:\?.*)? HTTP\/\S+\" 200" \
+                    | pcregrep -o1 "GET (\/|\/\S*\/)(?:\?.*)? HTTP\/\S+\" 200" \
                     | egrep -v "\.(css|png|js|txt|xml|well-known)" \
                     | sort \
                     | uniq -c \
