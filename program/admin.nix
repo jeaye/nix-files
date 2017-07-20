@@ -140,7 +140,7 @@
 
         views=$(grep "$month/$year" /var/log/httpd/access_log-$site \
                      | egrep "GET /\S* HTTP/\S+\" 200" \
-                     | egrep -v "\.(css|png|js|txt|xml)" \
+                     | egrep -v "\.(css|png|js|txt|xml|well-known)" \
                      | wc -l)
 
         printf "$month $year $site : $views\n"
