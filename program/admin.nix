@@ -147,6 +147,29 @@
       '';
       mode = "0774";
     };
+    "admin/monthly-http-favorites" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
+
+        month=$1 # Mar, Jun, etc
+        site=$2 # jeaye.com, safepaste.org, etc
+        year=$(date +"%Y")
+
+        views=$(grep "$month/$year" /var/log/httpd/access_log-$site \
+                    | pcregrep -o1 "GET (/\S*) HTTP/\S+\" 200" \
+                    | egrep -v "\.(css|png|js|txt|xml|well-known)" \
+                    | sort \
+                    | uniq -c \
+                    | sort -n)
+
+        echo "$month $year $site :"
+        echo "$views"
+      '';
+      mode = "0774";
+    };
     "admin/unban-fail2ban-ip" =
     {
       text =
