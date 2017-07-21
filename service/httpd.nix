@@ -48,6 +48,7 @@ in
         serverAliases =
         [
           "www.pastespace.org"
+          "mail.pastespace.org"
         ];
         globalRedirect = "https://pastespace.org/";
         enableSSL = false;
