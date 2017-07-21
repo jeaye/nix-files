@@ -83,9 +83,13 @@ in
       }
       {
         hostName = "webmail.pastespace.org";
-        documentRoot = "/etc/user/http/webmail.pastespace.org/latest";
+        documentRoot = "/etc/user/http/webmail.pastespace.org";
         extraConfig =
         ''
+          <Directory /etc/user/http/webmail.pastespace.org>
+            Options -Indexes
+            Deny from all
+          </Directory>
           <Directory /etc/user/http/webmail.pastespace.org/latest>
             DirectoryIndex index.php
             Options -Indexes +FollowSymLinks +ExecCGI
@@ -98,7 +102,7 @@ in
             Options -Indexes
             Deny from all
           </Directory>
-        '' + (defaults "webmail.pastespace.org" "pastespace.org");
+        '' + (defaults "webmail.pastespace.org" "webmail.pastespace.org");
         enableSSL = true;
       }
       {
