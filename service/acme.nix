@@ -33,7 +33,7 @@ in
         {
           "www.pastespace.org" = null;
           "mail.pastespace.org" = null;
-          "webmail.pastespace.org" = null;
+          "webmail.pastespace.org:/etc/user/http/webmail.pastespace.org" = null;
         };
         email = global-email;
         plugins = global-plugins;

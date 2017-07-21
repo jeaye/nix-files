@@ -86,10 +86,6 @@ in
         documentRoot = "/etc/user/http/webmail.pastespace.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/webmail.pastespace.org>
-            Options -Indexes
-            Deny from all
-          </Directory>
           <Directory /etc/user/http/webmail.pastespace.org/latest>
             DirectoryIndex index.php
             Options -Indexes +FollowSymLinks +ExecCGI
