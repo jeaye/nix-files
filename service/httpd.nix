@@ -196,15 +196,15 @@ in
       }
       {
         hostName = "bench.jank-lang.org";
-        documentRoot = "/etc/user/http/bench.jank-lang.org";
+        documentRoot = "/etc/user/http/jank-lang.org";
         extraConfig =
         ''
-          #SSLProxyEngine On
+          SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
           ProxyPass / http://localhost:3001/
           ProxyPassReverse / http://localhost:3001/
-        '' + (defaults "bench.jank-lang.org" "jank-lang.org");
+        '' + (defaults "jank-lang.org" "jank-lang.org");
         enableSSL = true;
       }
       {
