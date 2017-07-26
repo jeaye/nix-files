@@ -199,16 +199,8 @@ in
           ProxyPass /.well-known !
           ProxyPass / http://localhost:3001/
           ProxyPassReverse / http://localhost:3001/
-
-          #SSLCertificateKeyFile /var/lib/acme/jank-lang.org/key.pem
-          #SSLCertificateChainFile /var/lib/acme/jank-lang.org/chain.pem
-          #SSLCertificateFile /var/lib/acme/jank-lang.org/cert.pem
-          #SSLProtocol All -SSLv2 -SSLv3
-          #SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-          #SSLHonorCipherOrder on
-        '';
-        #enableSSL = true;
-        # TODO: SSL
+        '' + (defaults "bench.jank-lang.org" "jank-lang.org");
+        enableSSL = true;
       }
       {
         hostName = "fu-er.com";
