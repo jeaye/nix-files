@@ -191,6 +191,11 @@ in
       }
       {
         hostName = "bench.jank-lang.org";
+        globalRedirect = "https://bench.jank-lang.org/";
+        enableSSL = false;
+      }
+      {
+        hostName = "bench.jank-lang.org";
         documentRoot = "/etc/user/http/bench.jank-lang.org";
         extraConfig =
         ''
