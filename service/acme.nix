@@ -81,7 +81,10 @@ in
       {
         webroot = "/etc/user/http/jank-lang.org";
         extraDomains =
-        { "www.jank-lang.org" = null; };
+        {
+          "www.jank-lang.org" = null;
+          "bench.jank-lang.org" = null;
+        };
         email = global-email;
         plugins = global-plugins;
         postRun = global-post-run;
