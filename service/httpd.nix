@@ -281,7 +281,6 @@ in
     "user/http/jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/blog.jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/jank-lang.org/.well-known/.manage-directory".text = "";
-    "user/http/bench.jank-lang.org/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
     "user/http/fu-er.com/.well-known/.manage-directory".text = "";
