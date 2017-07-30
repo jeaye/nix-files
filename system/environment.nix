@@ -18,7 +18,6 @@
   nix.allowedUsers = [];
   nix.extraOptions =
   ''
-    auto-optimise-store = true
     build-use-sandbox = false
     build-use-chroot = false
   '';
