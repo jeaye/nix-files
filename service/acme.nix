@@ -122,6 +122,17 @@ in
         plugins = global-plugins;
         postRun = global-post-run;
       };
+      "okletsplay.com" =
+      {
+        webroot = "/etc/user/http/okletsplay.com";
+        extraDomains =
+        {
+          "www.okletsplay.com" = null;
+        };
+        email = global-email;
+        plugins = global-plugins;
+        postRun = global-post-run;
+      };
     };
   };
 }

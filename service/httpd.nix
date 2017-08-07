@@ -254,6 +254,20 @@ in
         '' + (defaults "penny-art.com" "penny-art.com");
         enableSSL = true;
       }
+      {
+        hostName = "okletsplay.com";
+        serverAliases = [ "www.okletsplay.com" ];
+        globalRedirect = "https://okletsplay.com/";
+      }
+      {
+        hostName = "okletsplay.com";
+        serverAliases = [ "www.okletsplay.com" ];
+        documentRoot = "/etc/user/http/okletsplay.com";
+        extraConfig =
+        ''
+        '' + (defaults "okletsplay.com" "okletsplay.com");
+        enableSSL = true;
+      }
     ];
 
     extraConfig =
@@ -286,6 +300,7 @@ in
     "user/http/fu-er.com/.well-known/.manage-directory".text = "";
     "user/http/penelope-art.com/.well-known/.manage-directory".text = "";
     "user/http/penny-art.com/.well-known/.manage-directory".text = "";
+    "user/http/okletsplay.com/.well-known/.manage-directory".text = "";
   };
 
   networking.firewall =
