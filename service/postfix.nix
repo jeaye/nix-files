@@ -34,6 +34,7 @@
       contact@furthington.com    jeaye
       support@furthington.com    jeaye
       spam@pastespace.org        jeaye
+      junk@pastespace.org        jeaye
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
