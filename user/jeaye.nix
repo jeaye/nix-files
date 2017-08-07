@@ -102,6 +102,11 @@ in
         :0:
         * ^X-BeenThere: nix-security-announce@googlegroups\.com
         .ML.NixOS-Sec/
+
+        # Junk
+        :0:
+        * ^To: junk@pastespace.org
+        .Junk/
       '';
     };
     "user/jeaye/.procmail/work.rc" =
