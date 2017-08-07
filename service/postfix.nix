@@ -35,6 +35,11 @@
       support@furthington.com    jeaye
       spam@pastespace.org        jeaye
       junk@pastespace.org        jeaye
+
+      contact@okletsplay.com     russalek13@gmail.com
+      russ@okletsplay.com        russalek13@gmail.com
+      jeaye@okletsplay.com       jeaye
+      cogwheel@okletsplay.com    maorlando@gmail.com
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
@@ -69,7 +74,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org furthington.com fu-er.com penelope-art.com penny-art.com
+      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org furthington.com fu-er.com penelope-art.com penny-art.com okletsplay.com
 
       # Max email size ~20MB
       message_size_limit = 20480000
