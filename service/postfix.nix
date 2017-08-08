@@ -35,6 +35,7 @@
       support@furthington.com    jeaye
       spam@pastespace.org        jeaye
       junk@pastespace.org        jeaye
+      kitty@pastespace.org       fu-er
 
       contact@okletsplay.com     russalek13@gmail.com
       russ@okletsplay.com        russalek13@gmail.com
