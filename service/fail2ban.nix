@@ -71,21 +71,11 @@
       bantime  = 7200
       enabled  = true
     '';
-    #jails.dovecot =
-    #''
-    #  filter   = dovecot
-    #  maxretry = 5
-    #  action   = iptables[name=dovecot, port=imap, protocol=tcp]
-    #             iptables[name=dovecot, port=imaps, protocol=tcp]
-    #             iptables[name=dovecot, port=submission, protocol=tcp]
-    #  enabled  = true
-    #'';
   };
   environment.etc."fail2ban/filter.d/port-scan.conf".text =
   ''
     [Definition]
     failregex = rejected connection: .* SRC=<HOST>
-    ignoreip = 202.156.237.206
   '';
   environment.etc."fail2ban/filter.d/postfix-custom.conf".text =
   ''
