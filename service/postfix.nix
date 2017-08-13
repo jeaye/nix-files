@@ -28,13 +28,16 @@
       contact@arrownext.com      jeaye
       contact@jeaye.com          jeaye
       contact@trustcoin.org      jeaye
+      contact@furthington.com    jeaye
+      support@furthington.com    jeaye
+
+      spam@pastespace.org        jeaye
+      junk@pastespace.org        jeaye
+      junk@jeaye.com             jeaye
+
       contact@fu-er.com          fu-er
       contact@penelope-art.com   fu-er
       contact@penny-art.com      fu-er
-      contact@furthington.com    jeaye
-      support@furthington.com    jeaye
-      spam@pastespace.org        jeaye
-      junk@pastespace.org        jeaye
       kitty@pastespace.org       fu-er
 
       contact@okletsplay.com     russalek13@gmail.com
