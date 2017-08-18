@@ -27,7 +27,7 @@
         queue=/etc/user/http-upload/queue
 
         # Check if it's empty first
-        if [ -z "$(ls -A $queue)" ];
+        if [ ".manage-directory" = "$(ls -A $queue)" ];
         then
           exit 0
         fi
