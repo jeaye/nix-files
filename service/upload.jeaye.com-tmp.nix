@@ -24,7 +24,15 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        for file in $(find /etc/user/http-upload/queue/ -maxdepth 1);
+        queue=/etc/user/http-upload/queue
+
+        # Check if it's empty first
+        if [ -z "$(ls -A $queue)" ];
+        then
+          exit 0
+        fi
+
+        for file in $queue/*;
         do
           basename=$(basename "$file")
           mv -f "$file" /etc/user/http/upload.jeaye.com/tmp/
