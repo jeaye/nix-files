@@ -13,10 +13,6 @@
   environment.etc =
   {
     "user/http-upload/queue/.manage-directory".text = "";
-  };
-
-  environment.etc =
-  {
     "user/http-upload/flush" =
     {
       text =
