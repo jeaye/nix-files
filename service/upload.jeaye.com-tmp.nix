@@ -15,25 +15,28 @@
     "user/http-upload/queue/.manage-directory".text = "";
   };
 
-  environment.etc.user.http-upload.flush =
+  environment.etc =
   {
-    text =
-    ''
-      #!/run/current-system/sw/bin/bash
-      set -eu
+    "user/http-upload/flush" =
+    {
+      text =
+      ''
+        #!/run/current-system/sw/bin/bash
+        set -eu
 
-      files=/etc/user/http-upload/queue/*
-      for file in $files;
-      do
-        mv -f "$file" /etc/user/http/upload.jeaye.com/tmp/
-      done
+        files=/etc/user/http-upload/queue/*
+        for file in $files;
+        do
+          mv -f "$file" /etc/user/http/upload.jeaye.com/tmp/
+        done
 
-      if [ ! "x$files" = "x" ];
-      then
-        chown -R http /etc/user/http/upload.jeaye.com/tmp/
-      fi
-    '';
-    mode = "0774";
+        if [ ! "x$files" = "x" ];
+        then
+          chown -R http /etc/user/http/upload.jeaye.com/tmp/
+        fi
+      '';
+      mode = "0774";
+    };
   };
 
   # Clean up old files and flush queue regularly.
