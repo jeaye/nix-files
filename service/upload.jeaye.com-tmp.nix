@@ -20,7 +20,7 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        for file in $(find /etc/user/http-upload/queue/ -d 1);
+        for file in $(find /etc/user/http-upload/queue/ -maxdepth 1);
         do
           basename=$(basename "$file")
           mv -f "$file" /etc/user/http/upload.jeaye.com/tmp/
