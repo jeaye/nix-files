@@ -24,7 +24,7 @@ in
   {
     isNormalUser = true;
     home = "/etc/user/jeaye";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel"  "ssh-user" ];
   };
 
   system.activationScripts =

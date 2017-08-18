@@ -15,10 +15,14 @@
     { domain = "*"; item = "nofile"; type = "hard"; value = "512"; }
   ];
 
+  # Required for SSH access.
+  users.groups.ssh-user = {};
+
   users.users.fu-er =
   {
     isNormalUser = true;
     home = "/etc/user/fu-er";
+    extraGroups = [ "ssh-user" ];
   };
 
   system.activationScripts =
