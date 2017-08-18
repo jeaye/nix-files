@@ -20,16 +20,11 @@
         #!/run/current-system/sw/bin/bash
         set -eu
 
-        files=/etc/user/http-upload/queue/*
-        for file in $files;
+        for file in /etc/user/http-upload/queue/*;
         do
           mv -f "$file" /etc/user/http/upload.jeaye.com/tmp/
+          chown -R http /etc/user/http/upload.jeaye.com/tmp/"$file"
         done
-
-        if [ ! "x$files" = "x" ];
-        then
-          chown -R http /etc/user/http/upload.jeaye.com/tmp/
-        fi
       '';
       mode = "0774";
     };
