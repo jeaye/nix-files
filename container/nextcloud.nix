@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+# TODO: Private network
+# TODO: Update script, like rainloop has
+
 containers.nextcloud =
 {
   autoStart = true;
