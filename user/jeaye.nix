@@ -105,7 +105,7 @@ in
 
         # Junk
         :0:
-        * ^To: junk@pastespace.org
+        * ^(From|Cc|To): junk@pastespace\.org
         .Junk/
       '';
     };
