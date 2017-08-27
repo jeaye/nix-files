@@ -63,15 +63,6 @@ in
         isNormalUser = false;
         home = "/etc/user/http";
       };
-
-      networking.firewall =
-      {
-        allowedTCPPorts =
-        [
-          80 # http
-          443 # https
-        ];
-      };
     };
   };
 
