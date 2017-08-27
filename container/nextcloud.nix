@@ -55,7 +55,7 @@ in
             SetEnv HOME /etc/user/http/cloud.pastespace.org/latest
             SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org/latest
           </Directory>
-          <Directory /etc/user/http/cloud.pastespace.org/data>
+          <Directory /etc/user/http/cloud.pastespace.org>
             Options -Indexes
             Deny from all
           </Directory>
