@@ -96,6 +96,17 @@ in
       {
         "user/http/cloud.pastespace.org/.well-known/.manage-directory".text = "";
       };
+
+      services.mysql =
+      {
+        enable = true;
+        package = pkgs.mysql;
+        dataDir = "/var/db/mysql";
+        initialDatabases =
+        [
+          { name = "nextcloud"; }
+        ];
+      };
     };
   };
 
