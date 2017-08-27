@@ -8,7 +8,6 @@ let
   localAddr = "192.168.254.1";
 in
 {
-  networking.extraHosts = "${hostAddr} nextcloud";
   containers.nextcloud =
   {
     autoStart = true;
@@ -88,8 +87,8 @@ in
           #SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
-          ProxyPass / http://nextcloud/
-          ProxyPassReverse / http://nextcloud/
+          ProxyPass / http://nextcloud.containers/
+          ProxyPassReverse / http://nextcloud.containers/
         ''; #TODO + (defaults "cloud.pastespace.org" "cloud.pastespace.org");
         enableSSL = false;
       }
