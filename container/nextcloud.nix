@@ -68,6 +68,7 @@ in
       {
         isNormalUser = true;
         home = "/etc/user/http";
+        createHome = true;
       };
 
       environment.etc =
