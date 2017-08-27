@@ -47,6 +47,7 @@ in
           <Directory /etc/user/http/cloud.pastespace.org/latest>
             Options +FollowSymlinks
             AllowOverride All
+            Allow from all
 
             <IfModule mod_dav.c>
               Dav off
