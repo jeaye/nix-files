@@ -63,6 +63,11 @@ in
         isNormalUser = true;
         home = "/etc/user/http";
       };
+
+      environment.etc =
+      {
+        "user/http/cloud.pastespace.org/.well-known/.manage-directory".text = "";
+      };
     };
   };
 
