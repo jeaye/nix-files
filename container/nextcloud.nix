@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 
-# TODO: Install nextcloud
 # TODO: Update script, like rainloop has
+
+# TODO: Harden
+# - Disable previews
+# - Enable hsts
+# - Serve provided security headers
 
 let
   hostAddr = "192.168.255.1";
@@ -48,6 +52,8 @@ in
             Options +FollowSymlinks
             AllowOverride All
             Allow from all
+
+            php_admin_value open_basedir /etc/user/http/cloud.pastespace.org/latest:/dev/urandom
 
             <IfModule mod_dav.c>
               Dav off
