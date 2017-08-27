@@ -71,6 +71,25 @@ in
         createHome = true;
       };
 
+      # TODO: Move to container util
+      system.activationScripts =
+      {
+        homes =
+        {
+          deps = [];
+          text = (builtins.foldl'
+          (us: u:
+          ''
+            ${us}
+            chown -R ${u.name}:users /etc/user/${u.name}
+          '')
+          ""
+          (builtins.filter (u: u.isNormalUser)
+                 (map (key: builtins.getAttr key config.users.users)
+                      (builtins.attrNames config.users.users))));
+        };
+      };
+
       environment.etc =
       {
         "user/http/cloud.pastespace.org/.well-known/.manage-directory".text = "";
