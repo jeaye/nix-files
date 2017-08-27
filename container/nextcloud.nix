@@ -24,6 +24,8 @@ in
         wheelNeedsPassword = true;
       };
 
+      networking.firewall.enable = false;
+
       services.httpd =
       {
         enable = true;
