@@ -82,6 +82,7 @@ in
           ''
             ${us}
             chown -R ${u.name}:users /etc/user/${u.name}
+            chmod a+r /etc/user/${u.name}
           '')
           ''
             chmod a+r /etc/user
