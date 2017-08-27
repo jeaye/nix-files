@@ -32,27 +32,22 @@ in
           { name = "php7"; path = "${pkgs.php}/modules/libphp7.so"; }
         ];
 
-        virtualHosts =
-        [
-          {
-            hostName = "cloud.pastespace.org";
-            documentRoot = "/etc/user/http/cloud.pastespace.org";
-            extraConfig =
-            ''
-              <Directory /etc/user/http/cloud.pastespace.org>
-                Options +FollowSymlinks
-                AllowOverride All
+        hostName = "cloud.pastespace.org";
+        documentRoot = "/etc/user/http/cloud.pastespace.org";
+        extraConfig =
+        ''
+          <Directory /etc/user/http/cloud.pastespace.org>
+            Options +FollowSymlinks
+            AllowOverride All
 
-                <IfModule mod_dav.c>
-                  Dav off
-                </IfModule>
+            <IfModule mod_dav.c>
+              Dav off
+            </IfModule>
 
-                SetEnv HOME /etc/user/http/cloud.pastespace.org
-                SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org
-              </Directory>
-            '';
-          }
-        ];
+            SetEnv HOME /etc/user/http/cloud.pastespace.org
+            SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org
+          </Directory>
+        '';
 
         extraConfig = # TODO: Share with host
         ''
