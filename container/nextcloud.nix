@@ -42,7 +42,7 @@ in
         documentRoot = "/etc/user/http/cloud.pastespace.org";
         extraConfig =
         ''
-          <Directory /etc/user/http/cloud.pastespace.org>
+          <Directory /etc/user/http/cloud.pastespace.org/latest>
             Options +FollowSymlinks
             AllowOverride All
 
@@ -50,8 +50,8 @@ in
               Dav off
             </IfModule>
 
-            SetEnv HOME /etc/user/http/cloud.pastespace.org
-            SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org
+            SetEnv HOME /etc/user/http/cloud.pastespace.org/latest
+            SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org/latest
           </Directory>
 
           # TODO: Share with host
