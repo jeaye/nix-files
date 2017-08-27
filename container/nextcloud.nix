@@ -85,7 +85,7 @@ in
             chmod a+r /etc/user/${u.name}
           '')
           ''
-            chmod a+r /etc/user
+            chmod a+rx /etc/user
           ''
           (builtins.filter (u: u.isNormalUser)
                  (map (key: builtins.getAttr key config.users.users)
