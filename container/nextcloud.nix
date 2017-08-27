@@ -53,6 +53,10 @@ in
             SetEnv HOME /etc/user/http/cloud.pastespace.org/latest
             SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org/latest
           </Directory>
+          <Directory /etc/user/http/cloud.pastespace.org/latest/data>
+            Options -Indexes
+            Deny from all
+          </Directory>
 
           # TODO: Share with host
           AddDefaultCharset UTF-8
