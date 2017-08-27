@@ -47,10 +47,8 @@ in
             SetEnv HOME /etc/user/http/cloud.pastespace.org
             SetEnv HTTP_HOME /etc/user/http/cloud.pastespace.org
           </Directory>
-        '';
 
-        extraConfig = # TODO: Share with host
-        ''
+          # TODO: Share with host
           AddDefaultCharset UTF-8
           AddCharset UTF-8 .html .htm .txt
 
