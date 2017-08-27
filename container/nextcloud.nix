@@ -51,7 +51,6 @@ in
           <Directory /etc/user/http/cloud.pastespace.org/latest>
             Options +FollowSymlinks
             AllowOverride All
-            Allow from all
 
             php_admin_value open_basedir /etc/user/http/cloud.pastespace.org/latest:/dev/urandom
 
@@ -64,7 +63,6 @@ in
           </Directory>
           <Directory /etc/user/http/cloud.pastespace.org>
             Options -Indexes
-            Deny from all
           </Directory>
 
           # TODO: Share with host
