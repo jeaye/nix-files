@@ -102,10 +102,6 @@ in
         enable = true;
         package = pkgs.mysql;
         dataDir = "/var/db/mysql";
-        initialDatabases =
-        [
-          { name = "nextcloud"; }
-        ];
       };
     };
   };
