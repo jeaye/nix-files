@@ -83,7 +83,9 @@ in
             ${us}
             chown -R ${u.name}:users /etc/user/${u.name}
           '')
-          ""
+          ''
+            chmod a+r /etc/user
+          ''
           (builtins.filter (u: u.isNormalUser)
                  (map (key: builtins.getAttr key config.users.users)
                       (builtins.attrNames config.users.users))));
