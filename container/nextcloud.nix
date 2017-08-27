@@ -17,6 +17,13 @@ in
 
     config = { config, pkgs, ... }:
     {
+      # TODO: Share with host and bring in pam limits config
+      security.sudo =
+      {
+        enable = false;
+        wheelNeedsPassword = true;
+      };
+
       services.httpd =
       {
         enable = true;
@@ -89,7 +96,7 @@ in
           ProxyPass /.well-known !
           ProxyPass / http://nextcloud.containers/
           ProxyPassReverse / http://nextcloud.containers/
-        ''; #TODO + (defaults "cloud.pastespace.org" "cloud.pastespace.org");
+        ''; # TODO + (defaults "cloud.pastespace.org" "cloud.pastespace.org");
         enableSSL = false;
       }
     ];
