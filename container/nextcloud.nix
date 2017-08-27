@@ -60,7 +60,7 @@ in
 
       users.users.http =
       {
-        isNormalUser = false;
+        isNormalUser = true;
         home = "/etc/user/http";
       };
     };
