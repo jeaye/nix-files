@@ -131,6 +131,7 @@ in
         bind = "127.0.0.1";
         port = 0;
         unixSocket = "/tmp/redis.sock";
+        package = pkgs.redisPhp7;
         extraConfig =
         ''
           unixsocketperm 755
