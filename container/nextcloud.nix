@@ -108,7 +108,7 @@ in
 
       services.cron.systemCronJobs =
       [
-        "*/15 * * * * http php -f /etc/user/http/cloud.pastespace.org/latest/cron.php"
+        "*/15 * * * * http ${pkgs.php}/bin/php -f /etc/user/http/cloud.pastespace.org/latest/cron.php"
       ];
 
       # TODO: Move to container util
