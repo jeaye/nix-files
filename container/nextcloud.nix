@@ -122,6 +122,9 @@ in
         "*/15 * * * * http ${pkgs.php}/bin/php -f /etc/user/http/cloud.pastespace.org/latest/cron.php"
       ];
 
+      # TODO: Automatically add config for enabling redis on NextCloud
+      services.redis.enable = true;
+
       # TODO: Move to container util
       system.activationScripts =
       {
