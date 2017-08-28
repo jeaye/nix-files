@@ -17,6 +17,9 @@ in
     hostAddress = hostAddr;
     localAddress = localAddr;
 
+    # Used for crypto
+    allowedDevices = [ { modifier = "r"; node = "/dev/urandom"; } ];
+
     config = { config, pkgs, ... }:
     {
       # TODO: Share with host and bring in pam limits config
@@ -33,9 +36,6 @@ in
         consoleKeyMap = "us";
         defaultLocale = "en_US.UTF-8";
       };
-
-      # Used for crypto
-      allowedDevices = [ { modifier = "r"; node = "/dev/urandom"; } ];
 
       networking.firewall.enable = false;
 
