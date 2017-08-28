@@ -59,8 +59,6 @@ in
             Options +FollowSymlinks
             AllowOverride All
 
-            php_admin_value open_basedir /etc/user/http/cloud.pastespace.org/latest:/dev/urandom
-
             <IfModule mod_dav.c>
               Dav off
             </IfModule>
