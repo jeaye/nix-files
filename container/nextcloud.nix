@@ -3,9 +3,7 @@
 # TODO: Update script, like rainloop has
 
 # TODO: Harden
-# - Disable previews
-# - Enable hsts
-# - Serve provided security headers
+# - Disable previews (requires automatic php parsing)
 
 let
   hostAddr = "192.168.255.1";
