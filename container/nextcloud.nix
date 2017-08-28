@@ -35,6 +35,7 @@ in
         adminAddr = "contact@jeaye.com";
 
         logPerVirtualHost = true;
+        enablePHP = true;
 
         extraModules =
         [
