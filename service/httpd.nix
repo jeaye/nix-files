@@ -36,7 +36,7 @@ in
 
     extraModules =
     [
-      "proxy" "proxy_http"
+      "http2" "proxy" "proxy_http"
       { name = "php7"; path = "${pkgs.php}/modules/libphp7.so"; }
     ];
 

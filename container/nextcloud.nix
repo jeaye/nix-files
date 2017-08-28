@@ -160,6 +160,8 @@ in
         documentRoot = "/etc/user/http/cloud.pastespace.org";
         extraConfig =
         ''
+          Protocols h2 http/1.1
+
           #SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
