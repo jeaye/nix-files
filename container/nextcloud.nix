@@ -34,6 +34,9 @@ in
         defaultLocale = "en_US.UTF-8";
       };
 
+      # Used for crypto
+      allowedDevices = [ { modifier = "r"; node = "/dev/urandom"; } ]
+
       networking.firewall.enable = false;
 
       services.httpd =
