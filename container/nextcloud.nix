@@ -40,8 +40,6 @@ in
         extraModules =
         [
           "http2" "rewrite" "headers" "env" "dir" "mime"
-          { name = "php7"; path = "${pkgs.php}/modules/libphp7.so"; }
-          { name = "opcache"; path = "${pkgs.php}/lib/php/extensions/opcache.so"; }
         ];
 
         hostName = "cloud.pastespace.org";
@@ -87,6 +85,7 @@ in
 
         phpOptions =
         ''
+          zend_extension = ${pkgs.php}/lib/php/extensions/opcache.so
           opcache.enable = 1
           opcache.enable_cli = 1
           opcache.interned_strings_buffer = 8
