@@ -39,7 +39,7 @@ in
 
         extraModules =
         [
-          "rewrite" "headers" "env" "dir" "mime"
+          "http2" "rewrite" "headers" "env" "dir" "mime"
           { name = "php7"; path = "${pkgs.php}/modules/libphp7.so"; }
         ];
 
@@ -72,6 +72,8 @@ in
           <IfModule mod_headers.c>
             Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
           </IfModule>
+
+          Protocols h2 http/1.1
 
           # TODO: Share with host
           AddDefaultCharset UTF-8
