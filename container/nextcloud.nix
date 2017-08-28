@@ -5,6 +5,8 @@
 # TODO: Harden
 # - Disable previews (requires automatic php parsing)
 
+# TODO: HTTP2: Change mpm from prefork
+
 let
   hostAddr = "192.168.255.1";
   localAddr = "192.168.254.1";
@@ -126,11 +128,11 @@ in
       services.redis =
       {
         enable = true;
+        bind = "127.0.0.1";
+        port = 0;
+        unixSocket = "/tmp/redis.sock";
         extraConfig =
         ''
-          port 0
-          bind 127.0.0.1
-          unixsocket /var/run/redis/redis.sock
           unixsocketperm 755
           maxclients 500
         '';
