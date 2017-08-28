@@ -132,6 +132,7 @@ in
           bind 127.0.0.1
           unixsocket /var/run/redis/redis.sock
           unixsocketperm 755
+          maxclients 500
         '';
       };
 
