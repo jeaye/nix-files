@@ -35,7 +35,7 @@ in
       };
 
       # Used for crypto
-      allowedDevices = [ { modifier = "r"; node = "/dev/urandom"; } ]
+      allowedDevices = [ { modifier = "r"; node = "/dev/urandom"; } ];
 
       networking.firewall.enable = false;
 
