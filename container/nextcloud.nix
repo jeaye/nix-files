@@ -41,6 +41,7 @@ in
         [
           "http2" "rewrite" "headers" "env" "dir" "mime"
           { name = "php7"; path = "${pkgs.php}/modules/libphp7.so"; }
+          { name = "opcache"; path = "${pkgs.php}/lib/php/extensions/opcache.so"; }
         ];
 
         hostName = "cloud.pastespace.org";
