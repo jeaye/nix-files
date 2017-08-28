@@ -92,7 +92,8 @@ in
           opcache.revalidate_freq = 1
 
           open_basedir /etc/user/http/cloud.pastespace.org:/dev/urandom
-          max_execution_time = 30
+          max_input_time 3600
+          max_execution_time 3600
         '';
       };
 
