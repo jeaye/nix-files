@@ -123,7 +123,17 @@ in
       ];
 
       # TODO: Automatically add config for enabling redis on NextCloud
-      services.redis.enable = true;
+      services.redis =
+      {
+        enable = true;
+        extraConfig =
+        ''
+          port 0
+          bind 127.0.0.1
+          unixsocket /var/run/redis/redis.sock
+          unixsocketperm 755
+        '';
+      };
 
       # TODO: Move to container util
       system.activationScripts =
