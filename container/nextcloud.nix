@@ -73,7 +73,7 @@ in
             Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
           </IfModule>
 
-          Protocols h2 http/1.1
+          Protocols h2 h2c http/1.1
 
           # TODO: Share with host
           AddDefaultCharset UTF-8
@@ -160,7 +160,7 @@ in
         documentRoot = "/etc/user/http/cloud.pastespace.org";
         extraConfig =
         ''
-          Protocols h2 http/1.1
+          Protocols h2 h2c http/1.1
 
           #SSLProxyEngine On
           ProxyPreserveHost Off
