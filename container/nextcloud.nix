@@ -26,6 +26,14 @@ in
         wheelNeedsPassword = true;
       };
 
+      # TODO: Share with host
+      i18n =
+      {
+        consoleFont = "Lat2-Terminus16";
+        consoleKeyMap = "us";
+        defaultLocale = "en_US.UTF-8";
+      };
+
       networking.firewall.enable = false;
 
       services.httpd =
