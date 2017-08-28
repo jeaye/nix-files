@@ -83,15 +83,16 @@ in
 
         phpOptions =
         ''
-          opcache.enable=1
-          opcache.enable_cli=1
-          opcache.interned_strings_buffer=8
-          opcache.max_accelerated_files=10000
-          opcache.memory_consumption=128
-          opcache.save_comments=1
-          opcache.revalidate_freq=1
+          opcache.enable = 1
+          opcache.enable_cli = 1
+          opcache.interned_strings_buffer = 8
+          opcache.max_accelerated_files = 10000
+          opcache.memory_consumption = 128
+          opcache.save_comments = 1
+          opcache.revalidate_freq = 1
 
           open_basedir /etc/user/http/cloud.pastespace.org:/dev/urandom
+          max_execution_time = 30
         '';
       };
 
