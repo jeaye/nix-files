@@ -70,6 +70,10 @@ in
             Options -Indexes
           </Directory>
 
+          <IfModule mod_headers.c>
+            Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+          </IfModule>
+
           # TODO: Share with host
           AddDefaultCharset UTF-8
           AddCharset UTF-8 .html .htm .txt
