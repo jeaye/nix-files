@@ -105,7 +105,7 @@ in
 
         # Junk
         :0:
-        * ^(From|Cc|To): junk@pastespace\.org
+        * ^(From|Cc|To): (junk@pastespace\.org|junk@jeaye.com)|lorgonjortle.*
         .Junk/
       '';
     };
