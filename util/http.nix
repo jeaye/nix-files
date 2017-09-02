@@ -1,6 +1,6 @@
 {}:
 
-{
+rec {
   util.http =
   {
     # Basic config
