@@ -34,6 +34,8 @@ in
 
     logPerVirtualHost = true;
 
+    multiProcessingModule = "event";
+
     extraModules =
     [
       "http2" "proxy" "proxy_http"

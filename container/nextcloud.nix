@@ -49,7 +49,9 @@ in
 
         logPerVirtualHost = true;
         enablePHP = true;
+        multiProcessingModule = "event";
 
+        # TODO: Bring in redis module
         extraModules =
         [
           "http2" "rewrite" "headers" "env" "dir" "mime"
