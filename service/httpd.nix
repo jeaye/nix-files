@@ -280,6 +280,9 @@ in
       ServerTokens Prod
       ServerSignature Off
       TraceEnable off
+
+      # Prefer HTTP2
+      Protocols h2 h2c http/1.1
     '';
   };
 
