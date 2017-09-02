@@ -2,31 +2,6 @@
 
 with import ../util/http.nix {};
 
-let
-  ssl_info = domain: cert_domain:
-  ''
-    <Directory /etc/user/http/${domain}/.well-known>
-      AllowOverride None
-      Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
-      Require method GET POST OPTIONS
-    </Directory>
-    Alias /.well-known/ /etc/user/http/${domain}/.well-known/
-
-    SSLCertificateKeyFile /var/lib/acme/${cert_domain}/key.pem
-    SSLCertificateChainFile /var/lib/acme/${cert_domain}/chain.pem
-    SSLCertificateFile /var/lib/acme/${cert_domain}/cert.pem
-    SSLProtocol All -SSLv2 -SSLv3
-    SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-    SSLHonorCipherOrder on
-  '';
-  ignore_directory = domain:
-  ''
-    <Directory /etc/user/http/${domain}>
-      Options -Indexes
-    </Directory>
-  '';
-  defaults = domain: cert_domain: (ignore_directory domain) + (ssl_info domain cert_domain);
-in
 {
   services.httpd =
   {
@@ -77,7 +52,7 @@ in
           ProxyPass /.well-known !
           ProxyPass /calendar http://localhost:5232/
           ProxyPassReverse /calendar http://localhost:5232/
-        '' + (defaults "pastespace.org" "pastespace.org");
+        '' + (util.http.domainDefaults "pastespace.org" "pastespace.org");
         enableSSL = true;
       }
       {
@@ -102,7 +77,7 @@ in
             Options -Indexes
             Deny from all
           </Directory>
-        '' + (defaults "webmail.pastespace.org" "pastespace.org");
+        '' + (util.http.domainDefaults "webmail.pastespace.org" "pastespace.org");
         enableSSL = true;
       }
       {
@@ -124,7 +99,7 @@ in
           ProxyPass /.well-known !
           ProxyPass / http://localhost:3000/
           ProxyPassReverse / http://localhost:3000/
-        '' + (defaults "safepaste.org" "safepaste.org");
+        '' + (util.http.domainDefaults "safepaste.org" "safepaste.org");
         enableSSL = true;
       }
       {
@@ -136,7 +111,7 @@ in
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
-        '' + (defaults "upload.jeaye.com" "upload.jeaye.com");
+        '' + (util.http.domainDefaults "upload.jeaye.com" "upload.jeaye.com");
         enableSSL = true;
       }
       {
@@ -156,7 +131,7 @@ in
           ProxyPass / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/jeaye.com/
-        '' + (defaults "jeaye.com" "jeaye.com");
+        '' + (util.http.domainDefaults "jeaye.com" "jeaye.com");
         enableSSL = true;
       }
       {
@@ -174,7 +149,7 @@ in
           ProxyPass / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
           ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
-        '' + (defaults "blog.jeaye.com" "blog.jeaye.com");
+        '' + (util.http.domainDefaults "blog.jeaye.com" "blog.jeaye.com");
         enableSSL = true;
       }
       {
@@ -190,7 +165,7 @@ in
         extraConfig =
         ''
           RedirectMatch 301 "^\/(?!\.well-known).*" https://github.com/jeaye/jank
-        '' + (defaults "jank-lang.org" "jank-lang.org");
+        '' + (util.http.domainDefaults "jank-lang.org" "jank-lang.org");
         enableSSL = true;
       }
       {
@@ -208,7 +183,7 @@ in
           ProxyPass /.well-known !
           ProxyPass / http://localhost:3001/
           ProxyPassReverse / http://localhost:3001/
-        '' + (defaults "jank-lang.org" "jank-lang.org");
+        '' + (util.http.domainDefaults "jank-lang.org" "jank-lang.org");
         enableSSL = true;
       }
       {
@@ -223,7 +198,7 @@ in
         documentRoot = "/etc/user/http/fu-er.com";
         extraConfig =
         ''
-        '' + (defaults "fu-er.com" "fu-er.com");
+        '' + (util.http.domainDefaults "fu-er.com" "fu-er.com");
         enableSSL = true;
       }
       {
@@ -239,7 +214,7 @@ in
         extraConfig =
         ''
           DirectoryIndex resume.pdf
-        '' + (defaults "penelope-art.com" "penelope-art.com");
+        '' + (util.http.domainDefaults "penelope-art.com" "penelope-art.com");
         enableSSL = true;
       }
       {
@@ -255,7 +230,7 @@ in
         extraConfig =
         ''
           RedirectMatch 301 "^\/(?!\.well-known).*" https://penny.artstation.com/
-        '' + (defaults "penny-art.com" "penny-art.com");
+        '' + (util.http.domainDefaults "penny-art.com" "penny-art.com");
         enableSSL = true;
       }
       {
@@ -269,7 +244,7 @@ in
         documentRoot = "/etc/user/http/okletsplay.com";
         extraConfig =
         ''
-        '' + (defaults "okletsplay.com" "okletsplay.com");
+        '' + (util.http.domainDefaults "okletsplay.com" "okletsplay.com");
         enableSSL = true;
       }
     ];
