@@ -5,7 +5,7 @@
 # TODO: Harden
 # - Disable previews (requires automatic php parsing)
 
-# TODO: HTTP2: Change mpm from prefork
+with import ../util/http.nix {};
 
 let
   hostAddr = "192.168.255.1";
@@ -42,14 +42,9 @@ in
       networking.firewall.enable = false;
 
       services.httpd =
-      {
+      util.http.defaults // {
         enable = true;
-        user = "http";
-        adminAddr = "contact@jeaye.com";
-
-        logPerVirtualHost = true;
         enablePHP = true;
-        multiProcessingModule = "event";
 
         # TODO: Bring in redis module
         extraModules =
@@ -59,7 +54,7 @@ in
 
         hostName = "cloud.pastespace.org";
         documentRoot = "/etc/user/http/cloud.pastespace.org";
-        extraConfig =
+        extraConfig = util.http.defaults.extraConfig +
         ''
           <Directory /etc/user/http/cloud.pastespace.org/latest>
             DirectoryIndex index.php
@@ -86,16 +81,6 @@ in
           <IfModule mod_headers.c>
             Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
           </IfModule>
-
-          Protocols h2 h2c http/1.1
-
-          # TODO: Share with host
-          AddDefaultCharset UTF-8
-          AddCharset UTF-8 .html .htm .txt
-
-          ServerTokens Prod
-          ServerSignature Off
-          TraceEnable off
         '';
 
         phpOptions =
