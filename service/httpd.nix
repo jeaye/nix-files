@@ -242,8 +242,6 @@ with import ../util/http.nix {};
         enableSSL = true;
       }
     ];
-
-    extraConfig = util.http.extraConfig;
   };
 
   users.users.http =
