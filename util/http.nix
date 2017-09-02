@@ -2,50 +2,54 @@
 
 {
   util.http =
-  rec {
-    user = "http";
-    adminAddr = "contact@jeaye.com";
-    logPerVirtualHost = true;
-    multiProcessingModule = "event";
-
+  {
     # Basic config
-    extraConfig =
-    ''
-      AddDefaultCharset UTF-8
-      AddCharset UTF-8 .html .htm .txt
+    defaults =
+    {
+      user = "http";
+      adminAddr = "contact@jeaye.com";
+      logPerVirtualHost = true;
+      multiProcessingModule = "event";
 
-      ServerTokens Prod
-      ServerSignature Off
-      TraceEnable off
+      extraConfig =
+      ''
+        AddDefaultCharset UTF-8
+        AddCharset UTF-8 .html .htm .txt
 
-      # Prefer HTTP2
-      Protocols h2 h2c http/1.1
-    '';
+        ServerTokens Prod
+        ServerSignature Off
+        TraceEnable off
 
-    # Helper functions
-    sslInfo = domain: cert_domain:
-    ''
-      <Directory /etc/user/http/${domain}/.well-known>
-        AllowOverride None
-        Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
-        Require method GET POST OPTIONS
-      </Directory>
-      Alias /.well-known/ /etc/user/http/${domain}/.well-known/
+        # Prefer HTTP2
+        Protocols h2 h2c http/1.1
+      '';
+    };
 
-      SSLCertificateKeyFile /var/lib/acme/${cert_domain}/key.pem
-      SSLCertificateChainFile /var/lib/acme/${cert_domain}/chain.pem
-      SSLCertificateFile /var/lib/acme/${cert_domain}/cert.pem
-      SSLProtocol All -SSLv2 -SSLv3
-      SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
-      SSLHonorCipherOrder on
-    '';
-    ignoreDirectory = domain:
-    ''
-      <Directory /etc/user/http/${domain}>
-      Options -Indexes
-      </Directory>
-    '';
-    domainDefaults = domain: cert_domain: (ignoreDirectory domain)
-                                          + (sslInfo domain cert_domain);
-  };
+    helpers =
+    {
+      sslInfo = domain: cert_domain:
+      ''
+        <Directory /etc/user/http/${domain}/.well-known>
+          AllowOverride None
+          Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+          Require method GET POST OPTIONS
+        </Directory>
+        Alias /.well-known/ /etc/user/http/${domain}/.well-known/
+
+        SSLCertificateKeyFile /var/lib/acme/${cert_domain}/key.pem
+        SSLCertificateChainFile /var/lib/acme/${cert_domain}/chain.pem
+        SSLCertificateFile /var/lib/acme/${cert_domain}/cert.pem
+        SSLProtocol All -SSLv2 -SSLv3
+        SSLCipherSuite HIGH:!aNULL:!MD5:!EXP
+        SSLHonorCipherOrder on
+      '';
+      ignoreDirectory = domain:
+      ''
+        <Directory /etc/user/http/${domain}>
+        Options -Indexes
+        </Directory>
+      '';
+      withSSL = domain: cert_domain: (ignoreDirectory domain)
+                                     + (sslInfo domain cert_domain);
+    };
 }
