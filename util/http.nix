@@ -1,8 +1,8 @@
 {}:
 
-rec {
+{
   util.http =
-  {
+  rec {
     # Basic config
     extraConfig =
     ''
