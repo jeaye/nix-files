@@ -6,12 +6,11 @@ with import ../util/http.nix {};
   services.httpd =
   {
     enable = true;
-    user = "http";
-    adminAddr = "contact@jeaye.com";
 
-    logPerVirtualHost = true;
-
-    multiProcessingModule = "event";
+    inherit util.http.user;
+    inherit util.http.adminAddr;
+    inherit util.http.logPerVirtualHost;
+    inherit util.http.multiProcessingModule;
 
     extraModules =
     [

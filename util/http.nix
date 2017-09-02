@@ -3,6 +3,11 @@
 {
   util.http =
   rec {
+    user = "http";
+    adminAddr = "contact@jeaye.com";
+    logPerVirtualHost = true;
+    multiProcessingModule = "event";
+
     # Basic config
     extraConfig =
     ''
