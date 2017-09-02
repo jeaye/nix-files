@@ -26,7 +26,7 @@
     };
 
     helpers =
-    {
+    rec {
       sslInfo = domain: cert_domain:
       ''
         <Directory /etc/user/http/${domain}/.well-known>
@@ -52,4 +52,5 @@
       withSSL = domain: cert_domain: (ignoreDirectory domain)
                                      + (sslInfo domain cert_domain);
     };
+  };
 }
