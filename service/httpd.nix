@@ -238,6 +238,9 @@ with import ../util/http.nix {};
         documentRoot = "/etc/user/http/okletsplay.com";
         extraConfig =
         ''
+          <Directory etc/user/http/okletsplay.com/apk>
+            Options +Indexes
+          </Directory>
         '' + (util.http.helpers.withSSL "okletsplay.com" "okletsplay.com");
         enableSSL = true;
       }
