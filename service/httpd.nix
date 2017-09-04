@@ -240,6 +240,7 @@ with import ../util/http.nix {};
         ''
           <Directory etc/user/http/okletsplay.com/apk>
             Options +Indexes
+            IndexOptions FancyIndexing SuppressDescription NameWidth=*
           </Directory>
         '' + (util.http.helpers.withSSL "okletsplay.com" "okletsplay.com");
         enableSSL = true;
