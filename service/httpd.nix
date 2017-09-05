@@ -242,6 +242,7 @@ with import ../util/http.nix {};
             Options +Indexes
             IndexOptions FancyIndexing SuppressDescription NameWidth=*
           </Directory>
+          Protocols http/1.1
         '' + (util.http.helpers.withSSL "okletsplay.com" "okletsplay.com");
         enableSSL = true;
       }
