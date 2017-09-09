@@ -37,7 +37,7 @@ with import ../util/http.nix {};
             AuthType Basic
             AuthName "Restricted Calendar"
             AuthBasicProvider file
-            AuthUserFile /etc/user/http/auth-users
+            AuthUserFile /etc/user/http/calendar-auth-users
             Require valid-user
           </Location>
 
@@ -238,6 +238,15 @@ with import ../util/http.nix {};
         documentRoot = "/etc/user/http/okletsplay.com";
         extraConfig =
         ''
+          # XXX: Requires manual creation using htpasswd
+          <Location /apk>
+            AuthType Basic
+            AuthName "Restricted Calendar"
+            AuthBasicProvider file
+            AuthUserFile /etc/user/http/okletsplay-auth-users
+            Require valid-user
+          </Location>
+
           <Directory etc/user/http/okletsplay.com/apk>
             Options +Indexes
             IndexOptions FancyIndexing SuppressDescription NameWidth=*
