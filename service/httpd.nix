@@ -247,11 +247,20 @@ with import ../util/http.nix {};
             Require valid-user
           </Location>
 
-          <Directory etc/user/http/okletsplay.com/apk>
+          <Directory /etc/user/http/okletsplay.com/apk>
             Options +Indexes
             IndexOptions FancyIndexing SuppressDescription NameWidth=*
           </Directory>
           Protocols http/1.1
+
+          SSLProxyEngine On
+          ProxyPreserveHost Off
+          ProxyPass /.well-known !
+          ProxyPass /img !
+          ProxyPass /apk !
+          ProxyPass / https://russalek13.wixsite.com/okletsplay/
+          ProxyPassReverse / https://russalek13.wixsite.com/okletsplay/
+          ProxyPassReverse / http://russalek13.wixsite.com/okletsplay/
         '' + (util.http.helpers.withSSL "okletsplay.com" "okletsplay.com");
         enableSSL = true;
       }
