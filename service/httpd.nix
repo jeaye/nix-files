@@ -105,6 +105,20 @@ with import ../util/http.nix {};
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
+          # XXX: Requires manual creation using htpasswd
+          <Location /letsbet/apk>
+            AuthType Basic
+            AuthName "Restricted Calendar"
+            AuthBasicProvider file
+            AuthUserFile /etc/user/http/okletsplay-auth-users
+            Require valid-user
+          </Location>
+
+          <Directory /etc/user/http/upload.jeaye.com/letsbet/apk>
+            Options +Indexes
+            IndexOptions FancyIndexing SuppressDescription NameWidth=*
+          </Directory>
+          Protocols http/1.1
         '' + (util.http.helpers.withSSL "upload.jeaye.com" "upload.jeaye.com");
         enableSSL = true;
       }
@@ -227,43 +241,6 @@ with import ../util/http.nix {};
         '' + (util.http.helpers.withSSL "penny-art.com" "penny-art.com");
         enableSSL = true;
       }
-      {
-        hostName = "okletsplay.com";
-        serverAliases = [ "www.okletsplay.com" ];
-        globalRedirect = "https://okletsplay.com/";
-      }
-      {
-        hostName = "okletsplay.com";
-        serverAliases = [ "www.okletsplay.com" ];
-        documentRoot = "/etc/user/http/okletsplay.com";
-        extraConfig =
-        ''
-          # XXX: Requires manual creation using htpasswd
-          <Location /apk>
-            AuthType Basic
-            AuthName "Restricted Calendar"
-            AuthBasicProvider file
-            AuthUserFile /etc/user/http/okletsplay-auth-users
-            Require valid-user
-          </Location>
-
-          <Directory /etc/user/http/okletsplay.com/apk>
-            Options +Indexes
-            IndexOptions FancyIndexing SuppressDescription NameWidth=*
-          </Directory>
-          Protocols http/1.1
-
-          SSLProxyEngine On
-          ProxyPreserveHost Off
-          ProxyPass /.well-known !
-          ProxyPass /img !
-          ProxyPass /apk !
-          ProxyPass / https://russalek13.wixsite.com/okletsplay/
-          ProxyPassReverse / https://russalek13.wixsite.com/okletsplay/
-          ProxyPassReverse / http://russalek13.wixsite.com/okletsplay/
-        '' + (util.http.helpers.withSSL "okletsplay.com" "okletsplay.com");
-        enableSSL = true;
-      }
     ];
   };
 
@@ -286,7 +263,6 @@ with import ../util/http.nix {};
     "user/http/fu-er.com/.well-known/.manage-directory".text = "";
     "user/http/penelope-art.com/.well-known/.manage-directory".text = "";
     "user/http/penny-art.com/.well-known/.manage-directory".text = "";
-    "user/http/okletsplay.com/.well-known/.manage-directory".text = "";
   };
 
   networking.firewall =
