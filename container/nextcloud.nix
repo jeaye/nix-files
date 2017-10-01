@@ -179,8 +179,8 @@ in
           #SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
-          ProxyPass / http://nextcloud.containers/
-          ProxyPassReverse / http://nextcloud.containers/
+          ProxyPass /latest/ http://nextcloud.containers/latest/
+          ProxyPassReverse /latest/ http://nextcloud.containers/latest/
         ''; # TODO + (defaults "cloud.pastespace.org" "cloud.pastespace.org");
         enableSSL = false;
       }
