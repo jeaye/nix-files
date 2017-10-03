@@ -44,5 +44,5 @@
     ./container/nextcloud.nix
   ];
 
-  system.stateVersion = "17.03";
+  system.stateVersion = "17.09";
 }
