@@ -8,7 +8,7 @@
 [server]
 hosts = 0.0.0.0:5232
 #base_prefix = /calendar/
-can_skip_base_prefix = True
+#can_skip_base_prefix = True
 
 [auth]
 type = None
