@@ -4,12 +4,11 @@
   services.spamassassin =
   {
     enable = true;
-    # TODO: Wait for 17.09
-    #config =
-    #''
-    #  use_bayes 1
-    #  bayes_auto_learn 0
-    #'';
+    config =
+    ''
+      use_bayes 1
+      bayes_auto_learn 0
+    '';
   };
 
   # Regularly update spamassassin rules and train
@@ -18,22 +17,6 @@
     "@daily root ${pkgs.spamassassin}/bin/sa-update && systemctl restart spamd"
     "@daily root /etc/train-spamassassin"
   ];
-
-  system.activationScripts =
-  {
-    spamassassin =
-    {
-      deps = [];
-      text =
-      ''
-        # Make sure spamassassin database is present
-        if ! [ -d /etc/spamassassin ];
-        then
-          cp -r ${pkgs.spamassassin}/share/spamassassin /etc
-        fi
-      '';
-    };
-  };
 
   # https://github.com/NixOS/nixpkgs/issues/7915#issuecomment-104882091
   environment.etc =
