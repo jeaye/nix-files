@@ -16,8 +16,8 @@ type = None
 [rights]
 type = none
 
-[git]
-committer = Radicale <radicale@jeaye.com>
+#[git]
+#committer = Radicale <radicale@jeaye.com>
 
 [logging]
 debug = False
