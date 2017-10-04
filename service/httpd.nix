@@ -39,6 +39,7 @@ with import ../util/http.nix {};
             AuthBasicProvider file
             AuthUserFile /etc/user/http/calendar-auth-users
             Require valid-user
+            RequestHeader set X-Script-Name "/calendar"
           </Location>
 
           SSLProxyEngine On
