@@ -13,7 +13,7 @@
     {
       enable = true;
       internalInterfaces = ["ve-+"];
-      externalInterface = "eth0";
+      externalInterface = "ens3";
     };
 
     firewall =
