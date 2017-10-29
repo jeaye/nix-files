@@ -16,7 +16,9 @@
     ./shared/system/environment.nix
     ./server/system/environment.nix
 
+    ./shared/system/network.nix
     ./server/system/network.nix
+
     ./server/system/user.nix
     ./server/system/systemd.nix
 
