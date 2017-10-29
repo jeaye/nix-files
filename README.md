@@ -1,12 +1,20 @@
 nix-files
 ===
 
-These configurations declaratively describe my VPS, running multiple websites
-and services, using the [NixOS Linux distribution](http://nixos.org).
+These configurations declaratively describe both my VPS, running multiple
+websites and services, as well we my workstation. These machines run using the
+[NixOS Linux distribution](http://nixos.org).
 
 The main entry point describing the core system is `configuration.nix`; from
-there, each item is split categorically.
+there, each item is split categorically. Each installation will provide a link
+from `/etc/nixos/configuration.nix` to either `workstation/configuration.nix` or
+`server/configuration.nix`.
 
+## Workstation
+### Managed bits
+### Non-managed bits
+
+## Server
 ### Managed bits
 * System
   * GRUB, time, network, firewall, users, packages, etc
