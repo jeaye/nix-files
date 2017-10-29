@@ -15,11 +15,5 @@
       internalInterfaces = ["ve-+"];
       externalInterface = "ens3";
     };
-
-    firewall =
-    {
-      enable = true;
-      allowPing = true;
-    };
   };
 }
