@@ -13,16 +13,15 @@
     ./shared/system/network.nix
     ./workstation/system/network.nix
 
-    ./system/user.nix
-    ./system/systemd.nix
+    ./workstation/system/user.nix
+    ./shared/system/systemd.nix
 
-    ./program/essentials.nix
-    ./program/admin.nix
+    ./workstation/program/essentials.nix
 
-    ./user/jeaye.nix
+    ./workstation/user/jeaye.nix
 
-    ./service/ssh.nix
-    ./service/gpg.nix
+    ./shared/service/ssh.nix
+    ./workstation/service/gpg.nix
   ];
 
   system.stateVersion = "17.09";

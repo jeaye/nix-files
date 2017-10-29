@@ -20,7 +20,7 @@
     ./server/system/network.nix
 
     ./server/system/user.nix
-    ./server/system/systemd.nix
+    ./shared/system/systemd.nix
 
     ./server/program/essentials.nix
     ./server/program/admin.nix
