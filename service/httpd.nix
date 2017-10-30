@@ -106,15 +106,6 @@ with import ../util/http.nix {};
         documentRoot = "/etc/user/http/upload.jeaye.com";
         extraConfig =
         ''
-          # XXX: Requires manual creation using htpasswd
-          <Location /letsbet/apk>
-            AuthType Basic
-            AuthName "Restricted Calendar"
-            AuthBasicProvider file
-            AuthUserFile /etc/user/http/okletsplay-auth-users
-            Require valid-user
-          </Location>
-
           <Directory /etc/user/http/upload.jeaye.com/letsbet/apk>
             Options +Indexes
             IndexOptions FancyIndexing SuppressDescription NameWidth=*
