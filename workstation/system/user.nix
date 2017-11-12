@@ -8,5 +8,5 @@
   };
 
   # Disallow useradd/groupadd imperatively.
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 }
