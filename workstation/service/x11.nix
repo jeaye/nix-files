@@ -11,4 +11,6 @@
   # Disable bulky shit.
   services.xserver.displayManager.sddm.enable = false;
   services.xserver.desktopManager.plasma5.enable = false;
+
+  services.xserver.windowManager.i3.enable = true;
 }
