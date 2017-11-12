@@ -5,7 +5,7 @@
   {
     hostName = "oryx";
 
-    wireless.enable = true;
+    #wireless.enable = true;
     enableIPv6 = true;
   };
 }
