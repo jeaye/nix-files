@@ -14,5 +14,6 @@
     traceroute
     nix-repl
     file
+    tmux
   ];
 }

@@ -19,7 +19,7 @@
 
     ./program/essentials.nix
 
-    #./user/jeaye.nix
+    ./user/jeaye.nix
 
     ../shared/service/ssh.nix
     ./service/x11.nix
