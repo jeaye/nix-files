@@ -29,7 +29,7 @@
     ./user/git.nix
     ./user/jeaye.nix
 
-    ./service/ssh.nix
+    ../shared/service/ssh.nix
     ./service/acme.nix
     ./service/httpd.nix
     ./service/postfix.nix

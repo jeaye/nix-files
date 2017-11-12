@@ -18,7 +18,7 @@
 
     ./program/essentials.nix
 
-    ./user/jeaye.nix
+    #./user/jeaye.nix
 
     ../shared/service/ssh.nix
     ./service/gpg.nix
