@@ -14,11 +14,12 @@
     ../shared/system/network.nix
     ./system/network.nix
 
-    ./system/user.nix
     ../shared/system/systemd.nix
 
     ./program/essentials.nix
 
+    ../shared/system/user.nix
+    ./system/user.nix
     ./user/jeaye.nix
 
     ../shared/service/ssh.nix

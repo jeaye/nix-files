@@ -19,8 +19,10 @@
     ../shared/system/network.nix
     ./system/network.nix
 
+    ../shared/system/user.nix
     ./server/system/user.nix
-    ./system/systemd.nix
+
+    ../shared/system/systemd.nix
 
     ./program/essentials.nix
     ./program/admin.nix
