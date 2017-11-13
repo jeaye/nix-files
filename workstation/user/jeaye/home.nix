@@ -15,6 +15,8 @@
           base=$(basename "$file_dir")
           ln -sf "$file_dir" "/etc/user/jeaye/$base"
         done
+
+        # TODO: Vimrc package
       '';
     };
   };

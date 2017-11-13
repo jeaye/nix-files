@@ -1,1 +1,0 @@
-/etc/user/jeaye/.i3
