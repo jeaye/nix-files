@@ -1,16 +1,32 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver =
+  {
+    enable = true;
+    layout = "us";
 
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
+    displayManager =
+    {
+      slim.enable = true;
+      slim.defaultUser = "jeaye";
+      sessionCommands =
+      ''
+      '';
+    };
 
-  # Disable bulky shit.
-  services.xserver.displayManager.sddm.enable = false;
-  services.xserver.desktopManager.plasma5.enable = false;
+    desktopManager.xterm.enable = false;
+    windowManager.default = "i3";
+    windowManager.i3.enable = true;
 
-  services.xserver.windowManager.i3.enable = true;
+    libinput =
+    {
+      enable = true;
+      tapping = false;
+      clickMethod = "clickfinger";
+      disableWhileTyping = true;
+      scrollMethod = "twofinger";
+      naturalScrolling = true;
+    };
+  };
 }
