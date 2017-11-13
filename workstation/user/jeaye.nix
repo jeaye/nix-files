@@ -13,4 +13,9 @@
     pinentry
     gnupg
   ];
+
+  imports =
+  [
+    ./jeaye/home.nix
+  ];
 }
