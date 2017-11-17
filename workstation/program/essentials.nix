@@ -15,5 +15,6 @@
     nix-repl
     file
     tmux
+    sshfs
   ];
 }
