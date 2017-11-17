@@ -11,4 +11,16 @@
 
   # Required for SSH access.
   users.groups.ssh-user = {};
+
+  # Ensure /etc/user is readable.
+  system.activationScripts =
+  {
+    readable-home =
+    {
+      text =
+      ''
+        chmod a+r /etc/user
+      '';
+    };
+  };
 }
