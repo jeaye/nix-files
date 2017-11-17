@@ -40,7 +40,7 @@
       PubkeyAcceptedKeyTypes ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519,ssh-rsa
 
       # LogLevel VERBOSE logs user's key fingerprint on login.
-      # Needed to have a clear audit track of which key was using to log in.
+      # Needed to have a clear audit track of which key was used to log in.
       LogLevel VERBOSE
 
       # Use kernel sandbox mechanisms where possible in unprivileged processes.
