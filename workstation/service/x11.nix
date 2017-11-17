@@ -6,18 +6,22 @@
     enable = true;
     layout = "us";
 
+    windowManager =
+    {
+      default = "i3";
+      i3.enable = true;
+    };
+    desktopManager =
+    {
+      default = "none";
+      xterm.enable = false;
+    };
     displayManager =
     {
       slim.enable = true;
-      slim.defaultUser = "jeaye";
-      sessionCommands =
-      ''
-      '';
     };
 
-    desktopManager.xterm.enable = false;
-    windowManager.default = "i3";
-    windowManager.i3.enable = true;
+    autorun = true;
 
     libinput =
     {
