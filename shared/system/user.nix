@@ -17,9 +17,10 @@
   {
     readable-home =
     {
+      deps = [];
       text =
       ''
-        chmod a+r /etc/user
+        chmod a+rx /etc/user
       '';
     };
   };
