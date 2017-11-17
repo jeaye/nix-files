@@ -5,7 +5,8 @@
   {
     hostName = "oryx";
 
-    #wireless.enable = true;
     enableIPv6 = true;
+
+    networkmanager.enable = true;
   };
 }
