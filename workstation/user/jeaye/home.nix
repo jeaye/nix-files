@@ -1,16 +1,14 @@
 { config, pkgs, lib, ... }:
 
-{
-  nixpkgs.config =
+let
+  # TODO: Use readDir + map to get these automatically.
+  dotfiles = [ "config" "i3status.conf" ];
+  make-dotfile = file:
   {
-    packageOverrides = pkgs: rec
-    {
-      jeaye-dotfiles = pkgs.callPackage ./pkg/dotfiles.nix { };
-    };
+    source = ./data/dotfiles + "/${file}";
+    target = "user/jeaye/.${file}";
   };
-
-  environment.systemPackages =
-  [
-    pkgs.jeaye-dotfiles
-  ];
+in
+{
+  environment.etc = map make-dotfile dotfiles;
 }
