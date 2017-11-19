@@ -18,7 +18,7 @@
     ../shared/system/systemd.nix
 
     ## Global programs
-    ./program/essentials.nix
+    ./program/essential.nix
 
     ## Users
     ../shared/system/user.nix
