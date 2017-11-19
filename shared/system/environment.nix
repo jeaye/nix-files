@@ -15,7 +15,7 @@
 
   services.locate.enable = true;
 
-  nix.allowedUsers = [];
+  nix.allowedUsers = [ "@wheel" ];
   nix.extraOptions =
   ''
     build-use-sandbox = false
