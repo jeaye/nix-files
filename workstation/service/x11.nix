@@ -33,4 +33,17 @@
       naturalScrolling = true;
     };
   };
+
+  fonts =
+  {
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs;
+    [
+      corefonts # MS free fonts
+      inconsolata # Monospaced
+      terminus_font # The best
+      unifont # Some international fonts
+    ]
+  };
 }
