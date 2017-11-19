@@ -1,0 +1,81 @@
+[user]
+  name = jeaye
+  email = contact@jeaye.com
+[color]
+  all = true
+  ui = true
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = red
+  untracked = yellow
+[alias]
+  po = push origin
+  c = commit
+  cp = cherry-pick
+  ch = checkout
+  st = status --column -sb
+  sup = submodule update --recursive --init
+  d = difftool --ignore-submodules
+  di = difftool --tool=vim_ignore_whitespace -w --ignore-submodules
+  ds = difftool --stat --ignore-submodules
+  ll = log --pretty=oneline --graph --abbrev-commit --decorate --topo-order
+  dp = difftool --tool=patch --ignore-submodules --minimal -w
+  clr = clone --recursive
+  find = log --pickaxe-all -S
+  fpull = "!f(){ git pull \"$1\" \"$2\" && git fat pull; };f"
+  fpush = "!f(){ git push \"$1\" \"$2\" && git fat push; };f"
+  reset-time = "!f(){ touch -camft $(git log --date=iso --pretty=format:%cd -1 HEAD -- \"$1\" | sed 's/-//g;s/ //;s/://;s/:/./' | cut -d' ' -f1) \"$1\"; };f"
+  deploy = push heroku
+[merge]
+  keepBackup = false
+  tool = custom_merge
+  renamelimit = 100000
+[mergetool "custom_merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+[diff]
+  tool = vim
+  renamelimit = 100000
+[difftool "vim"]
+  cmd = vim -d -R "$LOCAL" "$REMOTE"
+[difftool "vim_ignore_whitespace"]
+  cmd = vim -c 'set diffopt+=iwhite' -d -R "$LOCAL" "$REMOTE"
+[difftool "patch"]
+  cmd = diff_view "$LOCAL" "$REMOTE"
+[difftool]
+  prompt = false
+[push]
+  default = simple
+[core]
+  pager = less -R
+  excludesfile = ~/jeaye/.gitignore
+[gist]
+  private = yes
+  browse = no
+[filter "lfs"]
+  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+  gpgsign = true
+[stash]
+  showPatch = 1
+[pager]
+  log = less
+  show = less -R
+  diff = less -R
