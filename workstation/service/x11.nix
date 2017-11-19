@@ -5,6 +5,7 @@
   {
     enable = true;
     layout = "us";
+    tty = 2;
 
     windowManager =
     {
