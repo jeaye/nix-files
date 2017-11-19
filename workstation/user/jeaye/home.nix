@@ -2,7 +2,7 @@
 
 let
   # TODO: Use readDir + map to get these automatically.
-  dotfiles = [ "config" "i3status.conf" ];
+  dotfiles = [ "config" "i3status.conf" "gitconfig" ];
   make-dotfile = file:
   {
     source = ./data/dotfiles + "/${file}";
