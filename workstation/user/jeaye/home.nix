@@ -32,7 +32,7 @@ in
 
   system.activationScripts =
   {
-    # The permissions of ~/.vim need to be fudged, since they were made by Nix.
+    # The permissions of ~/.vim need to be fudged, since it was made by Nix.
     jeaye-vimrc =
     {
       deps = [];
