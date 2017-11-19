@@ -23,7 +23,7 @@
     ../shared/system/systemd.nix
 
     ## Global programs
-    ./program/essentials.nix
+    ./program/essential.nix
     ./program/admin.nix
 
     ## Users
