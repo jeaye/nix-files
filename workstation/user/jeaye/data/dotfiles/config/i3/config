@@ -18,7 +18,7 @@ bindsym $mod+Return exec urxvt
 # start a browser
 bindsym $mod+Shift+f exec firefox
 
-bindsym $mod+Shift+g exec lock
+bindsym $mod+Shift+g exec ~/.bin/lock
 
 for_window [class="(?i)gvim"] client.focused #000000 #000000 #000000 #000000
 for_window [class="plasmashell"] floating window
