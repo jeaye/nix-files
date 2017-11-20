@@ -13,10 +13,9 @@
       i3 =
       {
         enable = true;
-        extraPackages = with pkgs; [ dmenu i3status i3lock xautolock ];
+        extraPackages = with pkgs; [ dmenu i3status i3lock hsetroot xautolock ];
         extraSessionCommands =
         ''
-          export PATH=${pkgs.hsetroot}/bin:${pkgs.xautolock}/bin:$PATH
           echo "BINGBONG extraSessionCommands"
           source ~/.xinitrc || true
         '';
