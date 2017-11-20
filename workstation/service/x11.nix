@@ -10,17 +10,24 @@
     windowManager =
     {
       default = "i3";
-      i3.enable = true;
+      i3 =
+      {
+        enable = true;
+        extraPackages = with pkgs; [ dmenu i3status i3lock xautolock ];
+        extraSessionCommands =
+        ''
+          export PATH=${pkgs.hsetroot}/bin:${pkgs.xautolock}/bin:$PATH
+          echo "BINGBONG extraSessionCommands"
+          source ~/.xinitrc || true
+        '';
+      };
     };
     desktopManager =
     {
       default = "none";
       xterm.enable = false;
     };
-    displayManager =
-    {
-      slim.enable = true;
-    };
+    displayManager.slim.enable = true;
 
     autorun = true;
 

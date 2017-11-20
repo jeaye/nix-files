@@ -2,7 +2,13 @@
 
 let
   # TODO: Use readDir + map to get these automatically.
-  dotfiles = [ "config" "i3status.conf" "gitconfig" ];
+  dotfiles =
+  [
+    "config"
+    "i3status.conf"
+    "gitconfig"
+    "xinitrc"
+  ];
   make-dotfile = file:
   {
     source = ./data/dotfiles + "/${file}";
@@ -10,16 +16,14 @@ let
   };
 in
 {
-  nixpkgs.config =
+  nixpkgs.config.packageOverrides = pkgs:
   {
-    packageOverrides = pkgs: rec
-    {
-      jeaye-vimrc = pkgs.callPackage ./pkg/vimrc.nix { };
-    };
+    jeaye-vimrc = pkgs.callPackage ./pkg/vimrc.nix { };
   };
 
   environment.etc =
   [
+    ## Vim
     {
       source = pkgs.jeaye-vimrc + "/layer";
       target = "user/jeaye/.vim/layer";

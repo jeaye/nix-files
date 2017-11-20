@@ -1,0 +1,24 @@
+echo "BINGBONG xinitrc"
+
+# Disable bell
+xset -b
+
+# Acknowledge some more X settings
+xrdb -merge ~/.Xresources
+
+# Nice background color
+hsetroot -solid "#002b36"
+
+# Disable laptop monitor
+if [[ $(xrandr | grep "HDMI-0 connected") ]];
+then
+  xrandr --output LVDS --off
+  xrandr --output DP-0 --off
+  xrandr --output HDMI-0 --dpi 96
+fi
+
+# Set keyboard layout; toggle with alt + shift
+#setxkbmap -layout us,dvp -option grp:alt_shift_toggle
+
+# Lock the screen, if it's idle
+xautolock -time 10 -locker "~/.bin/lock" -secure &
