@@ -3,18 +3,30 @@
 {
   environment.systemPackages = with pkgs;
   [
-    vim
+    ## Vim
+    vimHugeX
+    vimPlugins.YouCompleteMe
+
+    ## Browsing/downloading
     wget
     elinks
+
+    ## File formats
     unzip
-    git
-    htop
-    bashCompletion
+    file
+
+    ## Networking
     telnet
     traceroute
-    nix-repl
-    file
-    tmux
     sshfs
+
+    ## Source control
+    git
+
+    ## Shell
+    htop
+    bashCompletion
+    nix-repl
+    tmux
   ];
 }
