@@ -7,7 +7,7 @@ let
     "config"
     "i3status.conf"
     "gitconfig"
-    "xinitrc"
+    "xinitrc" "Xresources"
   ];
   make-dotfile = file:
   {
