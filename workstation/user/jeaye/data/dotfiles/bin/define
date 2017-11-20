@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+wn $1 -over

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -eu -o pipefail
+
+#youtube-dl -x --audio-format "best" --audio-quality 0 "$1"
+youtube-dl -x --audio-format "best" --audio-quality 0 "$1"

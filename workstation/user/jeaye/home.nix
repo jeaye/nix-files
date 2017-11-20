@@ -8,6 +8,7 @@ let
     "i3status.conf"
     "gitconfig"
     "xsession" "Xresources"
+    "bin"
   ];
   make-dotfile = file:
   {

@@ -31,7 +31,6 @@
   di = difftool --tool=vim_ignore_whitespace -w --ignore-submodules
   ds = difftool --stat --ignore-submodules
   ll = log --pretty=oneline --graph --abbrev-commit --decorate --topo-order
-  dp = difftool --tool=patch --ignore-submodules --minimal -w
   clr = clone --recursive
   find = log --pickaxe-all -S
   fpull = "!f(){ git pull \"$1\" \"$2\" && git fat pull; };f"
@@ -54,8 +53,6 @@
   cmd = vim -d -R "$LOCAL" "$REMOTE"
 [difftool "vim_ignore_whitespace"]
   cmd = vim -c 'set diffopt+=iwhite' -d -R "$LOCAL" "$REMOTE"
-[difftool "patch"]
-  cmd = diff_view "$LOCAL" "$REMOTE"
 [difftool]
   prompt = false
 [push]

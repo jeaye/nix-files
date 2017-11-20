@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -eu
+
+echo "Setting priority for $1"
+sudo renice -10 $1
+sudo ionice -c 2 -n 0 -p $1

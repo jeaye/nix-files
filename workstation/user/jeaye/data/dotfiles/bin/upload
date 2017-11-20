@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eu -o pipefail
+
+scp -r "$@" http-upload@upload.jeaye.com:queue/
+
+for f in "$@";
+do
+  echo https://upload.jeaye.com/tmp/$(basename "$f")
+done
