@@ -10,14 +10,9 @@
     extraGroups = [ "wheel" "ssh-user" ];
   };
 
-  environment.systemPackages = with pkgs;
-  [
-    pinentry
-    gnupg
-  ];
-
   imports =
   [
     ./jeaye/home.nix
+    ./jeaye/program.nix
   ];
 }
