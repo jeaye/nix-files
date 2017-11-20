@@ -14,11 +14,6 @@
       {
         enable = true;
         extraPackages = with pkgs; [ dmenu i3status i3lock hsetroot xautolock ];
-        extraSessionCommands =
-        ''
-          echo "BINGBONG extraSessionCommands"
-          source ~/.xinitrc || true
-        '';
       };
     };
     desktopManager =
