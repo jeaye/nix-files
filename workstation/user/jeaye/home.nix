@@ -4,7 +4,7 @@ let
   # TODO: Use readDir + map to get these automatically.
   dotfiles =
   [
-    "config"
+    "config/i3"
     "i3status.conf"
     "gitconfig"
     "xsession" "Xresources"
@@ -50,6 +50,18 @@ in
         vim_dirs=$(echo /etc/user/jeaye/.vim/{autoload,plugged})
         mkdir -p $vim_dirs
         chown -R jeaye:users $vim_dirs
+      '';
+    };
+
+    # More fudging to account for environment.etc creations.
+    jeaye-dotfiles =
+    {
+      deps = [];
+      text =
+      ''
+        dotfile_dirs=$(echo /etc/user/jeaye/.config)
+        mkdir -p $dotfile_dirs
+        chown -R jeaye:users $dotfile_dirs
       '';
     };
   };
