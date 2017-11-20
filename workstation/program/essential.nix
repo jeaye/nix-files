@@ -5,7 +5,7 @@
   [
     ## Vim
     vimHugeX
-    vimPlugins.YouCompleteMe
+    vimPlugins.YouCompleteMe # TODO: For only certain languages?
 
     ## Browsing/downloading
     wget
@@ -28,5 +28,6 @@
     bashCompletion
     nix-repl
     tmux
+    rxvt_unicode
   ];
 }
