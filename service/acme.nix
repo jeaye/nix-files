@@ -10,13 +10,6 @@ let
   '';
 in
 {
-  nixpkgs.config =
-  {
-    packageOverrides = pkgs: rec
-    {
-      simp_le = pkgs.callPackage ../pkg/simp_le.nix { };
-    };
-  };
   environment.systemPackages = [ pkgs.simp_le ];
 
   # TODO: Combine these subdomains where possible
