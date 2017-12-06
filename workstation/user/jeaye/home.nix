@@ -11,6 +11,7 @@ let
     "xsession" "Xresources"
     "lein/profiles.clj"
     "mpv/mpv.conf"
+    "tmux.conf"
     "bin"
   ];
   make-dotfile = file:
