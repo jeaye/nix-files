@@ -47,4 +47,10 @@
       unifont # Some international fonts
     ];
   };
+
+  environment.sessionVariables =
+  {
+    # Allow GTK 2.0/3.0 themes to be found.
+    GTK_DATA_PREFIX = "/run/current-system/sw";
+  };
 }
