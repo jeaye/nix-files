@@ -52,5 +52,7 @@
   {
     # Allow GTK 2.0/3.0 themes to be found.
     GTK_DATA_PREFIX = "/run/current-system/sw";
+    # Allow KDE apps to work better in i3.
+    DESKTOP_SESSION = "kde";
   };
 }
