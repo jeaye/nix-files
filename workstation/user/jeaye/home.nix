@@ -7,6 +7,7 @@ let
     "config/i3"
     "i3status.conf"
     "gitconfig"
+    "gitignore"
     "xsession" "Xresources"
     "lein/profiles.clj"
     "mpv/mpv.conf"
