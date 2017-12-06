@@ -1,0 +1,56 @@
+# Colors
+default=$(tput sgr0)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+blue=$(tput setaf 39)
+purple=$(tput setaf 5)
+cyan=$(tput setaf 6)
+orange=$(tput setaf 9)
+
+# PS1 prompt
+git_branch()
+{
+  if git rev-parse --git-dir >/dev/null 2>&1
+  then
+    branch=`git symbolic-ref --short HEAD 2>/dev/null`
+    if [ -z "$branch" ]
+    then
+      branch="DETACHED"
+      color=${red}
+    elif git diff --quiet 2>/dev/null >&2
+    then
+      if [ -n "`git status -s --untracked-files=no 2>/dev/null`" ]
+      then
+        color=${yellow}
+      else
+        headRev=`git rev-list --max-count=1 HEAD 2>/dev/null`
+        upstreamBranch=`git remote 2>/dev/null`/$branch
+        upstreamRev=`git rev-list --max-count=1 $upstreamBranch 2>/dev/null`
+        if [ "$upstreamRev" = "$headRev" ]
+        then
+          color=${green}
+        else
+          color=${blue}
+        fi
+      fi
+    else
+      color=${red}
+    fi
+  else
+    return 0
+  fi
+  echo "[${color}$branch${default}]"
+}
+last_error()
+{
+  if [[ $? == 0 ]];
+  then
+    echo "(${green}✓${default})"
+  else
+    echo "(${red}✗${default})"
+  fi
+}
+current_time()
+{ date "+%H:%M:%S"; }
+PS1='${default}┌─$(last_error)[${cyan}\u${default}@${purple}\h${default}]─[${green}\w${default}][${orange}$(current_time)${default}]$(git_branch)${default}$(tput bel)\n└──╼ '

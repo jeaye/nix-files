@@ -1,0 +1,26 @@
+# Favor verbosity and color
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias rm='rm -vi'
+alias mkdir='mkdir -pv'
+alias grep='grep --color=auto'
+alias cl='clear'
+alias ls='ls --color=auto'
+alias less='less -R'
+alias vim='vim -p'
+alias gvim='gvim -p'
+alias rn='react-native'
+alias mplayer='mpv'
+alias ps='ps ax | grep'
+alias g='git'
+alias fail='tail -f'
+
+# Functions
+function weather
+{ curl wttr.in/${1:-Burlingame}; }
+
+function define
+{ wn $1 -over; }
+
+function irc
+{ ssh -t jeaye@pastespace.org "tmux attach || tmux new"; }

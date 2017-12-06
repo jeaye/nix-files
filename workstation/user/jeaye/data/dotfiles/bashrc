@@ -1,0 +1,46 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Local binaries
+export PATH=~/bin:~/.bin:$PATH
+
+# Bash options ------------------------------------
+set -o vi                   # Vi mode
+set -o noclobber            # do not overwrite files
+shopt -s globstar           # recursive globbing
+shopt -s cdable_vars        # if cd arg is not valid, assumes its a var defining a dir
+shopt -s cdspell            # autocorrects cd misspellings
+shopt -s checkwinsize       # update the value of LINES and COLUMNS after each command if altered
+shopt -s cmdhist            # save multi-line commands in history as single line
+shopt -s histappend         # do not overwrite history
+shopt -s dotglob            # include dotfiles in pathname expansion
+shopt -s expand_aliases     # expand aliases
+shopt -s extglob            # enable extended pattern-matching features
+shopt -s progcomp           # programmable completion
+shopt -s hostcomplete       # attempt hostname expansion when @ is at the beginning of a word
+shopt -s nocaseglob         # pathname expansion will be treated as case-insensitive
+
+# Have a large history and clean up duplicated lines
+unset HISTFILESIZE
+HISTSIZE="10000"
+HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE
+
+# Ignore duplicate commands, simple shit, and dangerous shit
+export HISTIGNORE="&:ls:[bf]g:exit:clear:cl:history:su:su *:sudo *"
+
+## 256 colors
+export TERM=rxvt-256color
+export EDITOR=vim
+export GPG_TTY=$(tty)
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01;32:quote=01'
+
+## UTF-8
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
+[ -f ~/.bashrc-alias ] && source ~/.bashrc-alias
+[ -f ~/.bashrc-less ] && source ~/.bashrc-less
+[ -f ~/.bashrc-prompt ] && source ~/.bashrc-prompt
+[ -f ~/.bashrc-secret ] && source ~/.bashrc-secret
