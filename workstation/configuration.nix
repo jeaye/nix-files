@@ -17,6 +17,8 @@
 
     ../shared/system/systemd.nix
 
+    ./system/power.nix
+
     ## Global programs
     ./program/essential.nix
 
