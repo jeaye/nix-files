@@ -9,6 +9,7 @@ let
     "gitconfig"
     "xsession" "Xresources"
     "lein/profiles.clj"
+    "mpv/mpv.conf"
     "bin"
   ];
   make-dotfile = file:
