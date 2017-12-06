@@ -8,6 +8,7 @@ let
     "i3status.conf"
     "gitconfig"
     "xsession" "Xresources"
+    "lein/profiles.clj"
     "bin"
   ];
   make-dotfile = file:
@@ -59,7 +60,7 @@ in
       deps = [];
       text =
       ''
-        dotfile_dirs=$(echo /etc/user/jeaye/.config)
+        dotfile_dirs=$(echo /etc/user/jeaye/.{config,lein})
         mkdir -p $dotfile_dirs
         chown -R jeaye:users $dotfile_dirs
       '';
