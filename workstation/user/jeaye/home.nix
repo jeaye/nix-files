@@ -10,6 +10,7 @@ let
     "xsession" "Xresources"
     "lein/profiles.clj"
     "mpv/mpv.conf"
+    "apvlvrc"
     "bin"
   ];
   make-dotfile = file:
