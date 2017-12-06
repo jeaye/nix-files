@@ -1,6 +1,0 @@
-" Dark backgrounds
-set inverted = yes
-
-" Map ^l and ^h to next and previous tab.
-map <C-l> gt
-map <C-h> gT
