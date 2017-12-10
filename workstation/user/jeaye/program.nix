@@ -17,6 +17,10 @@
 
       ## Music
       cmus
+
+      ## Dictionary
+      dict
+      dictdDBs.wordnet
     ];
   };
 }
