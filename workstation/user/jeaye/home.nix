@@ -42,7 +42,7 @@ in
       source = pkgs.jeaye-vimrc + "/vimrc";
       target = "user/jeaye/.vimrc";
     }
-  ] ++ map make-dotfile dotfiles;
+  ] ++ (map make-dotfile dotfiles);
 
   system.activationScripts =
   {
