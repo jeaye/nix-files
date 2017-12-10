@@ -4,7 +4,7 @@ let
   # TODO: Use readDir + map to get these automatically.
   dotfiles =
   [
-    "bashrc" "bashrc-alias" "bashrc-less" "bashrc-prompt"
+    "bash_profile" "bashrc" "bashrc-alias" "bashrc-less" "bashrc-prompt"
     "config/i3"
     "i3status.conf"
     "gitconfig"
