@@ -18,4 +18,9 @@
       ];
     };
   };
+
+  imports =
+  [
+    ./network/malicious-host.nix
+  ];
 }
