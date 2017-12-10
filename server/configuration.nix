@@ -22,6 +22,8 @@
 
     ../shared/system/systemd.nix
 
+    ../shared/system/security.nix
+
     ## Global programs
     ./program/essential.nix
     ./program/admin.nix

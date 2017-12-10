@@ -17,6 +17,8 @@
 
     ../shared/system/systemd.nix
 
+    ../shared/system/security.nix
+
     ./system/power.nix
 
     ## Global programs
