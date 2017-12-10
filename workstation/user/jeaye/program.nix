@@ -1,20 +1,22 @@
 { config, pkgs, lib, ... }:
 
 {
-  # TODO: Lock this to user-specific profile
-  environment.systemPackages = with pkgs;
-  [
-    ## Security
-    pinentry
-    gnupg
+  users.users.jeaye =
+  {
+    packages = with pkgs;
+    [
+      ## Security
+      pinentry
+      gnupg
 
-    ## Browsing
-    firefox
+      ## Browsing
+      firefox
 
-    ## Calendar
-    thunderbird
+      ## Calendar
+      thunderbird
 
-    ## Music
-    cmus
-  ];
+      ## Music
+      cmus
+    ];
+  };
 }
