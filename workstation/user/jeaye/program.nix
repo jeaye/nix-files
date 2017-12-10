@@ -9,6 +9,9 @@
       pinentry
       gnupg
 
+      ## Editing
+      neovim
+
       ## Browsing
       firefox
 
