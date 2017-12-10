@@ -1,3 +1,4 @@
+# Originally from https://github.com/michalrus/dotfiles/blob/master/nixos-config/machines/desktop/modules/malicious-hosts.nix
 { config, lib, pkgs, ... }:
 
 let
