@@ -25,7 +25,8 @@
 
     ## Shell
     htop
-    bashCompletion
+    # Disabled until https://github.com/NixOS/nixpkgs/pull/32534 is live
+    #bashCompletion
     nix-repl
     tmux
     rxvt_unicode
