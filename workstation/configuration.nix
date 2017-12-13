@@ -11,6 +11,7 @@
     ./system/environment.nix
     ./system/network.nix
     ./system/power.nix
+    ./system/security.nix
 
     ## Global programs
     ./program/essential.nix
