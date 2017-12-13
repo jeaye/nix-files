@@ -17,6 +17,8 @@
     ./system/user.nix
 
     ## Services
+    ./service/time.nix
+    ./service/locate.nix
     ./service/ssh.nix
   ];
 }
