@@ -12,6 +12,7 @@
     ./system/network.nix
     ./system/power.nix
     ./system/security.nix
+    ./system/sound.nix
 
     ## Global programs
     ./program/essential.nix
