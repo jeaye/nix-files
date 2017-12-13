@@ -3,6 +3,9 @@
 {
   imports =
   [
+    ## More secure defaults
+    <nixpkgs/nixos/modules/profiles/hardened.nix>
+
     ## System
     ./system/boot.nix
     ./system/environment.nix
@@ -16,6 +19,4 @@
     ## Services
     ./service/ssh.nix
   ];
-
-  system.stateVersion = "17.09";
 }
