@@ -21,6 +21,7 @@
     ./user/jeaye.nix
 
     ## Services
+    ./service/manual.nix
     ./service/x11.nix
   ];
 
