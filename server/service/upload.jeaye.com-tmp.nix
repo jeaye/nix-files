@@ -7,7 +7,7 @@
   {
     isNormalUser = true;
     home = "/etc/user/http-upload";
-    extraGroups = [ "ssh-user" ];
+    extraGroups = [ "ssh" ];
     openssh.authorizedKeys.keys =
     [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDL8j6NtvibZpsDLWSjsPMIjUQRYHta/a8XpOJf7CQ2Aze73oFwBPaAvP1iSmpLkFCs0hp+8w0P4+eHAjp67mLgVLIvM0iESpj8YbVJACyL2Gu2J8fN63CFP3HAMEmvXGK8LSpBEErF44az0H8ZrMJPODkUYiQMX2kAgshUjtMaUqicZmWRRsiJ8bBcK2ddsWOXPzY/0j8+9KMre8YaFJve/QgmJEvVpdxt8pqklPCiMHjFI0EKRHV835mDLe/fzYK2hrTzRXw5hRpluonGce7Tg7WsVk/SmGdfysJAYOOvUwcLosK64bsg2+wIdEKG4r/Ws9FR2hqykspzx4s2o6jL jeaye@oryx"

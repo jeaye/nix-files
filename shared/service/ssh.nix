@@ -25,7 +25,7 @@
       MaxAuthTries 5
 
       # Don't allow just anyone to use SSH.
-      AllowGroups ssh-user
+      AllowGroups ssh
 
       ### Recommended settings from both:
       # https://stribika.github.io/2015/01/04/secure-secure-shell.html

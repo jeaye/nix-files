@@ -7,7 +7,7 @@
     createHome = true;
     group = "users";
     home = "/etc/user/jeaye";
-    extraGroups = [ "wheel" "ssh-user" "proc" ];
+    extraGroups = [ "wheel" "ssh" "proc" ];
   };
 
   imports =

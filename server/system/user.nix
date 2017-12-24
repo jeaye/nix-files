@@ -11,7 +11,7 @@
   {
     isNormalUser = true;
     home = "/etc/user/fu-er";
-    extraGroups = [ "ssh-user" ];
+    extraGroups = [ "ssh" ];
   };
 
   system.activationScripts =

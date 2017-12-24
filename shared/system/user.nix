@@ -10,7 +10,7 @@
   ];
 
   # Required for SSH access.
-  users.groups.ssh-user = {};
+  users.groups.ssh = {};
 
   # Ensure /etc/user is readable.
   system.activationScripts =
