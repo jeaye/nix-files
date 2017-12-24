@@ -4,6 +4,7 @@
   services.xserver =
   {
     enable = true;
+    autorun = false;
     layout = "us";
     tty = 2;
 
