@@ -24,8 +24,6 @@
     };
     displayManager.slim.enable = true;
 
-    autorun = true;
-
     libinput =
     {
       enable = true;
