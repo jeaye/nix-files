@@ -4,7 +4,8 @@
   imports =
   [
     ## More secure defaults
-    <nixpkgs/nixos/modules/profiles/hardened.nix>
+    # TODO: Causing issues? Kernel modules?
+    #<nixpkgs/nixos/modules/profiles/hardened.nix>
 
     ## System
     ./system/boot.nix
