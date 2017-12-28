@@ -44,7 +44,7 @@
     ./service/wordy-word.nix
     ./service/rainloop.nix
 
-    ./container/nextcloud.nix
+    #./container/nextcloud.nix
   ];
 
   system.stateVersion = "17.09";
