@@ -9,7 +9,7 @@
     unzip
     git
     htop
-    bashCompletion
+    #bashCompletion
     telnet
     traceroute
     nix-repl
