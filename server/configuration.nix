@@ -21,7 +21,7 @@
     ./program/admin.nix
 
     ## Users
-    ./server/system/user.nix
+    ./system/user.nix
 
     ./user/irc.nix
     ./user/git.nix
