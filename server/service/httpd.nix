@@ -42,6 +42,8 @@ with import ../util/http.nix {};
             RequestHeader set X-Script-Name "/calendar"
           </Location>
 
+          RedirectMatch 301 "^\/(?!\.well-known|calendar).*" https://jeaye.com
+
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
