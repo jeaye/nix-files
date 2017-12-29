@@ -30,6 +30,7 @@
     ## Services
     ./service/acme.nix
     ./service/httpd.nix
+    ./service/domain-parking.nix
     ./service/postfix.nix
     ./service/dovecot.nix
     ./service/opendkim.nix
