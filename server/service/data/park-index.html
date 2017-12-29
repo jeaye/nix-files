@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>%%domain%% is for sale</title>
+    <meta name="description" content="See below for how to buy">
+
+    <style>
+    html { height: 100%; }
+    body
+    {
+      font-family: "Helvetica";
+      font-size: 36px;
+      color: #1e1e1e;
+      height: 100%;
+      background-color: #FFFF9D;
+    }
+    a:link    { color: #FF6138; }
+    a:visited { color: #FF6138; }
+    a:hover   { color: #FF6138; }
+    a:active  { color: #FF6138; }
+
+    #container { height: 100%; }
+    .content
+    {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #domain
+    {
+      font-size: 150%;
+      padding-bottom: 50px;
+    }
+    #sale
+    {
+      padding-bottom: 50px;
+    }
+    .content button
+    {
+      font-family: "Helvetica";
+      font-size: 30px;
+    }
+    .content button
+    {
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      -webkit-font-smoothing: antialiased;
+      color: #FFF;
+      background: #00A388;
+      display: inline-block;
+      padding: 10px 35px;
+        border-radius: 0px;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+      -webkit-transition: all 0.25s ease;
+      -ms-transition: all 0.25s ease;
+      -moz-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+    }
+    .content button:hover { background: #FF6138; }
+    </style>
+    <script>
+      window.onload =
+      function()
+      {
+        document.getElementById("offer").onclick =
+        function()
+        {
+          var button = document.getElementById("offer");
+          button.style.display = "none";
+
+          var div = document.createElement("div");
+          div.appendChild(document.createTextNode("Email "));
+          var a = document.createElement('a');
+          var email = document.createTextNode("domain@pastespace.org");
+          a.appendChild(email);
+          a.href = "mailto:domain" + "@pastespace" + ".org";
+          div.appendChild(a);
+          div.appendChild(document.createTextNode(" with your offer."));
+
+          var content = document.getElementById("content");
+          content.appendChild(div);
+        };
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="content" class="content">
+        <div id="domain">%%domain%%</div>
+        <div id="sale">This domain is for sale.</div>
+        <button id="offer">Make an offer!</button>
+      </div>
+    </div>
+  </body>
+</html>
