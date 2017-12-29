@@ -32,7 +32,7 @@ let
     name = "user/http/" + domain + "/index.html";
     value =
     {
-      text = builtins.replaceStrings ["%%domain%%"] domain index;
+      text = builtins.replaceStrings ["%%domain%%"] [domain] index;
     };
   };
 in
