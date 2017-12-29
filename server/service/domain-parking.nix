@@ -15,6 +15,7 @@ let
     "history-proxy.org"
     "jank-platform.org"
     "jeaye.io"
+    "pastespace.org"
     "polyvore.io"
     "preplist.io"
     "preplist.org"
