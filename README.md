@@ -18,7 +18,7 @@ from `/etc/nixos/configuration.nix` to either `workstation/configuration.nix` or
 ### Managed bits
 * System
   * GRUB, time, network, firewall, users, packages, etc
-* Several websites
+* Nearly three dozen websites
 * Mail server
   * IMAP (dovecot) + SMTP (postfix) + DKIM
 * Rainloop web client
@@ -26,7 +26,6 @@ from `/etc/nixos/configuration.nix` to either `workstation/configuration.nix` or
 * [jank benchmark visualizer](http://bench.jank-lang.org/) service
 * caldav service
 * SSL Certs (Let's Encrypt)
-* Persistent weechat/mutt sessions
 
 ### Non-managed bits
 * User passwords
