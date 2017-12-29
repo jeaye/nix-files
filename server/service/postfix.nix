@@ -24,10 +24,12 @@
     virtual =
     ''
       contact@pastespace.org     jeaye
+      domain@pastespace.org      jeaye
       contact@safepaste.org      jeaye
       contact@arrownext.com      jeaye
       contact@jeaye.com          jeaye
       contact@trustcoin.org      jeaye
+
       contact@furthington.com    jeaye
       support@furthington.com    jeaye
 
@@ -43,7 +45,6 @@
       contact@okletsplay.com     russalek13@gmail.com
       russ@okletsplay.com        russalek13@gmail.com
       jeaye@okletsplay.com       jeaye
-      cogwheel@okletsplay.com    maorlando@gmail.com
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
