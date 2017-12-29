@@ -22,7 +22,7 @@ let
   makeVirtualHost = domain:
   {
     hostName = domain;
-    serverAliases = ["www." + domain];
+    serverAliases = [("www." + domain)];
     enableSSL = false;
     documentRoot = "/etc/user/http/" + domain;
   };
