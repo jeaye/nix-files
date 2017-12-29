@@ -32,12 +32,11 @@ let
     name = "user/http/" + domain + "/index.html";
     value =
     {
-      name = "index.html";
       text = builtins.replaceStrings ["%%domain%%"] domain index;
     };
   };
 in
 {
   services.httpd.virtualHosts = (map makeVirtualHost domains);
-  environment.etc = (map makeIndexFile domains);
+  environment.etc = (builtins.listToAttrs (map makeIndexFile domains));
 }
