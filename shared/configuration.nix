@@ -5,7 +5,7 @@
   [
     ## More secure defaults
     # TODO: Causing issues? Kernel modules?
-    #<nixpkgs/nixos/modules/profiles/hardened.nix>
+    <nixpkgs/nixos/modules/profiles/hardened.nix>
 
     ## System
     ./system/boot.nix
