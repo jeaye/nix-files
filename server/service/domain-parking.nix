@@ -3,6 +3,7 @@
 let
   domains =
   [
+    "anonymust.org"
     "anylist.io"
     "bankapp.io"
     "candycapitalist.com"
@@ -25,6 +26,8 @@ let
     "tunnelvpn.io"
     "tunnelvpn.org"
     "univps.org"
+    "vingtsun.io"
+    "wingtsun.io"
     "zenlock.io"
     "zenlock.org"
     "zentrain.io"
