@@ -8,6 +8,7 @@
       ## Security
       pinentry
       gnupg
+      keepassx-community
 
       ## Editing
       neovim
