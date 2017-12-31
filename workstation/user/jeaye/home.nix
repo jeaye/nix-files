@@ -42,6 +42,11 @@ in
       source = pkgs.jeaye-vimrc + "/vimrc";
       target = "user/jeaye/.vimrc";
     }
+    ## X
+    {
+      source = ./data/dotfiles/xinitrc;
+      target = "user/jeaye/.xsession";
+    }
   ] ++ (map make-dotfile dotfiles);
 
   system.activationScripts =
