@@ -30,5 +30,6 @@
     nix-repl
     tmux
     rxvt_unicode
+    psmisc
   ];
 }
