@@ -15,7 +15,7 @@
       before = ["local-fs.target" "umount.target"];
       after = ["swap.target"];
       conflicts = ["umount.target"];
-      options = "rw,nosuid,nodev,noexec";
+      options = "rw,nosuid,nodev";
       type = "tmpfs";
 
       unitConfig =
