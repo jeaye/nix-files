@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  security.lockKernelModules = false;
+
   systemd.mounts =
   [
     { # Put /tmp on a protected tmpfs. This sucks up more RAM though.
