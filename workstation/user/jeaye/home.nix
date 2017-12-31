@@ -9,7 +9,7 @@ let
     "i3status.conf"
     "gitconfig"
     "gitignore"
-    "xsession" "Xresources"
+    "xinitrc" "Xresources"
     "lein/profiles.clj"
     "mpv/mpv.conf"
     "tmux.conf"

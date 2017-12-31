@@ -22,6 +22,7 @@
       default = "none";
       xterm.enable = false;
     };
+    # Apparently this still needs to be enabled, even with xinit.
     displayManager.slim.enable = true;
 
     libinput =

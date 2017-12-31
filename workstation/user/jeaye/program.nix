@@ -5,6 +5,9 @@
   {
     packages = with pkgs;
     [
+      # Xorg
+      xorg.xinit
+
       ## Security
       pinentry
       gnupg
