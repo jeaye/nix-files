@@ -5,6 +5,7 @@ let
   [
     "anonymust.org"
     "anylist.io"
+    "autocoupon.org"
     "bankapp.io"
     "candycapitalist.com"
     "candycapitalist.org"
@@ -21,6 +22,7 @@ let
     "preplist.org"
     "puretorrent.org"
     "safetybox.org"
+    "spamcan.org"
     "text-box.org"
     "trustcoin.org"
     "tunnelvpn.io"
