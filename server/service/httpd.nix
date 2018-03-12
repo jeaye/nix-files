@@ -249,6 +249,7 @@ with import ../util/http.nix {};
           SSLProxyEngine On
           ProxyPreserveHost Off
           ProxyPass /.well-known !
+          ProxyPass /media !
           ProxyPass / https://okletsplay.github.io/okletsplay.com/
           ProxyPassReverse / https://okletsplay.github.io/okletsplay.com/
           ProxyPassReverse / http://okletsplay.github.io/okletsplay.com/
