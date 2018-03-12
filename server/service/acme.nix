@@ -31,7 +31,7 @@ in
         };
         email = global-email;
         plugins = global-plugins;
-        postRun = global-post-run;
+        postRun = global-post-run + "systemctl restart dovecot2;";
       };
       "safepaste.org" =
       {
