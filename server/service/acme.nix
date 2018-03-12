@@ -26,7 +26,7 @@ in
         {
           "www.pastespace.org" = null;
           "mail.pastespace.org" = null;
-          "cloud.pastespace.org:/etc/user/http/cloud.pastespace.org" = null;
+          #"cloud.pastespace.org:/etc/user/http/cloud.pastespace.org" = null;
           "webmail.pastespace.org:/etc/user/http/webmail.pastespace.org" = null;
         };
         email = global-email;
