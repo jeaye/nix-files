@@ -121,7 +121,7 @@ in
 
         # LetsBet bucket
         :0:
-        * ^(From|Cc|To).*russalek13@gmail\.com
+        * ^(From|Cc|To).*(russalek13.*|.*@okletsplay.com)
         .LetsBet/
 
         # TinyCo bucket
