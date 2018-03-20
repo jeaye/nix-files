@@ -43,6 +43,8 @@
       kitty@pastespace.org       fu-er
 
       contact@okletsplay.com     russalek13@gmail.com
+      hello@okletsplay.com       russalek13@gmail.com
+      esports@okletsplay.com     russalek13@gmail.com
       russ@okletsplay.com        russalek13@gmail.com
       jeaye@okletsplay.com       jeaye
     '';
