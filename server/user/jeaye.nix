@@ -119,6 +119,11 @@ in
         * ^(From|Cc|To).*furthington\.com
         .Furthington/
 
+        # Hiring bucket
+        :0:
+        * ^(From|Cc|To).*(hiring@okletsplay.com)
+        .LetsBet-Hiring/
+
         # LetsBet bucket
         :0:
         * ^(From|Cc|To).*(russalek13.*|.*@okletsplay.com)
