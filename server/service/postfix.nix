@@ -46,6 +46,7 @@
       hello@okletsplay.com       russalek13@gmail.com
       esports@okletsplay.com     russalek13@gmail.com
       russ@okletsplay.com        russalek13@gmail.com
+      hiring@okletsplay.com       jeaye
       jeaye@okletsplay.com       jeaye
     '';
     postmasterAlias = "root";
