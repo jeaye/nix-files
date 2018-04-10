@@ -41,13 +41,6 @@
       contact@penelope-art.com   fu-er
       contact@penny-art.com      fu-er
       kitty@pastespace.org       fu-er
-
-      contact@okletsplay.com     russalek13@gmail.com
-      hello@okletsplay.com       russalek13@gmail.com
-      esports@okletsplay.com     russalek13@gmail.com
-      russ@okletsplay.com        russalek13@gmail.com
-      hiring@okletsplay.com       jeaye
-      jeaye@okletsplay.com       jeaye
     '';
     postmasterAlias = "root";
     rootAlias = "jeaye";
@@ -82,7 +75,7 @@
     extraConfig =
     ''
       home_mailbox = Maildir/
-      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org furthington.com fu-er.com penelope-art.com penny-art.com okletsplay.com
+      virtual_alias_domains = jeaye.com safepaste.org trustcoin.org furthington.com fu-er.com penelope-art.com penny-art.com
 
       # Max email size ~20MB
       message_size_limit = 20480000
