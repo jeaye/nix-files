@@ -2,9 +2,7 @@
 
 {
   environment.etc."user/http/upload.jeaye.com/jank-license".text =
-  ''Copyright © 2017 Jesse 'Jeaye' Wilkerson. All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
+  ''Redistribution and use in source and binary forms, with or without
 modification, are permitted, free of charge, provided that the following
 conditions are met:
 
