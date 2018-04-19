@@ -143,6 +143,11 @@ in
         :0:
         * ^Subject: Report [dD]omain:
         .ML.DMARC/
+
+        # Cron reports
+        :0:
+        * ^From: Cron Daemon
+        .Cron/
       '';
     };
   };
