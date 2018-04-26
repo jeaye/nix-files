@@ -6,6 +6,7 @@
     isNormalUser = true;
     home = "/etc/user/git";
     createHome = true;
+    extraGroups = [ "ssh" ];
   };
   users.groups.git = {};
 
