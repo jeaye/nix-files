@@ -26,6 +26,7 @@
     ./user/irc.nix
     ./user/git.nix
     ./user/jeaye.nix
+    ./user/fu-er.nix
 
     ## Services
     ./service/acme.nix
