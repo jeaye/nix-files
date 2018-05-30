@@ -7,13 +7,6 @@
     wheelNeedsPassword = true;
   };
 
-  users.users.fu-er =
-  {
-    isNormalUser = true;
-    home = "/etc/user/fu-er";
-    extraGroups = [ "ssh" ];
-  };
-
   system.activationScripts =
   {
     homes =
