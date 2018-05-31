@@ -28,7 +28,7 @@
 
         # Junk
         :0:
-        * ^From|Cc|To|X-Original-To: kitty@pastespace\.org
+        * ^(From|Cc|To|X-Original-To): kitty@pastespace\.org
         .Junk/
       '';
     };
