@@ -23,7 +23,7 @@
       ''
         # TrueIdentity
         :0:
-        * ^From: trueidentity@e-tui.transunion.com
+        * ^From: .*e-tui\.transunion\.com.*
         .Trash/
 
         # Junk
