@@ -45,6 +45,7 @@
     ./service/upload.jeaye.com-tmp.nix
     ./service/wordy-word.nix
     ./service/rainloop.nix
+    ./service/taskserver.nix
 
     #./container/nextcloud.nix
   ];
