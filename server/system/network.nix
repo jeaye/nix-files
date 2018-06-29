@@ -3,8 +3,6 @@
 {
   networking =
   {
-    hostName = "nixums";
-
     wireless.enable = false;
     enableIPv6 = false;
 
