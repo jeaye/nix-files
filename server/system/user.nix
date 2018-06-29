@@ -1,12 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  security.sudo =
-  {
-    enable = false;
-    wheelNeedsPassword = true;
-  };
-
   system.activationScripts =
   {
     homes =
