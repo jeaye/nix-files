@@ -186,25 +186,5 @@
       '';
       mode = "0774";
     };
-    "admin/optimize-nix" =
-    {
-      text =
-      ''
-        #!/run/current-system/sw/bin/bash
-        set -eu
-
-        # Delete everything from this profile that isn't currently needed
-        nix-env --delete-generations old
-
-        # Delete generations older than a week
-        nix-collect-garbage
-        nix-collect-garbage --delete-older-than 7d
-
-        # Optimize
-        nix-store --gc --print-dead
-        nix-store --optimise
-      '';
-      mode = "0774";
-    };
   };
 }
