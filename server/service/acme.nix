@@ -1,22 +1,18 @@
-{ config, pkgs, pythonPackages, ... }:
+{ config, pkgs, ... }:
+
+with import ../util/acme.nix {};
 
 let
   global-email = "contact@jeaye.com";
-  global-plugins = [ "account_key.json" "chain.pem" "key.pem" "cert.pem" ];
-  global-post-run =
-  ''
-    cp -R /var/lib/acme-unstable/* /var/lib/acme/
-    systemctl restart httpd.service ;
-  '';
 in
 {
   environment.systemPackages = [ pkgs.simp_le ];
 
-  # TODO: Combine these subdomains where possible
   security.acme =
   {
-    directory = "/var/lib/acme-unstable";
+    directory = util.acme.directory;
 
+    # TODO: Combine these subdomains where possible
     certs =
     {
       "pastespace.org" =
@@ -30,8 +26,8 @@ in
           "webmail.pastespace.org:/etc/user/http/webmail.pastespace.org" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run + "systemctl restart dovecot2;";
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run + "systemctl restart dovecot2;";
       };
       "safepaste.org" =
       {
@@ -41,8 +37,8 @@ in
           "www.safepaste.org" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "jeaye.com" =
       {
@@ -50,8 +46,8 @@ in
         extraDomains =
         { "www.jeaye.com" = null; };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "upload.jeaye.com" =
       {
@@ -59,8 +55,8 @@ in
         extraDomains =
         { "upload.jeaye.com" = null; };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "blog.jeaye.com" =
       {
@@ -68,8 +64,8 @@ in
         extraDomains =
         { "blog.jeaye.com" = null; };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "jank-lang.org" =
       {
@@ -80,8 +76,8 @@ in
           "bench.jank-lang.org" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "fu-er.com" =
       {
@@ -91,8 +87,8 @@ in
           "www.fu-er.com" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "penelope-art.com" =
       {
@@ -102,8 +98,8 @@ in
           "www.penelope-art.com" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "penny-art.com" =
       {
@@ -113,8 +109,8 @@ in
           "www.penny-art.com" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
       "okletsplay.com" =
       {
@@ -124,8 +120,8 @@ in
           "www.okletsplay.com" = null;
         };
         email = global-email;
-        plugins = global-plugins;
-        postRun = global-post-run;
+        plugins = util.acme.plugins;
+        postRun = util.acme.post-run;
       };
     };
   };
