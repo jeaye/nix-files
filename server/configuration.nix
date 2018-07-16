@@ -47,6 +47,6 @@
     #./container/nextcloud.nix
   ];
 
-  network.hostName = "nixums";
+  networking.hostName = "nixums";
   system.stateVersion = "17.09";
 }
