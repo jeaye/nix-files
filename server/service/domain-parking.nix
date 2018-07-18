@@ -11,6 +11,8 @@ let
     "candycapitalist.org"
     "clojure-atlas.org"
     "cpp-atlas.org"
+    "datever.org"
+    "date-ver.org"
     "farmware.io"
     "furthington.com"
     "helderman.io"
