@@ -4,7 +4,6 @@
   imports =
   [
     ## System
-    ./system/boot.nix
     ./system/environment.nix
     ./system/network.nix
     ./system/systemd.nix
