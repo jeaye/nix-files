@@ -112,17 +112,6 @@ in
         plugins = util.acme.plugins;
         postRun = util.acme.post-run;
       };
-      "okletsplay.com" =
-      {
-        webroot = "/etc/user/http/okletsplay.com";
-        extraDomains =
-        {
-          "www.okletsplay.com" = null;
-        };
-        email = global-email;
-        plugins = util.acme.plugins;
-        postRun = util.acme.post-run;
-      };
     };
   };
 }
