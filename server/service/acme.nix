@@ -58,15 +58,6 @@ in
         plugins = util.acme.plugins;
         postRun = util.acme.post-run;
       };
-      "blog.jeaye.com" =
-      {
-        webroot = "/etc/user/http/blog.jeaye.com";
-        extraDomains =
-        { "blog.jeaye.com" = null; };
-        email = global-email;
-        plugins = util.acme.plugins;
-        postRun = util.acme.post-run;
-      };
       "jank-lang.org" =
       {
         webroot = "/etc/user/http/jank-lang.org";

@@ -137,24 +137,6 @@ with import ../util/http.nix {};
         enableSSL = true;
       }
       {
-        hostName = "blog.jeaye.com";
-        globalRedirect = "https://blog.jeaye.com/";
-      }
-      {
-        hostName = "blog.jeaye.com";
-        documentRoot = "/etc/user/http/blog.jeaye.com";
-        extraConfig =
-        ''
-          SSLProxyEngine On
-          ProxyPreserveHost Off
-          ProxyPass /.well-known !
-          ProxyPass / https://jeaye.github.io/blog.jeaye.com/
-          ProxyPassReverse / https://jeaye.github.io/blog.jeaye.com/
-          ProxyPassReverse / http://jeaye.github.io/blog.jeaye.com/
-        '' + (util.http.helpers.withSSL "blog.jeaye.com" "blog.jeaye.com");
-        enableSSL = true;
-      }
-      {
         hostName = "jank-lang.org";
         serverAliases = [ "www.jank-lang.org" ];
         globalRedirect = "https://jank-lang.org/";
@@ -250,7 +232,6 @@ with import ../util/http.nix {};
     "user/http/webmail.pastespace.org/.well-known/.manage-directory".text = "";
     "user/http/safepaste.org/.well-known/.manage-directory".text = "";
     "user/http/jeaye.com/.well-known/.manage-directory".text = "";
-    "user/http/blog.jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/jank-lang.org/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/.well-known/.manage-directory".text = "";
     "user/http/upload.jeaye.com/tmp/.manage-directory".text = "";
