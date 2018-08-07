@@ -24,6 +24,7 @@
     ./user/git.nix
     ./user/jeaye.nix
     ./user/fu-er.nix
+    ./user/okletsplay.nix
 
     ## Services
     ./service/acme.nix
