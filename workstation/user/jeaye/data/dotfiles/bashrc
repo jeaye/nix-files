@@ -41,8 +41,9 @@ export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 
 # fzf bindings
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+fi
 
 # Rust/Cargo
 export PATH=~/.cargo/bin:$PATH
