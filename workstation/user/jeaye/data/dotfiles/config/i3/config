@@ -10,15 +10,16 @@ font xft:terminus
 floating_modifier $mod
 
 # setup default environment
-bindsym $mod+Shift+e exec i3-msg 'workspace 1; exec firefox; workspace 2; exec urxvt; workspace 7; exec urxvt; workspace 9; exec thunderbird-beta; workspace 10; layout tabbed; exec skypeforlinux; exec pavucontrol; nop '
+bindsym $mod+Shift+e exec i3-msg 'workspace 1; exec firefox; workspace 2; exec urxvt; workspace 7; layout tabbed; exec urxvt; exec signal-desktop; workspace 8; exec discord; workspace 9; exec thunderbird; workspace 10; exec pavucontrol; nop '
 
 # start a terminal
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec "urxvt -cd $(cat ~/.last-directory 2>/dev/null || echo ~)"
 
 # start a browser
 bindsym $mod+Shift+f exec firefox
 
-bindsym $mod+Shift+g exec ~/.bin/lock
+bindsym $mod+Shift+g exec lock
 
 for_window [class="(?i)gvim"] client.focused #000000 #000000 #000000 #000000
 for_window [class="plasmashell"] floating window
@@ -27,18 +28,24 @@ for_window [class="plasmashell"] floating window
 bindsym $mod+Shift+s exec import -window root ~/screen-shot-$(date +'%Y-%m-%d-%H-%M-%S').png
 
 # music control
-bindsym XF86AudioPrev exec cmus-remote -r
-bindsym XF86AudioNext exec cmus-remote -n
-bindsym XF86AudioPause exec cmus-remote -u
-bindsym XF86AudioMute exec cmus-remote -u
-bindsym XF86AudioRaiseVolume exec cmus-remote -v +10
-bindsym XF86AudioLowerVolume exec cmus-remote -v -10
+#bindsym XF86AudioPrev exec cmus-remote -r
+#bindsym XF86AudioNext exec cmus-remote -n
+#bindsym XF86AudioPause exec cmus-remote -u
+#bindsym XF86AudioMute exec cmus-remote -u
+#bindsym XF86AudioRaiseVolume exec cmus-remote -v +10
+#bindsym XF86AudioLowerVolume exec cmus-remote -v -10
+
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPause exec mpc toggle
+bindsym XF86AudioRaiseVolume exec mpc volume +10
+bindsym XF86AudioLowerVolume exec mpc volume -10
 
 # kill focused window
 bindsym $mod+x kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb '#282828' -nf '#928374' -sb '#282828' -sf '#d65d0e'
 
 # change focus
 bindsym $mod+j focus down
@@ -150,7 +157,7 @@ bindsym $mod+r mode "resize"
 
 # Window colors:
 # class                 border  backgr. text    indicator
-client.focused          #4c7899 #cb4b16 #ffffff #2e9ef4
+client.focused          #222222 #79740e #ffffff #b8bb26
 client.focused_inactive #222222 #5f676a #ffffff #484e50
 client.unfocused        #222222 #222222 #888888 #292d2e
 client.urgent           #222222 #859900 #000000 #859900
@@ -166,15 +173,15 @@ bar {
     font pango:DejaVu Sans Mono 14
 
     colors {
-      #hsetroot -solid "#002b36"
-      background #002b36
-      statusline #657b83
-      separator #cb4b16
+      #hsetroot -solid "#282828"
+      background #282828
+      statusline #928374
+      separator #d65d0e
 
-      focused_workspace  #268bd2 #002b36 #ffffff
-      active_workspace   #222222 #cb4b16 #ffffff
+      focused_workspace  #a89984 #282828 #ffffff
+      active_workspace   #222222 #d65d0e #ffffff
       inactive_workspace #222222 #111111 #888888
-      urgent_workspace   #2f343a #cb4b16 #ffffff
+      urgent_workspace   #2f343a #d65d0e #ffffff
     }
 }
 

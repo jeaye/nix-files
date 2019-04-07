@@ -5,7 +5,7 @@ xset -b
 xrdb -merge ~/.Xresources
 
 # Nice background color.
-hsetroot -solid "#002b36"
+hsetroot -solid "#282828"
 
 # Disable laptop monitor.
 if [[ $(xrandr | grep "HDMI-0 connected") ]];
@@ -20,6 +20,15 @@ fi
 
 # Lock the screen, if it's idle.
 xautolock -time 10 -locker "~/.bin/lock" -secure &
+
+# Remove blue light at night
+redshift &
+
+# Skype uses the GNOME keyring
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+
+mpd &
 
 # The X session dies when i3 exits.
 exec i3

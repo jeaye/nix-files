@@ -22,6 +22,7 @@
   untracked = yellow
 [alias]
   po = push origin
+  pu = push upstream
   c = commit
   cp = cherry-pick
   ch = checkout
@@ -31,6 +32,7 @@
   di = difftool --tool=vim_ignore_whitespace -w --ignore-submodules
   ds = difftool --stat --ignore-submodules
   ll = log --pretty=oneline --graph --abbrev-commit --decorate --topo-order
+  dp = difftool --tool=patch --ignore-submodules --minimal -w
   clr = clone --recursive
   find = log --pickaxe-all -S
   fpull = "!f(){ git pull \"$1\" \"$2\" && git fat pull; };f"
@@ -59,15 +61,15 @@
   default = simple
 [core]
   pager = less -R
-  excludesfile = ~/jeaye/.gitignore
+  excludesfile = /home/jeaye/.gitignore
 [gist]
   private = yes
   browse = no
 [filter "lfs"]
   required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
 [commit]
   gpgsign = true
 [stash]
