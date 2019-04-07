@@ -3,8 +3,10 @@
 i3status | (read line && echo $line && read line && echo $line && while :
 do
   read line
-  artist=$(cmus-remote -Q | grep ' artist ' | cut -d ' ' -f3-)
-  song=$(cmus-remote -Q | grep title | cut -d ' ' -f3-)
-  data="[{ \"full_text\": \"${artist} - ${song}\" },"
+  #artist=$(cmus-remote -Q | grep ' artist ' | cut -d ' ' -f3-)
+  #song=$(cmus-remote -Q | grep title | cut -d ' ' -f3-)
+  #music="${artist} - ${song}"
+  music=$(mpc current -f "%artist% [/ %composer% ]/ %title%")
+  data="[{ \"full_text\": \"${music}\" },"
   echo "${line/[/$data}" || exit 1
 done)
