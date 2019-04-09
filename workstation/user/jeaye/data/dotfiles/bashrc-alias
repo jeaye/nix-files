@@ -24,3 +24,20 @@ function define
 
 function irc
 { ssh -t jeaye@pastespace.org "tmux attach || tmux new"; }
+
+function cd
+{
+  if [ $# -eq 1 ];
+  then
+    command cd "$1"
+  else
+    command cd ~
+  fi
+  pwd >| ~/.last-directory
+}
+
+function cd-last-directory
+{
+  last=$(cat ~/.last-directory 2>/dev/null || echo ~)
+  command cd "$last"
+}
