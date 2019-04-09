@@ -5,20 +5,40 @@
 
 {
   imports =
-    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    [ <nixpkgs/nixos/modules/hardware/network/broadcom-43xx.nix>
+      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.initrd.luks.devices = [
+    {
+      name = "root";
+      device = "/dev/disk/by-uuid/b48f2d83-a37c-41b5-943a-7156f580d9fc";
+      preLVM = true;
+      allowDiscards = true;
+    }
+  ];
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a165f62f-e493-4f03-b808-ff2b62b7f536";
-      fsType = "ext4";
-    };
+  {
+    device = "/dev/mapper/root";
+    fsType = "ext4";
+  };
 
   swapDevices = [ ];
 
   nix.maxJobs = lib.mkDefault 8;
-  powerManagement.cpuFreqGovernor = "ondemand";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  # Allow audio and mic to work.
+  boot.extraModprobeConfig = ''
+    options libata.force=noncq
+    options snd_hda_intel index=0 model=intel-mac-auto id=PCH
+    options snd_hda_intel index=1 model=intel-mac-auto id=HDMI
+    options snd_hda_intel model=mbp101
+    options hid_apple fnmode=2
+  '';
 }

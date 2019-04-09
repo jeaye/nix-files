@@ -7,8 +7,8 @@ stdenv.mkDerivation rec
   {
     url = "https://github.com/jeaye/vimrc.git";
     deepClone = true;
-    rev = "19a28f08483b69a23f1eb976a7a96ea301e311a0";
-    sha256 = "0wzdzhp9q40dixfpkawngga7bylzspnjgiccrl5fa8yh36v0hp72";
+    rev = "c718665";
+    sha256 = "052hy2shkldqnkgr9vijadrwns5skgplf5027hrd5avp7vw65z42";
   };
   installPhase =
   ''

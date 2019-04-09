@@ -3,7 +3,8 @@
 {
   boot =
   {
-    loader.grub.device = "/dev/sda";
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
 
     #kernelModules =
     #[

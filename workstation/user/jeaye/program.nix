@@ -5,8 +5,11 @@
   {
     packages = with pkgs;
     [
-      # Xorg
+      ## Xorg
       xorg.xinit
+
+      ## Display
+      redshift
 
       ## Security
       pinentry
@@ -15,6 +18,7 @@
 
       ## Editing
       neovim
+      fzf
 
       ## Browsing
       firefox
@@ -23,7 +27,8 @@
       thunderbird
 
       ## Music
-      cmus
+      #cmus
+      mpd
 
       ## Dictionary
       dict

@@ -48,6 +48,15 @@
     ];
   };
 
+  services.redshift =
+  {
+    enable = true;
+    temperature.day = 5000;
+    temperature.night = 4500;
+    latitude = "37.5778696";
+    longitude = "-122.34809";
+  };
+
   environment.sessionVariables =
   {
     # Allow GTK 2.0/3.0 themes to be found.

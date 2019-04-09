@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+# TODO:
+# noatime
+# firejail
+
 {
   imports =
   [
@@ -29,5 +33,5 @@
     ./service/x11.nix
   ];
 
-  system.stateVersion = "17.09";
+  system.stateVersion = "18.09";
 }

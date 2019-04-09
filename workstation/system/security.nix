@@ -3,6 +3,12 @@
 {
   security.lockKernelModules = false;
 
+  programs.gnupg.agent =
+  {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   systemd.mounts =
   [
     { # Put /tmp on a protected tmpfs. This sucks up more RAM though.

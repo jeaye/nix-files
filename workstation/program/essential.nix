@@ -25,11 +25,12 @@
 
     ## Shell
     htop
-    # Disabled until https://github.com/NixOS/nixpkgs/pull/32534 is live
-    #bashCompletion
-    nix-repl
+    bashCompletion
     tmux
     rxvt_unicode
     psmisc
+
+    ## Administration
+    htop
   ];
 }

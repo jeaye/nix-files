@@ -5,7 +5,7 @@ let
   danPollock = pkgs.fetchurl
   {
     url = "http://someonewhocares.org/hosts/zero/hosts";
-    sha256 = "165bp7ipxngndyj7csdvsfn3pqi9z2mfd8mkr4pjg304jp3v9iny";
+    sha256 = "1zyzj0nd1gvsm16svlhkkp25j5bcaf33x1kz8mmjryl00323flsv";
   };
 in
 {
