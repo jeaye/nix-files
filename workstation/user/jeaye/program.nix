@@ -29,6 +29,14 @@
       ## Music
       #cmus
       mpd
+      pavucontrol
+
+      ## Chat
+      signal-desktop
+      discord
+
+      ## Gaming
+      #steam
 
       ## Dictionary
       dict

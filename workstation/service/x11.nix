@@ -34,6 +34,12 @@
       scrollMethod = "twofinger";
       naturalScrolling = true;
     };
+
+    multitouch =
+    {
+      enable = true;
+      invertScroll = true;
+    };
   };
 
   fonts =

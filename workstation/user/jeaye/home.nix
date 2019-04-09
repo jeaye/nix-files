@@ -27,6 +27,7 @@ in
     jeaye-vimrc = pkgs.callPackage ./pkg/vimrc.nix { };
   };
 
+  # TODO: Neovim links
   environment.etc =
   [
     ## Vim

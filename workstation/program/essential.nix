@@ -24,13 +24,12 @@
     git
 
     ## Shell
-    htop
     bashCompletion
     tmux
     rxvt_unicode
-    psmisc
 
     ## Administration
     htop
+    psmisc
   ];
 }

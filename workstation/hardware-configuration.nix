@@ -41,4 +41,12 @@
     options snd_hda_intel model=mbp101
     options hid_apple fnmode=2
   '';
+
+  hardware =
+  {
+    bluetooth.enable = false;
+    facetimehd.enable = true;
+    pulseaudio.enable = true;
+    opengl.extraPackages = [ pkgs.vaapiIntel ]; # TODO: Needed?
+  };
 }
