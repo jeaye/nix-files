@@ -3,6 +3,7 @@
 {
   networking = rec
   {
+    # TODO: Configure this top-level?
     hostName = "oryx";
 
     enableIPv6 = false;

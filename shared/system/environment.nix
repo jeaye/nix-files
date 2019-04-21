@@ -11,6 +11,7 @@
   programs.bash.enableCompletion = true;
 
   nix.allowedUsers = [ "@wheel" ];
+  # TODO: Can these be true now?
   nix.extraOptions =
   ''
     build-use-sandbox = false

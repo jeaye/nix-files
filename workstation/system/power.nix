@@ -5,6 +5,6 @@
 
   environment.systemPackages = with pkgs;
   [
-    powertop
+    powertop # TODO: Is this needed?
   ];
 }

@@ -17,6 +17,8 @@
 #	libc.so.6 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/libc.so.6 (0x0000770e97dc1000)
 #	/lib64/ld-linux-x86-64.so.2 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib64/ld-linux-x86-64.so.2 (0x0000770e98d4b000)
 
+# TODO: Steam fails, due to hardened kernel not allowing x86 programs
+
 {
   imports =
   [
@@ -47,5 +49,5 @@
     ./service/docker.nix
   ];
 
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.03";
 }
