@@ -35,7 +35,7 @@
     ./service/opendkim.nix
     ./service/spamassassin.nix
     ./service/safepaste.nix
-    ./service/jank-benchmark.nix
+    #./service/jank-benchmark.nix
     ./service/fail2ban.nix
     ./service/radicale.nix
     ./service/gpg.nix
@@ -43,11 +43,11 @@
     ./service/upload.jeaye.com-tmp.nix
     ./service/wordy-word.nix
     ./service/rainloop.nix
-    ./service/taskserver.nix
+    #./service/taskserver.nix
 
     #./container/nextcloud.nix
   ];
 
   networking.hostName = "nixums";
-  system.stateVersion = "18.03";
+  system.stateVersion = "19.03";
 }
