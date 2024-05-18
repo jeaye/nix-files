@@ -5,9 +5,11 @@ let
   danPollock = pkgs.fetchurl
   {
     url = "http://someonewhocares.org/hosts/zero/hosts";
-    sha256 = "1zyzj0nd1gvsm16svlhkkp25j5bcaf33x1kz8mmjryl00323flsv";
+    # curl http://someonewhocares.org/hosts/zero/hosts | sha256sum
+    sha256 = "dd5e4f9a4a3b08f8b8c5a45dcb363efeae0df47d8c80b232f8d91fb9c74ee99b";
   };
 in
 {
-  networking.extraHosts = builtins.readFile danPollock;
+  # TODO: Hash isn't working here? Copy the whole thing in?
+  #networking.extraHosts = builtins.readFile danPollock;
 }

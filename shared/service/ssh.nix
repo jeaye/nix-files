@@ -1,12 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   services.openssh =
   {
     enable = true;
-    forwardX11 = false;
-    permitRootLogin = "no";
-    allowSFTP = false;
+    allowSFTP = lib.mkDefault false;
+    settings =
+    {
+      X11Forwarding = false;
+      PermitRootLogin = "no";
+    };
     hostKeys =
     [
       { type = "ed25519"; path = "/etc/ssh/ssh_host_ed25519_key"; }
@@ -36,5 +39,5 @@
     '';
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = lib.mkDefault [ 22 ];
 }

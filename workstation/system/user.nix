@@ -7,6 +7,6 @@
     wheelNeedsPassword = true;
   };
 
-  # Disallow useradd/groupadd imperatively.
+  # Allow useradd/groupadd imperatively.
   users.mutableUsers = true;
 }

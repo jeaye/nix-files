@@ -1,23 +1,7 @@
 { config, pkgs, ... }:
 
 # TODO:
-# noatime
 # firejail
-
-# TODO: coc.nvim is failing
-#┌─(✗)[jeaye@oryx]─[~/.vim/plugged/coc.nvim][22:30:25][DETACHED]
-#└──╼ ldd build/coc-linux
-#	linux-vdso.so.1 (0x00007ffdeccab000)
-#	libdl.so.2 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/libdl.so.2 (0x0000770e98b47000)
-#	librt.so.1 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/librt.so.1 (0x0000770e9893f000)
-#	libstdc++.so.6 => not found
-#	libm.so.6 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/libm.so.6 (0x0000770e985aa000)
-#	libgcc_s.so.1 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/libgcc_s.so.1 (0x0000770e98394000)
-#	libpthread.so.0 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/libpthread.so.0 (0x0000770e98175000)
-#	libc.so.6 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib/libc.so.6 (0x0000770e97dc1000)
-#	/lib64/ld-linux-x86-64.so.2 => /nix/store/7gx4kiv5m0i7d7qkixq2cwzbr10lvxwc-glibc-2.27/lib64/ld-linux-x86-64.so.2 (0x0000770e98d4b000)
-
-# TODO: Steam fails, due to hardened kernel not allowing x86 programs
 
 {
   imports =
@@ -26,15 +10,16 @@
     ../shared/configuration.nix
 
     ## More secure defaults
-    <nixpkgs/nixos/modules/profiles/hardened.nix>
+    # TODO: Can we have this?
+    #<nixpkgs/nixos/modules/profiles/hardened.nix>
 
     ## System
     ./system/boot.nix
     ./system/environment.nix
     ./system/network.nix
-    ./system/power.nix
     ./system/security.nix
     ./system/sound.nix
+    ./system/usb.nix
 
     ## Global programs
     ./program/essential.nix
@@ -44,10 +29,11 @@
     ./user/jeaye.nix
 
     ## Services
-    ./service/manual.nix
     ./service/x11.nix
+    # Overrides.
+    ./service/ssh.nix
     ./service/docker.nix
   ];
 
-  system.stateVersion = "19.03";
+  system.stateVersion = "23.11";
 }

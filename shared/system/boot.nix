@@ -3,11 +3,8 @@
 {
   boot.kernelParams = [ "boot.shell_on_fail" ];
 
-  boot.loader.grub =
-  {
-    enable = true;
-    version = 2;
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Clean up /tmp on boot
   boot.cleanTmpDir = true;

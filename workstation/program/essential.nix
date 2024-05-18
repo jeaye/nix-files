@@ -1,22 +1,32 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs;
+  environment.systemPackages = let pkgsUnstable = import
+  (
+    fetchTarball https://github.com/NixOS/nixpkgs/archive/master.tar.gz
+  )
+  { };
+  in
+  with pkgs;
   [
     ## Vim
-    vimHugeX
-    vimPlugins.YouCompleteMe # TODO: For only certain languages?
+    neovim
+    tree-sitter
+    fzf
+    silver-searcher
+    ripgrep
 
     ## Browsing/downloading
     wget
-    elinks
+
+    ## Reading
+    pkgsUnstable.koodo-reader
 
     ## File formats
     unzip
     file
 
     ## Networking
-    telnet
     traceroute
     sshfs
 
@@ -24,12 +34,20 @@
     git
 
     ## Shell
-    bashCompletion
     tmux
-    rxvt_unicode
+    # 0.13.0 migrated to toml
+    pkgsUnstable.alacritty
+    starship
+    pcre
 
     ## Administration
     htop
     psmisc
+    lm_sensors
+
+    # Hardware
+    uhk-agent
   ];
+
+  hardware.keyboard.uhk.enable = true;
 }

@@ -6,13 +6,15 @@
     isNormalUser = true;
     createHome = true;
     group = "users";
-    home = "/etc/user/jeaye";
-    extraGroups = [ "wheel" "ssh" "proc" "docker" ];
+    home = "/home/jeaye";
+    extraGroups = [ "wheel" "networkmanager" "audio" "ssh" "proc" "docker" ];
   };
 
   imports =
   [
-    ./jeaye/home.nix
+    #./jeaye/home.nix
     ./jeaye/program.nix
+    ./jeaye/gaming.nix
+    ./jeaye/desktop.nix
   ];
 }
