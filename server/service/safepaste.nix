@@ -25,11 +25,11 @@
       export PATH=${pkgs.openssl}/bin:$PATH
 
       cd /etc/user/safepaste
-      for p in about donate;
-      do
-        ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share /etc/user/safepaste/paste
-      done
-      ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste.jar
+      #for p in about donate;
+      #do
+      #  ${pkgs.safepaste}/bin/encrypt $p ${pkgs.safepaste}/share /etc/user/safepaste/paste
+      #done
+      ${pkgs.openjdk}/bin/java -jar ${pkgs.safepaste}/bin/safepaste-standalone.jar
     '';
     mode = "0775";
   };

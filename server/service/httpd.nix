@@ -15,20 +15,15 @@ with import ../util/http.nix {};
 
     # TODO: Add proxy helper fn
     virtualHosts =
-    [
+    {
+      "pastespace.org" =
       {
-        hostName = "pastespace.org";
         serverAliases =
         [
           "www.pastespace.org"
           "mail.pastespace.org"
         ];
-        globalRedirect = "https://pastespace.org/";
-        enableSSL = false;
-      }
-      {
-        hostName = "pastespace.org";
-        serverAliases = [ "www.pastespace.org" ];
+        forceSSL = true;
         documentRoot = "/etc/user/http/pastespace.org";
         extraConfig =
         ''
@@ -217,7 +212,7 @@ with import ../util/http.nix {};
         '' + (util.http.helpers.withSSL "penny-art.com" "penny-art.com");
         enableSSL = true;
       }
-    ];
+    };
   };
 
   users.users.http =

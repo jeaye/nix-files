@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 let
   domains =
@@ -25,6 +25,7 @@ let
     "idiolisp.io"
     "idiolisp.org"
     "jank-platform.org"
+    "jank.wiki"
     "jeaye.dev"
     "jeaye.io"
     "orthodox-lang.com"
@@ -58,12 +59,11 @@ let
     "zentrain.io"
   ];
   makeVirtualHost = domain:
-  {
-    hostName = domain;
+  (builtins.nameValuePair domain {
     serverAliases = [("www." + domain)];
     enableSSL = false;
     documentRoot = "/etc/user/http/" + domain;
-  };
+  });
   index = builtins.readFile ./data/park-index.html;
   makeIndexFile = domain:
   {
@@ -75,6 +75,6 @@ let
   };
 in
 {
-  services.httpd.virtualHosts = (map makeVirtualHost domains);
+  services.httpd.virtualHosts = (builtins.listToAttrs (map makeVirtualHost domains));
   environment.etc = (builtins.listToAttrs (map makeIndexFile domains));
 }
