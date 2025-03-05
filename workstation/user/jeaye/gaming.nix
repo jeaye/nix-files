@@ -1,12 +1,18 @@
 { config, pkgs, lib, ... }:
 
 {
-  users.users.jeaye =
+  #users.users.jeaye =
+  #{
+  #  packages = with pkgs;
+  #  [
+  #    steam
+  #  ];
+  #};
+  programs.steam =
   {
-    packages = with pkgs;
-    [
-      steam
-    ];
+    enable = true;
+    # TODO: Enable once this is live.
+    #protontricks.enable = true;
   };
 
   # Needed for Rocket League.
@@ -19,6 +25,7 @@
       steam = prev.steam.override ({ extraPkgs ? pkgs': [], ... }: {
         extraPkgs = pkgs': (extraPkgs pkgs') ++ (with pkgs'; [
           openssl_1_1
+          protontricks
         ]);
       });
     })

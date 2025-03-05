@@ -20,7 +20,7 @@
     wget
 
     ## Reading
-    pkgsUnstable.koodo-reader
+    #pkgsUnstable.koodo-reader
 
     ## File formats
     unzip
@@ -32,6 +32,7 @@
 
     ## Source control
     git
+    git-lfs
 
     ## Shell
     tmux
@@ -47,6 +48,9 @@
 
     # Hardware
     uhk-agent
+
+    # Nix
+    nix-index
   ];
 
   hardware.keyboard.uhk.enable = true;

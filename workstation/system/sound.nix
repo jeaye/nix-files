@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  sound.enable = true;
+  services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.support32Bit = true;
   hardware.pulseaudio.package = pkgs.pulseaudioFull;

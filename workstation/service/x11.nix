@@ -5,7 +5,7 @@
   {
     enable = true;
     autorun = true;
-    layout = "us";
+    xkb.layout = "us";
     #tty = 2;
 
     windowManager =
@@ -88,7 +88,7 @@
   hardware.opengl =
   {
     enable = true;
-    driSupport = true;
+    #driSupport = true;
     driSupport32Bit = true;
   };
 

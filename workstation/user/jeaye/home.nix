@@ -28,27 +28,27 @@ in
   };
 
   # TODO: Neovim links
-  environment.etc =
-  [
-    ## Vim
-    {
-      source = pkgs.jeaye-vimrc + "/layer";
-      target = "user/jeaye/.vim/layer";
-    }
-    {
-      source = pkgs.jeaye-vimrc + "/build";
-      target = "user/jeaye/.vim/build";
-    }
-    {
-      source = pkgs.jeaye-vimrc + "/vimrc";
-      target = "user/jeaye/.vimrc";
-    }
-    ## X
-    {
-      source = ./data/dotfiles/xinitrc;
-      target = "user/jeaye/.xsession";
-    }
-  ] ++ (map make-dotfile dotfiles);
+  #environment.etc =
+  #[
+  #  ## Vim
+  #  {
+  #    source = pkgs.jeaye-vimrc + "/layer";
+  #    target = "user/jeaye/.vim/layer";
+  #  }
+  #  {
+  #    source = pkgs.jeaye-vimrc + "/build";
+  #    target = "user/jeaye/.vim/build";
+  #  }
+  #  {
+  #    source = pkgs.jeaye-vimrc + "/vimrc";
+  #    target = "user/jeaye/.vimrc";
+  #  }
+  #  ## X
+  #  {
+  #    source = ./data/dotfiles/xinitrc;
+  #    target = "user/jeaye/.xsession";
+  #  }
+  #] ++ (map make-dotfile dotfiles);
 
   system.activationScripts =
   {

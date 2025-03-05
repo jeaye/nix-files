@@ -61,7 +61,11 @@ in
       redshift
       imagemagick
       flameshot
-      pcmanfm
+      xfce.thunar
+      # Needed for thumbnails in pcmanfm
+      xfce.tumbler
+      # Allows pcmanfm to recognize different file types
+      shared-mime-info
 
       # Qt theme
       breeze-qt5
@@ -71,11 +75,11 @@ in
       iconTheme
 
       # Icons (Fallback)
-      gnome3.adwaita-icon-theme
+      gnome.adwaita-icon-theme
 
       # Qt Style tooling
       libsForQt5.qtstyleplugin-kvantum
-      qt5ct
+      libsForQt5.qt5ct
       themechanger
     ];
   };
